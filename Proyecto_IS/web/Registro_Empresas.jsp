@@ -12,7 +12,17 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Registrar Empresa</h1>
+        <form action="Proceso_Usuario.jsp" method="post">
+            Cod Empresa <input type="number" name="cod_empresa"><br>
+            Cod_Perfil <input type="number" name="cod_Perfil"><br>
+            Nombre <input type="text" name="Nombre"><br>
+            Telefonos <input type="number" name="Telefono"><br>
+            Email <input type="text" name="Email"><br>
+           
+           
+            <button type="submit"> Enviar </button><br>
+        </form>
 
     </body>
 </html>
