@@ -1,11 +1,9 @@
-<%-- 
-    Document   : Registro_Empresas
-    Created on : 04/06/2018, 21:43:48
-    Author     : rowel
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
     <head>
         <!-- Latest compiled and minified CSS -->
@@ -17,12 +15,13 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-        
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+
+        <title>Registrando</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body background="Imagenes/wall3.jpg">
-         <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -47,19 +46,19 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
+    <center>
         <br>
         <br>
-        <h1>Registrar Empresa</h1>
-        <form action="Proceso_Usuario.jsp" method="post">
-            Cod Empresa <input type="number" name="cod_empresa"><br>
-            Cod_Perfil <input type="number" name="cod_Perfil"><br>
-            Nombre <input type="text" name="Nombre"><br>
-            Telefonos <input type="number" name="Telefono"><br>
-            Email <input type="text" name="Email"><br>
-           
-           
-            <button type="submit"> Enviar </button><br>
-        </form>
+        <h1>¿Escoja quien es usted?</h1>
+        <table >
 
-    </body>
+            <tr><td><center><h2>Desmpleado</h2></center></td><td><center><h2>Empresa</h2></center></td></tr>
+            <tr><td><img src="Imagenes/empleado.jpg" alt=""/></td><td><img src="Imagenes/empresa.png" alt="" height="400" width="700" /></td></tr>
+            <tr><td><a type="button" href="RegistrarUsuario.jsp"  class="btn btn-success btn-lg btn-block"><strong>Registrarse Usuario </strong></a></td>
+            <td> <a type="button" href="Registro_Empresas.jsp"  class="btn btn-info btn-lg btn-block"><strong>Registrarse Empresa </strong></a></td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td colspan="2"><center><a type="button" href="Logeo.jsp"  class="btn btn-primary btn-lg btn-block">Iniciar Sesión</a></center></td></tr>
+        </table>
+    </center>
+</body>
 </html>
