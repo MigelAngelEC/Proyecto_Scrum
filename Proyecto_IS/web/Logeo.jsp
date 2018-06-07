@@ -21,7 +21,6 @@
         <title>Login</title>
     </head>
     <body background="Imagenes/wall3.jpg">
-        <body background="Imagenes/wall3.jpg">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -47,19 +46,41 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-            
+
+
+    <center>
         <h1>LOGIN</h1>
-        <form>
-            
-            <input type="text" name="usuario">
+        <br/>
+
+
+        <form action="Proceso_Login.jsp" method="post">
+
+
+            <div class="input-group input-group-lg">
+                <label for="exampleInputPassword1">Nickname</label>
+
+                <input type="text" class="form-control" placeholder="Nickname" name="nick" aria-describedby="sizing-addon2">
+            </div>
+
             <br/>
-            <input type="password" name="pass">
+            <div class="input-group input-group-lg">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="pass" name="pass" placeholder="Password" aria-describedby="sizing-addon2">
+            </div>
             <br/>
-            <input type="submit" value="Login">
-            
-            
+            <button type="submit" class="btn btn-outline-dark">Login</button>
+
+            <br/>
+            <br/>
+            <a href="#">Olvide mi contraseña..!</a>
+            <br/>
+            <a href="#">Registrarme</a>
+            <br/> <br/> <br/>
+
+            <img src="Imagenes/Users.png" alt="" height="350" width="350" align="center" />
         </form>
-        
-        
-    </body>
+
+
+    </center>
+</body>
 </html>
