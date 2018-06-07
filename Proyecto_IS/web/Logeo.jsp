@@ -74,7 +74,7 @@
             <br/>
             <a href="#">Olvide mi contraseña..!</a>
             <br/>
-            <a href="#">Registrarme</a>
+            <a href="RegistrarUsuario.jsp">Registrarme</a>
             <br/> <br/> <br/>
 
             <img src="Imagenes/Users.png" alt="" height="350" width="350" align="center" />
