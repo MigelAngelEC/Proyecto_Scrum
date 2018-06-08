@@ -57,7 +57,7 @@
                 <tr><td colspan="2">  <label class="sr-only" for="ci">Username</label>
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                             <div class="input-group-addon">Cedula Identidad</div>
-                            <input type="text" class="form-control" id="ci" placeholder="CI #1234567890">
+                            <input type="text" class="form-control" id="ci" placeholder="CI #1234567890"  >
                         </div>
                     </td></tr>
                 <tr><td> &nbsp;</td></tr>

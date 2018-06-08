@@ -19,9 +19,9 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
         
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Registro Empresa</title>
     </head>
-    <body background="Imagenes/wall3.jpg">
+    <body background="Imagenes/fondo_1.jpg">
          <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -49,17 +49,63 @@
         </nav>
         <br>
         <br>
+        <center>
         <h1>Registrar Empresa</h1>
         <form action="Proceso_Usuario.jsp" method="post">
-            Cod Empresa <input type="number" name="cod_empresa"><br>
-            Cod_Perfil <input type="number" name="cod_Perfil"><br>
-            Nombre <input type="text" name="Nombre"><br>
-            Telefonos <input type="number" name="Telefono"><br>
-            Email <input type="text" name="Email"><br>
+            
+            
+           <table>
+                <tr><td colspan="2">  <label class="sr-only" for="ci"> Username</label>
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <div class="input-group-addon">RUC</div>
+                            <input type="number" class="form-control" id="ruc" placeholder="digite 13 digitos">
+                        </div>
+                    </td></tr>
+                <tr><td> &nbsp;</td></tr>
+                <tr><td colspan="2">  
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <div class="input-group-addon">Nombre De La Empresa</div>
+                            <input type="text" class="form-control" id="nEmpresa" placeholder="Solo Caracteres" >
+                        </div>
+                    </td></tr>
+                <tr><td> &nbsp;</td></tr>
+                 <tr><td colspan="2">  
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <div class="input-group-addon">Direccion</div>
+                            <input type="text" class="form-control" id="dire" placeholder="Solo Caracteres" >
+                        </div>
+                    </td></tr>
+               
+                <tr><td> &nbsp;</td></tr>
+                <tr><td colspan="2">  
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <div class="input-group-addon">Telefono</div>
+                            <input type="number" class="form-control" id="tel" placeholder="Solo Digitos" >
+                        </div>
+                    </td></tr>
+                
+                <tr><td> &nbsp;</td></tr>
+                <tr><td colspan="2">  
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <div class="input-group-addon">Email</div>
+                            <input type="text" class="form-control" id="mail" placeholder="example@.com" >
+                        </div>
+                    </td></tr>
+               
+                <tr><td> &nbsp;</td></tr>
+                <tr><td colspan="2">  
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <div class="input-group-addon">Descripcion</div>
+                            <input type="text" class="form-control" id="desc" placeholder="Solo Caracteres" >
+                        </div>
+                    </td></tr>
+                
+                <tr><td> &nbsp;</td></tr>
+            </table>
            
-           
-            <button type="submit"> Enviar </button><br>
+            <button type="submit"> Registrarse  </button><br>
+            <img src="Imagenes/empresa.jpg" higth="300" width="300"/>
         </form>
-
+</center>
     </body>
 </html>
