@@ -23,13 +23,23 @@ public class clsempresa {
     private String Email;
     private String Descripcion ;
 
-    public clsempresa(String NombreEmpresa, String ruc, String direccion, String telefono, String Email, String Descripcion) {
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String Password) {
+        this.Password = Password;
+    }
+    private String Password;
+
+    public clsempresa(String ruc,String NombreEmpresa , String direccion, String telefono, String Email, String Descripcion,String Password) {
         this.NombreEmpresa = NombreEmpresa;
         this.ruc = ruc;
         this.direccion = direccion;
         this.telefono = telefono;
         this.Email = Email;
         this.Descripcion = Descripcion;
+        this.Password = Password;
     }
 
     public String getNombreEmpresa() {
@@ -85,13 +95,13 @@ public class clsempresa {
 
     
     
-    public boolean InsertarUsuario(String ruc,  String NombreEmpresa, String Direccion, String Telefono, String email, String Descripcion){
+    public boolean InsertarUsuario(String ruc,  String NombreEmpresa, String Direccion, String Telefono, String email, String Descripcion,String Password){
         boolean ejecuto=false;
         try {
-            String SQL =("Insert into Empresas values('"+ruc+"',"+NombreEmpresa+",'"+Direccion+"','"+telefono+"','"+email+"','"+Descripcion+"')");
+            String SQL =("Insert into empresas values('"+ruc+ "','2','" +NombreEmpresa+",'"+Direccion+"','"+Telefono+"','"+email+"','"+Descripcion+"','"+Password+"')");
             ClsConexion con = new ClsConexion();
             con.Ejecutar(SQL);
-            ejecuto=true;
+            //ejecuto=true;
         } catch (Exception e) {
             System.out.println("Error" + e.getMessage());
             ejecuto=false;

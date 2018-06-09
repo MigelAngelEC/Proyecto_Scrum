@@ -50,60 +50,72 @@
         <br>
         <br>
         <center>
-        <h1>Registrar Empresa</h1>
-        <form action="Proceso_Usuario.jsp" method="post">
-            
-            
-           <table>
-                <tr><td colspan="2">  <label class="sr-only" for="ci"> Username</label>
-                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                            <div class="input-group-addon">RUC</div>
-                            <input type="number" class="form-control" id="ruc" placeholder="digite 13 digitos">
-                        </div>
-                    </td></tr>
+        <h1>Registrar Usuario</h1>
+        <br>
+        <form action="Proceso_Empresa.jsp" method="post">
+
+            <table>
+                <tr><td colspan="2">  <center>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">RUC</div>
+                        <input type="text" class="form-control" id="ci" placeholder="CI #1234567890" name="ruc">
+                    </div></center>
+                </td></tr>
                 <tr><td> &nbsp;</td></tr>
-                <tr><td colspan="2">  
-                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                            <div class="input-group-addon">Nombre De La Empresa</div>
-                            <input type="text" class="form-control" id="nEmpresa" placeholder="Solo Caracteres" >
-                        </div>
-                    </td></tr>
+                <tr><td colspan="2"><center>  
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">Nombre de la Empresa</div>
+                        <input type="text" class="form-control" id="ci" placeholder="ej: Jose123" name="nempresa">
+                    </div></center>
+                </td></tr>
                 <tr><td> &nbsp;</td></tr>
-                 <tr><td colspan="2">  
-                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                            <div class="input-group-addon">Direccion</div>
-                            <input type="text" class="form-control" id="dire" placeholder="Solo Caracteres" >
-                        </div>
-                    </td></tr>
-               
+                <tr><td colspan="2">  <center>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">Direccion</div>
+                        <input type="text" class="form-control" id="ci" placeholder="ej: Mispar159357" name="direc">
+                    </div></center>
+                </td></tr>
                 <tr><td> &nbsp;</td></tr>
-                <tr><td colspan="2">  
-                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                            <div class="input-group-addon">Telefono</div>
-                            <input type="number" class="form-control" id="tel" placeholder="Solo Digitos" >
-                        </div>
-                    </td></tr>
+                <tr><td colspan="2">  <center>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">Telefono</div>
+                        <input type="text" class="form-control" id="ci" placeholder="Repetir Password" name="telefono">
+                    </div> </center>
+                </td></tr>
+                <tr><td> &nbsp;</td></tr>
+                <tr><td colspan="2">  <center>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">Email</div>
+                        <input type="text" class="form-control" id="ci" placeholder="ej: Juan Jose" name="email">
+                    </div> </center>
+                </td></tr>
+                <tr><td> &nbsp;</td></tr>
+                <tr><td colspan="2"> <center>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">Descripcion</div>
+                        <input type="text" class="form-control" id="ci" placeholder="ej: Catillo Perez" name="desc">
+                    </div></center>
+                </td></tr>
+                <tr><td> &nbsp;</td></tr>
+                <tr><td colspan="2">  <center>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">Password</div>
+                        <input type="password" class="form-control" id="ci" placeholder="ej: josejj@gmail.com" name="passw">
+                    </div></center>
+                </td></tr>
+                <tr><td> &nbsp;</td></tr>
+                <tr><td colspan="2">  <center>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">Repetir Password</div>
+                        <input type="password" class="form-control" id="ci" placeholder="ej 022465873" name="telf">
+                    </div></center>
+                </td></tr>
+                <tr><td> &nbsp;</td></tr>
                 
-                <tr><td> &nbsp;</td></tr>
-                <tr><td colspan="2">  
-                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                            <div class="input-group-addon">Email</div>
-                            <input type="text" class="form-control" id="mail" placeholder="example@.com" >
-                        </div>
-                    </td></tr>
-               
-                <tr><td> &nbsp;</td></tr>
-                <tr><td colspan="2">  
-                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                            <div class="input-group-addon">Descripcion</div>
-                            <input type="text" class="form-control" id="desc" placeholder="Solo Caracteres" >
-                        </div>
-                    </td></tr>
-                
-                <tr><td> &nbsp;</td></tr>
+
             </table>
-           
-            <button type="submit"> Registrarse  </button><br>
+
+            <button type="submit"  class="btn btn-primary btn-lg"> Crear Cuenta </button><br>
             <img src="Imagenes/empresa.jpg" higth="300" width="300"/>
         </form>
 </center>

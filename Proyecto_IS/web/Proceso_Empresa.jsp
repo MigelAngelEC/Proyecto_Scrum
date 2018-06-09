@@ -13,24 +13,25 @@
     </head>
     <body>
          <%
-            String ruc, nombreempresa, telefono, direccion, desc,email;
-            int year;
+            String ruc, NombreEmpresa, telefono, direccion, Descripcion,Email,Password;
+           
             ruc = request.getParameter("ruc");
-            nombreempresa = (request.getParameter("nempresa"));
+            NombreEmpresa = request.getParameter("nempresa");
             direccion = request.getParameter("direc");
             telefono = request.getParameter("telefono");
-            email = request.getParameter("email");
-            desc = request.getParameter("desc");
+            Email = request.getParameter("email");
+            Descripcion = request.getParameter("desc");
+            Password= request.getParameter("passw");
             
 
-            clsempresa obj = new clsempresa(ruc,nombreempresa,telefono,direccion,desc,email);
-            out.print("<br> RUC : " + obj.getRuc()+ "<br>NombreDeLaEmpresa : " + obj.getNombreEmpresa());
+            clsempresa obj = new clsempresa(ruc, NombreEmpresa, direccion, telefono, Email, Descripcion, Password);
+            out.print("<br> RUC : " + obj.getRuc()+ "<br>NombreDeLaEmpresa : " + obj.getNombreEmpresa()+ "<br>direc : " + obj.getDescripcion());
 
-            boolean eject = obj.InsertarUsuario(ruc, nombreempresa, telefono, direccion, desc, email);
+            boolean eject = obj.InsertarUsuario(ruc, NombreEmpresa,  direccion, telefono, Email, Descripcion, Password);
             if (eject = true) {
                 out.print("<br>Inserccion Exitosa " + eject);
             } else {
-                out.print("<br>Inserccion Exitosa " + eject);
+                out.print("<br>Inserccion no Exitosa " + eject);
             }
         %>
     </body>
