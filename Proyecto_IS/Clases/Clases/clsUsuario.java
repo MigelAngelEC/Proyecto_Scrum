@@ -5,6 +5,9 @@
  */
 package Clases;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  *
  * @author migue
@@ -12,25 +15,30 @@ package Clases;
 public class clsUsuario {
 
     private String cedula;
-    private Integer edad;
+    private String nickname;
+    private String password;
+    private String nombre;
+    private String apellido;
+    private String email;
     private String direccion;
     private String telefono;
     private String celular;
-    private String nombre;
-    private String apellido;
 
     public clsUsuario() {
 
     }
 
-    public clsUsuario(String cedula, Integer edad, String direccion, String telefono, String celular, String nombre, String apellido) {
+    public clsUsuario(String cedula, String nickname, String password, String nombre, String apellido, String email, String direccion, String telefono, String celular) {
         this.cedula = cedula;
-        this.edad=edad;
-        this.direccion=direccion;
-        this.telefono=telefono;
-        this.celular=celular;
-        this.nombre=nombre;
-        this.apellido=apellido;
+        this.nickname = nickname;
+        this.password = password;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.celular = celular;
+
     }
 
     /**
@@ -48,17 +56,76 @@ public class clsUsuario {
     }
 
     /**
-     * @return the edad
+     * @return the perfiles
      */
-    public Integer getEdad() {
-        return edad;
+    /**
+     * @return the nickname
+     */
+    public String getNickname() {
+        return nickname;
     }
 
     /**
-     * @param edad the edad to set
+     * @param nickname the nickname to set
      */
-    public void setEdad(Integer edad) {
-        this.edad = edad;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    /**
+     * @return the password
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     * @param password the password to set
+     */
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    /**
+     * @return the nombre
+     */
+    public String getNombre() {
+        return nombre;
+    }
+
+    /**
+     * @param nombre the nombre to set
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    /**
+     * @return the apellido
+     */
+    public String getApellido() {
+        return apellido;
+    }
+
+    /**
+     * @param apellido the apellido to set
+     */
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email the email to set
+     */
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     /**
@@ -103,44 +170,16 @@ public class clsUsuario {
         this.celular = celular;
     }
 
-    /**
-     * @return the nombre
-     */
-    public String getNombre() {
-        return nombre;
-    }
-
-    /**
-     * @param nombre the nombre to set
-     */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    /**
-     * @return the apellido
-     */
-    public String getApellido() {
-        return apellido;
-    }
-
-    /**
-     * @param apellido the apellido to set
-     */
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-    
-    public boolean InsertarUsuario(String cedula, int year, String Direccion, String telefono, String Celu, String Name, String Lname){
-        boolean ejecuto=false;
+    public boolean InsertarUsuario(String cedula, String nickname, String password, String Name, String Lname, String email, String Direccion, String telefono, String Celu) {
+        boolean ejecuto = false;
         try {
-            String SQL =("Insert into \"Informacion_Usuarios\" values('"+cedula+"',"+year+",'"+Direccion+"','"+telefono+"','"+Celu+"','"+Name+"','"+Lname+"')");
+            String SQL = ("Insert into usuarios values ('" + cedula + "','1','" + nickname + "','" + password + "','" + Name + "','" + Lname + "','" + telefono + "','" + Celu + "','" + email + "','" + Direccion + "');");
             ClsConexion con = new ClsConexion();
             con.Ejecutar(SQL);
-            ejecuto=true;
+            ejecuto = true;
         } catch (Exception e) {
             System.out.println("Error" + e.getMessage());
-            ejecuto=false;
+            ejecuto = false;
         }
         return ejecuto;
     }

@@ -4,6 +4,7 @@
     Author     : migue
 --%>
 
+<%@page import="Clases.clsUsuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -54,33 +55,80 @@
         <form action="Proceso_Usuario.jsp" method="post">
 
             <table>
-                <tr><td colspan="2">  <label class="sr-only" for="ci">Username</label>
-                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                            <div class="input-group-addon">Cedula Identidad</div>
-                            <input type="text" class="form-control" id="ci" placeholder="CI #1234567890"  >
-                        </div>
-                    </td></tr>
+                <tr><td colspan="2">  <center>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">Cédula Identidad</div>
+                        <input type="text" class="form-control" id="ci" placeholder="CI #1234567890" name="cedula">
+                    </div></center>
+                </td></tr>
                 <tr><td> &nbsp;</td></tr>
-                <tr><td colspan="2">  
-                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                            <div class="input-group-addon">Edad</div>
-                            <input type="number" class="form-control" id="ed" placeholder="22" size="100">
-                        </div>
-                    </td></tr>
+                <tr><td colspan="2"><center>  
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">NickName</div>
+                        <input type="text" class="form-control" id="ci" placeholder="ej: Jose123" name="nickn">
+                    </div></center>
+                </td></tr>
                 <tr><td> &nbsp;</td></tr>
-                <tr><td> Dirección</td><td> <input type="text" name="direccion"></td></tr>
+                <tr><td colspan="2">  <center>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">Password</div>
+                        <input type="password" class="form-control" id="ci" placeholder="ej: Mispar159357" name="passw">
+                    </div></center>
+                </td></tr>
                 <tr><td> &nbsp;</td></tr>
-                <tr><td>Telefono Fijo</td><td> <input type="text" name="phone"></td></tr>
+                <tr><td colspan="2">  <center>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">Verficar Password</div>
+                        <input type="password" class="form-control" id="ci" placeholder="Repetir Password" >
+                    </div> </center>
+                </td></tr>
                 <tr><td> &nbsp;</td></tr>
-                <tr><td>Telefono Celular </td><td><input type="text" name="celular"></td></tr>
+                <tr><td colspan="2">  <center>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">Nombres</div>
+                        <input type="text" class="form-control" id="ci" placeholder="ej: Juan Jose" name="name">
+                    </div> </center>
+                </td></tr>
                 <tr><td> &nbsp;</td></tr>
-                <tr><td>Nombres </td><td><input type="text" name="name"></td></tr>
+                <tr><td colspan="2"> <center>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">Apellido</div>
+                        <input type="text" class="form-control" id="ci" placeholder="ej: Catillo Perez" name="lname">
+                    </div></center>
+                </td></tr>
                 <tr><td> &nbsp;</td></tr>
-                <tr><td>Apellidos </td><td><input type="text" name="lname"></td></tr>
+                <tr><td colspan="2">  <center>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">em@il</div>
+                        <input type="email" class="form-control" id="ci" placeholder="ej: josejj@gmail.com" name="email">
+                    </div></center>
+                </td></tr>
                 <tr><td> &nbsp;</td></tr>
+                <tr><td colspan="2">  <center>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">Teléfono Fijo</div>
+                        <input type="text" class="form-control" id="ci" placeholder="ej 022465873" name="telf">
+                    </div></center>
+                </td></tr>
+                <tr><td> &nbsp;</td></tr>
+                <tr><td colspan="2"> <center>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">Teléfono Celular </div>
+                        <input type="text" class="form-control" id="ci" placeholder="ej: 0912345678"name="celu">
+                    </div></center>
+                </td></tr>
+                <tr><td> &nbsp;</td></tr>
+                <tr><td colspan="2">  <center>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">Dirección</div>
+                        <input type="text" class="form-control" id="ci" placeholder="ej: Ciudadela Ibarra" name="direc">
+                    </div>  </center>
+                </td></tr>
+                <tr><td> &nbsp;</td></tr>
+
             </table>
 
-            <button type="submit"> Enviar </button><br>
+            <button type="submit"  class="btn btn-primary btn-lg"> Crear Cuenta </button><br>
             <img src="Imagenes/Users.png" alt=""/>
         </form>
     </center>

@@ -14,24 +14,26 @@
     </head>
     <body>
         <%
-            String ci, direc, telefo, celu, name, apel;
-            int year;
+            String ci, direc, telefo, celu, name, apel, nickn, mail, pass;
+
             ci = request.getParameter("cedula");
-            year = Integer.parseInt(request.getParameter("edad"));
-            direc = request.getParameter("direccion");
-            telefo = request.getParameter("phone");
-            celu = request.getParameter("celular");
+            nickn = request.getParameter("nickn");
+            pass = request.getParameter("passw");
             name = request.getParameter("name");
             apel = request.getParameter("lname");
+            mail = request.getParameter("email");
+            direc = request.getParameter("direc");
+            telefo = request.getParameter("telf");
+            celu = request.getParameter("celu");
 
-            clsUsuario obj = new clsUsuario(ci, year, direc, telefo, celu, name, apel);
+            clsUsuario obj = new clsUsuario(ci, nickn, pass, name, apel, mail, direc, telefo, celu);
             out.print("<br> Cedula : " + obj.getCedula() + "<br>Nombre&APellido: " + obj.getNombre() + " " + obj.getApellido());
 
-            boolean eject = obj.InsertarUsuario(ci, year, direc, telefo, celu, name, apel);
+            boolean eject = obj.InsertarUsuario(ci, nickn, pass, name, apel, mail, direc, telefo, celu);
             if (eject = true) {
-                out.print("<br>Inserccion Exitosa " + eject);
+                out.print("<br>Usuario Registrado " + eject);
             } else {
-                out.print("<br>Inserccion Exitosa " + eject);
+                out.print("<br>Fallo al Registrar " + eject);
             }
         %>
     </body>
