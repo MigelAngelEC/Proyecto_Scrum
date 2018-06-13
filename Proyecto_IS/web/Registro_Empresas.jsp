@@ -17,12 +17,12 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-        
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registro Empresa</title>
     </head>
-    <body background="Imagenes/fondo_1.jpg">
-         <nav class="navbar navbar-default">
+    <body background="Imagenes/wall3.jpg">
+        <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -49,8 +49,8 @@
         </nav>
         <br>
         <br>
-        <center>
-        <h1>Registrar Usuario</h1>
+    <center>
+        <h1>Registrar Empresa</h1>
         <br>
         <form action="Proceso_Empresa.jsp" method="post">
 
@@ -58,66 +58,65 @@
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">RUC</div>
-                        <input type="text" class="form-control" id="ci" placeholder="CI #1234567890" name="ruc">
+                        <input type="text" class="form-control" id="ci" placeholder="RUC: #123456789001" name="ruc">
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2"><center>  
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Nombre de la Empresa</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej: Jose123" name="nempresa">
+                        <input type="text" class="form-control" id="ci" placeholder="ej: AKROSCORP" name="nempresa">
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Direccion</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej: Mispar159357" name="direc">
+                        <input type="text" class="form-control" id="ci" placeholder="ej: Ajavi" name="direc">
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Telefono</div>
-                        <input type="text" class="form-control" id="ci" placeholder="Repetir Password" name="telefono">
+                        <input type="text" class="form-control" id="ci" placeholder="ej: 022467315" name="telefono">
                     </div> </center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Email</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej: Juan Jose" name="email">
+                        <input type="text" class="form-control" id="ci" placeholder="ej:akroscgi@akros.com" name="email">
                     </div> </center>
-                </td></tr>
-                <tr><td> &nbsp;</td></tr>
-                <tr><td colspan="2"> <center>
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Descripcion</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej: Catillo Perez" name="desc">
-                    </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Password</div>
-                        <input type="password" class="form-control" id="ci" placeholder="ej: josejj@gmail.com" name="passw">
+                        <input type="password" class="form-control" id="ci" placeholder="ej:AkrosC159" name="passw">
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Repetir Password</div>
-                        <input type="password" class="form-control" id="ci" placeholder="ej 022465873" name="telf">
+                        <input type="password" class="form-control" id="ci" placeholder="Repetir Password">
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
-                
+                <tr><td colspan="2">  <center>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">Descripción Empresa</div>
+                        <input type="text" class="form-control" id="ci" placeholder="A que se dedica" name="desc">
+                    </div></center>
+                </td></tr>
+                <tr><td> &nbsp;</td></tr>
 
             </table>
 
             <button type="submit"  class="btn btn-primary btn-lg"> Crear Cuenta </button><br>
             <img src="Imagenes/empresa.jpg" higth="300" width="300"/>
         </form>
-</center>
-    </body>
+    </center>
+</body>
 </html>

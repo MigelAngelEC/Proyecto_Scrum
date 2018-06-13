@@ -14,6 +14,7 @@ import java.sql.SQLException;
  */
 public class clsUsuario {
 
+    //Datoos de usuario
     private String cedula;
     private String nickname;
     private String password;

@@ -48,117 +48,117 @@
         </nav>
 
 
-     <div class="row">
-             <center>
-            <div class="col-sm-4" bordercolor="blue" >
-                <div class="panel panel-primary">
-                    <center>
-                    <h3 align="center">SOY CANDIDATO</h3>
-                    <br/>
+        <div class="row">
+            <center>
+                <div class="col-sm-4" bordercolor="blue" >
+                    <div class="panel panel-primary">
+                        <center>
+                            <h3 align="center">SOY CANDIDATO</h3>
+                            <br/>
 
-                    <form action="Proceso_Login.jsp" method="post">
+                            <form action="Proceso_Login.jsp" method="post">
 
 
-                        <div class="input-group input-group-lg">
-                            <label for="exampleInputPassword1">Nickname</label>
+                                <div class="input-group input-group-lg">
+                                    <label for="exampleInputPassword1">Nickname</label>
 
-                            <input type="text" class="form-control" placeholder="Nickname" name="nick" aria-describedby="sizing-addon2">
-                        </div>
+                                    <input type="text" class="form-control" placeholder="Nickname" name="nick" aria-describedby="sizing-addon2">
+                                </div>
 
-                        <br/>
-                        <div class="input-group input-group-lg">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="pass" name="pass" placeholder="Password" aria-describedby="sizing-addon2">
-                        </div>
-                        <br/>
-                        <button type="submit" class="btn btn-outline-dark">Login</button>
+                                <br/>
+                                <div class="input-group input-group-lg">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" id="pass" name="pass" placeholder="Password" aria-describedby="sizing-addon2">
+                                </div>
+                                <br/>
+                                <button type="submit" class="btn btn-outline-dark">Login</button>
 
-                        <br/>
-                        <br/>
-                        <a href="#">Olvide mi contraseña..!</a>
-                        <br/>
-                        <a href="#">Registrarme</a>
-                        <br/> <br/> <br/>
+                                <br/>
+                                <br/>
+                                <a href="#">Olvide mi contraseña..!</a>
+                                <br/>
+                                <a href="RegistrarUsuario.jsp">Registrarme</a>
+                                <br/> <br/> <br/>
 
-                        <img src="Imagenes/Users.png" alt="" height="350" width="350" align="center" />
-                    </form>
-                    </center>   
+                                <img src="Imagenes/Users.png" alt="" height="350" width="350" align="center" />
+                            </form>
+                        </center>   
 
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="panel panel-success">
-                    <center>
-                    <h3 align="center">SOY EMPRESA</h3>
-                    <br/>
+                <div class="col-sm-4">
+                    <div class="panel panel-success">
+                        <center>
+                            <h3 align="center">SOY EMPRESA</h3>
+                            <br/>
 
-                    <form action="ProcesoLog_Emp.jsp" method="post">
+                            <form action="ProcesoLog_Emp.jsp" method="post">
 
 
-                        <div class="input-group input-group-lg">
-                            <label for="exampleInputPassword1">Correo Empresarial</label>
+                                <div class="input-group input-group-lg">
+                                    <label for="exampleInputPassword1">Correo Empresarial</label>
 
-                            <input type="text" class="form-control" placeholder="Correo Empresarial" name="correo_e" aria-describedby="sizing-addon2">
-                        </div>
+                                    <input type="text" class="form-control" placeholder="Correo Empresarial" name="correo_e" aria-describedby="sizing-addon2">
+                                </div>
 
-                        <br/>
-                        <div class="input-group input-group-lg">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="pass_e" name="pass_e" placeholder="Password" aria-describedby="sizing-addon2">
-                        </div>
-                        <br/>
-                        <button type="submit" class="btn btn-outline-dark">Login</button>
+                                <br/>
+                                <div class="input-group input-group-lg">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" id="pass_e" name="pass_e" placeholder="Password" aria-describedby="sizing-addon2">
+                                </div>
+                                <br/>
+                                <button type="submit" class="btn btn-outline-dark">Login</button>
 
-                        <br/>
-                        <br/>
-                        <a href="#">Olvide mi contraseña..!</a>
-                        <br/>
-                        <a href="RegistrarUsuario.jsp">Registrarme</a>
-                        <br/> <br/>
+                                <br/>
+                                <br/>
+                                <a href="#">Olvide mi contraseña..!</a>
+                                <br/>
+                                <a href="Registro_Empresas.jsp">Registrarme</a>
+                                <br/> <br/>
 
-                        <img src="Imagenes/empresa.png" alt="" height="350" width="350" align="center" />
-                    </form>
-                    </center> 
+                                <img src="Imagenes/empresa.png" alt="" height="350" width="350" align="center" />
+                            </form>
+                        </center> 
+                    </div>
                 </div>
-            </div>
-                 
-                  <div class="col-sm-4">
-                <div class="panel panel-success">
-                    <center>
-                    <h3 align="center">CENTRO DE BECAS</h3>
-                    <br/>
 
-                    <form action="ProcesoLog_CB.jsp" method="post">
+                <div class="col-sm-4">
+                    <div class="panel panel-success">
+                        <center>
+                            <h3 align="center">CENTRO DE BECAS</h3>
+                            <br/>
+
+                            <form action="ProcesoLog_CB.jsp" method="post">
 
 
-                        <div class="input-group input-group-lg">
-                            <label for="exampleInputPassword1">Correo Empresarial</label>
+                                <div class="input-group input-group-lg">
+                                    <label for="exampleInputPassword1">Correo Empresarial</label>
 
-                            <input type="text" class="form-control" placeholder="Correo Empresarial" name="correo_cb" aria-describedby="sizing-addon2">
-                        </div>
+                                    <input type="text" class="form-control" placeholder="Correo Empresarial" name="correo_cb" aria-describedby="sizing-addon2">
+                                </div>
 
-                        <br/>
-                        <div class="input-group input-group-lg">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="pass_e" name="pass_cb" placeholder="Password" aria-describedby="sizing-addon2">
-                        </div>
-                        <br/>
-                        <button type="submit" class="btn btn-outline-dark">Login</button>
+                                <br/>
+                                <div class="input-group input-group-lg">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" id="pass_e" name="pass_cb" placeholder="Password" aria-describedby="sizing-addon2">
+                                </div>
+                                <br/>
+                                <button type="submit" class="btn btn-outline-dark">Login</button>
 
-                        <br/>
-                        <br/>
-                        <a href="#">Olvide mi contraseña..!</a>
-                        <br/>
-                        <a href="RegistrarUsuario.jsp">Registrarme</a>
-                        <br/> <br/>
+                                <br/>
+                                <br/>
+                                <a href="#">Olvide mi contraseña..!</a>
+                                <br/>
+                                <a href="RegistrarUsuario.jsp">Registrarme</a>
+                                <br/> <br/>
 
-                        <img src="Imagenes/centros_becas.jpeg" alt="" height="350" width="350" align="center" />
-                    </form>
-                    </center> 
+                                <img src="Imagenes/centros_becas.jpeg" alt="" height="350" width="350" align="center" />
+                            </form>
+                        </center> 
+                    </div>
                 </div>
-            </div>
-             </center>
+            </center>
         </div>
 
-</body>
+    </body>
 </html>
