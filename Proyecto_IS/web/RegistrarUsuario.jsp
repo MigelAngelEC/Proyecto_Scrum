@@ -52,6 +52,7 @@
 
         <h1>Registrar Usuario</h1>
         <br>
+        <form action="Oferta_Empleo.jsp" method="post">
         <form action="Proceso_Usuario.jsp" method="post">
 
             <table>
@@ -131,6 +132,7 @@
             <button type="submit"  class="btn btn-primary btn-lg"> Crear Cuenta </button><br>
             <img src="Imagenes/Users.png" alt=""/>
         </form>
+            </form>
     </center>
 </body>
 </html>
