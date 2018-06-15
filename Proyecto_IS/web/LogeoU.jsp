@@ -1,6 +1,6 @@
 <%-- 
-    Document   : PublicitySite
-    Created on : 13-jun-2018, 21:02:53
+    Document   : login
+    Created on : 03-jun-2018, 12:20:33
     Author     : EstIvonneGeovannaCam
 --%>
 
@@ -15,11 +15,9 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login Centro de Becas</title>
+        <title>Login de candidatos</title>
     </head>
     <body background="Imagenes/wall3.jpg">
-
-        <!-- NAV BAR-->
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -46,49 +44,52 @@
             </div><!-- /.container-fluid -->
         </nav>
 
-        <!--  divisiones de la pagina -->
+
         <div class="row">
-            <img src="Imagenes/banner_Emp.jpg" alt="" height="300" width="1850" align="center" />
-        </div>
-        <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-7">
-                <h1>EMPRESAS ASOCIADAS</h1>
-                <!--Imagenes-->
-                <img src="Imagenes/chevrolet.jpeg" alt="" height="200" width="200" align="center" />
-                <img src="Imagenes/fibeca.jpg" alt="" height="250" width="300" align="center" />
-                <img src="Imagenes/kfc.png" alt="" height="200" width="200" align="center" />
-                
-                <!--Videos-->
-                <iframe width="360" height="315" src="https://www.youtube.com/embed/JYsEQkcgEbo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                <iframe width="360" height="315" src="https://www.youtube.com/embed/KAkcZ0N-6hE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                
-            </div>
-            <div class="col-sm-3">
-                <!--redes sociales-->
-                <h1>REDES SOCIALES</h1>
-                <br/>
-                <img src="Imagenes/face.jpg" alt="" height="100" width="100" align="center" />
-                <img src="Imagenes/Ins.png" alt="" height="100" width="100" align="center" />
-                <img src="Imagenes/tw.png" alt="" height="100" width="100" align="center" />
-            </div>
-           
-        </div>
-        <br/><br/>
-        <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-7">
-                <h1>CENTROS DE BECAS</h1>
-                <!--Imagenes-->
-                <img src="Imagenes/senecyt.jpg" alt="" height="200" width="200" align="center" />
-                <img src="Imagenes/convocatoria.jpg" alt="" height="250" width="300" align="center" />
-               
-                
-            </div>
-            <div class="col-sm-2">
-                <!--redes sociales-->
-            </div>
-           
+            <center>
+                <div class="col-sm-1"></div>
+                <div class="col-sm-4">
+                    <h2 align="center">El futuro depende de lo que hagas hoy.!</h2>
+                    <img src="Imagenes/loginUser.jpg" alt="" height="570" width="800" align="center" />  
+                </div>
+                <div class="col-sm-2"></div>
+                <div class="col-sm-4" bordercolor="blue" >
+                    <div class="panel panel-primary">
+                        <center>
+                            <h3 align="center">SOY CANDIDATO</h3>
+                            <br/>
+
+                            <form action="Proceso_Login.jsp" method="post">
+
+
+                                <div class="input-group input-group-lg">
+                                    <label for="exampleInputPassword1">Nickname</label>
+
+                                    <input type="text" class="form-control" placeholder="Nickname" name="nick" aria-describedby="sizing-addon2">
+                                </div>
+
+                                <br/>
+                                <div class="input-group input-group-lg">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" id="pass" name="pass" placeholder="Password" aria-describedby="sizing-addon2">
+                                </div>
+                                <br/>
+                                <button type="submit" class="btn btn-outline-dark">Login</button>
+
+                                <br/>
+                                <br/>
+                                <a href="#">Olvide mi contraseña..!</a>
+                                <br/>
+                                <a href="RegistrarUsuario.jsp">Registrarme</a>
+                                <br/> <br/> <br/>
+
+                                <img src="Imagenes/Users.png" alt="" height="250" width="250" align="center" />
+                            </form>
+                        </center>   
+
+                    </div>
+                </div>
+            </center>
         </div>
 
     </body>
