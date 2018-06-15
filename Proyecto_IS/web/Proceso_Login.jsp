@@ -79,12 +79,17 @@
                 <br>
                 <center>
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-secondary">Datos de Usuario</button>
+                        <form action="DatosUsuario.jsp" method="post">
+                            <input type="hidden" name="nick" value="<%out.println(nickname);%>" >
+                            <button type="submit" class="btn btn-secondary">Datos de Usuario</button>
+                        </form>
+                        <br>
                         <button type="button" class="btn btn-secondary">Datos Academicos</button>
                         <button type="button" class="btn btn-secondary">Ofertas Aplicadas</button>
                     </div>
                 </center>
             </div>
         </div>
+
     </body>
 </html>

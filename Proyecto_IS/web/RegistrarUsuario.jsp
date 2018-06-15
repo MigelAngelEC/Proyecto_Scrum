@@ -52,7 +52,6 @@
 
         <h1>Registrar Usuario</h1>
         <br>
-        <form action="Oferta_Empleo.jsp" method="post">
         <form action="Proceso_Usuario.jsp" method="post">
 
             <table>

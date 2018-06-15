@@ -7,6 +7,7 @@ package Clases;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Vector;
 
 /**
  *
@@ -183,5 +184,23 @@ public class clsUsuario {
             ejecuto = false;
         }
         return ejecuto;
+    }
+
+    public Vector ConsultarUsuario(String user) {
+        Vector vec = new Vector();
+        try {
+            String SQL = "Select cedula,nickname,password,nombres,apellidos,tel_fijo,tel_celular,email,direccion from usuarios where nickname='MiguelAEC';";
+            ClsConexion con = new ClsConexion();
+            ResultSet rs = con.Consultar(SQL);
+            while (rs.next()) {
+                for (int i = 1; i < 9; i++) {
+                    vec.addElement(rs.getString(i));
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Error" + e.getMessage());
+        }
+
+        return vec;
     }
 }
