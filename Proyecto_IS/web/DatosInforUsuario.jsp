@@ -10,7 +10,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <head>
         <!-- Latest compiled and minified CSS -->
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -72,14 +71,14 @@
             <tr><td colspan="2"><center>  
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">NickName</div>
-                    <input type="text" class="form-control" id="ci" placeholder="ej: Jose123" name="nickn">
+                    <input type="text" class="form-control" id="ci" placeholder="ej: Jose123" name="nickn" value="<% out.print(vec.elementAt(1));%>">
                 </div></center>
             </td></tr>
             <tr><td> &nbsp;</td></tr>
             <tr><td colspan="2">  <center>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">Password</div>
-                    <input type="password" class="form-control" id="ci" placeholder="ej: Mispar159357" name="passw">
+                    <input type="password" class="form-control" id="ci" placeholder="ej: Mispar159357" name="passw" value="<% out.print(vec.elementAt(2));%>">
                 </div></center>
             </td></tr>
             <tr><td> &nbsp;</td></tr>
@@ -93,42 +92,42 @@
             <tr><td colspan="2">  <center>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">Nombres</div>
-                    <input type="text" class="form-control" id="ci" placeholder="ej: Juan Jose" name="name">
+                    <input type="text" class="form-control" id="ci" placeholder="ej: Juan Jose" name="name" value="<% out.print(vec.elementAt(3));%>">
                 </div> </center>
             </td></tr>
             <tr><td> &nbsp;</td></tr>
             <tr><td colspan="2"> <center>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">Apellido</div>
-                    <input type="text" class="form-control" id="ci" placeholder="ej: Catillo Perez" name="lname">
+                    <input type="text" class="form-control" id="ci" placeholder="ej: Catillo Perez" name="lname" value="<% out.print(vec.elementAt(4));%>">
                 </div></center>
             </td></tr>
             <tr><td> &nbsp;</td></tr>
             <tr><td colspan="2">  <center>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">em@il</div>
-                    <input type="email" class="form-control" id="ci" placeholder="ej: josejj@gmail.com" name="email">
+                    <input type="email" class="form-control" id="ci" placeholder="ej: josejj@gmail.com" name="email" value="<% out.print(vec.elementAt(5));%>">
                 </div></center>
             </td></tr>
             <tr><td> &nbsp;</td></tr>
             <tr><td colspan="2">  <center>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">Teléfono Fijo</div>
-                    <input type="text" class="form-control" id="ci" placeholder="ej 022465873" name="telf">
+                    <input type="text" class="form-control" id="ci" placeholder="ej 022465873" name="telf" value="<% out.print(vec.elementAt(6));%>">
                 </div></center>
             </td></tr>
             <tr><td> &nbsp;</td></tr>
             <tr><td colspan="2"> <center>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">Teléfono Celular </div>
-                    <input type="text" class="form-control" id="ci" placeholder="ej: 0912345678"name="celu">
+                    <input type="text" class="form-control" id="ci" placeholder="ej: 0912345678"name="celu" value="<% out.print(vec.elementAt(7));%>">
                 </div></center>
             </td></tr>
             <tr><td> &nbsp;</td></tr>
             <tr><td colspan="2">  <center>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">Dirección</div>
-                    <input type="text" class="form-control" id="ci" placeholder="ej: Ciudadela Ibarra" name="direc">
+                    <input type="text" class="form-control" id="ci" placeholder="ej: Ciudadela Ibarra" name="direc" value="<% out.print(vec.elementAt(8));%>">
                 </div>  </center>
             </td></tr>
             <tr><td> &nbsp;</td></tr>

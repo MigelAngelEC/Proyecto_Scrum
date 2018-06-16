@@ -189,7 +189,7 @@ public class clsUsuario {
     public Vector ConsultarUsuario(String user) {
         Vector vec = new Vector();
         try {
-            String SQL = "Select cedula,nickname,password,nombres,apellidos,tel_fijo,tel_celular,email,direccion from usuarios where nickname='MiguelAEC';";
+            String SQL = "Select cedula,nickname,password,nombres,apellidos,email,tel_fijo,tel_celular,direccion from usuarios where nickname='MiguelAEC';";
             ClsConexion con = new ClsConexion();
             ResultSet rs = con.Consultar(SQL);
             while (rs.next()) {

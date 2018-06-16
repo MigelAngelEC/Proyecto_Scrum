@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Procesar_DatosUsuario
-    Created on : 14/06/2018, 19:54:04
+    Document   : ProcesarDatosAcademicos
+    Created on : 15/06/2018, 19:28:47
     Author     : migue
 --%>
 
@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Aqui va el Update de DatosUsuario</h1>
+        <h1>Hello World!</h1>
     </body>
 </html>
