@@ -11,125 +11,58 @@ package Clases;
  * @author rowel
  */
 public class clsOfertaEmpleo {
-    private String NombreEmpresa;
+
+    public clsOfertaEmpleo(String ruc, String Cod_Oferta, String Cargo, String Descripcion) {
+        this.ruc = ruc;
+        this.Cod_Oferta = Cod_Oferta;
+        this.Cargo = Cargo;
+        this.Descripcion = Descripcion;
+    }
+
+    public String getRuc() {
+        return ruc;
+    }
+
+    public void setRuc(String ruc) {
+        this.ruc = ruc;
+    }
+
+    public String getCod_Oferta() {
+        return Cod_Oferta;
+    }
+
+    public void setCod_Oferta(String Cod_Oferta) {
+        this.Cod_Oferta = Cod_Oferta;
+    }
+
+    public String getCargo() {
+        return Cargo;
+    }
+
+    public void setCargo(String Cargo) {
+        this.Cargo = Cargo;
+    }
+
+    public String getDescripcion() {
+        return Descripcion;
+    }
+
+    public void setDescripcion(String Descripcion) {
+        this.Descripcion = Descripcion;
+    }
+    
     private String ruc;
-    private String direccion;
-    private String telefono;
-    private String Email;
+    private String Cod_Oferta;
+    private String Cargo;
+   
     private String Descripcion;
-    private String Password;
+   
 
     public clsOfertaEmpleo() {
 
     }
 
-    public clsOfertaEmpleo(String ruc, String NombreEmpresa, String direccion, String telefono, String Email, String Descripcion, String Password) {
-        this.ruc = ruc;
-        this.NombreEmpresa = NombreEmpresa;
-        this.direccion = direccion;
-        this.telefono = telefono;
-        this.Email = Email;
-        this.Descripcion = Descripcion;
-        this.Password = Password;
-    }
-
-    /**
-     * @return the NombreEmpresa
-     */
-    public String getNombreEmpresa() {
-        return NombreEmpresa;
-    }
-
-    /**
-     * @param NombreEmpresa the NombreEmpresa to set
-     */
-    public void setNombreEmpresa(String NombreEmpresa) {
-        this.NombreEmpresa = NombreEmpresa;
-    }
-
-    /**
-     * @return the ruc
-     */
-    public String getRuc() {
-        return ruc;
-    }
-
-    /**
-     * @param ruc the ruc to set
-     */
-    public void setRuc(String ruc) {
-        this.ruc = ruc;
-    }
-
-    /**
-     * @return the direccion
-     */
-    public String getDireccion() {
-        return direccion;
-    }
-
-    /**
-     * @param direccion the direccion to set
-     */
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    /**
-     * @return the telefono
-     */
-    public String getTelefono() {
-        return telefono;
-    }
-
-    /**
-     * @param telefono the telefono to set
-     */
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    /**
-     * @return the Email
-     */
-    public String getEmail() {
-        return Email;
-    }
-
-    /**
-     * @param Email the Email to set
-     */
-    public void setEmail(String Email) {
-        this.Email = Email;
-    }
-
-    /**
-     * @return the Descripcion
-     */
-    public String getDescripcion() {
-        return Descripcion;
-    }
-
-    /**
-     * @param Descripcion the Descripcion to set
-     */
-    public void setDescripcion(String Descripcion) {
-        this.Descripcion = Descripcion;
-    }
-
-    /**
-     * @return the Password
-     */
-    public String getPassword() {
-        return Password;
-    }
-
-    /**
-     * @param Password the Password to set
-     */
-    public void setPassword(String Password) {
-        this.Password = Password;
-    }
+    
 
     public boolean InsertarEmpresa(String ruct, String nempresa, String direc, String telf, String mail, String desc, String pwd) {
         boolean ejecuto = false;
