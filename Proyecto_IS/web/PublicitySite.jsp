@@ -53,42 +53,68 @@
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-7">
-                <h1>EMPRESAS ASOCIADAS</h1>
-                <!--Imagenes-->
-                <img src="Imagenes/chevrolet.jpeg" alt="" height="200" width="200" align="center" />
-                <img src="Imagenes/fibeca.jpg" alt="" height="250" width="300" align="center" />
-                <img src="Imagenes/kfc.png" alt="" height="200" width="200" align="center" />
-                
-                <!--Videos-->
-                <iframe width="360" height="315" src="https://www.youtube.com/embed/JYsEQkcgEbo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                <iframe width="360" height="315" src="https://www.youtube.com/embed/KAkcZ0N-6hE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                
+                <br/><br/>
+                <center>
+                    <div class="jumbotron">
+                        <h1>EMPRESAS ASOCIADAS</h1>
+                        <div class="carousel-inner" role="listbox">
+
+                            <!--Imagenes-->
+                            <img src="Imagenes/chevrolet.jpeg" alt="" height="200" width="200" align="center" />
+                            <img src="Imagenes/fibeca.jpg" alt="" height="250" width="300" align="center" />
+                            <img src="Imagenes/kfc.png" alt="" height="200" width="200" align="center" />
+
+                            <!--Videos-->
+                            <iframe width="360" height="315" src="https://www.youtube.com/embed/JYsEQkcgEbo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            <iframe width="360" height="315" src="https://www.youtube.com/embed/KAkcZ0N-6hE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+                        </div>
+                </center>
             </div>
             <div class="col-sm-3">
-                <!--redes sociales-->
-                <h1>REDES SOCIALES</h1>
-                <br/>
-                <img src="Imagenes/face.jpg" alt="" height="100" width="100" align="center" />
-                <img src="Imagenes/Ins.png" alt="" height="100" width="100" align="center" />
-                <img src="Imagenes/tw.png" alt="" height="100" width="100" align="center" />
+                <br/><br/>
+                <center>
+                    <div class="jumbotron">
+                        <!--redes sociales-->
+                        <h2>REDES SOCIALES</h2>
+                        <br/>
+                        <img src="Imagenes/face.jpg" alt="" height="100" width="100" align="center" />
+                        <img src="Imagenes/Ins.png" alt="" height="100" width="100" align="center" />
+                        <img src="Imagenes/tw.png" alt="" height="100" width="100" align="center" />
+                        <br/><br/><br/><br/>
+                        <!--grupo de listas Avisos-->
+                        <div class="list-group">
+                            <a href="#" class="list-group-item active">
+                                <h4 class="list-group-item-heading">List group item heading</h4>
+                                <p class="list-group-item-text">...</p>
+                                <h4 class="list-group-item-heading">List group item heading1</h4>
+                                <p class="list-group-item-text">...</p>
+                                <h4 class="list-group-item-heading">List group item heading2</h4>
+                                <p class="list-group-item-text">...</p>
+                            </a>
+                        </div>
+                        <!-- fin de listas de avisos -->
+                    </div>
+                </center>
             </div>
-           
         </div>
         <br/><br/>
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-7">
-                <h1>CENTROS DE BECAS</h1>
-                <!--Imagenes-->
-                <img src="Imagenes/senecyt.jpg" alt="" height="200" width="200" align="center" />
-                <img src="Imagenes/convocatoria.jpg" alt="" height="250" width="300" align="center" />
-               
-                
+                <br/><br/>
+                <div class="jumbotron">
+                    <h1>CENTROS DE BECAS</h1>
+                    <!--Imagenes-->
+                    <img src="Imagenes/senecyt.jpg" alt="" height="200" width="200" align="center" />
+                    <img src="Imagenes/convocatoria.jpg" alt="" height="250" width="300" align="center" />
+
+                </div>
             </div>
             <div class="col-sm-2">
-                <!--redes sociales-->
+               
             </div>
-           
+
         </div>
 
     </body>
