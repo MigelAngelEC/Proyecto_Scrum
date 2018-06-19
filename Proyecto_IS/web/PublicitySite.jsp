@@ -85,9 +85,9 @@
                         <!--grupo de listas Avisos-->
                         <div class="list-group">
                             <a href="#" class="list-group-item active">
-                                <h4 class="list-group-item-heading">List group item heading</h4>
-                                <p class="list-group-item-text">...</p>
-                                <h4 class="list-group-item-heading">List group item heading1</h4>
+                                <h4 class="ANUNCIOS CERCANOS">List group item heading</h4>
+                                <p class="NUEVAS OPORTUNIDADES DE BECAS">...</p>
+                                <h4 class="NOVEDADES DE PRODUCTOS">List group item heading1</h4>
                                 <p class="list-group-item-text">...</p>
                                 <h4 class="list-group-item-heading">List group item heading2</h4>
                                 <p class="list-group-item-text">...</p>
