@@ -64,10 +64,11 @@ public class clsOfertaEmpleo {
 
     
 
-    public boolean InsertarEmpresa(String ruct, String nempresa, String direc, String telf, String mail, String desc, String pwd) {
+    public boolean InsertarEmpresa(String ruc, String Cod_Oferta, String Cargo, String Descripcion) {
         boolean ejecuto = false;
         try {
-            String SQL = ("Insert into empresas values('" + ruct + "','2','" + nempresa + "','" + direc + "','" + telf + "','" + mail + "','" + desc + "','" + pwd + "');");
+            String SQL = ("Insert into empresas values('" + ruc + "','" + Cod_Oferta + "','" + Cargo + "','" + Descripcion +  "');");
+            
             ClsConexion con = new ClsConexion();
             con.Ejecutar(SQL);
             ejecuto = true;
