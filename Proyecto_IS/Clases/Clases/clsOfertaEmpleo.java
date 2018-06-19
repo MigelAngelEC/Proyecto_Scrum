@@ -67,7 +67,7 @@ public class clsOfertaEmpleo {
     public boolean InsertarEmpresa(String ruc, String Cod_Oferta, String Cargo, String Descripcion) {
         boolean ejecuto = false;
         try {
-            String SQL = ("Insert into empresas values('" + ruc + "','" + Cod_Oferta + "','" + Cargo + "','" + Descripcion +  "');");
+            String SQL = ("Insert into Oferta_Empleo values('" + ruc + "','" + Cod_Oferta + "','" + Cargo + "','" + Descripcion +  "');");
             
             ClsConexion con = new ClsConexion();
             con.Ejecutar(SQL);
