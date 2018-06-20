@@ -47,7 +47,7 @@
             </div><!-- /.container-fluid -->
         </nav>
     <center>
-        <h1>Registrar Datos Academicos</h1>
+        <h1>Registrar Mis Datos Academicos</h1>
         <form action="ProcesarDatosAcademicos.jsp" method="post">
             <div class="container">
                 <div class="jumbotron">
