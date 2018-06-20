@@ -75,6 +75,7 @@ public class clsOfertaEmpleo {
         } catch (Exception e) {
             System.out.println("Error" + e.getMessage());
             ejecuto = false;
+            //validaciones
         }
         return ejecuto;
     }
