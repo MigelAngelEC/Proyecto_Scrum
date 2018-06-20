@@ -47,9 +47,11 @@
         </nav>
 
         <!--  divisiones de la pagina -->
+        <!--  columna 1 Banner-->
         <div class="row">
             <img src="Imagenes/banner_Emp.jpg" alt="" height="300" width="1850" align="center" />
         </div>
+        <!--  columna 2 paneles-->
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-7">
@@ -68,6 +70,26 @@
                             <iframe width="360" height="315" src="https://www.youtube.com/embed/JYsEQkcgEbo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                             <iframe width="360" height="315" src="https://www.youtube.com/embed/KAkcZ0N-6hE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+                        </div>
+
+                        <div class="btn-toolbar" role="toolbar" aria-label="...">
+                            
+                            <div class="carousel-inner" role="listbox">
+
+                            <!--Imagenes-->
+                            <img src="Imagenes/chevrolet.jpeg" alt="" height="200" width="200" align="center" />
+                            <img src="Imagenes/fibeca.jpg" alt="" height="250" width="300" align="center" />
+                            <img src="Imagenes/kfc.png" alt="" height="200" width="200" align="center" />
+
+                            <!--Videos-->
+                            <iframe width="360" height="315" src="https://www.youtube.com/embed/JYsEQkcgEbo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            <iframe width="360" height="315" src="https://www.youtube.com/embed/KAkcZ0N-6hE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+                        </div>
+                            
+                            <div class="btn-group" role="group" aria-label="...">...</div>
+                            <div class="btn-group" role="group" aria-label="...">...</div>
+                            <div class="btn-group" role="group" aria-label="...">...</div>
                         </div>
                 </center>
             </div>
@@ -112,7 +134,7 @@
                 </div>
             </div>
             <div class="col-sm-2">
-               
+
             </div>
 
         </div>
