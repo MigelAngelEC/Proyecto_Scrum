@@ -19,7 +19,11 @@
         <title>Pagina Publicitaria</title>
     </head>
     <body background="Imagenes/wall3.jpg">
-
+        
+        <div class="row">
+            
+        </div>
+        
         <!-- NAV BAR-->
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -206,12 +210,14 @@
                 <a href="#" class="alert-link">...</a><br/>
                 <div class="list-group">
                             <a href="#" class="list-group-item active">
-                                <h4 class="ANUNCIOS CERCANOS">List group item heading</h4>
-                                <p class="NUEVAS OPORTUNIDADES DE BECAS">...</p>
-                                <h4 class="NOVEDADE">List group item heading1</h4>
-                                <p class="list-group-item-text">...</p>
-                                <h4 class="list-group-item-heading">List group item heading2</h4>
-                                <p class="list-group-item-text">...</p>
+                                <h4 class="list-group-item-heading">INFORMACION DE SU INTERES..!</h4>
+                                <br/>
+                                <h4 class="list-group-item-heading">BECAS GAR- TERCER NIVEL</h4>
+                                <p class="list-group-item-text">El “Programa de Becas para el Grupo de Alto Rendimiento de Tercer Nivel 2018” tiene por objetivo conceder financiamiento para que ecuatorianas y ecuatorianos, que sean parte del Grupo de Alto Rendimiento X, XI y XII, puedan realizar estudios de tercer nivel en instituciones de educación superior del exterior.
+                                <br/><a href="https://www.educacionsuperior.gob.ec/programa-de-becas-gar-internacional/"><img src="ImagesPublicidad/becasGar.png" alt="" height="230" width="230" align="center" /></a></p>
+                                <h4 class="list-group-item-heading">Lo que debes saber sobre el proceso de admisión a la educación superior</h4>
+                                <p class="list-group-item-text">Nos encontramos a las puertas de un nuevo proceso de admisión a instituciones de educación superior. Si es la primera vez que participarás en este proceso, tenemos información valiosa que será de mucha utilidad en el camino hacia la U.
+                                <br/><a href="http://admision.senescyt.gob.ec/lo-que-debes-saber-antes-de-iniciar-el-proceso-de-admision/"><img src="ImagesPublicidad/lo-debesSaber.jpg" alt="" height="230" width="230" align="center" /></a></p>
                             </a>
                         </div>
             </div>
