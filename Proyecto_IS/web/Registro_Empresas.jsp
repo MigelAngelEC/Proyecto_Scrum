@@ -44,7 +44,7 @@
                         <li><a href="#">Ayuda</a></li>
 
                     </ul>
-                </div><!-- /.navbar-collapse -->
+                </div><!-- /.navbar-collapse validaciones -->
             </div><!-- /.container-fluid -->
         </nav>
         <br>

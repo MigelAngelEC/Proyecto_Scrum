@@ -149,5 +149,5 @@ public class clsempresa {
         }
         return ejecuto;
     }
-
+//validaciones
 }
