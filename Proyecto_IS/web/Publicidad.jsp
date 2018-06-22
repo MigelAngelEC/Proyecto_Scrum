@@ -24,7 +24,7 @@
         <div class="row">
            <img src="ImagesPublicidad/marketing_banner.jpg" alt="BANNER" width="1820" height="250"/> 
         </div>
-                <!-- NAV BAR-->
+                <!-- NAV BAR PRINCIPAL-->
         <nav class="navbar navbar-default" id="barraH">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
