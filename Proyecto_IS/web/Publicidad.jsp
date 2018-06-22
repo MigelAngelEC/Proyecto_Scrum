@@ -4,13 +4,14 @@
     Author     : EstIvonneGeovannaCam
 --%>
 
-<%@page import="Clases.Imagenes"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- Latest compiled and minified CSS -->
+        <!-- Latest compiled and minified CSS--> 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+        <link rel="stylesheet" href="estilos/publicidadStyle.css">
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <!-- Latest compiled JavaScript -->
@@ -21,11 +22,10 @@
     <body background="Imagenes/wall3.jpg">
         
         <div class="row">
-            
+           <img src="ImagesPublicidad/marketing_banner.jpg" alt="BANNER" width="1820" height="250"/> 
         </div>
-        
-        <!-- NAV BAR-->
-        <nav class="navbar navbar-default">
+                <!-- NAV BAR-->
+        <nav class="navbar navbar-default" id="barraH">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -63,6 +63,8 @@
                     <a href="#p2" class="list-group-item">CENTROS DE BECAS</a>
                     <a href="#" class="list-group-item">POSTULACION DE BECAS</a>
                     <a href="#" class="list-group-item">REGISTRO DE USUARIOS</a>
+                    <a href="#" class="list-group-item">REGISTRO DE EMPRESAS</a>
+                    <a href="#" class="list-group-item">REGISTRO CENTRO DE BECAS</a>
                 </div>
 
                 <ul class="list-group">
@@ -79,7 +81,7 @@
                 <!-- ////////////////////////////////////////////////INICIA PANEL DE EMPRESAS///////////////////////////////////////////// -->
 
                 <a name="p1"> <div class="jumbotron" id="p1"> </a> 
-                <h2 align="center">EMPRESAS ASOCIADAS</h2>
+                <h1 align="center">EMPRESAS ASOCIADAS</h1>
 
                 <div class="container" width="400" height="400">
                     <div id="Empresas" class="carousel slide" data-ride="carousel" width="400" height="400">
@@ -202,9 +204,17 @@
         <div class="col-sm-2">
             <div class="alert alert-success" role="alert">
                 <a href="#" class="alert-link">REDES SOCIALES</a><br/>
-                <img src="Imagenes/face.jpg" alt="" height="70" width="70" align="center" />
+                <a href="https://www.facebook.com/Aesoft_UPS-230449624425759/?modal=admin_todo_tour">
+                    <img src="Imagenes/face.jpg" alt="" height="70" width="70" align="center" />
+                </a>
+                
+                <a href="https://twitter.com/AesoftU">
                 <img src="Imagenes/Ins.png" alt="" height="70" width="70" align="center" />
+                </a>
+                
+                 <a href="https://www.facebook.com/Aesoft_UPS-230449624425759/?modal=admin_todo_tour">
                 <img src="Imagenes/tw.png" alt="" height="70" width="70" align="center" />
+                 </a>
             </div>
             <div class="alert alert-info" role="alert">
                 <a href="#" class="alert-link">...</a><br/>
@@ -231,7 +241,7 @@
         <div class="col-sm-8">        
             <!-- ////////////////////////////////////////////////INICIA PANEL DE CENTRO DE BECAS///////////////////////////////////////////// -->
             <a name="p2"> <div class="jumbotron" id="p2"> </a>
-            <h1>CENTROS DE BECAS</h1>
+            <h1><center>CENTROS DE BECAS</center></h1>
 
             <div class="container">
                 <h2>Carousel Example</h2>
