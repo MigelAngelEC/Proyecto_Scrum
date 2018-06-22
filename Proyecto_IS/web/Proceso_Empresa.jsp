@@ -19,28 +19,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body background="Imagenes/wall3.jpg">
-        <%
-            String ruc, NombreEmpresa, telefono, direccion, Descripcion, Email, Password;
-
-            ruc = request.getParameter("ruc");
-            NombreEmpresa = request.getParameter("nempresa");
-            direccion = request.getParameter("direc");
-            telefono = request.getParameter("telefono");
-            Email = request.getParameter("email");
-            Descripcion = request.getParameter("desc");
-            Password = request.getParameter("passw");
-
-            clsempresa obj = new clsempresa(ruc, NombreEmpresa, direccion, telefono, Email, Descripcion, Password);
-            //out.print("<br> RUC : " + obj.getRuc() + "<br>NombreDeLaEmpresa : " + obj.getNombreEmpresa() + "<br>direc : " + obj.getDescripcion());
-
-            boolean eject = obj.InsertarEmpresa(ruc, NombreEmpresa, direccion, telefono, Email, Descripcion, Password);
-            if (eject = true) {
-                // out.print("<br> Empresa Registrada Correctamente " + eject);
-            } else {
-                // out.print("<br>Error al Registrar Empresa " + eject);
-            }
-        %>
-
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -66,6 +44,29 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-       
+        <%
+            String ruc, NombreEmpresa, telefono, direccion, Descripcion, Email, Password;
+
+            ruc = request.getParameter("ruc");
+            NombreEmpresa = request.getParameter("nempresa");
+            direccion = request.getParameter("direc");
+            telefono = request.getParameter("telefono");
+            Email = request.getParameter("email");
+            Descripcion = request.getParameter("desc");
+            Password = request.getParameter("passw");
+
+            clsempresa obj = new clsempresa(ruc, NombreEmpresa, direccion, telefono, Email, Descripcion, Password);
+            //out.print("<br> RUC : " + obj.getRuc() + "<br>NombreDeLaEmpresa : " + obj.getNombreEmpresa() + "<br>direc : " + obj.getDescripcion());
+
+            boolean eject = obj.InsertarEmpresa(ruc, NombreEmpresa, direccion, telefono, Email, Descripcion, Password);
+            if (eject = true) {
+                out.print("<br> Empresa Registrada Correctamente " + eject);
+            } else {
+                out.print("<br>Error al Registrar Empresa " + eject);
+            }
+        %>
+
+
+
     </body>
 </html>
