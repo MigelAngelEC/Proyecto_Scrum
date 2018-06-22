@@ -212,9 +212,9 @@
                 <img src="Imagenes/Ins.png" alt="" height="70" width="70" align="center" />
                 </a>
                 
-                 <a href="https://www.facebook.com/Aesoft_UPS-230449624425759/?modal=admin_todo_tour">
+                 
                 <img src="Imagenes/tw.png" alt="" height="70" width="70" align="center" />
-                 </a>
+                
             </div>
             <div class="alert alert-info" role="alert">
                 <a href="#" class="alert-link">...</a><br/>
