@@ -65,21 +65,27 @@
                                         <tr><td colspan="2">  <center>
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                                 <div class="input-group-addon">Institución</div>
-                                                <input type="text" class="form-control" id="ci" placeholder="CI #1234567890" name="cedula" readonly >
+                                                <input type="text" class="form-control" id="Instituto" placeholder="CI #1234567890" name="cedula" readonly >
                                             </div></center>
                                         </td></tr>
                                         <tr><td> <br></td></tr>
                                         <tr><td colspan="2">  <center>
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                                 <div class="input-group-addon">Titulo</div>
-                                                <input type="text" class="form-control" id="ci" placeholder="CI #1234567890" name="cedula"  >
+                                                <input type="text" class="form-control" id="titulo" placeholder="CI #1234567890" name="cedula"  >
                                             </div></center>
                                         </td></tr>
                                         <tr><td> <br></td></tr>
                                         <tr><td colspan="2">  <center>
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                                 <div class="input-group-addon">Nivel</div>
-                                                <input type="text" class="form-control" id="ci" placeholder="CI #1234567890" name="cedula"  >
+                                                <input type="text" class="form-control" id="Nivel" placeholder="CI #1234567890" name="cedula"  >
+                                            </div></center>
+                                        </td></tr>
+                                        <tr><td colspan="2">  <center>
+                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                                <div class="input-group-addon">Especialidad</div>
+                                                <input type="text" class="form-control" id="espe" placeholder="CI #1234567890" name="cedula"  >
                                             </div></center>
                                         </td></tr>
                                     </table>
@@ -99,35 +105,35 @@
                                         <tr><td colspan="2">  <center>
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                                 <div class="input-group-addon">Cedula</div>
-                                                <input type="text" class="form-control" id="ci" placeholder="CI #1234567890" name="cedula"  >
+                                                <input type="text" class="form-control" id="ciref" placeholder="CI #1234567890" name="cedula"  >
                                             </div></center>
                                         </td></tr>
                                         <tr><td> <br></td></tr>
                                         <tr><td colspan="2">  <center>
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                                 <div class="input-group-addon">Nombre y Apellido</div>
-                                                <input type="text" class="form-control" id="ci" placeholder="CI #1234567890" name="cedula"  >
+                                                <input type="text" class="form-control" id="nameref" placeholder="CI #1234567890" name="cedula"  >
                                             </div></center>
                                         </td></tr>
                                         <tr><td> <br></td></tr>
                                         <tr><td colspan="2">  <center>
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                                 <div class="input-group-addon">Cargo</div>
-                                                <input type="text" class="form-control" id="ci" placeholder="CI #1234567890" name="cedula"  >
+                                                <input type="text" class="form-control" id="cargoref1" placeholder="CI #1234567890" name="cedula"  >
                                             </div></center>
                                         </td></tr>
                                         <tr><td> <br></td></tr>
                                         <tr><td colspan="2">  <center>
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                                 <div class="input-group-addon">Telefono</div>
-                                                <input type="text" class="form-control" id="ci" placeholder="CI #1234567890" name="cedula"  >
+                                                <input type="text" class="form-control" id="telfref1" placeholder="CI #1234567890" name="cedula"  >
                                             </div></center>
                                         </td></tr>
                                         <tr><td> <br></td></tr>
                                         <tr><td colspan="2">  <center>
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                                 <div class="input-group-addon">Parentesco</div>
-                                                <input type="text" class="form-control" id="ci" placeholder="CI #1234567890" name="cedula"  >
+                                                <input type="text" class="form-control" id="parentescoref1" placeholder="CI #1234567890" name="cedula"  >
                                             </div></center>
                                         </td></tr>
                                     </table>
@@ -147,35 +153,35 @@
                                         <tr><td colspan="2">  <center>
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                                 <div class="input-group-addon">Cedula</div>
-                                                <input type="text" class="form-control" id="ci" placeholder="CI #1234567890" name="cedula" >
+                                                <input type="text" class="form-control" id="ciref2" placeholder="CI #1234567890" name="cedula" >
                                             </div></center>
                                         </td></tr>
                                         <tr><td> <br></td></tr>
                                         <tr><td colspan="2">  <center>
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                                 <div class="input-group-addon">Nombre y Apellido</div>
-                                                <input type="text" class="form-control" id="ci" placeholder="CI #1234567890" name="cedula"  >
+                                                <input type="text" class="form-control" id="nameref2" placeholder="CI #1234567890" name="cedula"  >
                                             </div></center>
                                         </td></tr>
                                         <tr><td> <br></td></tr>
                                         <tr><td colspan="2">  <center>
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                                 <div class="input-group-addon">Cargo</div>
-                                                <input type="text" class="form-control" id="ci" placeholder="CI #1234567890" name="cedula"  >
+                                                <input type="text" class="form-control" id="cargoref2" placeholder="CI #1234567890" name="cedula"  >
                                             </div></center>
                                         </td></tr>
                                         <tr><td> <br></td></tr>
                                         <tr><td colspan="2">  <center>
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                                 <div class="input-group-addon">Telefono</div>
-                                                <input type="text" class="form-control" id="ci" placeholder="CI #1234567890" name="cedula"  >
+                                                <input type="text" class="form-control" id="telfref2" placeholder="CI #1234567890" name="cedula"  >
                                             </div></center>
                                         </td></tr>
                                         <tr><td> <br></td></tr>
                                         <tr><td colspan="2">  <center>
                                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                                 <div class="input-group-addon">Parentesco</div>
-                                                <input type="text" class="form-control" id="ci" placeholder="CI #1234567890" name="cedula"  >
+                                                <input type="text" class="form-control" id="parentescoref2" placeholder="CI #1234567890" name="cedula"  >
                                             </div></center>
                                         </td></tr>
                                     </table>
