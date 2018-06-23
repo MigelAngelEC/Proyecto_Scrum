@@ -44,6 +44,8 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
+        
+
         <%
             String ruc, NombreEmpresa, telefono, direccion, Descripcion, Email, Password;
 
@@ -65,7 +67,6 @@
                 out.print("<br>Error al Registrar Empresa " + eject);
             }
         %>
-
 
 
     </body>
