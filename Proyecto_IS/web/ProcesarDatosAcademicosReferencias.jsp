@@ -1,40 +1,28 @@
 <%-- 
-    Document   : ProcesoLog_Adm
-    Created on : 08-jun-2018, 19:34:21
-    Author     : EstIvonneGeovannaCam
+    Document   : ProcesarDatosAcademicos
+    Created on : 15/06/2018, 19:28:47
+    Author     : migue
 --%>
 
-<%@page import="Clases.clsLoginAdmn"%>
+<%@page import="Clases.clsInfoAcademicaReferences"%>
+<%@page import="Clases.clsInfoAcademica"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- Latest compiled and minified CSS -->
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Referencias del Usuario</title>
     </head>
     <body>
-        <%
-            //Validacion de login empresarial
-            String nickname = request.getParameter("nick");
-            String password = request.getParameter("pass");
-            out.println(nickname);
-            out.println(password);
-            clsLoginAdmn adm = new clsLoginAdmn();
-
-            String correcto_adm = adm.autenticacion_adm(nickname, password);
-
-            out.print(correcto_adm);
-            System.out.println(correcto_adm);
-
-            if (correcto_adm.equals("true")) {
-                HttpSession sess = request.getSession();
-                out.print(sess);
-                out.print("login administrador correcto");
-            } else {
-                out.print(correcto_adm);
-            }
-
-        %>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -70,5 +58,29 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
+        <div class="container">
+            <div class="jumbotron">
+                <%
+                    String nick, NameRef1, CargoRef1, Telfref1, parentescoref1;
+
+                    nick = request.getParameter("nickne");
+                    NameRef1 = request.getParameter("nameref");
+                    CargoRef1 = request.getParameter("cargoref");
+                    Telfref1 = request.getParameter("telfref");
+                    parentescoref1 = request.getParameter("parentescoref");
+                    clsInfoAcademicaReferences obj = new clsInfoAcademicaReferences();
+                    boolean eject = obj.InsertarReferencias(nick, NameRef1, CargoRef1, Telfref1, parentescoref1);
+                    if (eject = true) {
+                        out.print("<br> <h2>Referencias Correctamente Actualizados </h2>");
+                        out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");
+                        out.print("<a  href=LogeoU.jsp class=btn btn-primary btn-lg> <h3><u>Cerrar Sesión</u></h3> </a><br>");
+                    } else {
+                        out.print("<br><h2>Error al Actualizar Referencias </h2>");
+                        out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Cerrar Sesión </a><br>");
+                    }
+
+                %>
+            </div>
+        </div>
     </body>
 </html>

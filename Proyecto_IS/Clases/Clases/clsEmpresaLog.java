@@ -13,7 +13,22 @@ import java.sql.SQLException;
  * @author EstIvonneGeovannaCam
  */
 public class clsEmpresaLog extends ClsConexion {
-  String ruc, cod_perfil, nombre_empresa, telefono, email,direccion_emp,password_e;
+
+    private String ruc, cod_perfil, nombre_empresa, telefono, email, direccion_emp, password_e;
+
+    public clsEmpresaLog() {
+
+    }
+
+    public clsEmpresaLog(String ruc, String cod, String nameempr, String telf, String email, String direc, String pass) {
+        this.ruc = ruc;
+        this.cod_perfil = cod;
+        this.nombre_empresa = nameempr;
+        this.telefono = telf;
+        this.direccion_emp = direc;
+        this.password_e = pass;
+
+    }
 
     public String getRuc() {
         return ruc;
@@ -70,28 +85,25 @@ public class clsEmpresaLog extends ClsConexion {
     public void setPassword_e(String password_e) {
         this.password_e = password_e;
     }
-  
-   public static String autenticacion_emp(String correo, String pass){
-       String log_e="false";
-       ClsConexion con=new ClsConexion();
-       ResultSet rs=null;
-       String sql_Empresa="SELECT ruc FROM empresas WHERE email='"+correo+"' AND password_e='"+pass+"'";
-  
-       try {
-            rs=con.Consultar(sql_Empresa);
-            while(rs.next()){
-                log_e="true";
-                System.out.println("ruc"+rs.getString(0));
-                
-         }
+
+    public static String autenticacion_emp(String correo, String pass) {
+        String log_e = "false";
+        ClsConexion con = new ClsConexion();
+        ResultSet rs = null;
+        String sql_Empresa = "SELECT ruc FROM empresas WHERE email='" + correo + "' AND password_e='" + pass + "'";
+
+        try {
+            rs = con.Consultar(sql_Empresa);
+            while (rs.next()) {
+                log_e = "true";
+                System.out.println("ruc" + rs.getString(0));
+
+            }
         } catch (SQLException e) {
         }
         System.out.println(log_e);
         return log_e;
-        
-       
 
     }
 
-   
 }

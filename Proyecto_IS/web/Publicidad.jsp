@@ -10,7 +10,7 @@
     <head>
         <!-- Latest compiled and minified CSS--> 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        
+
         <link rel="stylesheet" href="estilos/publicidadStyle.css">
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -20,12 +20,12 @@
         <title>Pagina Publicitaria</title>
     </head>
     <body background="Imagenes/wall3.jpg">
-        
+
         <div class="row">
-           <img src="ImagesPublicidad/marketing_banner.jpg" alt="BANNER" width="1820" height="250"/> 
+            <img src="ImagesPublicidad/marketing_banner.jpg" alt="BANNER" width="1820" height="250"/> 
         </div>
-                <!-- NAV BAR PRINCIPAL-->
-        <nav class="navbar navbar-default" id="barraH">
+        <!-- NAV BAR PRINCIPAL-->
+        <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -41,9 +41,19 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="Inicio.html">Inicio <span class="sr-only">(current)</span></a></li>
-                        <li class=""><a href="#">Empresas Asociadas <span class="sr-only">(current)</span></a></li>
+                        <li class=""><a href="Publicidad.jsp">Empresas Asociadas <span class="sr-only">(current)</span></a></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right" >
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"name="drop" >Iniciar Sesión <span class="caret"></span></a>
+                            <ul class="dropdown-menu" >
+                                <li><a href="LogeoU.jsp" >Iniciar Sesión Usuario</a></li>
+                                <li><a href="LogueoE.jsp">Iniciar Sesión Empresa</a></li>
+                                <li><a href="LogueoCB.jsp">Iniciar Sesión C.Becas</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="TipoRegistro.html">Registrarse</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#">Ayuda</a></li>
 
                     </ul>
@@ -69,7 +79,7 @@
 
                 <ul class="list-group">
                     <li class="list-group-item list-group-item-success">
-                    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxpertlearn%2Fposts%2F10155369271418414&width=500" width="300" height="538" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxpertlearn%2Fposts%2F10155369271418414&width=500" width="300" height="538" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                     </li>
                     <li class="list-group-item list-group-item-info">Cras sit amet nibh libero</li>
                     <li class="list-group-item list-group-item-warning">Porta ac consectetur ac</li>
@@ -207,29 +217,29 @@
                 <a href="https://www.facebook.com/Aesoft_UPS-230449624425759/?modal=admin_todo_tour">
                     <img src="Imagenes/face.jpg" alt="" height="70" width="70" align="center" />
                 </a>
-                
+
                 <a href="https://twitter.com/AesoftU">
-                <img src="Imagenes/Ins.png" alt="" height="70" width="70" align="center" />
+                    <img src="Imagenes/Ins.png" alt="" height="70" width="70" align="center" />
                 </a>
-                
-                 
+
+
                 <img src="Imagenes/tw.png" alt="" height="70" width="70" align="center" />
-                
+
             </div>
             <div class="alert alert-info" role="alert">
                 <a href="#" class="alert-link">...</a><br/>
                 <div class="list-group">
-                            <a href="#" class="list-group-item active">
-                                <h4 class="list-group-item-heading">INFORMACION DE SU INTERES..!</h4>
-                                <br/>
-                                <h4 class="list-group-item-heading">BECAS GAR- TERCER NIVEL</h4>
-                                <p class="list-group-item-text">El “Programa de Becas para el Grupo de Alto Rendimiento de Tercer Nivel 2018” tiene por objetivo conceder financiamiento para que ecuatorianas y ecuatorianos, que sean parte del Grupo de Alto Rendimiento X, XI y XII, puedan realizar estudios de tercer nivel en instituciones de educación superior del exterior.
-                                <br/><a href="https://www.educacionsuperior.gob.ec/programa-de-becas-gar-internacional/"><img src="ImagesPublicidad/becasGar.png" alt="" height="230" width="230" align="center" /></a></p>
-                                <h4 class="list-group-item-heading">Lo que debes saber sobre el proceso de admisión a la educación superior</h4>
-                                <p class="list-group-item-text">Nos encontramos a las puertas de un nuevo proceso de admisión a instituciones de educación superior. Si es la primera vez que participarás en este proceso, tenemos información valiosa que será de mucha utilidad en el camino hacia la U.
-                                <br/><a href="http://admision.senescyt.gob.ec/lo-que-debes-saber-antes-de-iniciar-el-proceso-de-admision/"><img src="ImagesPublicidad/lo-debesSaber.jpg" alt="" height="230" width="230" align="center" /></a></p>
-                            </a>
-                        </div>
+                    <a href="#" class="list-group-item active">
+                        <h4 class="list-group-item-heading">INFORMACION DE SU INTERES..!</h4>
+                        <br/>
+                        <h4 class="list-group-item-heading">BECAS GAR- TERCER NIVEL</h4>
+                        <p class="list-group-item-text">El “Programa de Becas para el Grupo de Alto Rendimiento de Tercer Nivel 2018” tiene por objetivo conceder financiamiento para que ecuatorianas y ecuatorianos, que sean parte del Grupo de Alto Rendimiento X, XI y XII, puedan realizar estudios de tercer nivel en instituciones de educación superior del exterior.
+                            <br/><a href="https://www.educacionsuperior.gob.ec/programa-de-becas-gar-internacional/"><img src="ImagesPublicidad/becasGar.png" alt="" height="230" width="230" align="center" /></a></p>
+                        <h4 class="list-group-item-heading">Lo que debes saber sobre el proceso de admisión a la educación superior</h4>
+                        <p class="list-group-item-text">Nos encontramos a las puertas de un nuevo proceso de admisión a instituciones de educación superior. Si es la primera vez que participarás en este proceso, tenemos información valiosa que será de mucha utilidad en el camino hacia la U.
+                            <br/><a href="http://admision.senescyt.gob.ec/lo-que-debes-saber-antes-de-iniciar-el-proceso-de-admision/"><img src="ImagesPublicidad/lo-debesSaber.jpg" alt="" height="230" width="230" align="center" /></a></p>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

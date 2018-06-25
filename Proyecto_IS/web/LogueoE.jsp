@@ -16,7 +16,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login Empresarial</title>
-    </head>
+
     <body background="Imagenes/wall3.jpg">
         <!-- BARRA DE NAVEGACION-->
         <nav class="navbar navbar-default">
@@ -35,9 +35,19 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="Inicio.html">Inicio <span class="sr-only">(current)</span></a></li>
-                        <li class=""><a href="#">Empresas Asociadas <span class="sr-only">(current)</span></a></li>
+                        <li class=""><a href="Publicidad.jsp">Empresas Asociadas <span class="sr-only">(current)</span></a></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right" >
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"name="drop" >Iniciar Sesión <span class="caret"></span></a>
+                            <ul class="dropdown-menu" >
+                                <li><a href="LogeoU.jsp" >Iniciar Sesión Usuario</a></li>
+                                <li><a href="LogueoE.jsp">Iniciar Sesión Empresa</a></li>
+                                <li><a href="LogueoCB.jsp">Iniciar Sesión C.Becas</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="TipoRegistro.html">Registrarse</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#">Ayuda</a></li>
 
                     </ul>
@@ -60,21 +70,36 @@
                             <h3 align="center">SOY EMPRESA</h3>
                             <br/>
 
-                            <form action="ProcesoLog_Emp.jsp" method="post">
+                            <form action="ProcesoLog_Emp.jsp" method="get">
 
 
                                 <div class="input-group input-group-lg">
                                     <label for="exampleInputPassword1">Correo Empresarial</label>
 
-                                    <input type="text" class="form-control" placeholder="Correo Empresarial" name="correo_e" aria-describedby="sizing-addon2">
+                                    <input type="text" class="form-control" placeholder="Correo Empresarial" name="correo_e" aria-describedby="sizing-addon2" onClick="this.select();">
                                 </div>
 
                                 <br/>
                                 <div class="input-group input-group-lg">
                                     <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="pass_e" name="pass_e" placeholder="Password" aria-describedby="sizing-addon2">
+                                    <input type="password" class="form-control" id="pass_e" name="pass_e" placeholder="Password" aria-describedby="sizing-addon2" onClick="this.select();">
                                 </div>
-                                <br/>
+                                <br>
+                                <p
+                                    value="
+                                    <%
+                                        String error = "";
+                                        error = request.getParameter("t");
+                                    %>
+                                    " 
+                                    ><font size="3" color="red"><%
+                                        if (error == null) {
+
+                                        } else {
+                                            out.print("*" + error + "*");
+                                        }
+
+                                    %></font></p>
                                 <button type="submit" class="btn btn-outline-dark">Login</button>
 
                                 <br/>
@@ -91,5 +116,7 @@
                 </div>
             </center>  
         </div>
-    </body>
+
+</head>
+</body>
 </html>

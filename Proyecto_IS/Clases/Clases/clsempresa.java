@@ -10,6 +10,11 @@
  */
 package Clases;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author migue
@@ -149,5 +154,37 @@ public class clsempresa {
         }
         return ejecuto;
     }
-//validaciones
+
+    public List<String> ConsultarEmpresa(String email) {
+        List<String> lista = new ArrayList<String>(8);
+        try {
+            String SQL = ("select ruc,nom_empresa,direccion,telefono,email,descripcion_emp,password_e from empresas where email='" + email + "'");
+            ClsConexion con = new ClsConexion();
+            ResultSet rs = con.Consultar(SQL);
+            while (rs.next()) {
+                for (int i = 1; i < 8; i++) {
+                    lista.add(rs.getString(i));
+                }
+            }
+            for (int i = 0; i < lista.size(); i++) {
+                System.out.println(lista.get(i));
+            }
+        } catch (Exception e) {
+        }
+        return lista;
+    }
+
+    public boolean ActualizarEmpresa(String ruct, String nempresa, String direc, String telf, String mail, String desc, String pwd) {
+        boolean ejecuto = false;
+        try {
+            String SQL = ("update empresas set nom_empresa='" + nempresa + "',direccion='" + direc + "',telefono='" + telf + "',email='" + mail + "',descripcion_emp='" + desc + "',password_e='" + pwd + "' where ruc='" + ruct + "'");
+            ClsConexion con = new ClsConexion();
+            con.Ejecutar(SQL);
+            ejecuto = true;
+        } catch (Exception e) {
+            System.out.println("Error" + e.getMessage());
+            ejecuto = false;
+        }
+        return ejecuto;
+    }
 }

@@ -37,9 +37,19 @@ and open the template in the editor.
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="Inicio.html">Inicio <span class="sr-only">(current)</span></a></li>
-                        <li class=""><a href="#">Empresas Asociadas <span class="sr-only">(current)</span></a></li>
+                        <li class=""><a href="Publicidad.jsp">Empresas Asociadas <span class="sr-only">(current)</span></a></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right" >
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"name="drop" >Iniciar Sesión <span class="caret"></span></a>
+                            <ul class="dropdown-menu" >
+                                <li><a href="LogeoU.jsp" >Iniciar Sesión Usuario</a></li>
+                                <li><a href="LogueoE.jsp">Iniciar Sesión Empresa</a></li>
+                                <li><a href="LogueoCB.jsp">Iniciar Sesión C.Becas</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="TipoRegistro.html">Registrarse</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#">Ayuda</a></li>
 
                     </ul>
@@ -54,10 +64,9 @@ and open the template in the editor.
 
             <tr><td><center><h2>Desmpleado</h2></center></td><td><center><h2>Empresa</h2></center></td></tr>
             <tr><td><img src="Imagenes/empleado.jpg" alt=""/></td><td><img src="Imagenes/empresa.png" alt="" height="400" width="700" /></td></tr>
-            <tr><td><a type="button" href="RegistrarUsuario.jsp"  class="btn btn-success btn-lg btn-block"><strong>Registrarse Usuario </strong></a></td>
-            <td> <a type="button" href="Registro_Empresas.jsp"  class="btn btn-info btn-lg btn-block"><strong>Registrarse Empresa </strong></a></td></tr>
+            <tr><td><a type="button" href="RegistrarUsuario.jsp"  class="btn btn-success btn-lg btn-block" ><strong>Registrarse Usuario </strong></a></td>
+                <td> <a type="button" href="Registro_Empresas.jsp"  class="btn btn-info btn-lg btn-block" ><strong>Registrarse Empresa </strong></a></td></tr>
             <tr><td>&nbsp;</td></tr>
-            <tr><td colspan="2"><center><a type="button" href="Logeo.jsp"  class="btn btn-primary btn-lg btn-block">Iniciar Sesión</a></center></td></tr>
         </table>
     </center>
 </body>

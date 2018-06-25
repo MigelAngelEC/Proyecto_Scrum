@@ -5,6 +5,8 @@
  */
 package Clases;
 
+import java.sql.ResultSet;
+
 /**
  *
  * @author migue
@@ -96,6 +98,34 @@ public class clsInfoAcademicaReferences {
      */
     public void setParentesco(String parentesco) {
         this.parentesco = parentesco;
+    }
+
+    public Boolean InsertarReferencias(String nickf, String namef, String cargof, String telff, String parentescof) {
+        boolean ejecuto = false;
+        String ci = "";
+        int maxed = 0;
+        try {
+            String SQL = ("Select cedula from usuarios where nickname='" + nickf + "'");
+            ClsConexion con = new ClsConexion();
+            ResultSet rs = con.Consultar(SQL);
+            while (rs.next()) {
+                ci = rs.getString(1);
+            }
+            String SQL2 = ("Select MAX(cod_ref) from referencias_personales ");
+            ResultSet rs2 = con.Consultar(SQL2);
+            while (rs2.next()) {
+                maxed = rs2.getInt(1);
+            }
+            maxed = maxed + 1;
+
+            String SQL3 = ("insert into referencias_personales values (" + maxed + ",'" + ci + "','" + namef + "','" + cargof + "','" + telff + "','" + parentescof + "'); ");
+            con.Ejecutar(SQL3);
+            ejecuto = true;
+        } catch (Exception e) {
+            System.out.println("Error" + e.getMessage());
+            ejecuto = false;
+        }
+        return ejecuto;
     }
 
 }

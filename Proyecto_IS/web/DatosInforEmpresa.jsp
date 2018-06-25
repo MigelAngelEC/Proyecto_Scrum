@@ -1,14 +1,15 @@
 <%-- 
-    Document   : RegistrarUsuario
-    Created on : 03/06/2018, 15:42:17
-    Author     : migue
+    Document   : Registro_Empresas
+    Created on : 04/06/2018, 21:43:48
+    Author     : rowel
 --%>
 
-<%@page import="Clases.clsUsuario"%>
+<%@page import="java.util.List"%>
+<%@page import="Clases.clsempresa"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head> 
+    <head>
         <!-- Latest compiled and minified CSS -->
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -19,10 +20,16 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Registrar Usuario</title>
+        <title>Registro Empresa</title>
     </head>
     <body background="Imagenes/wall3.jpg">
-
+        <%
+            String email_emp;
+            List<String> lista;
+            email_emp = request.getParameter("emaile");
+            clsempresa obj = new clsempresa();
+            lista = obj.ConsultarEmpresa(email_emp);
+        %>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -42,106 +49,84 @@
                         <li class=""><a href="Publicidad.jsp">Empresas Asociadas <span class="sr-only">(current)</span></a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right" >
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"name="drop" >Iniciar Sesión <span class="caret"></span></a>
-                            <ul class="dropdown-menu" >
-                                <li><a href="LogeoU.jsp" >Iniciar Sesión Usuario</a></li>
-                                <li><a href="LogueoE.jsp">Iniciar Sesión Empresa</a></li>
-                                <li><a href="LogueoCB.jsp">Iniciar Sesión C.Becas</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="TipoRegistro.html">Registrarse</a></li>
-                            </ul>
-                        </li>
+                        <p class="navbar-text ">Signed in as <a class="navbar-link"><i><%out.println(email_emp);%></i></a></p>
                         <li><a href="#">Ayuda</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-    <center>
-
-        <h1>Registrar Usuario</h1>
         <br>
-        <form action="Proceso_Usuario.jsp" method="post">
+        <br>
+    <center>
+        <h1>Registrar Empresa</h1>
+        <br>
+        <form action="ProcesarActualizarDatosEmpresa.jsp" method="post">
 
             <table>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Cédula Identidad</div>
-                        <input type="text" class="form-control" id="ci" placeholder="CI #1234567890" name="cedula">
+                        <div class="input-group-addon">RUC</div>
+                        <input type="text" class="form-control" id="ci" placeholder="RUC: #123456789001" name="ruc" value="<% out.print(lista.get(0)); %>" readonly  >
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2"><center>  
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">NickName</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej: Jose123" name="nickn">
+                        <div class="input-group-addon">Nombre de la Empresa</div>
+                        <input type="text" class="form-control" id="ci" placeholder="ej: AKROSCORP" name="nempresa" value="<% out.print(lista.get(1)); %>" onClick="this.select();">
                     </div></center>
+                </td></tr>
+                <tr><td> &nbsp;</td></tr>
+                <tr><td colspan="2">  <center>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">Direccion</div>
+                        <input type="text" class="form-control" id="ci" placeholder="ej: Ajavi" name="direc" value="<% out.print(lista.get(2)); %>"onClick="this.select();" >
+                    </div></center>
+                </td></tr>
+                <tr><td> &nbsp;</td></tr>
+                <tr><td colspan="2">  <center>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">Telefono</div>
+                        <input type="text" class="form-control" id="ci" placeholder="ej: 022467315" name="telefono" value="<% out.print(lista.get(3)); %>"onClick="this.select();" >
+                    </div> </center>
+                </td></tr>
+                <tr><td> &nbsp;</td></tr>
+                <tr><td colspan="2">  <center>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">Email</div>
+                        <input type="text" class="form-control" id="ci" placeholder="ej:akroscgi@akros.com" name="email" value="<% out.print(lista.get(4)); %>"onClick="this.select();" >
+                    </div> </center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Password</div>
-                        <input type="password" class="form-control" id="ci" placeholder="ej: Mispar159357" name="passw">
+                        <input type="password" class="form-control" id="ci" placeholder="ej:AkrosC159" name="passw" value="<% out.print(lista.get(6)); %>"onClick="this.select();" >
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Verficar Password</div>
-                        <input type="password" class="form-control" id="ci" placeholder="Repetir Password" >
-                    </div> </center>
-                </td></tr>
-                <tr><td> &nbsp;</td></tr>
-                <tr><td colspan="2">  <center>
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Nombres</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej: Juan Jose" name="name">
-                    </div> </center>
-                </td></tr>
-                <tr><td> &nbsp;</td></tr>
-                <tr><td colspan="2"> <center>
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Apellido</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej: Catillo Perez" name="lname">
+                        <div class="input-group-addon">Repetir Password</div>
+                        <input type="password" class="form-control" id="ci" placeholder="Repetir Password">
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">em@il</div>
-                        <input type="email" class="form-control" id="ci" placeholder="ej: josejj@gmail.com" name="email">
+                        <div class="input-group-addon">Descripción Empresa</div>
+                        <input type="text" class="form-control" id="txtSearch" placeholder="A que se dedica" name="desc" value="<% out.print(lista.get(5));%>"onClick="this.select();">
                     </div></center>
-                </td></tr>
-                <tr><td> &nbsp;</td></tr>
-                <tr><td colspan="2">  <center>
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Teléfono Fijo</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej 022465873" name="telf">
-                    </div></center>
-                </td></tr>
-                <tr><td> &nbsp;</td></tr>
-                <tr><td colspan="2"> <center>
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Teléfono Celular </div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej: 0912345678"name="celu">
-                    </div></center>
-                </td></tr>
-                <tr><td> &nbsp;</td></tr>
-                <tr><td colspan="2">  <center>
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Dirección</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej: Ciudadela Ibarra" name="direc">
-                    </div>  </center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
 
             </table>
 
-            <button type="submit"  class="btn btn-primary btn-lg"> Crear Cuenta </button><br>
-            <img src="Imagenes/Users.png" alt=""/>
+            <button type="submit"  class="btn btn-primary btn-lg">Guardar Cambios </button>
+            <a  href="javascript:history.go(-1)" class="btn btn-primary btn-lg"> Cancelar </a><br>
+            <img src="Imagenes/empresa.jpg" higth="300" width="300"/>
         </form>
-    </form>
-</center>
+    </center>
 </body>
 </html>

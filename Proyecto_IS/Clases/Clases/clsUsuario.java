@@ -7,6 +7,8 @@ package Clases;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 
 /**
@@ -186,21 +188,21 @@ public class clsUsuario {
         return ejecuto;
     }
 
-    public Vector ConsultarUsuario(String user) {
-        Vector vec = new Vector();
+    public List<String> ConsultarUsuario(String user) {
+        List<String> lista = new ArrayList<String>(10);
         try {
-            String SQL = "Select cedula,nickname,password,nombres,apellidos,email,tel_fijo,tel_celular,direccion from usuarios where nickname='MiguelAEC';";
+            String SQL = "Select cedula,nickname,password,nombres,apellidos,email,tel_fijo,tel_celular,direccion from usuarios where nickname='" + user + "';";
             ClsConexion con = new ClsConexion();
             ResultSet rs = con.Consultar(SQL);
             while (rs.next()) {
-                for (int i = 1; i < 9; i++) {
-                    vec.addElement(rs.getString(i));
+                for (int i = 1; i < 10; i++) {
+                    lista.add(rs.getString(i));
                 }
             }
         } catch (Exception e) {
             System.out.println("Error" + e.getMessage());
         }
 
-        return vec;
+        return lista;
     }
 }

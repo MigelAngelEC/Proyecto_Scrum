@@ -4,6 +4,7 @@
     Author     : migue
 --%>
 
+<%@page import="Clases.clsInfoAcademica"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -21,6 +22,8 @@
         <title>Datos Academicos de Usuario</title>
     </head>
     <body background="Imagenes/wall3.jpg">
+        <% String nickname = request.getParameter("nickn");
+        %>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -37,9 +40,10 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="Inicio.html">Inicio <span class="sr-only">(current)</span></a></li>
-                        <li class=""><a href="#">Empresas Asociadas <span class="sr-only">(current)</span></a></li>
+                        <li class=""><a href="Publicidad.jsp">Empresas Asociadas <span class="sr-only">(current)</span></a></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right" >
+                        <p class="navbar-text ">Signed in as <a class="navbar-link"><i><%out.println(nickname);%></i></a></p>
                         <li><a href="#">Ayuda</a></li>
 
                     </ul>
@@ -49,148 +53,50 @@
     <center>
         <h1>Registrar Mis Datos Academicos</h1>
         <form action="ProcesarDatosAcademicos.jsp" method="post">
-            <div class="container">
-                <div class="jumbotron">
-                    <div class="panel-group" id="accordion">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                                        Datos Academicos Usuario</a>
-                                </h4>
-                            </div>
-                            <div id="collapse1" class="panel-collapse collapse in">
-                                <div class="panel-body">
-                                    <table>
-                                        <tr><td colspan="2">  <center>
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <div class="input-group-addon">Institución</div>
-                                                <input type="text" class="form-control" id="Instituto" placeholder="CI #1234567890" name="cedula" readonly >
-                                            </div></center>
-                                        </td></tr>
-                                        <tr><td> <br></td></tr>
-                                        <tr><td colspan="2">  <center>
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <div class="input-group-addon">Titulo</div>
-                                                <input type="text" class="form-control" id="titulo" placeholder="CI #1234567890" name="cedula"  >
-                                            </div></center>
-                                        </td></tr>
-                                        <tr><td> <br></td></tr>
-                                        <tr><td colspan="2">  <center>
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <div class="input-group-addon">Nivel</div>
-                                                <input type="text" class="form-control" id="Nivel" placeholder="CI #1234567890" name="cedula"  >
-                                            </div></center>
-                                        </td></tr>
-                                        <tr><td colspan="2">  <center>
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <div class="input-group-addon">Especialidad</div>
-                                                <input type="text" class="form-control" id="espe" placeholder="CI #1234567890" name="cedula"  >
-                                            </div></center>
-                                        </td></tr>
-                                    </table>
-                                </div>
-                            </div>
+
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Mis Datos</h3>
                         </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                                        Referencia Personal #1</a>
-                                </h4>
-                            </div>
-                            <div id="collapse2" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <table>
-                                        <tr><td colspan="2">  <center>
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <div class="input-group-addon">Cedula</div>
-                                                <input type="text" class="form-control" id="ciref" placeholder="CI #1234567890" name="cedula"  >
-                                            </div></center>
-                                        </td></tr>
-                                        <tr><td> <br></td></tr>
-                                        <tr><td colspan="2">  <center>
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <div class="input-group-addon">Nombre y Apellido</div>
-                                                <input type="text" class="form-control" id="nameref" placeholder="CI #1234567890" name="cedula"  >
-                                            </div></center>
-                                        </td></tr>
-                                        <tr><td> <br></td></tr>
-                                        <tr><td colspan="2">  <center>
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <div class="input-group-addon">Cargo</div>
-                                                <input type="text" class="form-control" id="cargoref1" placeholder="CI #1234567890" name="cedula"  >
-                                            </div></center>
-                                        </td></tr>
-                                        <tr><td> <br></td></tr>
-                                        <tr><td colspan="2">  <center>
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <div class="input-group-addon">Telefono</div>
-                                                <input type="text" class="form-control" id="telfref1" placeholder="CI #1234567890" name="cedula"  >
-                                            </div></center>
-                                        </td></tr>
-                                        <tr><td> <br></td></tr>
-                                        <tr><td colspan="2">  <center>
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <div class="input-group-addon">Parentesco</div>
-                                                <input type="text" class="form-control" id="parentescoref1" placeholder="CI #1234567890" name="cedula"  >
-                                            </div></center>
-                                        </td></tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-                                        Referencia Personal #2</a>
-                                </h4>
-                            </div>
-                            <div id="collapse3" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <table>
-                                        <tr><td colspan="2">  <center>
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <div class="input-group-addon">Cedula</div>
-                                                <input type="text" class="form-control" id="ciref2" placeholder="CI #1234567890" name="cedula" >
-                                            </div></center>
-                                        </td></tr>
-                                        <tr><td> <br></td></tr>
-                                        <tr><td colspan="2">  <center>
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <div class="input-group-addon">Nombre y Apellido</div>
-                                                <input type="text" class="form-control" id="nameref2" placeholder="CI #1234567890" name="cedula"  >
-                                            </div></center>
-                                        </td></tr>
-                                        <tr><td> <br></td></tr>
-                                        <tr><td colspan="2">  <center>
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <div class="input-group-addon">Cargo</div>
-                                                <input type="text" class="form-control" id="cargoref2" placeholder="CI #1234567890" name="cedula"  >
-                                            </div></center>
-                                        </td></tr>
-                                        <tr><td> <br></td></tr>
-                                        <tr><td colspan="2">  <center>
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <div class="input-group-addon">Telefono</div>
-                                                <input type="text" class="form-control" id="telfref2" placeholder="CI #1234567890" name="cedula"  >
-                                            </div></center>
-                                        </td></tr>
-                                        <tr><td> <br></td></tr>
-                                        <tr><td colspan="2">  <center>
-                                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                                <div class="input-group-addon">Parentesco</div>
-                                                <input type="text" class="form-control" id="parentescoref2" placeholder="CI #1234567890" name="cedula"  >
-                                            </div></center>
-                                        </td></tr>
-                                    </table>
-                                </div>
-                            </div>
+                        <div class="panel-body">
+                            <table>
+                                <tr><td colspan="2">  <center>
+                                    <% out.print(clsInfoAcademica.mostrarComboPerfiles());
+                                    %></center>
+                                </td></tr>
+                                <tr><td> <br></td></tr>
+                                <tr><td colspan="2">  <center>
+                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                        <div class="input-group-addon">Institución</div>
+                                        <input type="text" class="form-control" id="Instituto" placeholder="U.P.S" name="Instituto" size="20px">
+                                    </div></center>
+                                </td></tr>
+                                <tr><td> <br></td></tr>
+                                <tr><td colspan="2">  <center>
+                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                        <div class="input-group-addon">Titulo</div>
+                                        <input type="text" class="form-control" id="titulo" placeholder="Ing. Sistemas" name="Titulo" size="24px" >
+                                    </div></center>
+                                </td></tr>
+                                <tr><td> <br></td></tr>
+                                <tr><td colspan="2">  <center>
+                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                        <div class="input-group-addon">Especialidad</div>
+                                        <input type="text" class="form-control" id="espe" placeholder="Programación" name="Espe"  >
+                                    </div></center>
+                                </td></tr>
+                                <tr><td> <br></td></tr>
+                            </table>
                         </div>
                     </div>
-                    <button type="submit">Guardar </button>
+                    <input type="text" name="nickne" value="<%out.println(nickname);%>" hidden="true" >
+                    <button type="submit" class="btn btn-primary btn-lg">Guardar </button>
+                    <a  href="javascript:history.go(-1)" class="btn btn-primary btn-lg"> Cancelar </a><br>
                 </div>
+                <div class="col-sm-3"></div>
             </div>
         </form>
     </center>

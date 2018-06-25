@@ -1,40 +1,24 @@
 <%-- 
-    Document   : ProcesoLog_Adm
-    Created on : 08-jun-2018, 19:34:21
-    Author     : EstIvonneGeovannaCam
+    Document   : Proceso_Empresa
+    Created on : 07/06/2018, 19:09:46
+    Author     : rowel
 --%>
-
-<%@page import="Clases.clsLoginAdmn"%>
+<%@page import="Clases.clsempresa"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
     </head>
-    <body>
-        <%
-            //Validacion de login empresarial
-            String nickname = request.getParameter("nick");
-            String password = request.getParameter("pass");
-            out.println(nickname);
-            out.println(password);
-            clsLoginAdmn adm = new clsLoginAdmn();
-
-            String correcto_adm = adm.autenticacion_adm(nickname, password);
-
-            out.print(correcto_adm);
-            System.out.println(correcto_adm);
-
-            if (correcto_adm.equals("true")) {
-                HttpSession sess = request.getSession();
-                out.print(sess);
-                out.print("login administrador correcto");
-            } else {
-                out.print(correcto_adm);
-            }
-
-        %>
+    <body background="Imagenes/wall3.jpg">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -70,5 +54,38 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
+        <div class="container">
+            <div class="jumbotron">
+                <%
+                    String ruc, NombreEmpresa, telefono, direccion, Descripcion, Email, Password;
+
+                    ruc = request.getParameter("ruc");
+                    NombreEmpresa = request.getParameter("nempresa");
+                    direccion = request.getParameter("direc");
+                    telefono = request.getParameter("telefono");
+                    Email = request.getParameter("email");
+                    Descripcion = request.getParameter("desc");
+                    Password = request.getParameter("passw");
+
+                    clsempresa obj = new clsempresa(ruc, NombreEmpresa, direccion, telefono, Email, Descripcion, Password);
+                    //out.print("<br> RUC : " + obj.getRuc() + "<br>NombreDeLaEmpresa : " + obj.getNombreEmpresa() + "<br>direc : " + obj.getDescripcion());
+
+                    boolean eject = obj.ActualizarEmpresa(ruc, NombreEmpresa, direccion, telefono, Email, Descripcion, Password);
+                    if (eject = true) {
+                        out.print("<br> <h2>Datos Correctamente Actualizados </h2>");
+                        out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");
+                        out.print("<a  href=LogueoE.jsp class=btn btn-primary btn-lg> <h3><u>Cerrar Sesión</u></h3> </a><br>");
+                    } else {
+                        out.print("<br><h2>Error al Actualizar Datos de Empresa </h2>");
+                        out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Cerrar Sesión </a><br>");
+                    }
+                %>
+
+            </div>
+        </div>
+        <h2></h2>
+
+
+
     </body>
 </html>
