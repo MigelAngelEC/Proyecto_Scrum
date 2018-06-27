@@ -72,8 +72,8 @@
                     <a href="#p1" class="list-group-item"> EMPRESAS</a>
                     <a href="#p2" class="list-group-item">CENTROS DE BECAS</a>
                     <a href="#" class="list-group-item">POSTULACION DE BECAS</a>
-                    <a href="#" class="list-group-item">REGISTRO DE USUARIOS</a>
-                    <a href="#" class="list-group-item">REGISTRO DE EMPRESAS</a>
+                    <a href="RegistrarUsuario.jsp" class="list-group-item">REGISTRO DE USUARIOS</a>
+                    <a href="Registro_Empresas.jsp" class="list-group-item">REGISTRO DE EMPRESAS</a>
                     <a href="#" class="list-group-item">REGISTRO CENTRO DE BECAS</a>
                 </div>
 

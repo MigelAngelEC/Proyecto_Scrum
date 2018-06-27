@@ -1,9 +1,10 @@
 <%-- 
-    Document   : ProcesoLos_CB
-    Created on : 08-jun-2018, 20:05:30
+    Document   : Proceso_CB
+    Created on : 26-jun-2018, 20:48:08
     Author     : EstIvonneGeovannaCam
 --%>
 
+<!DOCTYPE html>
 <%@page import="Clases.clsCentroBecas"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -19,35 +20,77 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 
-        <title>Bienvenidos</title>
+        <title>Perfil Centro de Becas!</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body background="Imagenes/wall3.jpg">
-        //Programacion
-        <%
-            //Validacion de login empresarial
-            String email_cb = request.getParameter("correo_cb");
-            String password_cb = request.getParameter("pass_cb");
-            out.println(email_cb);
-            out.println(password_cb);
-            clsCentroBecas cb = new clsCentroBecas();
+        <script type="text/javascript">
+            function saveEdits() {
 
-            String correcto_cb = cb.autenticacion_cb(email_cb, password_cb);
+//get the editable element
+                var editElem = document.getElementById("edit");
 
-            out.print(correcto_cb);
-            System.out.println(correcto_cb);
+//get the edited element content
+                var userVersion = editElem.innerHTML;
 
-            if (correcto_cb.equals("true")) {
-                HttpSession sess = request.getSession();
-                out.print(sess);
-                out.print("login centro de becas correcto");
-            } else {
-                out.print("log correcto");
-                response.sendRedirect("LogeoCB.jsp?t=Email o Password Incorrectos");
+//save the content to local storage
+                localStorage.userEdits = userVersion;
+
+//write a confirmation to the user
+                document.getElementById("update").innerHTML = "Guardado!";
+
             }
+            function checkEdits() {
 
-            //Registro de centros de becas
+//find out if the user has previously saved edits
+                if (localStorage.userEdits != null)
+                    document.getElementById("edit").innerHTML = localStorage.userEdits;
+            }
+            function saveEdits1() {
+
+//get the editable element
+                var editElem1 = document.getElementById("edit1");
+
+//get the edited element content
+                var userVersion1 = editElem1.innerHTML;
+
+//save the content to local storage
+                localStorage.userEdits1 = userVersion1;
+
+//write a confirmation to the user
+                document.getElementById("update1").innerHTML = "Guardado!";
+
+            }
+            function checkEdits1() {
+
+//find out if the user has previously saved edits
+                if (localStorage.userEdits1 != null)
+                    document.getElementById("edit1").innerHTML = localStorage.userEdits1;
+            }
+            function saveEdits2() {
+
+//get the editable element
+                var editElem2 = document.getElementById("edit2");
+
+//get the edited element content
+                var userVersion = editElem2.innerHTML;
+
+//save the content to local storage
+                localStorage.userEdits2 = userVersion;
+
+//write a confirmation to the user
+                document.getElementById("update2").innerHTML = "Guardado!";
+
+            }
+            function checkEdits2() {
+
+//find out if the user has previously saved edits
+                if (localStorage.userEdits2 != null)
+                    document.getElementById("edit2").innerHTML = localStorage.userEdits2;
+            }
+        </script>
+
+        <%
+            //Confirmacion de registro de centros de becas
             String codCB, NombreCB, direccionCB, telefonoCB, EmailCB, PasswordCB;
 
             codCB = request.getParameter("id");
@@ -68,7 +111,21 @@
             } else {
                 out.print("<br>Error al Registrar Empresa " + eject);
             }
+
+            boolean ejectAc = objCb.ActualizarCb(codCB, NombreCB, direccionCB, telefonoCB, EmailCB, PasswordCB);
+            if (eject = true) {
+                out.print("<br> <h2>Datos Correctamente Actualizados </h2>");
+                out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");
+                out.print("<a  href=LogueoE.jsp class=btn btn-primary btn-lg> <h3><u>Cerrar Sesión</u></h3> </a><br>");
+            } else {
+                out.print("<br><h2>Error al Actualizar Datos de Empresa </h2>");
+                out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Cerrar Sesión </a><br>");
+            }
         %>
+    </head>
+
+    <body background="Imagenes/wall3.jpg" onload="checkEdits(), checkEdits1(), checkEdits2()">
+
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -104,44 +161,12 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-        <div class="col-sm-2">
 
-            <div class="list-group">
-                <a href="#" class="list-group-item active">
-                    MENU
-                </a>
-                <form action="DatosInforCentroBecas.jsp" method="post">
-                    <input type="text" name="email" value="<%out.println(EmailCB);%>" hidden="true" >
-                    <button type="submit" class="list-group-item">Datos de Centro de Becas <u>(Editar)</u></button>
-                </form>
 
-            </div>
-        </div>
 
-        <div class="container">
-            <div class="jumbotron">
-                <h2>Bievenido Centro de Becas <%  out.println(email_cb);
-                    %></h2>
-                <br>
-                <center><p>Menu</p></center>
-                <br>
-                <center>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <form action="DatosInforCentroBecas.jsp" method="post">
-                            <input type="hidden" name="email" value="<%out.println(email_cb);%>" >
-                            <button type="submit" class="btn btn-secondary">Datos de Centro de Becas</button>
-                        </form>
-                        <br>
-                        <form><button type="button" class="btn btn-secondary">Becas Ofertadas</button>
-                        </form>
-                        <br>
-                        <form>
-                            <button type="button" class="btn btn-secondary">Becas Aplicadas</button>
-                        </form>
-                    </div>
-                </center>
-            </div>
-        </div>
+
+
+
+
     </body>
-
 </html>

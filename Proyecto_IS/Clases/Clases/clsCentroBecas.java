@@ -7,15 +7,17 @@ package Clases;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author EstIvonneGeovannaCam
  */
 public class clsCentroBecas {
-    
-  int cod_b;
-String cod_perfil, nombre_cb,direccion, telefonos,email,password;
+
+    int cod_b;
+    String cod_perfil, nombre_cb, direccion, telefonos, email, password;
 
     public int getCod_b() {
         return cod_b;
@@ -73,26 +75,75 @@ String cod_perfil, nombre_cb,direccion, telefonos,email,password;
         this.password = password;
     }
 
-     public static String autenticacion_cb(String correo, String pass){
-       String log_cb="false";
-       ClsConexion con=new ClsConexion();
-       ResultSet rs=null;
-       String sql_CB="SELECT cod_cb FROM centros__becas WHERE email='"+correo+"' AND password='"+pass+"'";
-  
-       try {
-            rs=con.Consultar(sql_CB);
-            while(rs.next()){
-                log_cb="true";
-                System.out.println("ruc"+rs.getString(0));
-                
-         }
+    public static String autenticacion_cb(String correo, String pass) {
+        String log_cb = "false";
+        ClsConexion con = new ClsConexion();
+        ResultSet rs = null;
+        String sql_CB = "SELECT cod_cb FROM centros__becas WHERE email='" + correo + "' AND password='" + pass + "'";
+
+        try {
+            rs = con.Consultar(sql_CB);
+            while (rs.next()) {
+                log_cb = "true";
+                System.out.println("ruc" + rs.getString(0));
+
+            }
         } catch (SQLException e) {
         }
         System.out.println(log_cb);
         return log_cb;
-        
-       
-
     }
-    
+
+    public boolean InsertarCb(String id, String nombre, String dir, String tel, String email, String pwd) {
+        boolean ejecuto = false;
+        try {
+            String SQL = ("INSERT INTO centros__becas(\n"
+                    + "            cod_cb, cod_perfil, nombre_cb, direccion, telefonos, email, password)\n"
+                    + "           VALUES ('" + id + "','cnbec','" + nombre + "','" + dir + "','" + tel + "','" + email + "','" + pwd + "');");
+            ClsConexion con = new ClsConexion();
+            con.Ejecutar(SQL);
+            ejecuto = true;
+        } catch (Exception e) {
+            System.out.println("Error" + e.getMessage());
+            ejecuto = false;
+        }
+        return ejecuto;
+    }
+
+    public List<String> ConsultarCb(String email) {
+        List<String> lista = new ArrayList<String>(8);
+        try {
+            String SQL = ("SELECT cod_cb, cod_perfil, nombre_cb, direccion, telefonos, email, password\n"
+                    + "  FROM centros__becas where email='" + email + "'");
+            ClsConexion con = new ClsConexion();
+            ResultSet rs = con.Consultar(SQL);
+            while (rs.next()) {
+                for (int i = 1; i < 8; i++) {
+                    lista.add(rs.getString(i));
+                }
+            }
+            for (int i = 0; i < lista.size(); i++) {
+                System.out.println(lista.get(i));
+            }
+        } catch (Exception e) {
+        }
+        return lista;
+    }
+
+    public boolean ActualizarCb(String id, String nombre, String dir, String tel, String email, String pwd) {
+        boolean ejecuto = false;
+        try {
+
+            String SQL = ("UPDATE centros__becas\n"
+                    + "   SET nombre_cb='" + nombre + "',direccion='" + dir + "',telefono='" + tel + "',email='" + email + "',password='" + pwd + "' where cod_cb='" + id + "'");
+            ClsConexion con = new ClsConexion();
+            con.Ejecutar(SQL);
+            ejecuto = true;
+        } catch (Exception e) {
+            System.out.println("Error" + e.getMessage());
+            ejecuto = false;
+        }
+        return ejecuto;
+    }
+
 }

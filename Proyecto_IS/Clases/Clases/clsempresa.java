@@ -144,7 +144,7 @@ public class clsempresa {
     public boolean InsertarEmpresa(String ruct, String nempresa, String direc, String telf, String mail, String desc, String pwd) {
         boolean ejecuto = false;
         try {
-            String SQL = ("Insert into empresas values('" + ruct + "','2','" + nempresa + "','" + direc + "','" + telf + "','" + mail + "','" + desc + "','" + pwd + "');");
+            String SQL = ("Insert into empresas values('" + ruct + "','3','" + nempresa + "','" + direc + "','" + telf + "','" + mail + "','" + desc + "','" + pwd + "');");
             ClsConexion con = new ClsConexion();
             con.Ejecutar(SQL);
             ejecuto = true;
