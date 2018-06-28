@@ -4,6 +4,8 @@
     Author     : EstIvonneGeovannaCam
 --%>
 
+<%@page import="Clases.clsOfertaBecas"%>
+<%@page import="java.lang.String"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Clases.clsCentroBecas"%>
@@ -26,7 +28,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body background="Imagenes/wall3.jpg">
-        //Programacion
+
+        <!-- PROCESO DE REGISTRO DE LOS CENTROS DE BECAS-->  
         <%
             //Validacion de login centro de becas
             String email_cb = request.getParameter("correo_cb");
@@ -73,6 +76,7 @@
                 out.print("<br>Error al Registrar Empresa " + eject);
             }
         %>
+        <!-- BARRA DE NAVEGACION PRINCIPAL -->  
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -103,11 +107,13 @@
                             </ul>
                         </li>
                         <li><a href="#">Ayuda</a></li>
+                        <li><a href="LogueoCB.jsp">Cerrar Sesion</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
+        <!-- MENU IZQUIERDO DE LA PAGINA -->  
         <div class="col-sm-2">
 
             <div class="list-group">
@@ -118,30 +124,102 @@
                     <input type="text" name="email" value="<%out.println(EmailCB);%>" hidden="true" >
                     <button type="submit" class="list-group-item">Datos de Centro de Becas <u>(Editar)</u></button>
                 </form>
-                <a href="#" class="list-group-item">Becas Ofertadas</a>
+                <a href="#ofertasBecas" class="list-group-item">Becas Ofertadas</a>
             </div>
         </div>
-
+        <!-- CONTENEDOR DE INFORMACION GENERAL DEL CNETRO DE BECAS -->  
         <div class="container">
             <center>
                 <div class="jumbotron">
 
-                    <h2>Bievenido Centro de Becas <%  out.println(email_cb);%></h2>
-             <%       
-                    //List<String> infor = objCb.ConsultarCb(email_cb);
-                     //out.print(infor);
-                      //out.print("cod2");
-                     String cod = objCb.InformacionB(email_cb);
-                     System.out.println("----"+cod);
-                    out.print(cod);
-                    
-                   
-                  %>
-                    
+                    <h2>Bievenido Centro de Becas  
+                        <%
+                            String nombreCB = objCb.NombreCB(email_cb);
+                            out.print(nombreCB.toUpperCase());%></h2>
+
+                    <h2>Direccion del centro:
+                        <%
+                            String dirCB = objCb.DireccionCB(email_cb);
+                            out.print(dirCB);%></h2>
+
+                    <h2>Contactos:
+                        <%
+                            String fonosCB = objCb.TelefonosCB(email_cb);
+                            out.print(fonosCB);%></h2><br/><br/>
+
+                    <center>
+                        <img src="Imagenes/conocimiento1.png" alt="CONNOCIMIENTO" width="800" height="500"/>
+                    </center>
+
 
                 </div>
             </center>
         </div>
-    </body>
+        <!-- CONTENEDOR DE TABLA DE BECAS OFERTADAS POR CADA CENTRO DE EBECAS -->           
+        <a name="ofertasBecas">            
+            <div class="container">
+                <center>
+                    <div class="jumbotron">
+                        <div class="panel panel-default">
+                            <h2>Oferta de Becas</h2>
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">Informacion de Becas Ofertadas</div>
+                            <!-- Table -->
+                            <table class="table" >
 
+                                <tr>
+                                    <td>Codigo de Beca</td>
+                                    <td>Descripcion</td>
+                                    <td>Inicio</td>
+                                    <td>Fin</td>
+                                    <td>Horario</td>
+                                </tr>
+
+                                <%
+                                    String codigoCb = objCb.CodigoCB(email_cb);
+                                    System.out.println("CODIGO" + codigoCb);
+                                    clsOfertaBecas ofB = new clsOfertaBecas();
+                                    String becasCB = ofB.OfertasXCB(codigoCb);
+                                    out.print(becasCB);
+                                %>
+                            </table>
+                        </div>
+                    </div>
+                </center>
+            </div>
+        </a>
+<!-- CONTENEDOR DE TABLA DE BECAS OFERTADAS POR CADA CENTRO DE EBECAS -->           
+        <a name="ofertasBecas">            
+            <div class="container">
+                <center>
+                    <div class="jumbotron">
+                        <div class="panel panel-default">
+                            <h2>Oferta de Becas</h2>
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">Informacion de Becas Ofertadas</div>
+                            <!-- Table -->
+                            <table class="table" >
+
+                                <tr>
+                                    <td>Codigo de Beca</td>
+                                    <td>Descripcion</td>
+                                    <td>Inicio</td>
+                                    <td>Fin</td>
+                                    <td>Horario</td>
+                                </tr>
+
+                                <%
+                                    //String codigoCb = objCb.CodigoCB(email_cb);
+                                    System.out.println("CODIGO" + codigoCb);
+                                    //clsOfertaBecas ofB = new clsOfertaBecas();
+                                    //String becasCB = ofB.OfertasXCB(codigoCb);
+                                    out.print(becasCB);
+                                %>
+                            </table>
+                        </div>
+                    </div>
+                </center>
+            </div>
+        </a>
+    </body>
 </html>

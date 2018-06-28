@@ -5,6 +5,8 @@
  */
 package Clases;
 
+import java.sql.ResultSet;
+
 /**
  *
  * @author EstIvonneGeovannaCam
@@ -59,6 +61,26 @@ public class clsOfertaBecas {
 
     public void setHorario(String horario) {
         this.horario = horario;
+    }
+    
+    public String OfertasXCB(String codigoCB) {
+        String becas=null; 
+        ClsConexion con = new ClsConexion();
+        String SQL1 = ("SELECT cod_beca, descripcion_beca, fecha_inicio, fecha_fin, horario\n" +
+"       FROM becas where cod_cb='"+codigoCB+"';");
+         ResultSet rs = con.Consultar(SQL1);
+        try {       
+            while (rs.next()) {
+                becas+= "<tr><td>"+rs.getInt(1)+"</td><td>"+rs.getString(2)+
+                        "</td><td>"+rs.getString(3)+"</td><td>"+rs.getString(4)+
+                        "</td><td>"+rs.getString(5)+"</td></tr>";
+                System.out.println("RESULTADO CONSULTA" +rs.getInt(1)+rs.getString(2)+rs.getString(3)+rs.getString(4)+rs.getString(5));
+            }       
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(becas);
+        return becas;
     }
      
 }

@@ -130,24 +130,76 @@ public class clsCentroBecas {
         }
         return lista;
     }
-    public String InformacionB(String email) {
-        String res=null;
+    //INFORMACION POR SEPARADO DE LOS DCENTROS REGISTRADOS CONSULTADOS EN BASE AL EMAIL DE CADA CENTRO
+    public String CodigoCB(String email) {
+        String codigo=null;
         ClsConexion con = new ClsConexion();
-        ResultSet rs = null;
-        String SQL1 = ("SELECT cod_cb FROM centros__becas where email='"+email+"'");
+        String SQL1 = ("SELECT cod_cb  FROM centros__becas where email='"+email+"'");
+        ResultSet rs = con.Consultar(SQL1);
         try {       
             while (rs.next()) {
-                res=rs.getString(1);
-                System.out.println(rs.getString(1));
+                codigo=rs.getString(1);
+                System.out.println("RESULTADO CONSULTA" +rs.getString(1));
                         //+ "<tr>nombre+"rs.getString(1)+"</tr><tr>dir"+rs.getString(2)+"</tr><tr>fonos"+rs.getString(3)+"</tr></table>;";
             }
                 
         } catch (Exception e) {
         }
-        System.out.println(res);
-        return res;
+        System.out.println("CODIGO"+codigo);
+        return codigo;
     }
 
+    public String NombreCB(String email) {
+        String nombre=null; 
+        ClsConexion con = new ClsConexion();
+        String SQL1 = ("SELECT nombre_cb FROM centros__becas where email='"+email+"'");
+        ResultSet rs = con.Consultar(SQL1);
+        try {       
+            while (rs.next()) {
+                nombre=rs.getString(1);
+                System.out.println("RESULTADO CONSULTA" +rs.getString(1));
+                        //+ "<tr>nombre+"rs.getString(1)+"</tr><tr>dir"+rs.getString(2)+"</tr><tr>fonos"+rs.getString(3)+"</tr></table>;";
+            }
+                
+        } catch (Exception e) {
+        }
+        System.out.println(" "+nombre);
+        return nombre;
+    }
+    
+    public String DireccionCB(String email) {
+        String direccion=null;   
+        ClsConexion con = new ClsConexion();
+        String SQL1 = ("SELECT direccion FROM centros__becas where email='"+email+"'");
+         ResultSet rs = con.Consultar(SQL1);
+        try {       
+            while (rs.next()) {
+                direccion=rs.getString(1);
+                System.out.println("RESULTADO CONSULTA" +rs.getString(1));
+                        //+ "<tr>nombre+"rs.getString(1)+"</tr><tr>dir"+rs.getString(2)+"</tr><tr>fonos"+rs.getString(3)+"</tr></table>;";
+            }
+        } catch (Exception e) {
+        }
+        System.out.println(" "+direccion);
+        return direccion;
+    }
+    public String TelefonosCB(String email) {
+        String telefono=null;
+        
+        ClsConexion con = new ClsConexion();
+        String SQL1 = ("SELECT telefonos  FROM centros__becas where email='"+email+"'");
+         ResultSet rs = con.Consultar(SQL1);
+        try {       
+            while (rs.next()) {
+                telefono=rs.getString(1);
+                System.out.println("RESULTADO CONSULTA" +rs.getString(1));
+            }       
+        } catch (Exception e) {
+        }
+        System.out.println(" "+telefono);
+        return telefono;
+    }
+    //TRANSACCIONES REALIZADAS SOBRE LOS DATOS DEL CENTRO DE BECA
     public boolean ActualizarCb(String id, String nombre, String dir, String tel, String email, String pwd) {
         boolean ejecuto = false;
         try {
