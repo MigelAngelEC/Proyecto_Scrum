@@ -119,4 +119,7 @@ public class clsOfertaEmpleo {
         }
         return fmax;
     }
+    public void Controlar (){
+        
+    }
 }
