@@ -4,6 +4,8 @@
     Author     : EstIvonneGeovannaCam
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="Clases.clsCentroBecas"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -26,7 +28,7 @@
     <body background="Imagenes/wall3.jpg">
         //Programacion
         <%
-            //Validacion de login empresarial
+            //Validacion de login centro de becas
             String email_cb = request.getParameter("correo_cb");
             String password_cb = request.getParameter("pass_cb");
             out.println(email_cb);
@@ -36,15 +38,17 @@
             String correcto_cb = cb.autenticacion_cb(email_cb, password_cb);
 
             out.print(correcto_cb);
-            System.out.println(correcto_cb);
+            System.out.println(" estado" + correcto_cb);
 
             if (correcto_cb.equals("true")) {
                 HttpSession sess = request.getSession();
                 out.print(sess);
                 out.print("login centro de becas correcto");
-            } else {
-                out.print("log correcto");
-                response.sendRedirect("LogeoCB.jsp?t=Email o Password Incorrectos");
+            } else if (correcto_cb.equals("false")) {
+                out.print("login incorrecto");
+                // response.sendRedirect("LogueoCB.jsp");
+                response.sendRedirect("LogueoCB.jsp");
+
             }
 
             //Registro de centros de becas
@@ -114,33 +118,29 @@
                     <input type="text" name="email" value="<%out.println(EmailCB);%>" hidden="true" >
                     <button type="submit" class="list-group-item">Datos de Centro de Becas <u>(Editar)</u></button>
                 </form>
-
+                <a href="#" class="list-group-item">Becas Ofertadas</a>
             </div>
         </div>
 
         <div class="container">
-            <div class="jumbotron">
-                <h2>Bievenido Centro de Becas <%  out.println(email_cb);
-                    %></h2>
-                <br>
-                <center><p>Menu</p></center>
-                <br>
-                <center>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <form action="DatosInforCentroBecas.jsp" method="post">
-                            <input type="hidden" name="email" value="<%out.println(email_cb);%>" >
-                            <button type="submit" class="btn btn-secondary">Datos de Centro de Becas</button>
-                        </form>
-                        <br>
-                        <form><button type="button" class="btn btn-secondary">Becas Ofertadas</button>
-                        </form>
-                        <br>
-                        <form>
-                            <button type="button" class="btn btn-secondary">Becas Aplicadas</button>
-                        </form>
-                    </div>
-                </center>
-            </div>
+            <center>
+                <div class="jumbotron">
+
+                    <h2>Bievenido Centro de Becas <%  out.println(email_cb);%></h2>
+             <%       
+                    //List<String> infor = objCb.ConsultarCb(email_cb);
+                     //out.print(infor);
+                      //out.print("cod2");
+                     String cod = objCb.InformacionB(email_cb);
+                     System.out.println("----"+cod);
+                    out.print(cod);
+                    
+                   
+                  %>
+                    
+
+                </div>
+            </center>
         </div>
     </body>
 
