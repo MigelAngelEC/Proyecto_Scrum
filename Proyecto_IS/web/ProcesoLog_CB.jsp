@@ -34,21 +34,21 @@
             //Validacion de login centro de becas
             String email_cb = request.getParameter("correo_cb");
             String password_cb = request.getParameter("pass_cb");
-            out.println(email_cb);
-            out.println(password_cb);
+            //out.println(email_cb);
+           // out.println(password_cb);
             clsCentroBecas cb = new clsCentroBecas();
 
             String correcto_cb = cb.autenticacion_cb(email_cb, password_cb);
 
-            out.print(correcto_cb);
+           // out.print(correcto_cb);
             System.out.println(" estado" + correcto_cb);
 
             if (correcto_cb.equals("true")) {
                 HttpSession sess = request.getSession();
-                out.print(sess);
-                out.print("login centro de becas correcto");
+                //out.print(sess);
+               // out.print("login centro de becas correcto");
             } else if (correcto_cb.equals("false")) {
-                out.print("login incorrecto");
+                //out.print("login incorrecto");
                 // response.sendRedirect("LogueoCB.jsp");
                 response.sendRedirect("LogueoCB.jsp");
 
@@ -71,9 +71,9 @@
             boolean eject = objCb.InsertarCb(codCB, NombreCB, direccionCB, telefonoCB, EmailCB, PasswordCB);
             // out.print(" " +codCB+" "+" "+ NombreCB+" "+ direccionCB+" "+ telefonoCB+" " + EmailCB+" "+ PasswordCB);
             if (eject = true) {
-                out.print("<br> Centro de Becas registrado correctamente " + eject);
+               // out.print("<br> Centro de Becas registrado correctamente " + eject);
             } else {
-                out.print("<br>Error al Registrar Empresa " + eject);
+               // out.print("<br>Error al Registrar Empresa " + eject);
             }
         %>
         <!-- BARRA DE NAVEGACION PRINCIPAL -->  
@@ -180,39 +180,6 @@
                                     System.out.println("CODIGO" + codigoCb);
                                     clsOfertaBecas ofB = new clsOfertaBecas();
                                     String becasCB = ofB.OfertasXCB(codigoCb);
-                                    out.print(becasCB);
-                                %>
-                            </table>
-                        </div>
-                    </div>
-                </center>
-            </div>
-        </a>
-<!-- CONTENEDOR DE TABLA DE BECAS OFERTADAS POR CADA CENTRO DE EBECAS -->           
-        <a name="ofertasBecas">            
-            <div class="container">
-                <center>
-                    <div class="jumbotron">
-                        <div class="panel panel-default">
-                            <h2>Oferta de Becas</h2>
-                            <!-- Default panel contents -->
-                            <div class="panel-heading">Informacion de Becas Ofertadas</div>
-                            <!-- Table -->
-                            <table class="table" >
-
-                                <tr>
-                                    <td>Codigo de Beca</td>
-                                    <td>Descripcion</td>
-                                    <td>Inicio</td>
-                                    <td>Fin</td>
-                                    <td>Horario</td>
-                                </tr>
-
-                                <%
-                                    //String codigoCb = objCb.CodigoCB(email_cb);
-                                    System.out.println("CODIGO" + codigoCb);
-                                    //clsOfertaBecas ofB = new clsOfertaBecas();
-                                    //String becasCB = ofB.OfertasXCB(codigoCb);
                                     out.print(becasCB);
                                 %>
                             </table>

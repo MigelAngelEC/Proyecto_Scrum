@@ -88,7 +88,7 @@ public class clsCentroBecas {
                 System.out.println("codigo cb" + rs.getString(0));
             }
         } catch (SQLException e) {
-           // log_cb="false";
+            // log_cb="false";
             System.out.println("No esta registrado");
         }
         System.out.println(log_cb);
@@ -130,75 +130,78 @@ public class clsCentroBecas {
         }
         return lista;
     }
+
     //INFORMACION POR SEPARADO DE LOS DCENTROS REGISTRADOS CONSULTADOS EN BASE AL EMAIL DE CADA CENTRO
     public String CodigoCB(String email) {
-        String codigo=null;
+        String codigo = null;
         ClsConexion con = new ClsConexion();
-        String SQL1 = ("SELECT cod_cb  FROM centros__becas where email='"+email+"'");
+        String SQL1 = ("SELECT cod_cb  FROM centros__becas where email='" + email + "'");
         ResultSet rs = con.Consultar(SQL1);
-        try {       
+        try {
             while (rs.next()) {
-                codigo=rs.getString(1);
-                System.out.println("RESULTADO CONSULTA" +rs.getString(1));
-                        //+ "<tr>nombre+"rs.getString(1)+"</tr><tr>dir"+rs.getString(2)+"</tr><tr>fonos"+rs.getString(3)+"</tr></table>;";
+                codigo = rs.getString(1);
+                System.out.println("RESULTADO CONSULTA" + rs.getString(1));
+                //+ "<tr>nombre+"rs.getString(1)+"</tr><tr>dir"+rs.getString(2)+"</tr><tr>fonos"+rs.getString(3)+"</tr></table>;";
             }
-                
+
         } catch (Exception e) {
         }
-        System.out.println("CODIGO"+codigo);
+        System.out.println("CODIGO" + codigo);
         return codigo;
     }
 
     public String NombreCB(String email) {
-        String nombre=null; 
+        String nombre = null;
         ClsConexion con = new ClsConexion();
-        String SQL1 = ("SELECT nombre_cb FROM centros__becas where email='"+email+"'");
+        String SQL1 = ("SELECT nombre_cb FROM centros__becas where email='" + email + "'");
         ResultSet rs = con.Consultar(SQL1);
-        try {       
+        try {
             while (rs.next()) {
-                nombre=rs.getString(1);
-                System.out.println("RESULTADO CONSULTA" +rs.getString(1));
-                        //+ "<tr>nombre+"rs.getString(1)+"</tr><tr>dir"+rs.getString(2)+"</tr><tr>fonos"+rs.getString(3)+"</tr></table>;";
+                nombre = rs.getString(1);
+                System.out.println("RESULTADO CONSULTA" + rs.getString(1));
+                //+ "<tr>nombre+"rs.getString(1)+"</tr><tr>dir"+rs.getString(2)+"</tr><tr>fonos"+rs.getString(3)+"</tr></table>;";
             }
-                
+
         } catch (Exception e) {
         }
-        System.out.println(" "+nombre);
+        System.out.println(" " + nombre);
         return nombre;
     }
-    
+
     public String DireccionCB(String email) {
-        String direccion=null;   
+        String direccion = null;
         ClsConexion con = new ClsConexion();
-        String SQL1 = ("SELECT direccion FROM centros__becas where email='"+email+"'");
-         ResultSet rs = con.Consultar(SQL1);
-        try {       
+        String SQL1 = ("SELECT direccion FROM centros__becas where email='" + email + "'");
+        ResultSet rs = con.Consultar(SQL1);
+        try {
             while (rs.next()) {
-                direccion=rs.getString(1);
-                System.out.println("RESULTADO CONSULTA" +rs.getString(1));
-                        //+ "<tr>nombre+"rs.getString(1)+"</tr><tr>dir"+rs.getString(2)+"</tr><tr>fonos"+rs.getString(3)+"</tr></table>;";
+                direccion = rs.getString(1);
+                System.out.println("RESULTADO CONSULTA" + rs.getString(1));
+                //+ "<tr>nombre+"rs.getString(1)+"</tr><tr>dir"+rs.getString(2)+"</tr><tr>fonos"+rs.getString(3)+"</tr></table>;";
             }
         } catch (Exception e) {
         }
-        System.out.println(" "+direccion);
+        System.out.println(" " + direccion);
         return direccion;
     }
+
     public String TelefonosCB(String email) {
-        String telefono=null;
-        
+        String telefono = null;
+
         ClsConexion con = new ClsConexion();
-        String SQL1 = ("SELECT telefonos  FROM centros__becas where email='"+email+"'");
-         ResultSet rs = con.Consultar(SQL1);
-        try {       
+        String SQL1 = ("SELECT telefonos  FROM centros__becas where email='" + email + "'");
+        ResultSet rs = con.Consultar(SQL1);
+        try {
             while (rs.next()) {
-                telefono=rs.getString(1);
-                System.out.println("RESULTADO CONSULTA" +rs.getString(1));
-            }       
+                telefono = rs.getString(1);
+                System.out.println("RESULTADO CONSULTA" + rs.getString(1));
+            }
         } catch (Exception e) {
         }
-        System.out.println(" "+telefono);
+        System.out.println(" " + telefono);
         return telefono;
     }
+
     //TRANSACCIONES REALIZADAS SOBRE LOS DATOS DEL CENTRO DE BECA
     public boolean ActualizarCb(String id, String nombre, String dir, String tel, String email, String pwd) {
         boolean ejecuto = false;
@@ -216,4 +219,22 @@ public class clsCentroBecas {
         return ejecuto;
     }
 
+    //CENTROS DE BECAS POSTULACION PUBLICO
+    public String PostulacionPublico() {
+        String centro = null;
+        ClsConexion con = new ClsConexion();
+        String SQL1 = ("SELECT nombre_cb FROM centros__becas;");
+        ResultSet rs = con.Consultar(SQL1);
+        try {
+            while (rs.next()) {
+                centro= "<a>"+rs.getString(1)+"</a>";
+                System.out.println("RESULTADO CONSULTA" + rs.getString(1));
+                //+ "<tr>nombre+"rs.getString(1)+"</tr><tr>dir"+rs.getString(2)+"</tr><tr>fonos"+rs.getString(3)+"</tr></table>;";
+            }
+
+        } catch (Exception e) {
+        }
+        System.out.println(" " + centro);
+        return centro;
+    }
 }
