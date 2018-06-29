@@ -205,4 +205,38 @@ public class clsUsuario {
 
         return lista;
     }
+
+    public String CIUser(String nick) {
+        String ci = "";
+        try {
+            String SQL = "select cedula from usuarios where nickname='" + nick + "';";
+            ClsConexion con = new ClsConexion();
+            ResultSet rs = con.Consultar(SQL);
+            while (rs.next()) {
+                ci = rs.getString(1);
+            }
+        } catch (SQLException e) {
+        }
+        return ci;
+    }
+
+    public String PrintOferts(String nickname) {
+        String SQLAdded = " <table class=table table-hover> <tr><th> Empresa</th><th>Cargo</th><th>Descripción</th><th> Aplicar ¿?</th></tr>";
+        String cilast = "";
+        try {
+            ClsConexion con = new ClsConexion();
+            clsempresa emp = new clsempresa();
+            ResultSet rs = con.Consultar("select ruc,cod_oferta,caargo,descripcion from ofertas_empleo ;");
+            while (rs.next()) {
+                String empresa = emp.NameEnterprise(rs.getString(1));
+                SQLAdded += "<tr><td>" + empresa + "</td><td>" + rs.getString(3) + "</td><td>" + rs.getString(4) + "</td>"
+                        + "<form action=ProcesarOferta.jsp><input type=text name=ofert value=" + rs.getString(2) + " hidden=true>"
+                        + "<input type=text name=cedula value=" + this.CIUser(nickname) + " hidden=true>"
+                        + "<td>  <button type=submit class=list-group-item>Aplicar </button></td></form></tr>";
+            }
+        } catch (SQLException e) {
+        }
+        SQLAdded += "</table>";
+        return SQLAdded;
+    }
 }

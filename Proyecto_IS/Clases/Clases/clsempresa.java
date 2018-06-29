@@ -169,7 +169,7 @@ public class clsempresa {
             for (int i = 0; i < lista.size(); i++) {
                 System.out.println(lista.get(i));
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
         }
         return lista;
     }
@@ -178,6 +178,34 @@ public class clsempresa {
         boolean ejecuto = false;
         try {
             String SQL = ("update empresas set nom_empresa='" + nempresa + "',direccion='" + direc + "',telefono='" + telf + "',email='" + mail + "',descripcion_emp='" + desc + "',password_e='" + pwd + "' where ruc='" + ruct + "'");
+            ClsConexion con = new ClsConexion();
+            con.Ejecutar(SQL);
+            ejecuto = true;
+        } catch (Exception e) {
+            System.out.println("Error" + e.getMessage());
+            ejecuto = false;
+        }
+        return ejecuto;
+    }
+
+    public String NameEnterprise(String ruct) {
+        String empresa = "";
+        try {
+            String SQL = "select nom_empresa from empresas where ruc ='" + ruct + "';";
+            ClsConexion con = new ClsConexion();
+            ResultSet rs = con.Consultar(SQL);
+            while (rs.next()) {
+                empresa = rs.getString(1);
+            }
+        } catch (SQLException e) {
+        }
+        return empresa;
+    }
+
+    public boolean AplicarO(String cod, String ci) {
+        boolean ejecuto = false;
+        try {
+            String SQL = ("insert into ofertas_aplicadas values ('" + cod + "','" + ci + "');");
             ClsConexion con = new ClsConexion();
             con.Ejecutar(SQL);
             ejecuto = true;
