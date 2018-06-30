@@ -67,7 +67,7 @@
             <table>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Cédula Identidad</div>
+                        <div class="input-group-addon">Codigo</div>
                         <input type="text" class="form-control" id="ci" placeholder="CI #1234567890" name="cedula">
                     </div></center>
                 </td></tr>
