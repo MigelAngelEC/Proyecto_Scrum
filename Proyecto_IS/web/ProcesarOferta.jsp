@@ -4,6 +4,8 @@
     Author     : migue
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="Clases.clsInfoAcademica"%>
 <%@page import="Clases.clsempresa"%>
 <%@page import="Clases.clsUsuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -19,8 +21,6 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-
-        <title>Mi Perfil!</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ofertas Laborales</title>
@@ -61,26 +61,40 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
+        <%
+            String cod, ci, nickname;
+            nickname = request.getParameter("nickn");
+            cod = request.getParameter("ofert");
+            ci = request.getParameter("cedula");
+            clsempresa emp = new clsempresa();
+
+            /*Boolean eject = emp.AplicarO(cod, ci);
+
+              if (eject = true) {
+                 out.print("<br><h2>Oferta Laboral Aplicada </h2>");
+                 out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");
+                 out.print("<a  href=LogeoU.jsp class=btn btn-primary btn-lg> <h3><u>Cerrar Sesión</u></h3> </a><br>");
+             } else {
+                 out.print("<br>Fallo al Aplicar en la Oferta Laboral " + eject);
+                 out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Regresar</a><br>");
+             }
+             */
+            clsInfoAcademica info = new clsInfoAcademica();
+            List<String> lista2 = info.ConsultarDatosAcaEspecilidades(nickname);
+        %>
         <div class="container">
             <div class="jumbotron">
-                <%
-                    String cod, ci;
-                    cod = request.getParameter("ofert");
-                    ci = request.getParameter("cedula");
-                    clsempresa emp = new clsempresa();
-
-                    Boolean eject = emp.AplicarO(cod, ci);
-
-                    if (eject = true) {
-                        out.print("<br><h2>Oferta Laboral Aplicada </h2>");
-                        out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");
-                        out.print("<a  href=LogeoU.jsp class=btn btn-primary btn-lg> <h3><u>Cerrar Sesión</u></h3> </a><br>");
-                    } else {
-                        out.print("<br>Fallo al Aplicar en la Oferta Laboral " + eject);
-                        out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Regresar</a><br>");
-                    }
-
-                %>
+                <h2>¿ Aplicar Oferta ?</h2>
+            </div>
+            <div class="jumbotron">
+                <h3>Sus Especialidades son:</h3>
+                <h4> <%for (int i = 0; i < lista2.size(); i++) {
+                        out.print("<li>" + lista2.get(i) + "</li>");
+                    }%></h4>
+                <br>
+                <center>
+                    <h3>Esta Seguro que desa aplicar a la oferta </h3>
+                </center>
             </div>
         </div>
     </body>
