@@ -233,6 +233,9 @@ public class clsUsuario {
                         + "<form action=ProcesarOferta.jsp><input type=text name=ofert value=" + rs.getString(2) + " hidden=true>"
                         + "<input type=text name=cedula value=" + this.CIUser(nickname) + " hidden=true>"
                         + "<input type=text name=nickn value=" + nickname + " hidden=true >"
+                        + "<input type=text name=empre value=" + empresa + " hidden=true >"
+                        + "<input type=text name=cargo value=" + rs.getString(3) + " hidden=true >"
+                        + "<input type=text name=descr value='" + rs.getString(4).trim() + "'hidden=true >"
                         + "<td>  <button type=submit class=list-group-item>Aplicar </button></td></form></tr>";
             }
         } catch (SQLException e) {
