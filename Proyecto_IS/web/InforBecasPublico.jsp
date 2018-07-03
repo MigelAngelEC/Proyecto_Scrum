@@ -81,7 +81,7 @@
                 String centro=cb.PostulacionPublico();
                 out.print(centro);
                 %>
-                
+                <!--revisar metodo-->
                 <a href="#" class="list-group-item">Becas Ofertadas</a>
             </div>
         </div>
