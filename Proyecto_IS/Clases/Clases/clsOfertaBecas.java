@@ -64,7 +64,7 @@ public class clsOfertaBecas {
     }
     
     public String OfertasXCB(String codigoCB) {
-        String becas=null; 
+        String becas=""; 
         ClsConexion con = new ClsConexion();
         String SQL1 = ("SELECT cod_beca, descripcion_beca, fecha_inicio, fecha_fin, horario\n" +
 "       FROM becas where cod_cb='"+codigoCB+"';");
