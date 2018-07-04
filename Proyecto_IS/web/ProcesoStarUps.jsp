@@ -1,15 +1,15 @@
 <%-- 
-    Document   : StartUps
-    Created on : 26/06/2018, 21:30:46
+    Document   : ProcesoStarUps
+    Created on : 03/07/2018, 21:03:01
     Author     : rowel
 --%>
 
+<%@page import="Clases.clsstarups"%>
+<%@page import="Clases.clsempresa"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- Latest compiled and minified CSS -->
-
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
         <!-- jQuery library -->
@@ -19,10 +19,9 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>StarUps</title>
     </head>
     <body background="Imagenes/wall3.jpg">
-        <nav class="navbar navbar-default">
+                <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -57,41 +56,30 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-        <br>
-        <br>
-    <center>
-        <h1>Registrar StartUp</h1>
-        <br>
-        <form action="Proceso_Empresa.jsp" method="post">
+        <%
+            String Cod_Star, Nombre, Descripcion ;
 
-            <table>
-                <tr><td colspan="2">  <center>
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Cod_Start</div>
-                        <input type="text" class="form-control" id="ci" placeholder="RUC: #123456789001" name="ruc">
-                    </div></center>
-                </td></tr>
-                <tr><td> &nbsp;</td></tr>
-                <tr><td colspan="2"><center>  
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Nombre</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej: AKROSCORP" name="nempresa">
-                    </div></center>
-                </td></tr>
-                <tr><td> &nbsp;</td></tr>
-                <tr><td colspan="2">  <center>
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Descripción</div>
-                        <input type="text" class="form-control" id="ci" placeholder="A que se dedica" name="desc">
-                    </div></center>
-                </td></tr>
-                <tr><td> &nbsp;</td></tr>
+            Cod_Star = request.getParameter("ruc");
+            Nombre = request.getParameter("nempresa");
+           
+            Descripcion = request.getParameter("desc");
+            
 
-            </table>
+            clsstarups obj = new clsstarups(Cod_Star,Nombre,Descripcion);
+            //out.print("<br> RUC : " + obj.getRuc() + "<br>NombreDeLaEmpresa : " + obj.getNombreEmpresa() + "<br>direc : " + obj.getDescripcion());
 
-            <button type="submit"  class="btn btn-primary btn-lg"> Crear Cuenta </button><br>
-            <img src="Imagenes/StarUps.png" higth="600" width="600"/>
-        </form>
-    </center>
-</body>
+            boolean eject = obj.InsertarStart(Cod_Star, Nombre, Descripcion);
+            if (eject = true) {
+                out.print("<br> StartUp Registrada Correctamente " + eject);
+            } else {
+                out.print("<br>Error al Registrar StartUp " + eject);
+            }
+        %>
+
+
+
+
+
+
+    </body>
 </html>

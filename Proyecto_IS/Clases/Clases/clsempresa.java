@@ -187,6 +187,20 @@ public class clsempresa {
         }
         return ejecuto;
     }
+     public String NameEnterprise1() {
+        String empresa = "";
+        try {
+            String SQL = "select  from empresas ";
+            ClsConexion con = new ClsConexion();
+            ResultSet rs = con.Consultar(SQL);
+            while (rs.next()) {
+                empresa = rs.getString(1);
+            }
+        } catch (SQLException e) {
+        }
+        return empresa;
+        
+    }
 
     public String NameEnterprise(String ruct) {
         String empresa = "";
