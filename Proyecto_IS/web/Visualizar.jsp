@@ -31,7 +31,7 @@
     <option><%=rs.getString(1)%></option>
                              
             <%
-    }
+    }/// esto es editar la parte de interfaz del modulo starups
            
         %>
                 </body>
