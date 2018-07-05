@@ -221,13 +221,14 @@ public class clsCentroBecas {
 
     //CENTROS DE BECAS POSTULACION PUBLICO
     public String PostulacionPublico() {
-        String centro = null;
+        String centro = "";
         ClsConexion con = new ClsConexion();
-        String SQL1 = ("SELECT nombre_cb FROM centros__becas;");
+        String SQL1 = ("SELECT cod_cb, nombre_cb FROM centros__becas;");
         ResultSet rs = con.Consultar(SQL1);
         try {
             while (rs.next()) {
-                centro= "<a>"+rs.getString(1)+"</a>";
+                centro+= "<a href='#' class='list-group-item'>"+rs.getString(2)+"</a>";
+               
                 System.out.println("RESULTADO CONSULTA" + rs.getString(1));
                 //+ "<tr>nombre+"rs.getString(1)+"</tr><tr>dir"+rs.getString(2)+"</tr><tr>fonos"+rs.getString(3)+"</tr></table>;";
             }

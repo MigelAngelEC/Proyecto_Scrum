@@ -11,7 +11,7 @@
     <head>
         <!-- Latest compiled and minified CSS -->
 
-       <!-- Latest compiled and minified CSS -->
+        <!-- Latest compiled and minified CSS -->
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -20,19 +20,19 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-        
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ofertas de becas</title>
     </head>
     <body background="Imagenes/wall3.jpg">
-          <!-- BANNER APLICACION DE BECAS -->  
+        <!-- BANNER APLICACION DE BECAS -->  
         <div class="row">
             <center>
-            <img src="Imagenes/b1.png" alt="BANNER" width="1720" height="250"/> 
+                <img src="Imagenes/b1.png" alt="BANNER" width="1720" height="250"/> 
             </center>
         </div>
-         <!-- BARRA DE NAVEGACION PRINCIPAL -->  
+        <!-- BARRA DE NAVEGACION PRINCIPAL -->  
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -67,33 +67,75 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-         
-         <!-- MENU IZQUIERDO DE LA PAGINA -->  
+
+        <!-- MENU IZQUIERDO DE LA PAGINA -->  
         <div class="col-sm-2">
 
             <div class="list-group">
                 <a href="#" class="list-group-item active">
-                   CENTROS ASOCIADOS
+                    CENTROS ASOCIADOS
                 </a>
-                
-                <% 
-                clsCentroBecas cb= new clsCentroBecas();
-                String centro=cb.PostulacionPublico();
-                out.print(centro);
-                %>
-                <!--revisar metodo-->
-                <a href="#" class="list-group-item">Becas Ofertadas</a>
+
+                <%
+                    clsCentroBecas cb = new clsCentroBecas();
+                    String centro = cb.PostulacionPublico();
+                    out.print(centro);
+                %> 
+
             </div>
         </div>
-            
-         <!-- CONTENEDOR DE INFORMACION GENERAL DEL CNETRO DE BECAS -->  
+
+        <!-- CONTENEDOR DE INFORMACION GENERAL DEL CNETRO DE BECAS -->  
         <div class="container">
-            <center>
+            <div class="jumbotron">
+                 <img align="left" src="Imagenes/solicitarbeca.png" alt="BANNER" width="200" height="200"/> 
+                <center>
+                    <h2><B>REQUISITOS</B></h2><br/><br/>
+                </center>
+                
+               
+                    <ul>
+                        <li>Estar registrado en la pagina Desempleados.com</li>
+                        <li>Tener disponibilidad de tiempo en los horarios establecidos.</li>
+                        <li>Puedes aplicar a mas de una beca, sin embargo te recomendamos escoger becas que correspondan a tus preferencias</li>
+                    </ul>
+            </div>
+            <div class="container">
                 <div class="jumbotron">
-                    <h1>INFORMACION</h1>
+                    <center>
+                        <h2><B>BECAS</B></h2>
+                        
+                              <!-- CONTENEDOR DE TABLA DE BECAS OFERTADAS POR CADA CENTRO DE EBECAS -->           
+        <a name="ofertasBecas">            
+            <div class="container">
+                <center>
+                    <div class="jumbotron">
+                        <div class="panel panel-default">
+                            <h2>Oferta de Becas</h2>
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">Informacion de Becas Ofertadas</div>
+                            <!-- Table -->
+                            <table class="table" >
+
+                                <tr>
+                                    <td>Codigo de Beca</td>
+                                    <td>Descripcion</td>
+                                    <td>Inicio</td>
+                                    <td>Fin</td>
+                                    <td>Horario</td>
+                                </tr>
+
+                               
+                            </table>
+                        </div>
+                    </div>
+                </center>
+            </div>
+        </a>
+                    </center>
+                    
                 </div>
-            </center>
+            </div>
         </div>
-        <h1>BECAS!</h1>
     </body>
 </html>
