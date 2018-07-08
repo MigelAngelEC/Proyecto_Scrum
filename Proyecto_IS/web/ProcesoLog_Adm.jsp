@@ -12,7 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body>
+    <body background="Imagenes/wall3.jpg" style="background-repeat: round">
         <%
             //Validacion de login empresarial
             String nickname = request.getParameter("nick");

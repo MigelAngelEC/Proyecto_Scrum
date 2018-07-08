@@ -22,7 +22,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registro Empresa</title>
     </head>
-    <body background="Imagenes/wall3.jpg">
+    <body background="Imagenes/wall3.jpg" style="background-repeat: round">
         <%
             String email_emp;
             List<String> lista;

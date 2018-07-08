@@ -24,7 +24,7 @@
         <title>Datos de Usuario</title>
     </head>
 </head>
-<body background="Imagenes/wall3.jpg">
+<body background="Imagenes/wall3.jpg" style="background-repeat: round">
     <%
         String nickname = request.getParameter("nickn");
         clsUsuario cs = new clsUsuario();

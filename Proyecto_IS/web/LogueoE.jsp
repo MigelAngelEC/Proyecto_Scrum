@@ -17,7 +17,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login Empresarial</title>
 
-    <body background="Imagenes/wall3.jpg">
+    <body background="Imagenes/wall3.jpg" style="background-repeat: round">
         <!-- BARRA DE NAVEGACION-->
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -117,6 +117,6 @@
             </center>  
         </div>
 
-</head>
+    </head>
 </body>
 </html>

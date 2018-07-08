@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body>
+    <body background="Imagenes/wall3.jpg" style="background-repeat: round">
         <h1>Error</h1>
     </body>
 </html>

@@ -24,7 +24,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ofertas Laborales</title>
     </head>
-    <body background="Imagenes/wall3.jpg">
+    <body background="Imagenes/wall3.jpg" style="background-repeat: space">
         <% String nickname = request.getParameter("nickn");
         %>
         <nav class="navbar navbar-default">
@@ -59,11 +59,13 @@
                 <br>
                 <h2>Ofertas Disponibles</h2>
                 <br>
-                <%
-                    clsUsuario us = new clsUsuario();
-                    out.print(us.PrintOferts(nickname));
-                %>
-                <a  href="javascript:history.go(-1)" class="btn btn-primary btn-lg"> Cancelar </a><br>
+                <center>
+                    <%
+                        clsUsuario us = new clsUsuario();
+                        out.print(us.PrintOferts(nickname));
+                    %>
+                    <a  href="javascript:history.go(-1)" class="btn btn-primary btn-lg"> Cancelar </a><br>
+                </center>
             </div>
             <div class="col-sm-3 col-md-3"></div>
 

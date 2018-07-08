@@ -1,10 +1,11 @@
 <%-- 
-    Document   : ProcesadaOferta
-    Created on : 30/06/2018, 22:28:53
+    Document   : OfertasAplicadas
+    Created on : 07/07/2018, 18:38:03
     Author     : migue
 --%>
-
-<%@page import="Clases.clsempresa"%>
+<%@page import="Clases.clsUsuario"%>
+<%@page import="javafx.scene.control.Alert"%>
+<%@page import="java.util.*" session="true" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,11 +19,28 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ofertas Laborales</title>
+
+        <title>Ofertas Aplicadas </title>
     </head>
-    <body background="Imagenes/wall3.jpg" style="background-repeat: round">
+
+    <% String nickname = request.getParameter("nickn");
+    %>
+    <script>
+        function myFunction() {
+        <%
+            if (nickname == null) {
+        %>
+            alert("Sesión no Iniciada , Se lo Redirigira al Incio");
+            window.setTimeout('window.location="Inicio.html"; ', 200);
+        <% }
+        %>
+        }
+    </script>
+    <body background="Imagenes/wall3.jpg" style="background-repeat: space" onload="myFunction()">
+
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -42,41 +60,32 @@
                         <li class=""><a href="Publicidad.jsp">Empresas Asociadas <span class="sr-only">(current)</span></a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right" >
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"name="drop" >Iniciar Sesión <span class="caret"></span></a>
-                            <ul class="dropdown-menu" >
-                                <li><a href="LogeoU.jsp" >Iniciar Sesión Usuario</a></li>
-                                <li><a href="LogueoE.jsp">Iniciar Sesión Empresa</a></li>
-                                <li><a href="LogueoCB.jsp">Iniciar Sesión C.Becas</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="TipoRegistro.html">Registrarse</a></li>
-                            </ul>
-                        </li>
+                        <p class="navbar-text ">Signed in as <a class="navbar-link"><i><%out.println(nickname);%></i></a></p>
+                        <p class="navbar-text ">  <a class="navbar-link" href="Inicio.html"><i>Cerrar Sesión</i></a></p>
                         <li><a href="#">Ayuda</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-        <div class="container">
-            <div class="jumbotron">
-                <% String cod, ci;
-                    clsempresa emp = new clsempresa();
-                    cod = request.getParameter("ofert");
-                    ci = request.getParameter("cedula");
-                    Boolean eject = emp.AplicarO(cod, ci);
+        <%
+            clsUsuario us = new clsUsuario();
+            String printed = us.PrintOfertsApply(nickname);%>
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
 
-                    if (eject = true) {
-                        out.print("<br><h2>Oferta Laboral Aplicada </h2>");
-                        out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");
-                        out.print("<a  href=LogeoU.jsp class=btn btn-primary btn-lg> <h3><u>Cerrar Sesión</u></h3> </a><br>");
-                    } else {
-                        out.print("<br>Fallo al Aplicar en la Oferta Laboral " + eject);
-                        out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Regresar</a><br>");
-                    }
+                <div class="container">
+                    <h2>Ofertas Aplicadas</h2>
+                    <br>
+                    <% out.print(printed);%>
+                    <center>   <a  href="javascript:history.go(-1)" class="btn btn-primary btn-lg"> Cancelar </a><br></center>
+                </div>
 
-                %>
             </div>
+            <div class="col-sm-3"></div>
         </div>
+
+
     </body>
 </html>

@@ -15,24 +15,23 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Visualizar</title>
     </head>
-    <body>
+    <body background="Imagenes/wall3.jpg" style="background-repeat: round">
         <select name="consulta" id="consulta" >
-    
-         </select>      
-         <%
-          
-        
+
+        </select>      
+        <%
+
             String SQL = "select  from empresas ";
             ClsConexion con = new ClsConexion();
             ResultSet rs = con.Consultar(SQL);
             while (rs.next()) {
-                %>
-                
-    <option><%=rs.getString(1)%></option>
-                             
-            <%
-    }/// esto es editar la parte de interfaz del modulo starups
-           
         %>
-                </body>
+
+    <option><%=rs.getString(1)%></option>
+
+    <%
+        }/// esto es editar la parte de interfaz del modulo starups
+
+    %>
+</body>
 </html>

@@ -27,7 +27,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body background="Imagenes/wall3.jpg">
+    <body background="Imagenes/wall3.jpg" style="background-repeat: round">
 
         <!-- PROCESO DE REGISTRO DE LOS CENTROS DE BECAS-->  
         <%
@@ -35,18 +35,18 @@
             String email_cb = request.getParameter("correo_cb");
             String password_cb = request.getParameter("pass_cb");
             //out.println(email_cb);
-           // out.println(password_cb);
+            // out.println(password_cb);
             clsCentroBecas cb = new clsCentroBecas();
 
             String correcto_cb = cb.autenticacion_cb(email_cb, password_cb);
 
-           // out.print(correcto_cb);
+            // out.print(correcto_cb);
             System.out.println(" estado" + correcto_cb);
 
             if (correcto_cb.equals("true")) {
                 HttpSession sess = request.getSession();
                 //out.print(sess);
-               // out.print("login centro de becas correcto");
+                // out.print("login centro de becas correcto");
             } else if (correcto_cb.equals("false")) {
                 //out.print("login incorrecto");
                 // response.sendRedirect("LogueoCB.jsp");
@@ -71,9 +71,9 @@
             boolean eject = objCb.InsertarCb(codCB, NombreCB, direccionCB, telefonoCB, EmailCB, PasswordCB);
             // out.print(" " +codCB+" "+" "+ NombreCB+" "+ direccionCB+" "+ telefonoCB+" " + EmailCB+" "+ PasswordCB);
             if (eject = true) {
-               // out.print("<br> Centro de Becas registrado correctamente " + eject);
+                // out.print("<br> Centro de Becas registrado correctamente " + eject);
             } else {
-               // out.print("<br>Error al Registrar Empresa " + eject);
+                // out.print("<br>Error al Registrar Empresa " + eject);
             }
         %>
         <!-- BARRA DE NAVEGACION PRINCIPAL -->  

@@ -25,16 +25,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ofertas Laborales</title>
     </head>
-    <body background="Imagenes/wall3.jpg">
+    <body background="Imagenes/wall3.jpg" style="background-repeat: round">
         <%
-            String cod, ci, nickname, empresa, cargo, descrip;
+            String cod, ci, nickname, empresa, cargo, descrip, time, xp, estado;
             nickname = request.getParameter("nickn");
             cod = request.getParameter("ofert");
             ci = request.getParameter("cedula");
             empresa = request.getParameter("empre");
             cargo = request.getParameter("cargo");
             descrip = request.getParameter("descr");
+            time = request.getParameter("time");
+            xp = request.getParameter("exp");
+            estado = request.getParameter("stado");
             clsInfoAcademica info = new clsInfoAcademica();
+            clsUsuario us = new clsUsuario();
+            String Exp = us.PrintExperience(nickname);
             List<String> lista2 = info.ConsultarDatosAcaEspecilidades(nickname);
         %>
         <nav class="navbar navbar-default">
@@ -79,12 +84,21 @@
                 </ul>
                 <br>
                 <center>
+                    <h3>Sus Experiencia Laboral</h3>
+                    <%
+                        out.print(Exp);
+                    %>
+                </center>
+                <br>
+            </div>
+            <div class="jumbotron">
+                <center>
                     <h3>Esta Seguro que desa aplicar a la oferta </h3>
                     <br>
                     <center>
                         <table class="table table-condensed">
-                            <tr><th>Empresa</th><th>Cargo</th><th>Descripción</th></tr>
-                            <tr><td> <% out.print(empresa); %> </td><td> <% out.print(cargo);%> </td><td> <% out.print(descrip);%> </td></tr>
+                            <tr><th>Empresa</th><th>Cargo</th><th>Descripción</th><th>Tiempo Requerido</th><th>Experiencia Requerida</th><th>Estado</th></tr>
+                            <tr><td> <% out.print(empresa); %> </td><td> <% out.print(cargo);%> </td><td> <% out.print(descrip);%> </td><td> <% out.print(descrip);%> </td><td> <% out.print(descrip);%> </td><td> <% out.print(descrip);%> </td></tr>
                         </table>
                     </center>
 

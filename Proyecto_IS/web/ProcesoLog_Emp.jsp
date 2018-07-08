@@ -66,7 +66,8 @@
         </script>
     </head>
 </head>
-<body background="Imagenes/wall3.jpg" onload="checkEdits4(), checkEdits5()">
+<body background="Imagenes/wall3.jpg" style="background-repeat: round"onload="checkEdits4(), checkEdits5()">
+
     <%
         //Validacion de login empresarial
         String email_emp = request.getParameter("correo_e");

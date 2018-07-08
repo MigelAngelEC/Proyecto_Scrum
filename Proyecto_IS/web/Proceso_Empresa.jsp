@@ -18,8 +18,8 @@
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
-    <body background="Imagenes/wall3.jpg">
-                <nav class="navbar navbar-default">
+    <body background="Imagenes/wall3.jpg" style="background-repeat: round">
+        <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">

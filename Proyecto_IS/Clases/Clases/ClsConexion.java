@@ -48,7 +48,7 @@ public class ClsConexion {
         this.driver = "org.postgresql.Driver";
         this.user = "postgres";
         this.pwd = "1234";
-        this.cadena = "jdbc:postgresql://localhost:5432/BaseProy1";
+        this.cadena = "jdbc:postgresql://localhost:5432/BaseProy3";
         this.con = this.crearConexion();
 
     }

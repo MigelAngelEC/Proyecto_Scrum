@@ -25,7 +25,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ofertas de becas</title>
     </head>
-    <body background="Imagenes/wall3.jpg">
+    <body background="Imagenes/wall3.jpg" style="background-repeat: round">
         <!-- BANNER APLICACION DE BECAS -->  
         <div class="row">
             <center>
@@ -88,52 +88,52 @@
         <!-- CONTENEDOR DE INFORMACION GENERAL DEL CNETRO DE BECAS -->  
         <div class="container">
             <div class="jumbotron">
-                 <img align="left" src="Imagenes/solicitarbeca.png" alt="BANNER" width="200" height="200"/> 
+                <img align="left" src="Imagenes/solicitarbeca.png" alt="BANNER" width="200" height="200"/> 
                 <center>
                     <h2><B>REQUISITOS</B></h2><br/><br/>
                 </center>
-                
-               
-                    <ul>
-                        <li>Estar registrado en la pagina Desempleados.com</li>
-                        <li>Tener disponibilidad de tiempo en los horarios establecidos.</li>
-                        <li>Puedes aplicar a mas de una beca, sin embargo te recomendamos escoger becas que correspondan a tus preferencias</li>
-                    </ul>
+
+
+                <ul>
+                    <li>Estar registrado en la pagina Desempleados.com</li>
+                    <li>Tener disponibilidad de tiempo en los horarios establecidos.</li>
+                    <li>Puedes aplicar a mas de una beca, sin embargo te recomendamos escoger becas que correspondan a tus preferencias</li>
+                </ul>
             </div>
             <div class="container">
                 <div class="jumbotron">
                     <center>
                         <h2><B>BECAS</B></h2>
-                        
-                              <!-- CONTENEDOR DE TABLA DE BECAS OFERTADAS POR CADA CENTRO DE EBECAS -->           
-        <a name="ofertasBecas">            
-            <div class="container">
-                <center>
-                    <div class="jumbotron">
-                        <div class="panel panel-default">
-                            <h2>Oferta de Becas</h2>
-                            <!-- Default panel contents -->
-                            <div class="panel-heading">Informacion de Becas Ofertadas</div>
-                            <!-- Table -->
-                            <table class="table" >
 
-                                <tr>
-                                    <td>Codigo de Beca</td>
-                                    <td>Descripcion</td>
-                                    <td>Inicio</td>
-                                    <td>Fin</td>
-                                    <td>Horario</td>
-                                </tr>
+                        <!-- CONTENEDOR DE TABLA DE BECAS OFERTADAS POR CADA CENTRO DE EBECAS -->           
+                        <a name="ofertasBecas">            
+                            <div class="container">
+                                <center>
+                                    <div class="jumbotron">
+                                        <div class="panel panel-default">
+                                            <h2>Oferta de Becas</h2>
+                                            <!-- Default panel contents -->
+                                            <div class="panel-heading">Informacion de Becas Ofertadas</div>
+                                            <!-- Table -->
+                                            <table class="table" >
 
-                               
-                            </table>
-                        </div>
-                    </div>
-                </center>
-            </div>
-        </a>
+                                                <tr>
+                                                    <td>Codigo de Beca</td>
+                                                    <td>Descripcion</td>
+                                                    <td>Inicio</td>
+                                                    <td>Fin</td>
+                                                    <td>Horario</td>
+                                                </tr>
+
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                </center>
+                            </div>
+                        </a>
                     </center>
-                    
+
                 </div>
             </div>
         </div>

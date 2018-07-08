@@ -216,31 +216,90 @@ public class clsUsuario {
                 ci = rs.getString(1);
             }
         } catch (SQLException e) {
+            System.out.println("Error" + e.getMessage());
         }
         return ci;
     }
 
     public String PrintOferts(String nickname) {
-        String SQLAdded = " <table class=table table-hover> <tr><th> Empresa</th><th>Cargo</th><th>Descripción</th><th> Aplicar ¿?</th></tr>";
-        String cilast = "";
+        String SQLAdded = " <table class=table table-hover> <tr><th> Empresa</th><th>Cargo</th><th>Descripción</th><th>Tiempo Requerido</th><th>Experiencia Requerida</th><th>Estado de la Oferta</th> <th> Aplicar ¿?</th></tr>";
         try {
             ClsConexion con = new ClsConexion();
             clsempresa emp = new clsempresa();
-            ResultSet rs = con.Consultar("select ruc,cod_oferta,caargo,descripcion from ofertas_empleo ;");
+            ResultSet rs = con.Consultar("select * from ofertas_empleo ;");
             while (rs.next()) {
                 String empresa = emp.NameEnterprise(rs.getString(1));
-                SQLAdded += "<tr><td>" + empresa + "</td><td>" + rs.getString(3) + "</td><td>" + rs.getString(4) + "</td>"
+                SQLAdded += "<tr><td>" + empresa + "</td><td>" + rs.getString(3) + "</td><td>" + rs.getString(4) + "</td><td>" + rs.getString(6) + "</td><td>" + rs.getString(7) + "</td><td>" + rs.getString(5) + "</td>"
                         + "<form action=ProcesarOferta.jsp><input type=text name=ofert value=" + rs.getString(2) + " hidden=true>"
                         + "<input type=text name=cedula value=" + this.CIUser(nickname) + " hidden=true>"
                         + "<input type=text name=nickn value=" + nickname + " hidden=true >"
                         + "<input type=text name=empre value=" + empresa + " hidden=true >"
                         + "<input type=text name=cargo value=" + rs.getString(3) + " hidden=true >"
                         + "<input type=text name=descr value='" + rs.getString(4).trim() + "'hidden=true >"
-                        + "<td>  <button type=submit class=list-group-item>Aplicar </button></td></form></tr>";
+                        + "<input type=text name=time value='" + rs.getString(6).trim() + "'hidden=true >"
+                        + "<input type=text name=exp value='" + rs.getString(7).trim() + "'hidden=true >"
+                        + "<input type=text name=stado value='" + rs.getString(5).trim() + "'hidden=true >";
+                if (rs.getString(5).trim().equalsIgnoreCase("No Disponible")) {
+
+                    SQLAdded += "<td>  <button title=\"Oferta No Disponible, Imposible de Aplicar\" type=submit class=btn btn-link disabled=true>Aplicar </button></td></form></tr>";
+                } else {
+                    SQLAdded += "<td>  <button type=submit class=list-group-item>Aplicar </button></td></form></tr>";
+                }
+//                        + "<td>  <button type=submit class=list-group-item>Aplicar </button></td></form></tr>";
             }
         } catch (SQLException e) {
+            System.out.println("Error" + e.getMessage());
         }
         SQLAdded += "</table>";
         return SQLAdded;
+    }
+
+    public String PrintOfertsApply(String nickname) {
+        String SQLAdded = " <table class=table table-hover> <tr><th> Empresa</th><th>Descripción Empresa</th><th>Cargo</th><th>Descripción del Cargo </th> <th> Estado Oferta </th> <th> Eliminar ¿? </th></tr>";
+        try {
+            ClsConexion con = new ClsConexion();
+            ResultSet rs = con.Consultar("SELECT empresas.nom_empresa,empresas.descripcion_emp,ofertas_empleo.caargo,ofertas_empleo.descripcion,ofertas_empleo.estado,ofertas_aplicadas.cod_oferta, ofertas_aplicadas.cedula  FROM public.ofertas_aplicadas, public.ofertas_empleo,public.usuarios,public.empresas WHERE usuarios.nickname='" + nickname + "' and ofertas_empleo.cod_oferta = ofertas_aplicadas.cod_oferta AND usuarios.cedula = ofertas_aplicadas.cedula AND empresas.ruc = ofertas_empleo.ruc;");
+            while (rs.next()) {
+                SQLAdded += "<tr><td>" + rs.getString(1) + "</td><td>" + rs.getString(2) + "</td><td>" + rs.getString(3) + "</td><td>" + rs.getString(4) + "</td><td>" + rs.getString(5) + "</td>"
+                        + "<form action=ProcesarOfertaAplicada.jsp>"
+                        + "<input type=text name=codofer value=" + rs.getString(6) + " hidden=true>"
+                        + "<input type=text name=cedula value=" + rs.getString(7) + " hidden=true >"
+                        + "<input type=text name=nickn value=" + nickname + " hidden=true >"
+                        + "<td>  <button type=submit class=list-group-item>Eliminar Oferta ¿? </button></td></form></tr>";
+            }
+        } catch (SQLException e) {
+            System.out.println("Error" + e.getMessage());
+        }
+        SQLAdded += "</table>";
+        return SQLAdded;
+    }
+
+    public String PrintExperience(String nickname) {
+        String SQLAdded = " <table class=table table-hover> <tr class=info><th> Empresa</th><th>Tiempo Trabajado</th><th>Cargo Desempeñado</th></tr>";
+        try {
+            ClsConexion con = new ClsConexion();
+            ResultSet rs = con.Consultar("	SELECT  experiencia_laboral.empresa, experiencia_laboral.tiempo, experiencia_laboral.cargo_desem FROM public.usuarios, public.experiencia_laboral WHERE usuarios.nickname='" + nickname + "' and usuarios.cedula = experiencia_laboral.cedula;");
+            while (rs.next()) {
+                SQLAdded += "<tr><td>" + rs.getString(1) + "</td><td>" + rs.getString(2) + "</td><td>" + rs.getString(3) + "</td></tr>";
+            }
+        } catch (SQLException e) {
+            System.out.println("Error" + e.getMessage());
+        }
+        SQLAdded += "</table>";
+        return SQLAdded;
+    }
+
+    public boolean EliminarOferta(String codOfer, String cedul) {
+        boolean ejecuto = false;
+        try {
+            String SQL = ("DELETE FROM ofertas_aplicadas WHERE cod_oferta='" + codOfer + "' and cedula='" + cedul + "';");
+            ClsConexion con = new ClsConexion();
+            con.Ejecutar(SQL);
+            ejecuto = true;
+        } catch (Exception e) {
+            System.out.println("Error" + e.getMessage());
+            ejecuto = false;
+        }
+        return ejecuto;
     }
 }

@@ -21,7 +21,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Datos Academicos de Usuario</title>
     </head>
-    <body background="Imagenes/wall3.jpg">
+<body background="Imagenes/wall3.jpg" style="background-repeat: space">
         <% String nickname = request.getParameter("nickn");
         %>
         <nav class="navbar navbar-default">

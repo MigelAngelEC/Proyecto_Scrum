@@ -19,7 +19,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Pagina Publicitaria</title>
     </head>
-    <body background="Imagenes/wall3.jpg">
+    <body background="Imagenes/wall3.jpg" style="background-repeat: space">
 
         <div class="row">
             <img src="ImagesPublicidad/marketing_banner.jpg" alt="BANNER" width="1820" height="250"/> 

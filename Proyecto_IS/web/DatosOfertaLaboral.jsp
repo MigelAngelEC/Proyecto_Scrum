@@ -18,7 +18,7 @@
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
-    <body background="Imagenes/ofertaempresa.gif">
+    <body background="Imagenes/wall3.jpg" style="background-repeat: round">
         <%
             String email_emp;
             email_emp = request.getParameter("emaile");

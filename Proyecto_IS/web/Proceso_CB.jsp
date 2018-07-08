@@ -123,9 +123,7 @@
             }
         %>
     </head>
-
-    <body background="Imagenes/wall3.jpg" onload="checkEdits(), checkEdits1(), checkEdits2()">
-
+    <body background="Imagenes/wall3.jpg" style="background-repeat: round"onload="checkEdits(), checkEdits1(), checkEdits2()">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->

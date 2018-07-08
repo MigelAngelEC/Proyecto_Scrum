@@ -26,24 +26,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     </head>
-    <body background="Imagenes/wall3.jpg" onload="checkEdits(), checkEdits1(), checkEdits2()">
+    <body background="Imagenes/wall3.jpg" style="background-repeat: space" onload="checkEdits(), checkEdits1(), checkEdits2()">
+
         <%
             String nickname = request.getParameter("nick");
             String password = request.getParameter("pass");
-            out.println(nickname);
-            out.println(password);
+            //out.println(nickname);
+            //out.println(password);
             clsLogin log = new clsLogin();
 
             String correcto = log.autenticacion(nickname, password);
 
-            out.print(correcto);
-
+            //out.print(correcto);
             if (correcto.equals("true")) {
                 HttpSession sess = request.getSession();
-                out.print(sess);
-                out.print("log correcto");
+                // out.print(sess);
+                //  out.print("log correcto");
             } else {
-                out.print("log correcto");
+                // out.print("log incorrecto");
                 response.sendRedirect("LogeoU.jsp?t=Usuario o Password Incorrectos");
 
             }
@@ -99,11 +99,11 @@
                 </form>
                 <form action="MostrarOfertas.jsp" method="post">
                     <input type="text" name="nickn" value="<%out.println(nickname);%>" hidden="true" >
-                    <button type="submit" class="list-group-item">Ofertas Laborales</button>
+                    <button type="submit" class="list-group-item">Ofertas Laborales <u>(Aplicar)</u></button>
                 </form>
-                <form action="Proceso_Login.jsp" method="post">
+                <form action="OfertasAplicadas.jsp" method="post">
                     <input type="text" name="nickn" value="<%out.println(nickname);%>" hidden="true" >
-                    <button type="submit" class="list-group-item">Ofertas Aplicadas</button>
+                    <button type="submit" class="list-group-item">Ofertas Aplicadas<u>(Editar)</u></button>
                 </form>
                 <form action="Proceso_Login.jsp" method="post">
                     <input type="text" name="nickn" value="<%out.println(nickname);%>" hidden="true" >
@@ -186,64 +186,64 @@
     <script type="text/javascript">
         function saveEdits() {
 
-//get the editable element
+            //get the editable element
             var editElem = document.getElementById("edit");
 
-//get the edited element content
+            //get the edited element content
             var userVersion = editElem.innerHTML;
 
-//save the content to local storage
+            //save the content to local storage
             localStorage.userEdits = userVersion;
 
-//write a confirmation to the user
+            //write a confirmation to the user
             document.getElementById("update").innerHTML = "Guardado!";
 
         }
         function checkEdits() {
 
-//find out if the user has previously saved edits
+            //find out if the user has previously saved edits
             if (localStorage.userEdits != null)
                 document.getElementById("edit").innerHTML = localStorage.userEdits;
         }
         function saveEdits1() {
 
-//get the editable element
+            //get the editable element
             var editElem1 = document.getElementById("edit1");
 
-//get the edited element content
+            //get the edited element content
             var userVersion1 = editElem1.innerHTML;
 
-//save the content to local storage
+            //save the content to local storage
             localStorage.userEdits1 = userVersion1;
 
-//write a confirmation to the user
+            //write a confirmation to the user
             document.getElementById("update1").innerHTML = "Guardado!";
 
         }
         function checkEdits1() {
 
-//find out if the user has previously saved edits
+            //find out if the user has previously saved edits
             if (localStorage.userEdits1 != null)
                 document.getElementById("edit1").innerHTML = localStorage.userEdits1;
         }
         function saveEdits2() {
 
-//get the editable element
+            //get the editable element
             var editElem2 = document.getElementById("edit2");
 
-//get the edited element content
+            //get the edited element content
             var userVersion = editElem2.innerHTML;
 
-//save the content to local storage
+            //save the content to local storage
             localStorage.userEdits2 = userVersion;
 
-//write a confirmation to the user
+            //write a confirmation to the user
             document.getElementById("update2").innerHTML = "Guardado!";
 
         }
         function checkEdits2() {
 
-//find out if the user has previously saved edits
+            //find out if the user has previously saved edits
             if (localStorage.userEdits2 != null)
                 document.getElementById("edit2").innerHTML = localStorage.userEdits2;
         }
