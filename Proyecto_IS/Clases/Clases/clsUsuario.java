@@ -275,12 +275,12 @@ public class clsUsuario {
     }
 
     public String PrintExperience(String nickname) {
-        String SQLAdded = " <table class=table table-hover> <tr class=info><th> Empresa</th><th>Tiempo Trabajado</th><th>Cargo Desempeñado</th></tr>";
+        String SQLAdded = " <table class=table table-hover> <tr class=active><th> Empresa</th><th>Tiempo Trabajado</th><th>Cargo Desempeñado</th></tr>";
         try {
             ClsConexion con = new ClsConexion();
             ResultSet rs = con.Consultar("	SELECT  experiencia_laboral.empresa, experiencia_laboral.tiempo, experiencia_laboral.cargo_desem FROM public.usuarios, public.experiencia_laboral WHERE usuarios.nickname='" + nickname + "' and usuarios.cedula = experiencia_laboral.cedula;");
             while (rs.next()) {
-                SQLAdded += "<tr><td>" + rs.getString(1) + "</td><td>" + rs.getString(2) + "</td><td>" + rs.getString(3) + "</td></tr>";
+                SQLAdded += "<tr><td>" + rs.getString(1) + "</td><td class=danger>" + rs.getString(2) + "</td><td>" + rs.getString(3) + "</td></tr>";
             }
         } catch (SQLException e) {
             System.out.println("Error" + e.getMessage());

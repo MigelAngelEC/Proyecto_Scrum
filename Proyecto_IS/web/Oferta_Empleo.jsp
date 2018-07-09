@@ -21,8 +21,23 @@
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Oferta_Empleo</title>
+        <%
+            String email_emp;
+            email_emp = request.getParameter("emaile");
+        %>
+        <script>
+            function myFunction() {
+            <%
+                if (email_emp == null) {
+            %>
+                alert("Sesión no Iniciada , Se lo Redirigira al Incio");
+                window.setTimeout('window.location="Inicio.html"; ', 200);
+            <% }
+            %>
+            }
+        </script>
     </head>
-    <body background="Imagenes/wall3.jpg" style="background-repeat: round">
+    <body background="Imagenes/wall3.jpg" style="background-repeat: space" onload="myFunction()">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -42,41 +57,37 @@
                         <li class=""><a href="Publicidad.jsp">Empresas Asociadas <span class="sr-only">(current)</span></a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right" >
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"name="drop" >Iniciar Sesión <span class="caret"></span></a>
-                            <ul class="dropdown-menu" >
-                                <li><a href="LogeoU.jsp" >Iniciar Sesión Usuario</a></li>
-                                <li><a href="LogueoE.jsp">Iniciar Sesión Empresa</a></li>
-                                <li><a href="LogueoCB.jsp">Iniciar Sesión C.Becas</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="TipoRegistro.html">Registrarse</a></li>
-                            </ul>
-                        </li>
+                        <p class="navbar-text ">Signed in as <a class="navbar-link"><i><%out.println(email_emp);%></i></a></p>
                         <li><a href="#">Ayuda</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-    <center>
-        <%
-            String ruc, cargo, descrip;
-            int cod = 0;
-            clsOfertaEmpleo obj = new clsOfertaEmpleo();
-            ruc = request.getParameter("ruc");
-            cargo = request.getParameter("cargo");
-            descrip = request.getParameter("desc");
-            cod = obj.ConsultarMaxOferta();
-            out.print(ruc + "-" + cargo + "-" + descrip + "-" + cod + "<br>");
-            clsOfertaEmpleo obj2 = new clsOfertaEmpleo(ruc, cod, cargo, descrip);
-            boolean eject = obj.InsertarOfertaEmpresa(ruc, cod, cargo, descrip);
-            if (eject = true) {
-                out.print("<br> Oferta Laboral Registrada Correctamente " + eject);
-            } else {
-                out.print("<br>Error al Registrar Oferta Laboral " + eject);
-            }
-        %>
-        <a  href="javascript:history.go(-2)" class="btn btn-primary btn-lg"> Volver </a><br>
+        <div class="container">
+            <h2> Oferta Laboral</h2>
+            <center> <div class="jumbotron">
+
+                    <%
+                        String ruc, cargo, descrip;
+                        int cod = 0;
+                        clsOfertaEmpleo obj = new clsOfertaEmpleo();
+                        ruc = request.getParameter("ruc");
+                        cargo = request.getParameter("cargo");
+                        descrip = request.getParameter("desc");
+                        cod = obj.ConsultarMaxOferta();
+
+                        clsOfertaEmpleo obj2 = new clsOfertaEmpleo(ruc, cod, cargo, descrip);
+                        boolean eject = obj.InsertarOfertaEmpresa(ruc, cod, cargo, descrip);
+                        if (eject = true) {
+                            out.print("<br><h3> Oferta Laboral Registrada Correctamente </h3>");
+                        } else {
+                            out.print("<br><h3> Error al Registrar Oferta Laboral </h3>");
+                        }
+                    %>
+                    <br>  <br> <a  href="javascript:history.go(-2)" class="btn btn-primary btn-lg"> Volver </a><br>
+                </div>
+        </div>
     </center>
 </body>
 </html>

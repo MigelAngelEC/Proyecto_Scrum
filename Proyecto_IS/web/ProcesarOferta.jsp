@@ -97,8 +97,8 @@
                     <br>
                     <center>
                         <table class="table table-condensed">
-                            <tr><th>Empresa</th><th>Cargo</th><th>Descripción</th><th>Tiempo Requerido</th><th>Experiencia Requerida</th><th>Estado</th></tr>
-                            <tr><td> <% out.print(empresa); %> </td><td> <% out.print(cargo);%> </td><td> <% out.print(descrip);%> </td><td> <% out.print(descrip);%> </td><td> <% out.print(descrip);%> </td><td> <% out.print(descrip);%> </td></tr>
+                            <tr class="active"><th>Empresa</th><th>Cargo</th><th>Descripción</th><th>Tiempo Requerido</th><th>Experiencia Requerida</th><th>Estado</th></tr>
+                            <tr><td> <% out.print(empresa); %> </td><td> <% out.print(cargo);%> </td><td> <% out.print(descrip);%> </td><td class="danger"> <% out.print(time);%> </td><td class="danger"> <% out.print(xp);%> </td><td> <% out.print(estado);%> </td></tr>
                         </table>
                     </center>
 

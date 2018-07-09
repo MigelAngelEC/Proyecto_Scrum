@@ -17,12 +17,23 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
-    <body background="Imagenes/wall3.jpg" style="background-repeat: round">
+    </head>      <%
+        String email_emp;
+        email_emp = request.getParameter("emaile");
+    %>
+    <script>
+        function myFunction() {
         <%
-            String email_emp;
-            email_emp = request.getParameter("emaile");
+            if (email_emp == null) {
         %>
+            alert("Sesión no Iniciada , Se lo Redirigira al Incio");
+            window.setTimeout('window.location="Inicio.html"; ', 200);
+        <% }
+        %>
+        }
+    </script>
+    <body background="Imagenes/wall3.jpg" style="background-repeat: space" onload="myFunction()">
+
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -79,6 +90,7 @@
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
             </table>
+            <input type="text" name="emaile" value="<%out.println(email_emp);%>" hidden="true" >
             <button type="submit"  class="btn btn-primary btn-lg"> Crear Oferta Laboral </button>
             <a  href="javascript:history.go(-1)" class="btn btn-primary btn-lg"> Cancelar </a><br>
             <br>

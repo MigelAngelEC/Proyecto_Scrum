@@ -20,9 +20,21 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Referencias del Usuario</title>
     </head>
-    <body background="Imagenes/wall3.jpg" style="background-repeat: space">
-        <% String nickname = request.getParameter("nickn");
+    <% String nickname = request.getParameter("nickn");
+    %>
+    <script>
+        function myFunction() {
+        <%
+            if (nickname == null) {
         %>
+            alert("Sesión no Iniciada , Se lo Redirigira al Incio");
+            window.setTimeout('window.location="Inicio.html"; ', 200);
+        <% }
+        %>
+        }
+    </script>
+    <body background="Imagenes/wall3.jpg" style="background-repeat: space" onload="myFunction()">
+
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->

@@ -17,7 +17,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login Centro de Becas</title>
     </head>
-    <body background="Imagenes/wall3.jpg" style="background-repeat: round">
+    <body background="Imagenes/wall3.jpg" style="background-repeat: space">
         <!-- BARRA DE NAVEGACION-->
         <nav class="navbar navbar-default">
             <div class="container-fluid">
