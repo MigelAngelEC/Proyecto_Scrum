@@ -18,9 +18,10 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="icon" href="Imagenes/letterD.png">
         <title>Registrar Centro de Becas</title>
     </head>
-    <body background="Imagenes/wall3.jpg" style="background-repeat: round">
+    <body background="Imagenes/wall3.jpg" style="background-repeat: space">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->

@@ -67,71 +67,71 @@
             <table>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Codigo</div>
-                        <input type="text" class="form-control" id="ci" placeholder="CI #1234567890" name="cedula">
+                        <div class="input-group-addon">Cedula</div>
+                        <input type="text" class="form-control" id="ci" placeholder="CI #1234567890" name="cedula" required maxlength="10">
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2"><center>  
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">NickName</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej: Jose123" name="nickn">
+                        <input type="text" class="form-control" id="ci" placeholder="ej: Jose123" name="nickn"required>
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Password</div>
-                        <input type="password" class="form-control" id="ci" placeholder="ej: Mispar159357" name="passw">
+                        <input type="password" class="form-control" id="passw" placeholder="ej: Mispar159357" name="passw"required maxlength="20">
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Verficar Password</div>
-                        <input type="password" class="form-control" id="ci" placeholder="Repetir Password" >
+                        <input type="password" class="form-control" id="passwv" name="passwv" placeholder="Repetir Password" required maxlength="20">
                     </div> </center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Nombres</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej: Juan Jose" name="name">
+                        <input type="text" class="form-control" id="ci" placeholder="ej: Juan Jose" name="name"required>
                     </div> </center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2"> <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Apellido</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej: Catillo Perez" name="lname">
+                        <input type="text" class="form-control" id="ci" placeholder="ej: Catillo Perez" name="lname"required>
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">em@il</div>
-                        <input type="email" class="form-control" id="ci" placeholder="ej: josejj@gmail.com" name="email">
+                        <input type="email" class="form-control" id="ci" placeholder="ej: josejj@gmail.com" name="email"required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"  >
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Teléfono Fijo</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej 022465873" name="telf">
+                        <input type="text" class="form-control" id="ci" placeholder="ej 022465873" name="telf"required maxlength="10"onkeypress='return validaNumericos(event)'>
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2"> <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Teléfono Celular </div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej: 0912345678"name="celu">
+                        <input type="text" class="form-control" id="ci" placeholder="ej: 0912345678"name="celu"required  maxlength="10" onkeypress='return validaNumericos(event)'>
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Dirección</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej: Ciudadela Ibarra" name="direc">
+                        <input type="text" class="form-control" id="ci" placeholder="ej: Ciudadela Ibarra" name="direc"required>
                     </div>  </center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
@@ -144,4 +144,33 @@
     </form>
 </center>
 </body>
+<script>
+    function validaNumericos(event) {
+        if (event.charCode >= 48 && event.charCode <= 57) {
+            return true;
+        }
+        return false;
+    }
+    function validaLetras(event) {
+        if (event.charCode >= 48 && event.charCode <= 57) {
+            return false;
+        }
+        return true;
+    }
+</script>
+<script>
+    var password = document.getElementById("passw")
+            , confirm_password = document.getElementById("passwv");
+
+    function validatePassword() {
+        if (password.value != confirm_password.value) {
+            confirm_password.setCustomValidity("Contraseñas Distintas");
+        } else {
+            confirm_password.setCustomValidity('');
+        }
+    }
+
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;
+</script>
 </html>

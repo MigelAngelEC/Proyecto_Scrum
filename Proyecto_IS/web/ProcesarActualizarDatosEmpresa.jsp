@@ -15,7 +15,7 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-
+        <link rel="icon" href="Imagenes/letterD.png">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body background="Imagenes/wall3.jpg" style="background-repeat: round">

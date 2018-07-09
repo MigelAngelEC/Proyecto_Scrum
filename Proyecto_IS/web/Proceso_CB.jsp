@@ -19,109 +19,13 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-
+        <link rel="icon" href="Imagenes/letterD.png">
         <title>Perfil Centro de Becas!</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script type="text/javascript">
-            function saveEdits() {
 
-//get the editable element
-                var editElem = document.getElementById("edit");
 
-//get the edited element content
-                var userVersion = editElem.innerHTML;
 
-//save the content to local storage
-                localStorage.userEdits = userVersion;
-
-//write a confirmation to the user
-                document.getElementById("update").innerHTML = "Guardado!";
-
-            }
-            function checkEdits() {
-
-//find out if the user has previously saved edits
-                if (localStorage.userEdits != null)
-                    document.getElementById("edit").innerHTML = localStorage.userEdits;
-            }
-            function saveEdits1() {
-
-//get the editable element
-                var editElem1 = document.getElementById("edit1");
-
-//get the edited element content
-                var userVersion1 = editElem1.innerHTML;
-
-//save the content to local storage
-                localStorage.userEdits1 = userVersion1;
-
-//write a confirmation to the user
-                document.getElementById("update1").innerHTML = "Guardado!";
-
-            }
-            function checkEdits1() {
-
-//find out if the user has previously saved edits
-                if (localStorage.userEdits1 != null)
-                    document.getElementById("edit1").innerHTML = localStorage.userEdits1;
-            }
-            function saveEdits2() {
-
-//get the editable element
-                var editElem2 = document.getElementById("edit2");
-
-//get the edited element content
-                var userVersion = editElem2.innerHTML;
-
-//save the content to local storage
-                localStorage.userEdits2 = userVersion;
-
-//write a confirmation to the user
-                document.getElementById("update2").innerHTML = "Guardado!";
-
-            }
-            function checkEdits2() {
-
-//find out if the user has previously saved edits
-                if (localStorage.userEdits2 != null)
-                    document.getElementById("edit2").innerHTML = localStorage.userEdits2;
-            }
-        </script>
-
-        <%
-            //Confirmacion de registro de centros de becas
-            String codCB, NombreCB, direccionCB, telefonoCB, EmailCB, PasswordCB;
-
-            codCB = request.getParameter("id");
-            NombreCB = request.getParameter("nombre");
-            direccionCB = request.getParameter("dir");
-            telefonoCB = request.getParameter("tel");
-            EmailCB = request.getParameter("email");
-            PasswordCB = request.getParameter("pass");
-            System.out.println(codCB + " " + NombreCB + " " + direccionCB + " " + telefonoCB + " " + EmailCB + " " + PasswordCB);
-
-            clsCentroBecas objCb = new clsCentroBecas();
-            // out.print("<br> COD : " + objCb.getCod_b()+ "<br>NombreDeLaEmpresa : " + objCb.getNombre_cb());
-
-            boolean eject = objCb.InsertarCb(codCB, NombreCB, direccionCB, telefonoCB, EmailCB, PasswordCB);
-            // out.print(" " +codCB+" "+" "+ NombreCB+" "+ direccionCB+" "+ telefonoCB+" " + EmailCB+" "+ PasswordCB);
-            if (eject = true) {
-                out.print("<br> Centro de Becas registrado correctamente " + eject);
-            } else {
-                out.print("<br>Error al Registrar Empresa " + eject);
-            }
-
-            boolean ejectAc = objCb.ActualizarCb(codCB, NombreCB, direccionCB, telefonoCB, EmailCB, PasswordCB);
-            if (eject = true) {
-                out.print("<br> <h2>Datos Correctamente Actualizados </h2>");
-                out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");
-                out.print("<a  href=LogueoE.jsp class=btn btn-primary btn-lg> <h3><u>Cerrar Sesión</u></h3> </a><br>");
-            } else {
-                out.print("<br><h2>Error al Actualizar Datos de Empresa </h2>");
-                out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Cerrar Sesión </a><br>");
-            }
-        %>
     </head>
     <body background="Imagenes/wall3.jpg" style="background-repeat: round"onload="checkEdits(), checkEdits1(), checkEdits2()">
         <nav class="navbar navbar-default">
@@ -159,10 +63,44 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
+        <div class="container">
+            <div class="jumbotron">
+                <%
+                    //Confirmacion de registro de centros de becas
+                    String codCB, NombreCB, direccionCB, telefonoCB, EmailCB, PasswordCB;
 
+                    codCB = request.getParameter("id");
+                    NombreCB = request.getParameter("nombre");
+                    direccionCB = request.getParameter("dir");
+                    telefonoCB = request.getParameter("tel");
+                    EmailCB = request.getParameter("email");
+                    PasswordCB = request.getParameter("pass");
+                    System.out.println(codCB + " " + NombreCB + " " + direccionCB + " " + telefonoCB + " " + EmailCB + " " + PasswordCB);
 
+                    clsCentroBecas objCb = new clsCentroBecas();
+                    // out.print("<br> COD : " + objCb.getCod_b()+ "<br>NombreDeLaEmpresa : " + objCb.getNombre_cb());
 
+                    boolean eject = objCb.InsertarCb(codCB, NombreCB, direccionCB, telefonoCB, EmailCB, PasswordCB);
+                    // out.print(" " +codCB+" "+" "+ NombreCB+" "+ direccionCB+" "+ telefonoCB+" " + EmailCB+" "+ PasswordCB);
+                    if (eject = true) {
+                        out.print("<br> Centro de Becas registrado correctamente " + eject);
+                    } else {
+                        out.print("<br>Error al Registrar Empresa " + eject);
+                    }
 
+                    boolean ejectAc = objCb.ActualizarCb(codCB, NombreCB, direccionCB, telefonoCB, EmailCB, PasswordCB);
+                    if (eject = true) {
+                        out.print("<br> <h2>Datos Correctamente Actualizados </h2>");
+                        out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");
+                        out.print("<a  href=LogueoE.jsp class=btn btn-primary btn-lg> <h3><u>Cerrar Sesión</u></h3> </a><br>");
+                    } else {
+                        out.print("<br><h2>Error al Actualizar Datos de Empresa </h2>");
+                        out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Cerrar Sesión </a><br>");
+                    }
+                %>
+
+            </div>
+        </div>
 
 
 

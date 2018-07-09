@@ -15,9 +15,10 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="icon" href="Imagenes/letterD.png">
         <title>Login Empresarial</title>
 
-    <body background="Imagenes/wall3.jpg" style="background-repeat: round">
+    <body background="Imagenes/wall3.jpg" style="background-repeat: space">
         <!-- BARRA DE NAVEGACION-->
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -76,13 +77,13 @@
                                 <div class="input-group input-group-lg">
                                     <label for="exampleInputPassword1">Correo Empresarial</label>
 
-                                    <input type="text" class="form-control" placeholder="Correo Empresarial" name="correo_e" aria-describedby="sizing-addon2" onClick="this.select();">
+                                    <input type="text" class="form-control" placeholder="Correo Empresarial" name="correo_e" aria-describedby="sizing-addon2" onClick="this.select();" required>
                                 </div>
 
                                 <br/>
                                 <div class="input-group input-group-lg">
                                     <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="pass_e" name="pass_e" placeholder="Password" aria-describedby="sizing-addon2" onClick="this.select();">
+                                    <input type="password" class="form-control" id="pass_e" name="pass_e" placeholder="Password" aria-describedby="sizing-addon2" onClick="this.select();" required maxlength="20">
                                 </div>
                                 <br>
                                 <p

@@ -4,6 +4,7 @@
     Author     : migue
 --%>
 
+<%@page import="Clases.clsCentroBecas"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.Vector"%>
 <%@page import="Clases.clsUsuario"%>
@@ -21,17 +22,18 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Datos de Usuario</title>
+        <title>Datos Centro de Becas</title>
+        <link rel="icon" href="Imagenes/letterD.png">
     </head>
     <%
-        String nickname = request.getParameter("nickn");
-        clsUsuario cs = new clsUsuario();
-        List<String> vec = cs.ConsultarUsuario(nickname);
+        String emailcb = request.getParameter("emailcb");
+        clsCentroBecas cb = new clsCentroBecas();
+        List<String> vec = cb.ConsultarCb(emailcb);
     %>
     <script>
         function myFunction() {
         <%
-            if (nickname == null) {
+            if (emailcb == null) {
         %>
             alert("Sesión no Iniciada , Se lo Redirigira al Incio");
             window.setTimeout('window.location="Inicio.html"; ', 200);
@@ -61,7 +63,8 @@
                     <li class=""><a href="Publicidad.jsp">Empresas Asociadas <span class="sr-only">(current)</span></a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" >
-                    <p class="navbar-text ">Signed in as <a class="navbar-link"><i><%out.println(nickname);%></i></a></p>
+                    <p class="navbar-text ">Signed in as <a class="navbar-link"><i><%out.println(emailcb);%></i></a></p>
+                    <p class="navbar-text ">  <a class="navbar-link" href="Inicio.html"><i>Cerrar Sesión</i></a></p>
                     <li><a href="#">Ayuda</a></li>
 
                 </ul>
@@ -78,59 +81,124 @@
             <tr><td colspan="2">  <center>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">Identificado Centro </div>
-                    <input type="text" class="form-control" id="id" placeholder="Identificador #1234567890" name="id">
+                    <input type="text" class="form-control" id="id" placeholder="Identificador #1234567890" name="id"value="<%
+                        if (vec.isEmpty()) {
+                            out.print("");
+                        } else {
+                            out.print(vec.get(1).trim());
+                        }
+                           %>" required onkeypress='return validaLetras(event)'>
                 </div></center>
             </td></tr>
             <tr><td> &nbsp;</td></tr>
             <tr><td colspan="2"><center>  
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">Nombre</div>
-                    <input type="text" class="form-control" id="nombre" placeholder="ej: CENEC123" name="nombre">
+                    <input type="text" class="form-control" id="nombre" placeholder="ej: CENEC123" name="nombre"value="<%
+                        if (vec.isEmpty()) {
+                            out.print("");
+                        } else {
+                            out.print(vec.get(2).trim());
+                        }
+                           %>"required>
                 </div></center>
             </td></tr>
             <tr><td> &nbsp;</td></tr>
             <tr><td colspan="2">  <center>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">Dirección</div>
-                    <input type="text" class="form-control" id="dir" placeholder="ej: Ciudadela Ibarra" name="dir">
+                    <input type="text" class="form-control" id="dir" placeholder="ej: Ciudadela Ibarra" name="dir"value="<%
+                        if (vec.isEmpty()) {
+                            out.print("");
+                        } else {
+                            out.print(vec.get(3).trim());
+                        }
+                           %>"required>
                 </div>  </center>
             </td></tr>
             <tr><td> &nbsp;</td></tr>
             <tr><td colspan="2">  <center>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">Teléfono Fijo</div>
-                    <input type="text" class="form-control" id="tel" placeholder="ej 022465873" name="tel">
+                    <input type="text" class="form-control" id="tel" placeholder="ej 022465873" name="tel"value="<%
+                        if (vec.isEmpty()) {
+                            out.print("");
+                        } else {
+                            out.print(vec.get(4).trim());
+                        }
+                           %>"required maxlength="10" onkeypress='return validaNumericos(event)'>
                 </div></center>
             </td></tr>
             <tr><td> &nbsp;</td></tr>
             <tr><td colspan="2">  <center>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">em@il</div>
-                    <input type="email" class="form-control" id="email" placeholder="ej: centro_cenec@cenec.org" name="email">
+                    <input type="email" class="form-control" id="email" placeholder="ej: centro_cenec@cenec.org" name="email"value="<%
+                        if (vec.isEmpty()) {
+                            out.print("");
+                        } else {
+                            out.print(vec.get(5).trim());
+                        }
+                           %>"required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
                 </div></center>
             </td></tr>
             <tr><td> &nbsp;</td></tr>
             <tr><td colspan="2">  <center>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">Password</div>
-                    <input type="password" class="form-control" id="pass" placeholder="ej: Mispar159357" name="pass">
+                    <input type="password" class="form-control" id="pass" placeholder="ej: Mispar159357" name="pass"value="<%
+                        if (vec.isEmpty()) {
+                            out.print("");
+                        } else {
+                            out.print(vec.get(6).trim());
+                        }
+                           %>"required maxlength="20">
                 </div></center>
             </td></tr>
             <tr><td> &nbsp;</td></tr>
             <tr><td colspan="2">  <center>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">Verficar Password</div>
-                    <input type="password" class="form-control" id="vpass" placeholder="Repetir Password" >
+                    <input type="password" class="form-control" id="vpass" placeholder="Repetir Password" name="vpass" required maxlength="20">
                 </div> </center>
             </td></tr>     
             <tr><td> &nbsp;</td></tr>
 
         </table>
 
-        <button type="submit"  class="btn btn-primary btn-lg"> Crear Cuenta </button><br>
+        <button type="submit"  class="btn btn-primary btn-lg"> Actualizar Cuenta </button><br>
         <img src="Imagenes/centros_becas.jpeg" alt=""/>
     </form>
 </form>
 </center>
+<script>
+    function validaNumericos(event) {
+        if (event.charCode >= 48 && event.charCode <= 57) {
+            return true;
+        }
+        return false;
+    }
+    function validaLetras(event) {
+        if (event.charCode >= 48 && event.charCode <= 57) {
+            return false;
+        }
+        return true;
+    }
+</script>
+<script>
+    var password = document.getElementById("pass")
+            , confirm_password = document.getElementById("vpass");
+
+    function validatePassword() {
+        if (password.value != confirm_password.value) {
+            confirm_password.setCustomValidity("Contraseñas Distintas");
+        } else {
+            confirm_password.setCustomValidity('');
+        }
+    }
+
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;
+</script>
 </body>
 </html>

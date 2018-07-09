@@ -112,14 +112,14 @@ public class clsCentroBecas {
     }
 
     public List<String> ConsultarCb(String email) {
-        List<String> lista = new ArrayList<String>(8);
+        List<String> lista = new ArrayList<String>(10);
         try {
             String SQL = ("SELECT cod_cb, cod_perfil, nombre_cb, direccion, telefonos, email, password\n"
                     + "  FROM centros__becas where email='" + email + "'");
             ClsConexion con = new ClsConexion();
             ResultSet rs = con.Consultar(SQL);
             while (rs.next()) {
-                for (int i = 1; i < 8; i++) {
+                for (int i = 1; i < 10; i++) {
                     lista.add(rs.getString(i));
                 }
             }
@@ -227,8 +227,8 @@ public class clsCentroBecas {
         ResultSet rs = con.Consultar(SQL1);
         try {
             while (rs.next()) {
-                centro+= "<a href='#' class='list-group-item'>"+rs.getString(2)+"</a>";
-               
+                centro += "<a href='#' class='list-group-item'>" + rs.getString(2) + "</a>";
+
                 System.out.println("RESULTADO CONSULTA" + rs.getString(1));
                 //+ "<tr>nombre+"rs.getString(1)+"</tr><tr>dir"+rs.getString(2)+"</tr><tr>fonos"+rs.getString(3)+"</tr></table>;";
             }

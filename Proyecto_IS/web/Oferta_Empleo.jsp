@@ -18,7 +18,7 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-
+        <link rel="icon" href="Imagenes/letterD.png">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Oferta_Empleo</title>
         <%
@@ -58,6 +58,7 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right" >
                         <p class="navbar-text ">Signed in as <a class="navbar-link"><i><%out.println(email_emp);%></i></a></p>
+                        <p class="navbar-text ">  <a class="navbar-link" href="Inicio.html"><i>Cerrar Sesión</i></a></p>
                         <li><a href="#">Ayuda</a></li>
 
                     </ul>
@@ -69,20 +70,23 @@
             <center> <div class="jumbotron">
 
                     <%
-                        String ruc, cargo, descrip;
+                        String ruc, cargo, descrip, time, xp;
                         int cod = 0;
                         clsOfertaEmpleo obj = new clsOfertaEmpleo();
                         ruc = request.getParameter("ruc");
                         cargo = request.getParameter("cargo");
                         descrip = request.getParameter("desc");
+                        time = request.getParameter("time");
+                        xp = request.getParameter("xp");
                         cod = obj.ConsultarMaxOferta();
-
-                        clsOfertaEmpleo obj2 = new clsOfertaEmpleo(ruc, cod, cargo, descrip);
-                        boolean eject = obj.InsertarOfertaEmpresa(ruc, cod, cargo, descrip);
+                        boolean eject = obj.InsertarOfertaEmpresa(ruc, cod, cargo, descrip, time, xp);
                         if (eject = true) {
-                            out.print("<br><h3> Oferta Laboral Registrada Correctamente </h3>");
+                            out.print("<br> <h2>Oferta Corractamente Registrada</h2>");
+                            out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");
+                            out.print("<a  href=LogeoU.jsp class=btn btn-primary btn-lg> <h3><u>Cerrar Sesión</u></h3> </a><br>");
                         } else {
-                            out.print("<br><h3> Error al Registrar Oferta Laboral </h3>");
+                            out.print("<br><h2>Error al Registrar Oferta </h2>");
+                            out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Volver</a><br>");
                         }
                     %>
                     <br>  <br> <a  href="javascript:history.go(-2)" class="btn btn-primary btn-lg"> Volver </a><br>

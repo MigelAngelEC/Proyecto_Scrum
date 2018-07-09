@@ -1,7 +1,7 @@
 <%-- 
-    Document   : MostrarOfertas
-    Created on : 28/06/2018, 18:38:45
-    Author     : migue
+Document   : MostrarOfertas
+Created on : 28/06/2018, 18:38:45
+Author     : migue
 --%>
 
 <%@page import="Clases.clsUsuario"%>
@@ -18,15 +18,25 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-
-        <title>Mi Perfil!</title>
+        <link rel="icon" href="Imagenes/letterD.png">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ofertas Laborales</title>
     </head>
-    <body background="Imagenes/wall3.jpg" style="background-repeat: space">
-        <% String nickname = request.getParameter("nickn");
+    <% String nickname = request.getParameter("nickn");
+    %>
+    <script>
+        function myFunction() {
+        <%
+            if (nickname == null) {
         %>
+            alert("Sesión no Iniciada , Se lo Redirigira al Incio");
+            window.setTimeout('window.location="Inicio.html"; ', 200);
+        <% }
+        %>
+        }
+    </script>
+    <body background="Imagenes/wall3.jpg" style="background-repeat: space" onload="myFunction()">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -47,6 +57,7 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right" >
                         <p class="navbar-text ">Signed in as <a class="navbar-link"><i><%out.println(nickname);%></i></a></p>
+                        <p class="navbar-text ">  <a class="navbar-link" href="Inicio.html"><i>Cerrar Sesión</i></a></p>
                         <li><a href="#">Ayuda</a></li>
 
                     </ul>

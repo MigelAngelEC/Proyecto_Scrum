@@ -1,10 +1,10 @@
 <%-- 
-    Document   : ProcesarOfertaAplicada
-    Created on : 08/07/2018, 13:23:21
+    Document   : StartUpsReg
+    Created on : 09/07/2018, 3:32:16
     Author     : migue
 --%>
 
-<%@page import="Clases.clsUsuario"%>
+<%@page import="Clases.clsstarups"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,10 +18,10 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-        <title>Ofertas Aplicadas</title>
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="icon" href="Imagenes/letterD.png">
-        <title>Oferta Aplicada</title>
+        <title>StarUps</title>
     </head>
     <% String nickname = request.getParameter("nickn");
     %>
@@ -37,7 +37,6 @@
         }
     </script>
     <body background="Imagenes/wall3.jpg" style="background-repeat: space" onload="myFunction()">
-
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -68,24 +67,23 @@
         <div class="container">
             <div class="jumbotron">
                 <%
-                    String nick, celu, cod;
-
-                    nick = request.getParameter("nickne");
-                    cod = request.getParameter("codofer");
-                    celu = request.getParameter("cedula");
-                    clsUsuario us = new clsUsuario();
-                    boolean eject = us.EliminarOferta(cod, celu);
+                    String nombre, descrip;
+                    nombre = request.getParameter("namest");
+                    descrip = request.getParameter("descst");
+                    clsstarups st = new clsstarups();
+                    Boolean eject = st.InsertarStart(nombre, descrip);
                     if (eject = true) {
-                        out.print("<br> <h2>Oferta Correctamente Eliminada </h2>");
+                        out.print("<br><h2>StartUP Registrada Correctamente </h2>");
                         out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");
                         out.print("<a  href=LogeoU.jsp class=btn btn-primary btn-lg> <h3><u>Cerrar Sesión</u></h3> </a><br>");
                     } else {
-                        out.print("<br><h2>Error al Eliminar Oferta </h2>");
+                        out.print("<br>Fallo al Registrar StartUP");
                         out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Volver </a><br>");
                     }
 
                 %>
             </div>
+
         </div>
     </body>
 </html>

@@ -17,8 +17,9 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-
+        <link rel="icon" href="Imagenes/letterD.png">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Mi Perfil StartUps</title>
     </head>
     <body background="Imagenes/wall3.jpg" style="background-repeat: round">
         <nav class="navbar navbar-default">
@@ -56,26 +57,26 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-        <%
-            String Cod_Star, Nombre, Descripcion;
+        <div class="container">
+            <div class="jumbotron">
+                <%
+                    String Nombre, Descripcion;
+                    clsstarups obj = new clsstarups();
+                    Nombre = request.getParameter("nempresa");
+                    Descripcion = request.getParameter("desc");
+                    boolean eject = obj.InsertarStart(Nombre, Descripcion);
+                    if (eject = true) {
+                        out.print("<br><h2>StartUp Registrada </h2>");
+                        out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");
+                        out.print("<a  href=LogeoU.jsp class=btn btn-primary btn-lg> <h3><u>Cerrar Sesión</u></h3> </a><br>");
+                    } else {
+                        out.print("<br>Fallo al Registrar la StartUp " + eject);
+                        out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Regresar</a><br>");
+                    }
 
-            Cod_Star = request.getParameter("ruc");
-            Nombre = request.getParameter("nempresa");
-
-            Descripcion = request.getParameter("desc");
-
-            clsstarups obj = new clsstarups(Cod_Star, Nombre, Descripcion);
-            //out.print("<br> RUC : " + obj.getRuc() + "<br>NombreDeLaEmpresa : " + obj.getNombreEmpresa() + "<br>direc : " + obj.getDescripcion());
-
-            boolean eject = obj.InsertarStart(Cod_Star, Nombre, Descripcion);
-            if (eject = true) {
-                out.print("<br> StartUp Registrada Correctamente " + eject);
-            } else {
-                out.print("<br>Error al Registrar StartUp " + eject);
-            }
-        %>
-
-
+                %>
+            </div>
+        </div>
 
 
 

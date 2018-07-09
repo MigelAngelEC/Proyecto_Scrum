@@ -1,9 +1,12 @@
 <%-- 
-    Document   : DatosOfertaLaboral
-    Created on : 19/06/2018, 22:50:51
+    Document   : OfertasEEdit
+    Created on : 09/07/2018, 6:08:20
     Author     : migue
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="Clases.clsempresa"%>
+<%@page import="Clases.clsOfertaEmpleo"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -65,23 +68,40 @@
         </nav>
 
     <center>
-        <h1>Oferta Empleo</h1>
+        <h1>Oferta Empleo Editar</h1>
+        <%
+            clsOfertaEmpleo oe = new clsOfertaEmpleo();
+            clsempresa et = new clsempresa();
+            List<String> lista = oe.ConsultarOferta(et.RucEnterprise(email_emp));
+        %>
         <br>
-        <form action="Oferta_Empleo.jsp" method="post">
+        <form action="ProcesarOfertasEE.jsp" method="post">
 
             <table>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Cargo Empresarial</div>
-                        <input type="text" class="form-control" id="cargo" placeholder="ej: Gerente" name="cargo">
+                        <input type="text" class="form-control" id="cargo" placeholder="ej: Gerente" name="cargo"value="<%
+                            if (lista.isEmpty()) {
+                                out.print("");
+                            } else {
+                                out.print(lista.get(2));
+                            }
+                               %>">
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Descripcion</div>
-                        <input type="text" class="form-control" id="desc"  placeholder="ej: Varias Habilidades" name="desc">
+                        <input type="text" class="form-control" id="desc"  placeholder="ej: Varias Habilidades" name="desc"value="<%
+                            if (lista.isEmpty()) {
+                                out.print("");
+                            } else {
+                                out.print(lista.get(3));
+                            }
+                               %>">
 
                     </div> </center>
                 </td></tr>
@@ -89,7 +109,13 @@
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon" >Tiempo Requerido</div>
-                        <select class="form-control" id="time" name="time" >
+                        <select class="form-control" id="time" name="time" value="<%
+                            if (lista.isEmpty()) {
+                                out.print("");
+                            } else {
+                                out.print(lista.get(5));
+                            }
+                                %>">
                             <option value="4 Horas">4 Horas o menos</option>
                             <option value="6 Horas">6 Horas</option>
                             <option value="8 Horas">8 Horas</option>
@@ -101,7 +127,7 @@
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon" >Experiencia Requerida</div>
-                        <select class="form-control" id="xp" name="xp" >
+                        <select class="form-control" id="xp" name="xp">
                             <option value="3 Meses">3 Meses o menos</option>
                             <option value="6 Meses">6 Meses</option>
                             <option value="9 Meses">9 Meses</option>
@@ -111,10 +137,34 @@
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
-            </table>
+                <tr><td colspan="2">  <center>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" >Estado</div>
+                        <select class="form-control" id="state" name="state">
+                            <option value="Disponible">Disponible</option>
+                            <option value="No Disponible">No Disponible</option>
+
+                        </select>
+                    </div></center>
+                </td></tr>
+                <tr><td> &nbsp;</td></tr>
             </table>
             <input type="text" name="emaile" value="<%out.println(email_emp);%>" hidden="true" >
-            <button type="submit"  class="btn btn-primary btn-lg"> Crear Oferta Laboral </button>
+            <input type="text" name="ruc" value="<%
+                if (lista.isEmpty()) {
+                    out.print("");
+                } else {
+                    out.print(lista.get(0));
+                }
+                   %>"  hidden="true" >
+            <input type="text" name="cod" value="<%
+                if (lista.isEmpty()) {
+                    out.print("");
+                } else {
+                    out.print(lista.get(1));
+                }
+                   %>" hidden="true" >
+            <button type="submit"  class="btn btn-primary btn-lg"> Actualizar Oferta Laboral </button>
             <a  href="javascript:history.go(-1)" class="btn btn-primary btn-lg"> Cancelar </a><br>
             <br>
             <img src="Imagenes/oferta.jpg" higth="300" width="300"/>

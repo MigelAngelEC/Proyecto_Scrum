@@ -15,8 +15,9 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-
+        <link rel="icon" href="Imagenes/letterD.png">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Mi Perfil Empresa</title>
     </head>
     <body background="Imagenes/wall3.jpg" style="background-repeat: round">
         <nav class="navbar navbar-default">
@@ -54,27 +55,35 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-        <%
-            String ruc, NombreEmpresa, telefono, direccion, Descripcion, Email, Password;
+        <div class="container">
+            <div class="jumbotron">
+                <%
+                    String ruc, NombreEmpresa, telefono, direccion, Descripcion, Email, Password;
 
-            ruc = request.getParameter("ruc");
-            NombreEmpresa = request.getParameter("nempresa");
-            direccion = request.getParameter("direc");
-            telefono = request.getParameter("telefono");
-            Email = request.getParameter("email");
-            Descripcion = request.getParameter("desc");
-            Password = request.getParameter("passw");
+                    ruc = request.getParameter("ruc");
+                    NombreEmpresa = request.getParameter("nempresa");
+                    direccion = request.getParameter("direc");
+                    telefono = request.getParameter("telefono");
+                    Email = request.getParameter("email");
+                    Descripcion = request.getParameter("desc");
+                    Password = request.getParameter("passw");
 
-            clsempresa obj = new clsempresa(ruc, NombreEmpresa, direccion, telefono, Email, Descripcion, Password);
-            //out.print("<br> RUC : " + obj.getRuc() + "<br>NombreDeLaEmpresa : " + obj.getNombreEmpresa() + "<br>direc : " + obj.getDescripcion());
+                    clsempresa obj = new clsempresa(ruc, NombreEmpresa, direccion, telefono, Email, Descripcion, Password);
+                    //out.print("<br> RUC : " + obj.getRuc() + "<br>NombreDeLaEmpresa : " + obj.getNombreEmpresa() + "<br>direc : " + obj.getDescripcion());
 
-            boolean eject = obj.InsertarEmpresa(ruc, NombreEmpresa, direccion, telefono, Email, Descripcion, Password);
-            if (eject = true) {
-                out.print("<br> Empresa Registrada Correctamente " + eject);
-            } else {
-                out.print("<br>Error al Registrar Empresa " + eject);
-            }
-        %>
+                    boolean eject = obj.InsertarEmpresa(ruc, NombreEmpresa, direccion, telefono, Email, Descripcion, Password);
+                    if (eject = true) {
+                        out.print("<br><h2>Empresa Correctamente Registrado </h2>");
+                        out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Iniciar Sesión</h3>");
+                        out.print("<a  href=LogueoE.jsp class=btn btn-primary btn-lg> <h3><u>Iniciar Sesión</u></h3> </a><br>");
+                    } else {
+                        out.print("<br>Fallo al Registrar Empresa " + eject);
+                        out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Regresar</a><br>");
+                    }
+
+                %>
+            </div>
+        </div>
 
 
 

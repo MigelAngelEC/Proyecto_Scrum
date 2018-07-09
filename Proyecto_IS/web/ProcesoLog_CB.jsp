@@ -22,8 +22,8 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-
-        <title>Bienvenidos</title>
+        <link rel="icon" href="Imagenes/letterD.png">
+        <title>Bienvenidos Centro de Becas</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -50,7 +50,7 @@
             } else if (correcto_cb.equals("false")) {
                 //out.print("login incorrecto");
                 // response.sendRedirect("LogueoCB.jsp");
-                response.sendRedirect("LogueoCB.jsp");
+                response.sendRedirect("LogueoCB.jsp?t=Usuario o Password Incorrectos");
 
             }
 
@@ -96,18 +96,9 @@
                         <li class=""><a href="Publicidad.jsp">Empresas Asociadas <span class="sr-only">(current)</span></a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right" >
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"name="drop" >Iniciar Sesión <span class="caret"></span></a>
-                            <ul class="dropdown-menu" >
-                                <li><a href="LogeoU.jsp" >Iniciar Sesión Usuario</a></li>
-                                <li><a href="LogueoE.jsp">Iniciar Sesión Empresa</a></li>
-                                <li><a href="LogueoCB.jsp">Iniciar Sesión C.Becas</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="TipoRegistro.html">Registrarse</a></li>
-                            </ul>
-                        </li>
+                        <p class="navbar-text ">Signed in as <a class="navbar-link"><i><%out.println(email_cb);%></i></a></p>
+                        <p class="navbar-text ">  <a class="navbar-link" href="Inicio.html"><i>Cerrar Sesión</i></a></p>
                         <li><a href="#">Ayuda</a></li>
-                        <li><a href="LogueoCB.jsp">Cerrar Sesion</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -121,72 +112,78 @@
                     MENU
                 </a>
                 <form action="DatosInforCentroBecas.jsp" method="post">
-                    <input type="text" name="email" value="<%out.println(EmailCB);%>" hidden="true" >
+                    <input type="text" name="emailcb" value="<%out.println(email_cb);%>" hidden="true" >
                     <button type="submit" class="list-group-item">Datos de Centro de Becas <u>(Editar)</u></button>
                 </form>
                 <a href="#ofertasBecas" class="list-group-item">Becas Ofertadas</a>
             </div>
         </div>
         <!-- CONTENEDOR DE INFORMACION GENERAL DEL CNETRO DE BECAS -->  
-        <div class="container">
-            <center>
-                <div class="jumbotron">
-
-                    <h2>Bievenido Centro de Becas  
-                        <%
-                            String nombreCB = objCb.NombreCB(email_cb);
-                            out.print(nombreCB.toUpperCase());%></h2>
-
-                    <h2>Direccion del centro:
-                        <%
-                            String dirCB = objCb.DireccionCB(email_cb);
-                            out.print(dirCB);%></h2>
-
-                    <h2>Contactos:
-                        <%
-                            String fonosCB = objCb.TelefonosCB(email_cb);
-                            out.print(fonosCB);%></h2><br/><br/>
-
-                    <center>
-                        <img src="Imagenes/conocimiento1.png" alt="CONNOCIMIENTO" width="800" height="500"/>
-                    </center>
-
-
-                </div>
-            </center>
-        </div>
-        <!-- CONTENEDOR DE TABLA DE BECAS OFERTADAS POR CADA CENTRO DE EBECAS -->           
-        <a name="ofertasBecas">            
+        <div class="col-sm-8">
             <div class="container">
                 <center>
                     <div class="jumbotron">
-                        <div class="panel panel-default">
-                            <h2>Oferta de Becas</h2>
-                            <!-- Default panel contents -->
-                            <div class="panel-heading">Informacion de Becas Ofertadas</div>
-                            <!-- Table -->
-                            <table class="table" >
 
-                                <tr>
-                                    <td>Codigo de Beca</td>
-                                    <td>Descripcion</td>
-                                    <td>Inicio</td>
-                                    <td>Fin</td>
-                                    <td>Horario</td>
-                                </tr>
+                        <h2>Bievenido Centro de Becas  
+                            <%
+                                String nombreCB = objCb.NombreCB(email_cb);
+                                out.print(nombreCB.toUpperCase());%></h2>
 
-                                <%
-                                    String codigoCb = objCb.CodigoCB(email_cb);
-                                    System.out.println("CODIGO" + codigoCb);
-                                    clsOfertaBecas ofB = new clsOfertaBecas();
-                                    String becasCB = ofB.OfertasXCB(codigoCb);
-                                    out.print(becasCB);
-                                %>
-                            </table>
-                        </div>
+                        <h2>Direccion del centro:
+                            <%
+                                String dirCB = objCb.DireccionCB(email_cb);
+                                out.print(dirCB);%></h2>
+
+                        <h2>Contactos:
+                            <%
+                                String fonosCB = objCb.TelefonosCB(email_cb);
+                                out.print(fonosCB);%></h2><br/><br/>
+
+                        <center>
+                            <img src="Imagenes/conocimiento1.png" alt="CONNOCIMIENTO" width="800" height="500"/>
+                        </center>
+
+
                     </div>
                 </center>
             </div>
-        </a>
+            <!-- CONTENEDOR DE TABLA DE BECAS OFERTADAS POR CADA CENTRO DE EBECAS -->      
+
+            <a name="ofertasBecas">            
+                <div class="container">
+                    <center>
+                        <div class="jumbotron">
+                            <div class="panel panel-default">
+                                <h2>Oferta de Becas</h2>
+                                <!-- Default panel contents -->
+                                <div class="panel-heading">Informacion de Becas Ofertadas</div>
+                                <!-- Table -->
+                                <table class="table" >
+
+                                    <tr>
+                                        <td>Codigo de Beca</td>
+                                        <td>Descripcion</td>
+                                        <td>Inicio</td>
+                                        <td>Fin</td>
+                                        <td>Horario</td>
+                                    </tr>
+
+                                    <%
+                                        String codigoCb = objCb.CodigoCB(email_cb);
+                                        System.out.println("CODIGO" + codigoCb);
+                                        clsOfertaBecas ofB = new clsOfertaBecas();
+                                        String becasCB = ofB.OfertasXCB(codigoCb);
+                                        out.print(becasCB);
+                                    %>
+                                </table>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+            </a>
+        </div>                  
+        <div class="col-sm-2">
+            <a class="twitter-timeline" data-lang="es" data-width="250" data-dnt="true" data-theme="light" data-link-color="#19CF86" href="https://twitter.com/LocosxBecas?ref_src=twsrc%5Etfw" data-tweet-limit="3">Tweets by LocosxBecas</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
     </body>
 </html>

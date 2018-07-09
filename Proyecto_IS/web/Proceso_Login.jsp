@@ -20,12 +20,21 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-
-        <title>Mi Perfil!</title>
+        <link rel="icon" href="Imagenes/letterD.png">
+        <title>Mi Perfil Usuario</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <script>(function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id))
+                    return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = 'https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.0&appId=151378954918283&autoLogAppEvents=1';
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
     </head>
+
     <body background="Imagenes/wall3.jpg" style="background-repeat: space" onload="checkEdits(), checkEdits1(), checkEdits2()">
 
         <%
@@ -73,6 +82,7 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right" >
                         <p class="navbar-text ">Signed in as <a class="navbar-link"><i><%out.println(nickname);%></i></a></p>
+                        <p class="navbar-text ">  <a class="navbar-link" href="Inicio.html"><i>Cerrar Sesión</i></a></p>
                         <li><a href="#">Ayuda</a></li>
 
                     </ul>
@@ -97,6 +107,10 @@
                     <input type="text" name="nickn" value="<%out.println(nickname);%>" hidden="true" >
                     <button type="submit" class="list-group-item">Referencias Personales <u>(Agregar)</u></button>
                 </form>
+                <form action="DatosExperienciaLaboral.jsp" method="post">
+                    <input type="text" name="nickn" value="<%out.println(nickname);%>" hidden="true" >
+                    <button type="submit" class="list-group-item">Experiencia Laboral <u>(Agregar)</u></button>
+                </form>
                 <form action="MostrarOfertas.jsp" method="post">
                     <input type="text" name="nickn" value="<%out.println(nickname);%>" hidden="true" >
                     <button type="submit" class="list-group-item">Ofertas Laborales <u>(Aplicar)</u></button>
@@ -105,82 +119,101 @@
                     <input type="text" name="nickn" value="<%out.println(nickname);%>" hidden="true" >
                     <button type="submit" class="list-group-item">Ofertas Aplicadas<u>(Editar)</u></button>
                 </form>
-                <form action="Proceso_Login.jsp" method="post">
+                <form action="BecasDispon.jsp" method="post">
                     <input type="text" name="nickn" value="<%out.println(nickname);%>" hidden="true" >
-                    <button type="submit" class="list-group-item">Becas Disponibles </button>
+                    <button type="submit" class="list-group-item">Becas Disponibles <u>(Aplicar)</u></button>
                 </form>
-                <form action="Proceso_Login.jsp" method="post">
+                <form action="BecasAplicadas.jsp" method="post">
                     <input type="text" name="nickn" value="<%out.println(nickname);%>" hidden="true" >
-                    <button type="submit" class="list-group-item">Becas Aplicadas</button>
+                    <button type="submit" class="list-group-item">Becas Aplicadas<u>(Editar)</u></button>
+                </form>
+                <form action="StartUps.jsp" method="post">
+                    <input type="text" name="nickn" value="<%out.println(nickname);%>" hidden="true" >
+                    <button type="submit" class="list-group-item">Crear&Editar StartUP<u>(Editar)</u></button>
+                </form>
+                <form action="StartUpAdd.jsp" method="post">
+                    <input type="text" name="nickn" value="<%out.println(nickname);%>" hidden="true" >
+                    <button type="submit" class="list-group-item">Agregar Usuarios a StartUP<u>(Editar)</u></button>
                 </form>
 
             </div>
         </div>
-        <div class="container">
+        <div class="col-sm-8">
+            <div class="container">
 
-            <div class="jumbotron">
-                <h2>Bienvenido <%  out.println(nickname);
-                    %></h2>
-                <br>
-                <center>
+                <div class="jumbotron">
+                    <h2>Bienvenido <%  out.println(nickname);
+                        %></h2>
+                    <br>
+                    <center>
 
-                    <div class="row">
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
-                                <br>
-                                <img src="Imagenes/useru.png" data-holder-rendered="true" style="height: 200px; width: 70%; display: block;">
-                                <div class="caption">
-                                    <h3>Mi Perfil !</h3>
-                                    <p> : D </p>
-                                    <div id="edit" contenteditable="true" class="well" >
-                                        Here is the element's original contentaa</div>
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                    <br>
+                                    <img src="Imagenes/useru.png" data-holder-rendered="true" style="height: 200px; width: 70%; display: block;">
+                                    <div class="caption">
+                                        <h3>Mi Perfil !</h3>
+                                        <p> : D </p>
+                                        <div id="edit" contenteditable="true" class="well" >
+                                            Here is the element's original contentaa</div>
 
-                                    <input  class="btn btn-default btn-xs dropdown-toggle"  aria-haspopup="true" aria-expanded="false" type="button" value="Guardar" onclick="saveEdits()">
+                                        <input  class="btn btn-default btn-xs dropdown-toggle"  aria-haspopup="true" aria-expanded="false" type="button" value="Guardar" onclick="saveEdits()">
 
-                                    <h6><div id="update"> Edita el texto y presiona en Guardar</div></h6>
+                                        <h6><div id="update"> Edita el texto y presiona en Guardar</div></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                    <br>
+                                    <img src="Imagenes/enterprise.png" data-holder-rendered="true" style="height: 200px; width: 70%; display: block;"/>
+                                    <div class="caption">
+                                        <h3>Mis Estudios !</h3>
+                                        <p>Instituciones</p>
+                                        <p><% for (int i = 0; i < lista1.size(); i++) {
+                                                out.print("<h5>" + lista1.get(i) + "</h5>");
+                                            }%></p>
+                                        <div id="edit1" contenteditable="true" class="well" >
+                                            Here is the element's original contentaa</div>
+
+                                        <input  class="btn btn-default btn-xs dropdown-toggle"  aria-haspopup="true" aria-expanded="false" type="button" value="Guardar" onclick="saveEdits1()">
+
+                                        <h6><div id="update1"> Edita el texto y presiona en Guardar</div></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                    <br>
+                                    <img src="Imagenes/becas.png" data-holder-rendered="true" style="height: 200px; width: 70%; display: block;"/>
+                                    <div class="caption">
+                                        <h3>Mi Especialidad !</h3>
+                                        <p><% for (int i = 0; i < lista2.size(); i++) {
+                                                out.print("<h5>" + lista2.get(i) + "</h5>");
+                                            }%></p>
+                                        <div id="edit2" contenteditable="true" class="well" >
+                                            Here is the element's original contentaa</div>
+
+                                        <input  class="btn btn-default btn-xs dropdown-toggle"  aria-haspopup="true" aria-expanded="false" type="button" value="Guardar" onclick="saveEdits2()">
+
+                                        <h6><div id="update2"> Edita el texto y presiona en Guardar</div></h6>   
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
-                                <br>
-                                <img src="Imagenes/enterprise.png" data-holder-rendered="true" style="height: 200px; width: 70%; display: block;"/>
-                                <div class="caption">
-                                    <h3>Mis Estudios !</h3>
-                                    <p>Instituciones</p>
-                                    <p><% for (int i = 0; i < lista1.size(); i++) {
-                                            out.print("<h5>" + lista1.get(i) + "</h5>");
-                                        }%></p>
-                                    <div id="edit1" contenteditable="true" class="well" >
-                                        Here is the element's original contentaa</div>
-
-                                    <input  class="btn btn-default btn-xs dropdown-toggle"  aria-haspopup="true" aria-expanded="false" type="button" value="Guardar" onclick="saveEdits1()">
-
-                                    <h6><div id="update1"> Edita el texto y presiona en Guardar</div></h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
-                                <br>
-                                <img src="Imagenes/becas.png" data-holder-rendered="true" style="height: 200px; width: 70%; display: block;"/>
-                                <div class="caption">
-                                    <h3>Mi Especialidad !</h3>
-                                    <p><% for (int i = 0; i < lista2.size(); i++) {
-                                            out.print("<h5>" + lista2.get(i) + "</h5>");
-                                        }%></p>
-                                    <div id="edit2" contenteditable="true" class="well" >
-                                        Here is the element's original contentaa</div>
-
-                                    <input  class="btn btn-default btn-xs dropdown-toggle"  aria-haspopup="true" aria-expanded="false" type="button" value="Guardar" onclick="saveEdits2()">
-
-                                    <h6><div id="update2"> Edita el texto y presiona en Guardar</div></h6>   
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </center>
+                    </center>
+                </div>
             </div>
+        </div>
+        <div class="col-sm-2">
+            <center>
+                <a target="_blank"><img alt="follow me on facebook" src="//login.create.net/images/icons/user/facebook_30x30.png" border=0></a>
+                <h3>Empleos Quito Noticias</h3>
+                <div class="jumbotron">
+                    <div class="fb-page" data-href="https://www.facebook.com/Empleos-en-Quito-1430155270570625/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Empleos-en-Quito-1430155270570625/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Empleos-en-Quito-1430155270570625/">Empleos en Quito</a></blockquote></div>
+                </div>
+            </center>
         </div>
     </body>
     <script type="text/javascript">

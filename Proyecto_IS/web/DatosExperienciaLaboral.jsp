@@ -1,10 +1,9 @@
 <%-- 
-    Document   : DatosAcademicosUsuario
-    Created on : 15/06/2018, 19:22:06
+    Document   : DatosExperienciaLaboral
+    Created on : 08/07/2018, 23:48:50
     Author     : migue
 --%>
 
-<%@page import="Clases.clsInfoAcademica"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,13 +17,15 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Datos Academicos de Usuario</title>
+        <title>Experiencia Laboral</title>
         <link rel="icon" href="Imagenes/letterD.png">
     </head>
     <% String nickname = request.getParameter("nickn");
     %>
     <script>
+
         function myFunction() {
         <%
             if (nickname == null) {
@@ -65,13 +66,12 @@
             </div><!-- /.container-fluid -->
         </nav>
     <center>
-        <h1>Registrar Mis Datos Académicos</h1>
-        <form action="ProcesarDatosAcademicos.jsp" method="post">
+        <h1>Registrar Mi Experiencia Laboral</h1>
+        <form action="ProcesarDatosExperienciaLaboral.jsp" method="post">
 
             <div class="row">
                 <div class="col-sm-3">
-                    <img src="Imagenes/DA.png" alt=""width="350" height="625"/>
-
+                    <img src="Imagenes/XPL.png" alt=""width="400" height="625"/>
                 </div>
                 <div class="col-sm-6">
                     <div class="panel panel-default">
@@ -81,28 +81,37 @@
                         <div class="panel-body">
                             <table>
                                 <tr><td colspan="2">  <center>
-                                    <% out.print(clsInfoAcademica.mostrarComboPerfiles());
-                                    %></center>
+                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                        <div class="input-group-addon" >Tiempo</div>
+                                        <select class="form-control" id="time" name="time" >
+                                            <option value="3 Meses">3 Meses o menos</option>
+                                            <option value="6 Meses">6 Meses</option>
+                                            <option value="9 Meses">9 Meses</option>
+                                            <option value="2 Años">2 Años</option>
+                                            <option value="5 Años">5 Años o más</option>
+                                        </select>
+                                    </div></center>
                                 </td></tr>
+
                                 <tr><td> <br></td></tr>
                                 <tr><td colspan="2">  <center>
                                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                        <div class="input-group-addon">Institución</div>
-                                        <input type="text" class="form-control" id="Instituto" placeholder="U.P.S" name="Instituto" size="20px" required=""maxlength="90">
+                                        <div class="input-group-addon">Empresa</div>
+                                        <input type="text" class="form-control" id="Empresa" placeholder="Matelec" name="Empresa" size="20px" required maxlength="25">
                                     </div></center>
                                 </td></tr>
                                 <tr><td> <br></td></tr>
                                 <tr><td colspan="2">  <center>
                                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                        <div class="input-group-addon">Titulo</div>
-                                        <input type="text" class="form-control" id="titulo" placeholder="Ing. Sistemas" name="Titulo" size="24px"onkeypress='return validaLetras(event)' required=""maxlength="140">
+                                        <div class="input-group-addon">Contacto</div>
+                                        <input type="text" class="form-control" id="Contact" placeholder="#0912345678" name="Contact" required maxlength="10"onkeypress='return validaNumericos(event)' >
                                     </div></center>
                                 </td></tr>
                                 <tr><td> <br></td></tr>
                                 <tr><td colspan="2">  <center>
                                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                        <div class="input-group-addon">Especialidad</div>
-                                        <input type="text" class="form-control" id="espe" placeholder="Programación" name="Espe"  onkeypress='return validaLetras(event)'required="">
+                                        <div class="input-group-addon">Cargo Desempeñado</div>
+                                        <input type="text" class="form-control" id="cargo" placeholder="Gerente de TI" name="cargo" size="24px" required maxlength="30" onkeypress='return validaLetras(event)'>
                                     </div></center>
                                 </td></tr>
                                 <tr><td> <br></td></tr>
@@ -117,10 +126,12 @@
                     <div class="list-group"> <a href="#" class="list-group-item active"> 
                             <h4 class="list-group-item-heading">Necesitas Ayuda?</h4> 
                             <p class="list-group-item-text"></p> </a> 
-                        <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Tus Datos Académicos</h4> 
-                            <p class="list-group-item-text">Son Aquellos títulos que has ido obteniendo en el transcurso de toda tu vida puedes agregarlos todos o solo el más importante de alto nivel agregando su respectiva institución y el titulo que se ha adquirido. Agrega en que te especializas, tú mejor habilidad académicamente</p> </a>
+                        <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Tus Experiencias Laborales</h4> 
+                            <p class="list-group-item-text">Son Aquellos datos que refieren a toda la experiencia vivida en el entorno laboral tales como el tiempo trabajado dentro de una empresa y el cargo desempeñado. Nos permite conocer el tiempo promedio que trabajas en una empresa.</p> </a>
                         <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Datos</h4> 
-                            <p class="list-group-item-text">En botón de selección múltiple escoge un nivel y a continuación llena los datos solicitados como el nombre de la institución el titulo adquirido y la especialidad que manejas.</p> </a> </div>
+                            <p class="list-group-item-text">En cuanto al tiempo selecciona una sola opción que se encuentre dentro de tu rango, agrega la empresa como el ejemplo. En el campo contacto puedes agregar un número de teléfono o celular de una persona referente que trabaje en tu antigua empresa y escribe finalmente el Cargo que desempeñaste..</p> </a> </div>
+
+
 
                 </div>
             </div>
@@ -130,6 +141,7 @@
         function validaNumericos(event) {
             if (event.charCode >= 48 && event.charCode <= 57) {
                 return true;
+                
             }
             return false;
         }

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : ProcesarOfertaAplicada
-    Created on : 08/07/2018, 13:23:21
+    Document   : ProcesarDatosExperienciaLaboral
+    Created on : 09/07/2018, 0:33:40
     Author     : migue
 --%>
 
@@ -18,12 +18,12 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-        <title>Ofertas Aplicadas</title>
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="icon" href="Imagenes/letterD.png">
-        <title>Oferta Aplicada</title>
+        <title>Experiencia Laboral</title>
     </head>
-    <% String nickname = request.getParameter("nickn");
+    <% String nickname = request.getParameter("nickne");
     %>
     <script>
         function myFunction() {
@@ -65,25 +65,25 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
+
         <div class="container">
             <div class="jumbotron">
                 <%
-                    String nick, celu, cod;
-
-                    nick = request.getParameter("nickne");
-                    cod = request.getParameter("codofer");
-                    celu = request.getParameter("cedula");
+                    String time, empresa, contacto, cargo;
+                    time = request.getParameter("time");
+                    empresa = request.getParameter("Empresa");
+                    contacto = request.getParameter("Contact");
+                    cargo = request.getParameter("cargo");
                     clsUsuario us = new clsUsuario();
-                    boolean eject = us.EliminarOferta(cod, celu);
+                    boolean eject = us.InsertarXP(time, empresa, contacto, cargo, nickname);
                     if (eject = true) {
-                        out.print("<br> <h2>Oferta Correctamente Eliminada </h2>");
+                        out.print("<br> <h2>Experiencia Laboral Correctamente Actualizados </h2>");
                         out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");
                         out.print("<a  href=LogeoU.jsp class=btn btn-primary btn-lg> <h3><u>Cerrar Sesión</u></h3> </a><br>");
                     } else {
-                        out.print("<br><h2>Error al Eliminar Oferta </h2>");
-                        out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Volver </a><br>");
+                        out.print("<br><h2>Error al Actualizar Experiencia Laboral </h2>");
+                        out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Cerrar Sesión </a><br>");
                     }
-
                 %>
             </div>
         </div>

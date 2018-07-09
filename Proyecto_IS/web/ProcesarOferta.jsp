@@ -22,6 +22,7 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
         <meta charset="UTF-8">
+        <link rel="icon" href="Imagenes/letterD.png">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ofertas Laborales</title>
     </head>

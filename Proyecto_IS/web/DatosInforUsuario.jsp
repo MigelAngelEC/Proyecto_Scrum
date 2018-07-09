@@ -22,6 +22,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Datos de Usuario</title>
+        <link rel="icon" href="Imagenes/letterD.png">
     </head>
 </head>
 <body background="Imagenes/wall3.jpg" style="background-repeat: round">
@@ -50,6 +51,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right" >
                     <p class="navbar-text ">Signed in as <a class="navbar-link"><i><%out.println(nickname);%></i></a></p>
+                    <p class="navbar-text ">  <a class="navbar-link" href="Inicio.html"><i>Cerrar Sesión</i></a></p>
                     <li><a href="#">Ayuda</a></li>
 
                 </ul>
@@ -65,70 +67,124 @@
             <tr><td colspan="2">  <center>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">Cédula Identidad</div>
-                    <input type="text" class="form-control " id="ci" placeholder="CI #1234567890" value="<% out.print(vec.get(0));%>" name="cedula" readonly aria-describedby="basic-addon2" >
+                    <input type="text" class="form-control " id="ci" placeholder="CI #1234567890" value="<%
+                        if (vec.isEmpty()) {
+                            out.print("");
+                        } else {
+                            out.print(vec.get(0).trim());
+                        }
+                           %>" name="cedula" readonly aria-describedby="basic-addon2"  onkeypress='return validaNumericos(event)'>
                 </div></center>
             </td></tr>
             <tr><td> &nbsp;</td></tr>
             <tr><td colspan="2"><center>  
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">NickName</div>
-                    <input type="text" class="form-control" id="ci" placeholder="ej: Jose123" name="nickn" value="<% out.print(vec.get(1));%>"aria-describedby="basic-addon2"onClick="this.select();">
+                    <input type="text" class="form-control" id="ci" placeholder="ej: Jose123" name="nickn" value="<%
+                        if (vec.isEmpty()) {
+                            out.print("");
+                        } else {
+                            out.print(vec.get(1).trim());
+                        }
+                           %>"aria-describedby="basic-addon2"onClick="this.select();"required maxlength="20">
                 </div></center>
             </td></tr>
             <tr><td> &nbsp;</td></tr>
             <tr><td colspan="2">  <center>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">Password</div>
-                    <input type="password" class="form-control" id="ci" placeholder="ej: Mispar159357" name="passw" value="<% out.print(vec.get(2));%>"onClick="this.select();">
+                    <input type="password" class="form-control" id="passw" placeholder="ej: Mispar159357" name="passw" value="<%
+                        if (vec.isEmpty()) {
+                            out.print("");
+                        } else {
+                            out.print(vec.get(2).trim());
+                        }
+                           %>"onClick="this.select();"required>
                 </div></center>
             </td></tr>
             <tr><td> &nbsp;</td></tr>
             <tr><td colspan="2">  <center>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">Verficar Password</div>
-                    <input type="password" class="form-control" id="ci" placeholder="Repetir Password" >
+                    <input type="password" class="form-control" id="passwv" name="passwv" placeholder="Repetir Password" required>
                 </div> </center>
             </td></tr>
             <tr><td> &nbsp;</td></tr>
             <tr><td colspan="2">  <center>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">Nombres</div>
-                    <input type="text" class="form-control" id="ci" placeholder="ej: Juan Jose" name="name" value="<% out.print(vec.get(3));%>"onClick="this.select();">
+                    <input type="text" class="form-control" id="ci" placeholder="ej: Juan Jose" name="name" value="<%
+                        if (vec.isEmpty()) {
+                            out.print("");
+                        } else {
+                            out.print(vec.get(3).trim());
+                        }
+                           %>"onClick="this.select();"required onkeypress='return validaLetras(event)'>
                 </div> </center>
             </td></tr>
             <tr><td> &nbsp;</td></tr>
             <tr><td colspan="2"> <center>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">Apellido</div>
-                    <input type="text" class="form-control" id="ci" placeholder="ej: Catillo Perez" name="lname" value="<% out.print(vec.get(4));%>"onClick="this.select();">
+                    <input type="text" class="form-control" id="ci" placeholder="ej: Catillo Perez" name="lname" value="<%
+                        if (vec.isEmpty()) {
+                            out.print("");
+                        } else {
+                            out.print(vec.get(4).trim());
+                        }
+                           %>"onClick="this.select();"required  onkeypress='return validaLetras(event)'>
                 </div></center>
             </td></tr>
             <tr><td> &nbsp;</td></tr>
             <tr><td colspan="2">  <center>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">em@il</div>
-                    <input type="email" class="form-control" id="ci" placeholder="ej: josejj@gmail.com" name="email" value="<% out.print(vec.get(5));%>"onClick="this.select();">
+                    <input type="email" class="form-control" id="ci" placeholder="ej: josejj@gmail.com" name="email" value="<%
+                        if (vec.isEmpty()) {
+                            out.print("");
+                        } else {
+                            out.print(vec.get(5).trim());
+                        }
+                           %>"onClick="this.select();"required>
                 </div></center>
             </td></tr>
             <tr><td> &nbsp;</td></tr>
             <tr><td colspan="2">  <center>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">Teléfono Fijo</div>
-                    <input type="text" class="form-control" id="ci" placeholder="ej 022465873" name="telf" value="<% out.print(vec.get(6));%>"onClick="this.select();">
+                    <input type="text" class="form-control" id="ci" placeholder="ej 022465873" name="telf" value="<%
+                        if (vec.isEmpty()) {
+                            out.print("");
+                        } else {
+                            out.print(vec.get(6).trim());
+                        }
+                           %>"onClick="this.select();"required onkeypress='return validaNumericos(event)'>
                 </div></center>
             </td></tr>
             <tr><td> &nbsp;</td></tr>
             <tr><td colspan="2"> <center>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">Teléfono Celular </div>
-                    <input type="text" class="form-control" id="ci" placeholder="ej: 0912345678"name="celu" value="<% out.print(vec.get(7));%>"onClick="this.select();">
+                    <input type="text" class="form-control" id="ci" placeholder="ej: 0912345678"name="celu" value="<%
+                        if (vec.isEmpty()) {
+                            out.print("");
+                        } else {
+                            out.print(vec.get(7).trim());
+                        }
+                           %>"onClick="this.select();"required onkeypress='return validaNumericos(event)'>
                 </div></center>
             </td></tr>
             <tr><td> &nbsp;</td></tr>
             <tr><td colspan="2">  <center>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">Dirección</div>
-                    <input type="text" class="form-control" id="ci" placeholder="ej: Ciudadela Ibarra" name="direc" value="<% out.print(vec.get(8));%>"onClick="this.select();">
+                    <input type="text" class="form-control" id="ci" placeholder="ej: Ciudadela Ibarra" name="direc" value="<%
+                        if (vec.isEmpty()) {
+                            out.print("");
+                        } else {
+                            out.print(vec.get(8).trim());
+                        }
+                           %>"onClick="this.select();"required>
                 </div>  </center>
             </td></tr>
             <tr><td> &nbsp;</td></tr>
@@ -142,4 +198,33 @@
 </form>
 </center>
 </body>
+<script>
+    function validaNumericos(event) {
+        if (event.charCode >= 48 && event.charCode <= 57) {
+            return true;
+        }
+        return false;
+    }
+    function validaLetras(event) {
+        if (event.charCode >= 48 && event.charCode <= 57) {
+            return false;
+        }
+        return true;
+    }
+</script>
+<script>
+    var password = document.getElementById("passw")
+            , confirm_password = document.getElementById("passwv");
+
+    function validatePassword() {
+        if (password.value != confirm_password.value) {
+            confirm_password.setCustomValidity("Contraseñas Distintas");
+        } else {
+            confirm_password.setCustomValidity('');
+        }
+    }
+
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;
+</script>
 </html>

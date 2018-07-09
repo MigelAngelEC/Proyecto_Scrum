@@ -187,7 +187,8 @@ public class clsempresa {
         }
         return ejecuto;
     }
-     public String NameEnterprise1() {
+
+    public String NameEnterprise1() {
         String empresa = "";
         try {
             String SQL = "select  from empresas ";
@@ -199,7 +200,7 @@ public class clsempresa {
         } catch (SQLException e) {
         }
         return empresa;
-        
+
     }
 
     public String NameEnterprise(String ruct) {
@@ -228,5 +229,19 @@ public class clsempresa {
             ejecuto = false;
         }
         return ejecuto;
+    }
+
+    public String RucEnterprise(String email) {
+        String ruc = "";
+        try {
+            ClsConexion con = new ClsConexion();
+            ResultSet rs = con.Consultar("Select ruc from empresas where email='" + email + "'");
+            while (rs.next()) {
+                ruc = rs.getString(1);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error" + e.getMessage());
+        }
+        return ruc;
     }
 }

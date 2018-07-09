@@ -15,6 +15,7 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="icon" href="Imagenes/letterD.png">
         <title>Error</title>
     </head>
     <body background="Imagenes/wall3.jpg" style="background-repeat: space">

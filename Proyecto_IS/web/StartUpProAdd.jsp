@@ -1,15 +1,14 @@
 <%-- 
-    Document   : Proceso_Usuario
-    Created on : 03/06/2018, 15:42:32
+    Document   : StartUpProAdd
+    Created on : 09/07/2018, 4:59:20
     Author     : migue
 --%>
 
-<%@page import="Clases.clsUsuario"%>
+<%@page import="Clases.clsstarups"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-    <head> 
         <!-- Latest compiled and minified CSS -->
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -19,12 +18,25 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="icon" href="Imagenes/letterD.png">
-        <title>Registrando Mi Perfil</title>
+        <title>StarUps</title>
     </head>
-    <body background="Imagenes/wall3.jpg" style="background-repeat: space">
+    <% String nickname = request.getParameter("nickn");
+    %>
+    <script>
+        function myFunction() {
+        <%
+            if (nickname == null) {
+        %>
+            alert("Sesión no Iniciada , Se lo Redirigira al Incio");
+            window.setTimeout('window.location="Inicio.html"; ', 200);
+        <% }
+        %>
+        }
+    </script>
+    <body background="Imagenes/wall3.jpg" style="background-repeat: space" onload="myFunction()">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -44,16 +56,8 @@
                         <li class=""><a href="Publicidad.jsp">Empresas Asociadas <span class="sr-only">(current)</span></a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right" >
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"name="drop" >Iniciar Sesión <span class="caret"></span></a>
-                            <ul class="dropdown-menu" >
-                                <li><a href="LogeoU.jsp" >Iniciar Sesión Usuario</a></li>
-                                <li><a href="LogueoE.jsp">Iniciar Sesión Empresa</a></li>
-                                <li><a href="LogueoCB.jsp">Iniciar Sesión C.Becas</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="TipoRegistro.html">Registrarse</a></li>
-                            </ul>
-                        </li>
+                        <p class="navbar-text ">Signed in as <a class="navbar-link"><i><%out.println(nickname);%></i></a></p>
+                        <p class="navbar-text ">  <a class="navbar-link" href="Inicio.html"><i>Cerrar Sesión</i></a></p>
                         <li><a href="#">Ayuda</a></li>
 
                     </ul>
@@ -63,28 +67,17 @@
         <div class="container">
             <div class="jumbotron">
                 <%
-                    String ci, direc, telefo, celu, name, apel, nickn, mail, pass;
-
-                    ci = request.getParameter("cedula");
-                    nickn = request.getParameter("nickn");
-                    pass = request.getParameter("passw");
-                    name = request.getParameter("name");
-                    apel = request.getParameter("lname");
-                    mail = request.getParameter("email");
-                    direc = request.getParameter("direc");
-                    telefo = request.getParameter("telf");
-                    celu = request.getParameter("celu");
-
-                    clsUsuario obj = new clsUsuario(ci, nickn, pass, name, apel, mail, direc, telefo, celu);
-                    out.print("<br> Cedula : " + obj.getCedula() + "<br>Nombre&Apellido: " + obj.getNombre() + " " + obj.getApellido());
-
-                    boolean eject = obj.InsertarUsuario(ci, nickn, pass, name, apel, mail, direc, telefo, celu);
+                    String cedul, cod;
+                    cedul = request.getParameter("cedula");
+                    cod = request.getParameter("codstart");
+                    clsstarups st = new clsstarups();
+                    boolean eject = st.UpdateUserStartUp(cedul, cod);
                     if (eject = true) {
-                        out.print("<br><h2>Usuario Correctamente Registrado </h2>");
-                        out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Iniciar Sesión</h3>");
-                        out.print("<a  href=LogeoU.jsp class=btn btn-primary btn-lg> <h3><u>Iniciar Sesión</u></h3> </a><br>");
+                        out.print("<br><h2>Usuario Registrado en Mí StartUp </h2>");
+                        out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");
+                        out.print("<a  href=LogeoU.jsp class=btn btn-primary btn-lg> <h3><u>Cerrar Sesión</u></h3> </a><br>");
                     } else {
-                        out.print("<br>Fallo al Registrar Usuario " + eject);
+                        out.print("<br>Fallo al Registrar Usuario en mí StartUp " + eject);
                         out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Regresar</a><br>");
                     }
 

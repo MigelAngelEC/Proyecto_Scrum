@@ -15,6 +15,7 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="icon" href="Imagenes/letterD.png">
         <title>Login de candidatos</title>
     </head>
     <body background="Imagenes/wall3.jpg" style="background-repeat: space">
@@ -75,13 +76,13 @@
                                 <div class="input-group input-group-lg">
                                     <label for="exampleInputPassword1">Nickname</label>
 
-                                    <input type="text" class="form-control" placeholder="Nickname" name="nick" aria-describedby="sizing-addon2">
+                                    <input type="text" class="form-control" placeholder="Nickname" name="nick" aria-describedby="sizing-addon2"required>
                                 </div>
 
                                 <br/>
                                 <div class="input-group input-group-lg">
                                     <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="pass" name="pass" placeholder="Password" aria-describedby="sizing-addon2">
+                                    <input type="password" class="form-control" id="pass" name="pass" placeholder="Password" aria-describedby="sizing-addon2" maxlength="20" required>
                                 </div>
                                 <br/>
                                 <p

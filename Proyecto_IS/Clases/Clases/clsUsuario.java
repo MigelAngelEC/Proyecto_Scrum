@@ -177,7 +177,7 @@ public class clsUsuario {
     public boolean InsertarUsuario(String cedula, String nickname, String password, String Name, String Lname, String email, String Direccion, String telefono, String Celu) {
         boolean ejecuto = false;
         try {
-            String SQL = ("Insert into usuarios values ('" + cedula + "','1','" + nickname + "','" + password + "','" + Name + "','" + Lname + "','" + telefono + "','" + Celu + "','" + email + "','" + Direccion + "');");
+            String SQL = ("Insert into usuarios values ('" + cedula + "','user','','" + nickname + "','" + password + "','" + Name + "','" + Lname + "','" + telefono + "','" + Celu + "','" + email + "','" + Direccion + "');");
             ClsConexion con = new ClsConexion();
             con.Ejecutar(SQL);
             ejecuto = true;
@@ -231,7 +231,7 @@ public class clsUsuario {
                 String empresa = emp.NameEnterprise(rs.getString(1));
                 SQLAdded += "<tr><td>" + empresa + "</td><td>" + rs.getString(3) + "</td><td>" + rs.getString(4) + "</td><td>" + rs.getString(6) + "</td><td>" + rs.getString(7) + "</td><td>" + rs.getString(5) + "</td>"
                         + "<form action=ProcesarOferta.jsp><input type=text name=ofert value=" + rs.getString(2) + " hidden=true>"
-                        + "<input type=text name=cedula value=" + this.CIUser(nickname) + " hidden=true>"
+                        + "<input type=text name=cedula value='" + this.CIUser(nickname) + "' hidden=true>"
                         + "<input type=text name=nickn value=" + nickname + " hidden=true >"
                         + "<input type=text name=empre value=" + empresa + " hidden=true >"
                         + "<input type=text name=cargo value=" + rs.getString(3) + " hidden=true >"
@@ -274,6 +274,26 @@ public class clsUsuario {
         return SQLAdded;
     }
 
+    public String PrintBeksApply(String nickname) {
+        String SQLAdded = " <table class=table table-hover> <tr><th> Centro de Becas</th><th>Em@mail C.Becas</th><th>Descripción Beca</th><th>Fecha de Inicio </th> <th> Fecha de Finalización </th><th>Horario</th> <th> Eliminar ¿? </th></tr>";
+        try {
+            ClsConexion con = new ClsConexion();
+            ResultSet rs = con.Consultar("SELECT centros__becas.nombre_cb, centros__becas.email, becas.descripcion_beca, becas.fecha_inicio,becas.fecha_fin, becas.horario,becas_aplicadas.cod_beca,becas_aplicadas.cedula FROM public.becas_aplicadas, public.usuarios,public.centros__becas,public.becas WHERE usuarios.nickname='" + nickname + "' and becas_aplicadas.cod_beca = becas.cod_beca AND usuarios.cedula = becas_aplicadas.cedula AND centros__becas.cod_cb = becas.cod_cb;");
+            while (rs.next()) {
+                SQLAdded += "<tr><td>" + rs.getString(1) + "</td><td>" + rs.getString(2) + "</td><td>" + rs.getString(3) + "</td><td>" + rs.getString(4) + "</td><td>" + rs.getString(5) + "</td><td>" + rs.getString(6) + "</td>"
+                        + "<form action=ProcesarBecaAplicada.jsp>"
+                        + "<input type=text name=codBeca value=" + rs.getString(7) + " hidden=true>"
+                        + "<input type=text name=cedula value=" + rs.getString(8) + " hidden=true >"
+                        + "<input type=text name=nickn value=" + nickname + " hidden=true >"
+                        + "<td>  <button type=submit class=list-group-item>Eliminar Beca ¿? </button></td></form></tr>";
+            }
+        } catch (SQLException e) {
+            System.out.println("Error" + e.getMessage());
+        }
+        SQLAdded += "</table>";
+        return SQLAdded;
+    }
+
     public String PrintExperience(String nickname) {
         String SQLAdded = " <table class=table table-hover> <tr class=active><th> Empresa</th><th>Tiempo Trabajado</th><th>Cargo Desempeñado</th></tr>";
         try {
@@ -302,4 +322,115 @@ public class clsUsuario {
         }
         return ejecuto;
     }
+
+    public boolean EliminarBeca(String codBeca, String cedul) {
+        boolean ejecuto = false;
+        try {
+            String SQL = ("Delete from becas_aplicadas where cod_beca='" + codBeca + "' and cedula='" + cedul + "'");
+            ClsConexion con = new ClsConexion();
+            con.Ejecutar(SQL);
+            ejecuto = true;
+        } catch (Exception e) {
+            System.out.println("Error" + e.getMessage());
+            ejecuto = false;
+        }
+        return ejecuto;
+    }
+
+    public String PrintBecas(String nickname) {
+        String SQLAdded = " <table class=table table-hover> <tr><th> Centro de Becas </th><th>Descripción de Beca</th><th>Fecha de Inicio</th><th>Fecha de Finalización</th><th>Horario</th> <th>Estado</th><th> Aplicar ¿?</th></tr>";
+        try {
+            ClsConexion con = new ClsConexion();
+            clsempresa emp = new clsempresa();
+            ResultSet rs = con.Consultar("SELECT centros__becas.nombre_cb,becas.descripcion_beca,becas.fecha_inicio,becas.fecha_fin,becas.horario,becas.estado,becas.cod_beca FROM public.becas,public.centros__becas WHERE centros__becas.cod_cb = becas.cod_cb;");
+            while (rs.next()) {
+                SQLAdded += "<tr><td>" + rs.getString(1) + "</td><td>" + rs.getString(2) + "</td><td>" + rs.getString(3) + "</td><td>" + rs.getString(4) + "</td><td>" + rs.getString(5) + "</td><td>" + rs.getString(6) + "</td>"
+                        + "<form action=ProcesarBecaDispo.jsp>"
+                        + "<input type=text name=cedula value=" + this.CIUser(nickname) + " hidden=true>"
+                        + "<input type=text name=nickn value=" + nickname + " hidden=true >"
+                        + "<input type=text name=codbeca value='" + rs.getString(7).trim() + "'hidden=true >"
+                        + "<input type=text name=cedula value='" + this.CIUser(nickname) + "'hidden=true >";
+                if (rs.getString(6).trim().equalsIgnoreCase("No Disponible")) {
+
+                    SQLAdded += "<td>  <button title=\"Beca No Disponible, Imposible de Aplicar\" type=submit class=btn btn-link disabled=true>Aplicar </button></td></form></tr>";
+                } else {
+                    SQLAdded += "<td>  <button type=submit class=list-group-item>Aplicar </button></td></form></tr>";
+                }
+//                        + "<td>  <button type=submit class=list-group-item>Aplicar </button></td></form></tr>";
+            }
+        } catch (SQLException e) {
+            System.out.println("Error" + e.getMessage());
+        }
+        SQLAdded += "</table>";
+        return SQLAdded;
+    }
+
+    public boolean ApplyBeca(String codBeca, String cedul) {
+        boolean ejecuto = false;
+        try {
+            String SQL = ("insert into becas_aplicadas values('" + codBeca + "','" + cedul + "');");
+            ClsConexion con = new ClsConexion();
+            con.Ejecutar(SQL);
+            ejecuto = true;
+        } catch (Exception e) {
+            System.out.println("Error" + e.getMessage());
+            ejecuto = false;
+        }
+        return ejecuto;
+    }
+
+    public boolean InsertarXP(String time, String empresa, String contacto, String cargo, String nickname) {
+        boolean ejecuto = false;
+        int max = 0;
+        ClsConexion con = new ClsConexion();
+        try {
+            ResultSet rs = con.Consultar("Select Max(cod_refe) from experiencia_laboral");
+            while (rs.next()) {
+                max = rs.getInt(1);
+            }
+            max = max + 1;
+            String SQL = "insert into experiencia_laboral values(" + max + ",'" + this.CIUser(nickname) + "','" + empresa + "','" + time + "','" + cargo + "','" + contacto + "');";
+            con.Ejecutar(SQL);
+            ejecuto = true;
+        } catch (Exception e) {
+            System.out.println("Error" + e.getMessage());
+            ejecuto = false;
+        }
+        return ejecuto;
+    }
+
+    public List<String> StartUP(String nick) {
+        List<String> lista = new ArrayList<String>(4);
+        try {
+            String SQL = "SELECT startups.cod_startup,startups.nombres, startups.descripcions FROM public.startups, public.usuarios WHERE usuarios.nickname='" + nick + "' and usuarios.cod_startup = startups.cod_startup;";
+            ClsConexion con = new ClsConexion();
+            ResultSet rs = con.Consultar(SQL);
+            while (rs.next()) {
+                for (int i = 1; i < 4; i++) {
+                    lista.add(rs.getString(i));
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Error" + e.getMessage());
+        }
+
+        return lista;
+    }
+
+    public Integer StartUPUser(String nickname) {
+        int start = 0;
+        try {
+            String SQL = "SELECT startups.cod_startup FROM public.startups, public.usuarios WHERE usuarios.nickname='" + nickname + "' and usuarios.cod_startup = startups.cod_startup;";
+            ClsConexion con = new ClsConexion();
+            ResultSet rs = con.Consultar(SQL);
+            while (rs.next()) {
+                start = rs.getInt(1);
+
+            }
+        } catch (SQLException e) {
+            System.out.println("Error" + e.getMessage());
+        }
+        return start;
+    }
+
 }

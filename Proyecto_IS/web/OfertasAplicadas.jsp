@@ -19,7 +19,7 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-
+        <link rel="icon" href="Imagenes/letterD.png">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -72,8 +72,8 @@
             clsUsuario us = new clsUsuario();
             String printed = us.PrintOfertsApply(nickname);%>
         <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-7">
 
                 <div class="container">
                     <h2>Ofertas Aplicadas</h2>

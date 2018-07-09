@@ -15,6 +15,7 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="icon" href="Imagenes/letterD.png">
         <title>Login Centro de Becas</title>
     </head>
     <body background="Imagenes/wall3.jpg" style="background-repeat: space">
@@ -75,15 +76,30 @@
                                 <div class="input-group input-group-lg">
                                     <label for="exampleInputPassword1">Correo Empresarial</label>
 
-                                    <input type="text" class="form-control" placeholder="Correo Empresarial" name="correo_cb" aria-describedby="sizing-addon2">
+                                    <input type="text" class="form-control" placeholder="Correo Empresarial" name="correo_cb" aria-describedby="sizing-addon2" required>
                                 </div>
 
                                 <br/>
                                 <div class="input-group input-group-lg">
                                     <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="pass_e" name="pass_cb" placeholder="Password" aria-describedby="sizing-addon2">
+                                    <input type="password" class="form-control" id="pass_e" name="pass_cb" placeholder="Password" aria-describedby="sizing-addon2"maxlength="20" required>
                                 </div>
                                 <br/>
+                                <p
+                                    value="
+                                    <%
+                                        String error = "";
+                                        error = request.getParameter("t");
+                                    %>
+                                    " 
+                                    ><font size="3" color="red"><%
+                                        if (error == null) {
+
+                                        } else {
+                                            out.print("*" + error + "*");
+                                        }
+
+                                    %></font></p>
                                 <button type="submit" class="btn btn-outline-dark">Login</button>
 
                                 <br/>

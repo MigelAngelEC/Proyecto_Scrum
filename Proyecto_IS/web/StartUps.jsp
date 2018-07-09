@@ -4,6 +4,8 @@
     Author     : rowel
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="Clases.clsUsuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -19,9 +21,23 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="icon" href="Imagenes/letterD.png">
         <title>StarUps</title>
     </head>
-    <body background="Imagenes/wall3.jpg" style="background-repeat: round">
+    <% String nickname = request.getParameter("nickn");
+    %>
+    <script>
+        function myFunction() {
+        <%
+            if (nickname == null) {
+        %>
+            alert("Sesión no Iniciada , Se lo Redirigira al Incio");
+            window.setTimeout('window.location="Inicio.html"; ', 200);
+        <% }
+        %>
+        }
+    </script>
+    <body background="Imagenes/wall3.jpg" style="background-repeat: space" onload="myFunction()">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -41,16 +57,8 @@
                         <li class=""><a href="Publicidad.jsp">Empresas Asociadas <span class="sr-only">(current)</span></a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right" >
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"name="drop" >Iniciar Sesión <span class="caret"></span></a>
-                            <ul class="dropdown-menu" >
-                                <li><a href="LogeoU.jsp" >Iniciar Sesión Usuario</a></li>
-                                <li><a href="LogueoE.jsp">Iniciar Sesión Empresa</a></li>
-                                <li><a href="LogueoCB.jsp">Iniciar Sesión C.Becas</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="TipoRegistro.html">Registrarse</a></li>
-                            </ul>
-                        </li>
+                        <p class="navbar-text ">Signed in as <a class="navbar-link"><i><%out.println(nickname);%></i></a></p>
+                        <p class="navbar-text ">  <a class="navbar-link" href="Inicio.html"><i>Cerrar Sesión</i></a></p>
                         <li><a href="#">Ayuda</a></li>
 
                     </ul>
@@ -60,38 +68,83 @@
         <br>
         <br>
     <center>
-        <h1>Registrar StartUp</h1>
-        <br>
-        <form action="Proceso_Empresa.jsp" method="post">
+        <%  int start = 0;
+            clsUsuario us = new clsUsuario();
+            start = us.StartUPUser(nickname);
+            if (start == 0) {
+        %>
+        <h1>Registrar Mi StartUp</h1>
+        <form action="StartUpsReg.jsp" method="post">
 
             <table>
-                <tr><td colspan="2">  <center>
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Cod_Start</div>
-                        <input type="text" class="form-control" id="ci" placeholder="RUC: #123456789001" name="ruc">
-                    </div></center>
-                </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2"><center>  
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Nombre</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej: AKROSCORP" name="nempresa">
+                        <div class="input-group-addon">Nombre StartUP</div>
+                        <input type="text" class="form-control"id="namest" placeholder="ej: AKROSCORP" name="namest">
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Descripción</div>
-                        <input type="text" class="form-control" id="ci" placeholder="A que se dedica" name="desc">
+                        <div class="input-group-addon">Descripción StartUP</div>
+                        <input type="text" class="form-control"id="descst" placeholder="A que se dedica" name="descst">
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
 
             </table>
-
-            <button type="submit"  class="btn btn-primary btn-lg"> Crear Cuenta </button><br>
+            <input type="text" name="nickn" value="<%out.println(nickname);%>" hidden="true" >
+            <button type="submit"  class="btn btn-primary btn-lg"> Crear StartUP </button><br>
             <img src="Imagenes/StarUps.png" higth="600" width="600"/>
-        </form>
+        </form><%
+        } else {
+            clsUsuario cs = new clsUsuario();
+            List<String> vec = cs.StartUP(nickname);
+        %><h1>Editar Mi StartUp</h1>
+        <form action="StartUpdate.jsp" method="post">
+
+            <table>
+                <tr><td> &nbsp;</td></tr>
+                <tr><td colspan="2"><center>  
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">Nombre StartUP</div>
+                        <input type="text" class="form-control" value="<%
+                            if (vec.isEmpty()) {
+                                out.print("");
+                            } else {
+                                out.print(vec.get(1));
+                            }
+                               %>"id="namest" placeholder="ej: AKROSCORP" name="namest">
+                    </div></center>
+                </td></tr>
+                <tr><td> &nbsp;</td></tr>
+                <tr><td colspan="2">  <center>
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon">Descripción StartUP</div>
+                        <input type="text" class="form-control" value="<%
+                            if (vec.isEmpty()) {
+                                out.print("");
+                            } else {
+                                out.print(vec.get(2));
+                            }
+                               %>" id="descst" placeholder="A que se dedica" name="descst">
+                    </div></center>
+                </td></tr>
+                <tr><td> &nbsp;</td></tr>
+
+            </table>
+            <input type="text" name="codUp" value="<%out.println(vec.get(0));%>" hidden="true" >
+            <input type="text" name="nickn" value="<%out.println(nickname);%>" hidden="true" >
+            <button type="submit"  class="btn btn-primary btn-lg"> Actualizar Startup </button><br>
+            <img src="Imagenes/StarUps.png" higth="600" width="600"/>
+        </form><%
+            }
+        %>
+
+
+        <br>
+
     </center>
 </body>
 </html>

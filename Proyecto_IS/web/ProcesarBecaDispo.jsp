@@ -1,6 +1,6 @@
 <%-- 
-    Document   : ProcesarOfertaAplicada
-    Created on : 08/07/2018, 13:23:21
+    Document   : ProcesarBecaDispo
+    Created on : 08/07/2018, 20:09:07
     Author     : migue
 --%>
 
@@ -18,10 +18,9 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-        <title>Ofertas Aplicadas</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="icon" href="Imagenes/letterD.png">
-        <title>Oferta Aplicada</title>
+        <title>Beca Aplicando...</title>
     </head>
     <% String nickname = request.getParameter("nickn");
     %>
@@ -71,21 +70,20 @@
                     String nick, celu, cod;
 
                     nick = request.getParameter("nickne");
-                    cod = request.getParameter("codofer");
+                    cod = request.getParameter("codbeca");
                     celu = request.getParameter("cedula");
                     clsUsuario us = new clsUsuario();
-                    boolean eject = us.EliminarOferta(cod, celu);
+                    boolean eject = us.ApplyBeca(cod, celu);
                     if (eject = true) {
-                        out.print("<br> <h2>Oferta Correctamente Eliminada </h2>");
+                        out.print("<br> <h2>Se ha Aplicado Correctamente a la Beca Seleccionada </h2>");
                         out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");
                         out.print("<a  href=LogeoU.jsp class=btn btn-primary btn-lg> <h3><u>Cerrar Sesión</u></h3> </a><br>");
                     } else {
-                        out.print("<br><h2>Error al Eliminar Oferta </h2>");
+                        out.print("<br><h2>Error al Aplicar en Beca</h2>");
                         out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Volver </a><br>");
                     }
 
                 %>
             </div>
         </div>
-    </body>
 </html>

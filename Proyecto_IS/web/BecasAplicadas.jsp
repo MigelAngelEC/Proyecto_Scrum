@@ -1,6 +1,6 @@
 <%-- 
-    Document   : ProcesarOfertaAplicada
-    Created on : 08/07/2018, 13:23:21
+    Document   : BecasAplicadas
+    Created on : 08/07/2018, 21:08:32
     Author     : migue
 --%>
 
@@ -18,10 +18,9 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-        <title>Ofertas Aplicadas</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Becas Disponibles</title>
         <link rel="icon" href="Imagenes/letterD.png">
-        <title>Oferta Aplicada</title>
     </head>
     <% String nickname = request.getParameter("nickn");
     %>
@@ -58,34 +57,31 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right" >
                         <p class="navbar-text ">Signed in as <a class="navbar-link"><i><%out.println(nickname);%></i></a></p>
-                        <p class="navbar-text ">  <a class="navbar-link" href="Inicio.html"><i>Cerrar Sesión</i></a></p>
                         <li><a href="#">Ayuda</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-        <div class="container">
-            <div class="jumbotron">
-                <%
-                    String nick, celu, cod;
+        <%
+            clsUsuario us = new clsUsuario();
+            String printed = us.PrintBeksApply(nickname);
+        %>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-7">
 
-                    nick = request.getParameter("nickne");
-                    cod = request.getParameter("codofer");
-                    celu = request.getParameter("cedula");
-                    clsUsuario us = new clsUsuario();
-                    boolean eject = us.EliminarOferta(cod, celu);
-                    if (eject = true) {
-                        out.print("<br> <h2>Oferta Correctamente Eliminada </h2>");
-                        out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");
-                        out.print("<a  href=LogeoU.jsp class=btn btn-primary btn-lg> <h3><u>Cerrar Sesión</u></h3> </a><br>");
-                    } else {
-                        out.print("<br><h2>Error al Eliminar Oferta </h2>");
-                        out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Volver </a><br>");
-                    }
+                <div class="container">
+                    <h2>Becas Aplicadas</h2>
+                    <br>
+                    <% out.print(printed);%>
+                    <center>   <a  href="javascript:history.go(-1)" class="btn btn-primary btn-lg"> Cancelar </a><br></center>
+                </div>
 
-                %>
             </div>
+            <div class="col-sm-3"></div>
         </div>
+
+
     </body>
 </html>

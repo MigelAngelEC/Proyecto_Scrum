@@ -19,6 +19,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Referencias del Usuario</title>
+        <link rel="icon" href="Imagenes/letterD.png">
     </head>
     <% String nickname = request.getParameter("nickn");
     %>
@@ -55,6 +56,7 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right" >
                         <p class="navbar-text ">Signed in as <a class="navbar-link"><i><%out.println(nickname);%></i></a></p>
+                        <p class="navbar-text ">  <a class="navbar-link" href="Inicio.html"><i>Cerrar Sesión</i></a></p>
                         <li><a href="#">Ayuda</a></li>
 
                     </ul>
@@ -64,7 +66,10 @@
     <center>
         <h1>Registrar Mis Referencias Personales</h1>
         <form action="ProcesarDatosAcademicosReferencias.jsp" method="post">
-            <div class="col-sm-3"></div>
+            <div class="col-sm-3">  
+                <img src="Imagenes/RF.png" alt="" width="350" height="625"/>
+            </div>
+
             <div class="col-sm-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -75,28 +80,28 @@
                             <tr><td colspan="2">  <center>
                                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                     <div class="input-group-addon">Nombre y Apellido</div>
-                                    <input type="text" class="form-control" id="nameref" placeholder="CI #1234567890" name="nameref"  >
+                                    <input type="text" class="form-control" id="nameref" placeholder="Juan Torrez" name="nameref" onClick="this.select();" required=""onkeypress='return validaLetras(event)'  >
                                 </div></center>
                             </td></tr>
                             <tr><td> <br></td></tr>
                             <tr><td colspan="2">  <center>
                                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                     <div class="input-group-addon">Cargo</div>
-                                    <input type="text" class="form-control" id="cargoref1" placeholder="CI #1234567890" name="cargoref" size="30px" >
+                                    <input type="text" class="form-control" id="cargoref1" placeholder="Administrador de Datos" name="cargoref" size="30px" onClick="this.select();" required="" onkeypress='return validaLetras(event)' maxlength="50">
                                 </div></center>
                             </td></tr>
                             <tr><td> <br></td></tr>
                             <tr><td colspan="2">  <center>
                                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                    <div class="input-group-addon">Telefono</div>
-                                    <input type="text" class="form-control" id="telfref1" placeholder="CI #1234567890" name="telfref" size="28px" >
+                                    <div class="input-group-addon">Teléfono</div>
+                                    <input type="text" class="form-control" id="telfref1" placeholder="telf:022413568" name="telfref" size="28px" onClick="this.select();" required=""onkeypress='return validaNumericos(event)' maxlength="10"> 
                                 </div></center>
                             </td></tr>
                             <tr><td> <br></td></tr>
                             <tr><td colspan="2">  <center>
                                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                     <div class="input-group-addon">Parentesco</div>
-                                    <input type="text" class="form-control" id="parentescoref1" placeholder="CI #1234567890" name="parentescoref" size="26px" >
+                                    <input type="text" class="form-control" id="parentescoref1" placeholder="Primo" name="parentescoref" size="26px" onClick="this.select();" required=""onkeypress='return validaLetras(event)'maxlength="30">
                                 </div></center>
                             </td></tr>
                         </table>
@@ -106,8 +111,30 @@
                 <button type="submit"class="btn btn-primary btn-lg">Guardar </button>
                 <a  href="javascript:history.go(-1)" class="btn btn-primary btn-lg"> Cancelar </a><br>
             </div>
-            <div class="col-sm-3"></div>
+            <div class="col-sm-3">
+                <div class="list-group"> <a href="#" class="list-group-item active"> 
+                        <h4 class="list-group-item-heading">Necesitas Ayuda?</h4> 
+                        <p class="list-group-item-text"></p> </a> 
+                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Tus Referencias Personales</h4> 
+                        <p class="list-group-item-text">Son aquellas personas que tienen cierto parentesco hacia ti además de tener un cargo importante por tal manera aseguran la veracidad de tus habilidades que seguirás agregando en tu Perfil</p> </a>
+                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Datos</h4> 
+                        <p class="list-group-item-text">En el campo Nombre y Apellido es suficiente con llenar con el primer nombre y apellido de tu referencia, tal y como se muestra en el ejemplo. Si tiene varios Cargos, solo agrega el más importante, Puedes agregar el Teléfono de casa o celular y el parentesco que tienes hacia el o ella..</p> </a> </div>
 
+            </div>
+            <script>
+                function validaNumericos(event) {
+                    if (event.charCode >= 48 && event.charCode <= 57) {
+                        return true;
+                    }
+                    return false;
+                }
+                function validaLetras(event) {
+                    if (event.charCode >= 48 && event.charCode <= 57) {
+                        return false;
+                    }
+                    return true;
+                }
+            </script>
 
         </form>
     </center>

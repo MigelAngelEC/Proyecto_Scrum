@@ -17,7 +17,8 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-
+        <link rel="icon" href="Imagenes/letterD.png">
+        <title>Mi Perfil de Empresa</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script type="text/javascript">
             function saveEdits4() {
@@ -66,30 +67,29 @@
         </script>
     </head>
 </head>
-<body background="Imagenes/wall3.jpg" style="background-repeat: round"onload="checkEdits4(), checkEdits5()">
+<body background="Imagenes/wall3.jpg" style="background-repeat: space"onload="checkEdits4(), checkEdits5()">
 
     <%
         //Validacion de login empresarial
         String email_emp = request.getParameter("correo_e");
         String password_e = request.getParameter("pass_e");
-        out.println(email_emp);
-        out.println(password_e);
-        System.out.println(email_emp + " " + password_e);
+        //out.println(email_emp);
+        //out.println(password_e);
+        //System.out.println(email_emp + " " + password_e);
         clsEmpresaLog emp = new clsEmpresaLog();
 
         String correcto_log = emp.autenticacion_emp(email_emp, password_e);
 
-        out.print(correcto_log);
-        System.out.println(correcto_log);
-
+        //out.print(correcto_log);
+        // System.out.println(correcto_log);
         if (correcto_log.equals("true")) {
             HttpSession sess = request.getSession();
-            out.print(sess);
-            out.print("login empresarial correcto");
+            // out.print(sess);
+            // out.print("login empresarial correcto");
         } else {
             response.sendRedirect("LogueoE.jsp?t=Usuario o Password Incorrectos");
             out.print("login empresarial correcto");
-            
+
         }
 
     %>
@@ -114,6 +114,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right" >
                     <p class="navbar-text ">Signed in as <a class="navbar-link"><i><%out.println(email_emp);%></i></a></p>
+                     <p class="navbar-text ">  <a class="navbar-link" href="Inicio.html"><i>Cerrar Sesión</i></a></p>
                     <li><a href="#">Ayuda</a></li>
 
                 </ul>
@@ -135,62 +136,67 @@
                 <input type="text" name="emaile" value="<%out.println(email_emp);%>" hidden="true" >
                 <button type="submit" class="list-group-item">Datos de Mi Empresa <u>(Editar)</u></button>
             </form>
-            <form action="#" method="post">
+            <form action="MostrarOfertasE.jsp" method="post">
                 <input type="text" name="emaile" value="<%out.println(email_emp);%>" hidden="true" >
-                <button type="submit" class="list-group-item">Revisar Ofertas</button>
+                <button type="submit" class="list-group-item">Mis Ofertas Laborales <u>(Editar)</u></button>
             </form>
 
         </div>
     </div>
-    <div class="container">
-        <div class="jumbotron">
-            <h2>Bievenido <%  out.println(email_emp);
-                %></h2>
-            <br>
-            <center>
+    <div class="col-sm-8">
+        <div class="container">
+            <div class="jumbotron">
+                <h2>Bievenido <%  out.println(email_emp);
+                    %></h2>
+                <br>
+                <center>
 
 
-            </center>
-            <br>
-            <center>
+                </center>
+                <br>
+                <center>
 
-                <div class="row">
+                    <div class="row">
 
-                    <div class="col-sm- col-md-4">
-                        <div class="thumbnail">
-                            <br>
-                            <img src="Imagenes/enterprise1.png" data-holder-rendered="true" style="height: 200px; width: 70%; display: block;">
-                            <div class="caption">
-                                <h3>Mi Empresa !</h3>
-                                <p> </p>
-                                <div id="edit4" contenteditable="true" class="well" >
-                                    Here is the element's original contentaa</div>
+                        <div class="col-sm- col-md-4">
+                            <div class="thumbnail">
+                                <br>
+                                <img src="Imagenes/enterprise1.png" data-holder-rendered="true" style="height: 200px; width: 70%; display: block;">
+                                <div class="caption">
+                                    <h3>Mi Empresa !</h3>
+                                    <p> </p>
+                                    <div id="edit4" contenteditable="true" class="well" >
+                                        Here is the element's original contentaa</div>
 
-                                <input  class="btn btn-default btn-xs dropdown-toggle"  aria-haspopup="true" aria-expanded="false" type="button" value="Guardar" onclick="saveEdits4()">
+                                    <input  class="btn btn-default btn-xs dropdown-toggle"  aria-haspopup="true" aria-expanded="false" type="button" value="Guardar" onclick="saveEdits4()">
 
-                                <h6><div id="update4"> Edita el texto y presiona en Guardar</div></h6>
+                                    <h6><div id="update4"> Edita el texto y presiona en Guardar</div></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <br>
+                                <img src="Imagenes/oferts.jpg" data-holder-rendered="true" style="height: 200px; width: 70%; display: block;"/>
+                                <div class="caption">
+                                    <h3>Mis Ofertas !</h3>
+                                    <p></p>
+                                    <div id="edit5" contenteditable="true" class="well" >
+                                        Here is the element's original contentaa</div>
+
+                                    <input  class="btn btn-default btn-xs dropdown-toggle"  aria-haspopup="true" aria-expanded="false" type="button" value="Guardar" onclick="saveEdits5()">
+
+                                    <h6><div id="update5"> Edita el texto y presiona en Guardar</div></h6>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <br>
-                            <img src="Imagenes/oferts.jpg" data-holder-rendered="true" style="height: 200px; width: 70%; display: block;"/>
-                            <div class="caption">
-                                <h3>Mis Ofertas !</h3>
-                                <p></p>
-                                <div id="edit5" contenteditable="true" class="well" >
-                                    Here is the element's original contentaa</div>
-
-                                <input  class="btn btn-default btn-xs dropdown-toggle"  aria-haspopup="true" aria-expanded="false" type="button" value="Guardar" onclick="saveEdits5()">
-
-                                <h6><div id="update5"> Edita el texto y presiona en Guardar</div></h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </center>
+                </center>
+            </div>
         </div>
+    </div>
+    <div class="col-sm-2">
+        <a class="twitter-timeline" data-lang="es" data-width="250" data-dnt="true" data-link-color="#2B7BB9" href="https://twitter.com/Socioempleo_ec" data-tweet-limit="2">Tweets by elcomerciocom</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
 </body >
 </html>
