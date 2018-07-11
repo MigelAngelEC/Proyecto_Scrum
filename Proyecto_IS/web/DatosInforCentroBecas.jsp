@@ -25,6 +25,15 @@
         <title>Datos Centro de Becas</title>
         <link rel="icon" href="Imagenes/letterD.png">
     </head>
+    <style>
+        body {text-align:center; padding:20px}
+        input {
+            min-width:200px!important;
+            max-width:99.99%!important;
+            transition: width 0.25s;
+            text-align:center;
+        }
+    </style>
     <%
         String emailcb = request.getParameter("emailcb");
         clsCentroBecas cb = new clsCentroBecas();
@@ -72,104 +81,120 @@
         </div><!-- /.container-fluid -->
     </nav>
 <center>
+    <div class="row">
+        <div class="col-sm-3">
+            <img src="Imagenes/Foto4.png" alt="" width="450"/>
+        </div>
+        <div class="col-sm-6">
+            <h1>Actualizar Mi Información de Usuario</h1>
+            <br>
+            <form action="Proceso_CB.jsp" method="post">
 
-    <h1>Actualizar Mi Información de Usuario</h1>
-    <br>
-    <form action="Proceso_CB.jsp" method="post">
+                <table>
+                    <tr><td colspan="2">  <center>
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <div class="input-group-addon">Identificado Centro </div>
+                            <input type="text" class="form-control" id="id" placeholder="Identificador #1234567890" name="id"value="<%
+                                if (vec.isEmpty()) {
+                                    out.print("");
+                                } else {
+                                    out.print(vec.get(1).trim());
+                                }
+                                   %>" required onkeypress='return validaLetras(event)'>
+                        </div></center>
+                    </td></tr>
+                    <tr><td> &nbsp;</td></tr>
+                    <tr><td colspan="2"><center>  
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <div class="input-group-addon">Nombre</div>
+                            <input type="text" class="form-control" id="nombre" placeholder="ej: CENEC123" name="nombre"value="<%
+                                if (vec.isEmpty()) {
+                                    out.print("");
+                                } else {
+                                    out.print(vec.get(2).trim());
+                                }
+                                   %>"required>
+                        </div></center>
+                    </td></tr>
+                    <tr><td> &nbsp;</td></tr>
+                    <tr><td colspan="2">  <center>
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <div class="input-group-addon">Dirección</div>
+                            <input type="text" class="form-control" id="dir" placeholder="ej: Ciudadela Ibarra" name="dir"value="<%
+                                if (vec.isEmpty()) {
+                                    out.print("");
+                                } else {
+                                    out.print(vec.get(3).trim());
+                                }
+                                   %>"required>
+                        </div>  </center>
+                    </td></tr>
+                    <tr><td> &nbsp;</td></tr>
+                    <tr><td colspan="2">  <center>
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <div class="input-group-addon">Teléfono Fijo</div>
+                            <input type="text" class="form-control" id="tel" placeholder="ej 022465873" name="tel"value="<%
+                                if (vec.isEmpty()) {
+                                    out.print("");
+                                } else {
+                                    out.print(vec.get(4).trim());
+                                }
+                                   %>"required maxlength="10" onkeypress='return validaNumericos(event)'>
+                        </div></center>
+                    </td></tr>
+                    <tr><td> &nbsp;</td></tr>
+                    <tr><td colspan="2">  <center>
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <div class="input-group-addon">em@il</div>
+                            <input type="email" class="form-control" id="email" placeholder="ej: centro_cenec@cenec.org" name="email"value="<%
+                                if (vec.isEmpty()) {
+                                    out.print("");
+                                } else {
+                                    out.print(vec.get(5).trim());
+                                }
+                                   %>"required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
+                        </div></center>
+                    </td></tr>
+                    <tr><td> &nbsp;</td></tr>
+                    <tr><td colspan="2">  <center>
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <div class="input-group-addon">Password</div>
+                            <input type="password" class="form-control" id="pass" placeholder="ej: Mispar159357" name="pass"value="<%
+                                if (vec.isEmpty()) {
+                                    out.print("");
+                                } else {
+                                    out.print(vec.get(6).trim());
+                                }
+                                   %>"required maxlength="20">
+                        </div></center>
+                    </td></tr>
+                    <tr><td> &nbsp;</td></tr>
+                    <tr><td colspan="2">  <center>
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <div class="input-group-addon">Verficar Password</div>
+                            <input type="password" class="form-control" id="vpass" placeholder="Repetir Password" name="vpass" required maxlength="20">
+                        </div> </center>
+                    </td></tr>     
+                    <tr><td> &nbsp;</td></tr>
 
-        <table>
-            <tr><td colspan="2">  <center>
-                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                    <div class="input-group-addon">Identificado Centro </div>
-                    <input type="text" class="form-control" id="id" placeholder="Identificador #1234567890" name="id"value="<%
-                        if (vec.isEmpty()) {
-                            out.print("");
-                        } else {
-                            out.print(vec.get(1).trim());
-                        }
-                           %>" required onkeypress='return validaLetras(event)'>
-                </div></center>
-            </td></tr>
-            <tr><td> &nbsp;</td></tr>
-            <tr><td colspan="2"><center>  
-                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                    <div class="input-group-addon">Nombre</div>
-                    <input type="text" class="form-control" id="nombre" placeholder="ej: CENEC123" name="nombre"value="<%
-                        if (vec.isEmpty()) {
-                            out.print("");
-                        } else {
-                            out.print(vec.get(2).trim());
-                        }
-                           %>"required>
-                </div></center>
-            </td></tr>
-            <tr><td> &nbsp;</td></tr>
-            <tr><td colspan="2">  <center>
-                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                    <div class="input-group-addon">Dirección</div>
-                    <input type="text" class="form-control" id="dir" placeholder="ej: Ciudadela Ibarra" name="dir"value="<%
-                        if (vec.isEmpty()) {
-                            out.print("");
-                        } else {
-                            out.print(vec.get(3).trim());
-                        }
-                           %>"required>
-                </div>  </center>
-            </td></tr>
-            <tr><td> &nbsp;</td></tr>
-            <tr><td colspan="2">  <center>
-                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                    <div class="input-group-addon">Teléfono Fijo</div>
-                    <input type="text" class="form-control" id="tel" placeholder="ej 022465873" name="tel"value="<%
-                        if (vec.isEmpty()) {
-                            out.print("");
-                        } else {
-                            out.print(vec.get(4).trim());
-                        }
-                           %>"required maxlength="10" onkeypress='return validaNumericos(event)'>
-                </div></center>
-            </td></tr>
-            <tr><td> &nbsp;</td></tr>
-            <tr><td colspan="2">  <center>
-                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                    <div class="input-group-addon">em@il</div>
-                    <input type="email" class="form-control" id="email" placeholder="ej: centro_cenec@cenec.org" name="email"value="<%
-                        if (vec.isEmpty()) {
-                            out.print("");
-                        } else {
-                            out.print(vec.get(5).trim());
-                        }
-                           %>"required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
-                </div></center>
-            </td></tr>
-            <tr><td> &nbsp;</td></tr>
-            <tr><td colspan="2">  <center>
-                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                    <div class="input-group-addon">Password</div>
-                    <input type="password" class="form-control" id="pass" placeholder="ej: Mispar159357" name="pass"value="<%
-                        if (vec.isEmpty()) {
-                            out.print("");
-                        } else {
-                            out.print(vec.get(6).trim());
-                        }
-                           %>"required maxlength="20">
-                </div></center>
-            </td></tr>
-            <tr><td> &nbsp;</td></tr>
-            <tr><td colspan="2">  <center>
-                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                    <div class="input-group-addon">Verficar Password</div>
-                    <input type="password" class="form-control" id="vpass" placeholder="Repetir Password" name="vpass" required maxlength="20">
-                </div> </center>
-            </td></tr>     
-            <tr><td> &nbsp;</td></tr>
+                </table>
 
-        </table>
+                <button type="submit"  class="btn btn-primary btn-lg"> Actualizar Cuenta </button>
+                <a  href="javascript:history.go(-1)" class="btn btn-primary btn-lg"> Cancelar </a><br>
+                <img src="Imagenes/centros_becas.jpeg" alt=""/>
+            </form></div>
+        <div class="col-sm-3">
+            <br><br>
+            <div class="list-group"> <a href="#" class="list-group-item active"> 
+                    <h4 class="list-group-item-heading">Necesitas Ayuda?</h4> 
+                    <p class="list-group-item-text"></p> </a> 
+                <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Tu Información de C.B</h4> 
+                    <p class="list-group-item-text">En este apartado a tu izquierda tienes todos los datos relacionados a tu Centro de Becas tales como nombre, email, teléfono si deseas actualizar alguno de estos datos, modifícalos y pulsa clic en el botón “Actualizar Cuenta”.</p> </a>
+                <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Datos</h4> 
+                    <p class="list-group-item-text">El campo Identificación de centro puedes escribir las siglas de tu centro de becas para una rápida identificación del mismo dentro del sistema.</p> </a> </div>
 
-        <button type="submit"  class="btn btn-primary btn-lg"> Actualizar Cuenta </button><br>
-        <img src="Imagenes/centros_becas.jpeg" alt=""/>
-    </form>
-</form>
+        </div>
+    </div>
 </center>
 <script>
     function validaNumericos(event) {

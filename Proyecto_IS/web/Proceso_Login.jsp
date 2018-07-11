@@ -34,8 +34,16 @@
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));</script>
     </head>
-
-    <body background="Imagenes/wall3.jpg" style="background-repeat: space" onload="checkEdits(), checkEdits1(), checkEdits2()">
+<style>
+    body {text-align:center; padding:20px}
+    input {
+        min-width:200px!important;
+        max-width:99.99%!important;
+        transition: width 0.25s;
+        text-align:center;
+    }
+</style>
+<body background="Imagenes/wall3.jpg" style="background-repeat: space" onload="checkEdits(), checkEdits1(), checkEdits2()">
 
         <%
             String nickname = request.getParameter("nick");

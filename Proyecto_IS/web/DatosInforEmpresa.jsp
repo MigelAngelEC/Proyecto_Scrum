@@ -22,7 +22,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>InformaciónEmpresa</title>
         <link rel="icon" href="Imagenes/letterD.png">
-    </head><%
+    </head>
+        <style>
+        body {text-align:center; padding:20px}
+        input {
+            min-width:200px!important;
+            max-width:99.99%!important;
+            transition: width 0.25s;
+            text-align:center;
+        }
+    </style><%
         String email_emp;
         email_emp = request.getParameter("emaile");
     %>
@@ -74,117 +83,136 @@
         <br>
         <br>
     <center>
-        <h1>Registrar Empresa</h1>
-        <br>
-        <form action="ProcesarActualizarDatosEmpresa.jsp" method="post">
+        <div class="row">
+            <div class="col-sm-3">
+                <br>
+                <img src="Imagenes/Foto6.png" alt="" width="500"/>
+            </div>
+            <div class="col-sm-6">
+                <h1>Actualizar Mis Datos de  Empresa</h1>
+                <br>
+                <form action="ProcesarActualizarDatosEmpresa.jsp" method="post">
 
-            <table>
-                <tr><td colspan="2">  <center>
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">RUC</div>
-                        <input type="text" class="form-control" id="ci" placeholder="RUC: #123456789001" name="ruc" value="<%
-                            if (lista.isEmpty()) {
-                                out.print("");
-                            } else {
-                                out.print(lista.get(0).trim());
-                            }
-                               %>" readonly required maxlength="10"onkeypress='return validaNumericos(event)' >
-                    </div></center>
-                </td></tr>
-                <tr><td> &nbsp;</td></tr>
-                <tr><td colspan="2"><center>  
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Nombre de la Empresa</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej: AKROSCORP" name="nempresa" value="<%
-                            if (lista.isEmpty()) {
-                                out.print("");
-                            } else {
-                                out.print(lista.get(1).trim());
-                            }
-                               %>" onClick="this.select();"required>
-                    </div></center>
-                </td></tr>
-                <tr><td> &nbsp;</td></tr>
-                <tr><td colspan="2">  <center>
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Direccion</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej: Ajavi" name="direc" value="<%
-                            if (lista.isEmpty()) {
-                                out.print("");
-                            } else {
-                                out.print(lista.get(2).trim());
-                            }
-                               %>"onClick="this.select();"required >
-                    </div></center>
-                </td></tr>
-                <tr><td> &nbsp;</td></tr>
-                <tr><td colspan="2">  <center>
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Telefono</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej: 022467315" name="telefono" value="<%
-                            if (lista.isEmpty()) {
-                                out.print("");
-                            } else {
-                                out.print(lista.get(3).trim());
-                            }
-                               %>"onClick="this.select();"required onkeypress='return validaNumericos(event)'maxlength="10">
-                    </div> </center>
-                </td></tr>
-                <tr><td> &nbsp;</td></tr>
-                <tr><td colspan="2">  <center>
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Email</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej:akroscgi@akros.com" name="email" value="<%
-                            if (lista.isEmpty()) {
-                                out.print("");
-                            } else {
-                                out.print(lista.get(4).trim()
-                                );
-                            }
-                               %>"onClick="this.select();"required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" >
-                    </div> </center>
-                </td></tr>
-                <tr><td> &nbsp;</td></tr>
-                <tr><td colspan="2">  <center>
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Password</div>
-                        <input type="password" class="form-control" id="passw" placeholder="ej:AkrosC159" name="passw" value="<%
-                            if (lista.isEmpty()) {
-                                out.print("");
-                            } else {
-                                out.print(lista.get(6).trim());
-                            }
-                               %>"onClick="this.select();" maxlength="20" required>
-                    </div></center>
-                </td></tr>
-                <tr><td> &nbsp;</td></tr>
-                <tr><td colspan="2">  <center>
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Repetir Password</div>
-                        <input type="password" class="form-control" id="passwv" name="passwv" placeholder="Repetir Password" maxlength="20" required>
-                    </div></center>
-                </td></tr>
-                <tr><td> &nbsp;</td></tr>
-                <tr><td colspan="2">  <center>
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Descripción Empresa</div>
-                        <input type="text" class="form-control" id="txtSearch" placeholder="A que se dedica" name="desc" value="<%
-                            if (lista.isEmpty()) {
-                                out.print("");
-                            } else {
-                                out.print(lista.get(5).trim());
-                            }
-                               %>"onClick="this.select();"required>
-                    </div></center>
-                </td></tr>
-                <tr><td> &nbsp;</td></tr>
+                    <table>
+                        <tr><td colspan="2">  <center>
+                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                <div class="input-group-addon">RUC</div>
+                                <input type="text" class="form-control" id="ci" placeholder="RUC: #123456789001" name="ruc" value="<%
+                                    if (lista.isEmpty()) {
+                                        out.print("");
+                                    } else {
+                                        out.print(lista.get(0).trim());
+                                    }
+                                       %>" readonly required maxlength="10"onkeypress='return validaNumericos(event)' >
+                            </div></center>
+                        </td></tr>
+                        <tr><td> &nbsp;</td></tr>
+                        <tr><td colspan="2"><center>  
+                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                <div class="input-group-addon">Nombre de la Empresa</div>
+                                <input type="text" class="form-control" id="ci" placeholder="ej: AKROSCORP" name="nempresa" value="<%
+                                    if (lista.isEmpty()) {
+                                        out.print("");
+                                    } else {
+                                        out.print(lista.get(1).trim());
+                                    }
+                                       %>" onClick="this.select();"required>
+                            </div></center>
+                        </td></tr>
+                        <tr><td> &nbsp;</td></tr>
+                        <tr><td colspan="2">  <center>
+                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                <div class="input-group-addon">Direccion</div>
+                                <input type="text" class="form-control" id="ci" placeholder="ej: Ajavi" name="direc" value="<%
+                                    if (lista.isEmpty()) {
+                                        out.print("");
+                                    } else {
+                                        out.print(lista.get(2).trim());
+                                    }
+                                       %>"onClick="this.select();"required >
+                            </div></center>
+                        </td></tr>
+                        <tr><td> &nbsp;</td></tr>
+                        <tr><td colspan="2">  <center>
+                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                <div class="input-group-addon">Telefono</div>
+                                <input type="text" class="form-control" id="ci" placeholder="ej: 022467315" name="telefono" value="<%
+                                    if (lista.isEmpty()) {
+                                        out.print("");
+                                    } else {
+                                        out.print(lista.get(3).trim());
+                                    }
+                                       %>"onClick="this.select();"required onkeypress='return validaNumericos(event)'maxlength="10">
+                            </div> </center>
+                        </td></tr>
+                        <tr><td> &nbsp;</td></tr>
+                        <tr><td colspan="2">  <center>
+                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                <div class="input-group-addon">Email</div>
+                                <input type="text" class="form-control" id="ci" placeholder="ej:akroscgi@akros.com" name="email" value="<%
+                                    if (lista.isEmpty()) {
+                                        out.print("");
+                                    } else {
+                                        out.print(lista.get(4).trim()
+                                        );
+                                    }
+                                       %>"onClick="this.select();"required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" >
+                            </div> </center>
+                        </td></tr>
+                        <tr><td> &nbsp;</td></tr>
+                        <tr><td colspan="2">  <center>
+                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                <div class="input-group-addon">Password</div>
+                                <input type="password" class="form-control" id="passw" placeholder="ej:AkrosC159" name="passw" value="<%
+                                    if (lista.isEmpty()) {
+                                        out.print("");
+                                    } else {
+                                        out.print(lista.get(6).trim());
+                                    }
+                                       %>"onClick="this.select();" maxlength="20" required>
+                            </div></center>
+                        </td></tr>
+                        <tr><td> &nbsp;</td></tr>
+                        <tr><td colspan="2">  <center>
+                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                <div class="input-group-addon">Repetir Password</div>
+                                <input type="password" class="form-control" id="passwv" name="passwv" placeholder="Repetir Password" maxlength="20" required>
+                            </div></center>
+                        </td></tr>
+                        <tr><td> &nbsp;</td></tr>
+                        <tr><td colspan="2">  <center>
+                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                <div class="input-group-addon">Descripción Empresa</div>
+                                <input type="text" class="form-control" id="txtSearch" placeholder="A que se dedica" name="desc" value="<%
+                                    if (lista.isEmpty()) {
+                                        out.print("");
+                                    } else {
+                                        out.print(lista.get(5).trim());
+                                    }
+                                       %>"onClick="this.select();"required>
+                            </div></center>
+                        </td></tr>
+                        <tr><td> &nbsp;</td></tr>
 
-            </table>
+                    </table>
 
-            <button type="submit"  class="btn btn-primary btn-lg">Guardar Cambios </button>
-            <a  href="javascript:history.go(-1)" class="btn btn-primary btn-lg"> Cancelar </a><br>
-            <img src="Imagenes/empresa.jpg" higth="300" width="300"/>
-        </form>
+                    <button type="submit"  class="btn btn-primary btn-lg">Guardar Cambios </button>
+                    <a  href="javascript:history.go(-1)" class="btn btn-primary btn-lg"> Cancelar </a><br>
+                    <img src="Imagenes/empresa.jpg" higth="300" width="300"/>
+                </form>
+            </div>
+            <div class="col-sm-3">
+                <br><br>
+                <div class="list-group"> <a href="#" class="list-group-item active"> 
+                        <h4 class="list-group-item-heading">Necesitas Ayuda?</h4> 
+                        <p class="list-group-item-text"></p> </a> 
+                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Tu Información de Empresa</h4> 
+                        <p class="list-group-item-text">En este apartado a tu izquierda tienes todos los datos relacionados a tu Empresa tales como nombre, email, teléfono si deseas actualizar alguno de estos datos, modifícalos y pulsa clic en el botón “Actualizar Cuenta”.</p> </a>
+                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Datos</h4> 
+                        <p class="list-group-item-text">El campo RUC se encuentra bloqueado ya que es un campo con el cual se genera las ofertas de trabajo y demás. En el campo Descripción Empresa puedes describir a tu empresa hasta 100 palabras de requerirlo, así que se lo más conciso posible.</p> </a> </div>
+
+            </div>
+        </div>
     </center>
     <script>
         function validaNumericos(event) {

@@ -9,7 +9,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
         <!-- jQuery library -->
@@ -66,6 +65,15 @@
 
         </script>
     </head>
+    <style>
+    body {text-align:center; padding:20px}
+    input {
+        min-width:200px!important;
+        max-width:99.99%!important;
+        transition: width 0.25s;
+        text-align:center;
+    }
+</style>
 </head>
 <body background="Imagenes/wall3.jpg" style="background-repeat: space"onload="checkEdits4(), checkEdits5()">
 

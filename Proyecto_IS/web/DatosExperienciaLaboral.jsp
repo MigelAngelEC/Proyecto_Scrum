@@ -22,6 +22,15 @@
         <title>Experiencia Laboral</title>
         <link rel="icon" href="Imagenes/letterD.png">
     </head>
+        <style>
+        body {text-align:center; padding:20px}
+        input {
+            min-width:200px!important;
+            max-width:99.99%!important;
+            transition: width 0.25s;
+            text-align:center;
+        }
+    </style>
     <% String nickname = request.getParameter("nickn");
     %>
     <script>
@@ -71,7 +80,9 @@
 
             <div class="row">
                 <div class="col-sm-3">
-                    <img src="Imagenes/XPL.png" alt=""width="400" height="625"/>
+                    <img src="http://vicavelsa.com/wp-content/uploads/2017/10/Experiencia.png" alt=""width="450" height=""/>
+                    <img src="https://vignette.wikia.nocookie.net/dofus/images/1/1a/XP.png/revision/latest?cb=20130205214753&path-prefix=es" alt=""width="150" height=""/>
+
                 </div>
                 <div class="col-sm-6">
                     <div class="panel panel-default">
@@ -141,7 +152,7 @@
         function validaNumericos(event) {
             if (event.charCode >= 48 && event.charCode <= 57) {
                 return true;
-                
+
             }
             return false;
         }

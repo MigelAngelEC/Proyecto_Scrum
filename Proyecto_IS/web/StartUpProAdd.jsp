@@ -23,6 +23,15 @@
         <link rel="icon" href="Imagenes/letterD.png">
         <title>StarUps</title>
     </head>
+    <style>
+    body {text-align:center; padding:20px}
+    input {
+        min-width:200px!important;
+        max-width:99.99%!important;
+        transition: width 0.25s;
+        text-align:center;
+    }
+</style>
     <% String nickname = request.getParameter("nickn");
     %>
     <script>

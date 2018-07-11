@@ -26,6 +26,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ofertas Laborales</title>
     </head>
+    <style>
+    body {text-align:center; padding:20px}
+    input {
+        min-width:200px!important;
+        max-width:99.99%!important;
+        transition: width 0.25s;
+        text-align:center;
+    }
+</style>
     <body background="Imagenes/wall3.jpg" style="background-repeat: round">
         <%
             String cod, ci, nickname, empresa, cargo, descrip, time, xp, estado;

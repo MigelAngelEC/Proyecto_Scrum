@@ -177,7 +177,7 @@ public class clsUsuario {
     public boolean InsertarUsuario(String cedula, String nickname, String password, String Name, String Lname, String email, String Direccion, String telefono, String Celu) {
         boolean ejecuto = false;
         try {
-            String SQL = ("Insert into usuarios values ('" + cedula + "','user','','" + nickname + "','" + password + "','" + Name + "','" + Lname + "','" + telefono + "','" + Celu + "','" + email + "','" + Direccion + "');");
+            String SQL = ("Insert into usuarios values ('" + cedula + "','user',null,'" + nickname + "','" + password + "','" + Name + "','" + Lname + "','" + telefono + "','" + Celu + "','" + email + "','" + Direccion + "');");
             ClsConexion con = new ClsConexion();
             con.Ejecutar(SQL);
             ejecuto = true;
@@ -222,7 +222,7 @@ public class clsUsuario {
     }
 
     public String PrintOferts(String nickname) {
-        String SQLAdded = " <table class=table table-hover> <tr><th> Empresa</th><th>Cargo</th><th>Descripción</th><th>Tiempo Requerido</th><th>Experiencia Requerida</th><th>Estado de la Oferta</th> <th> Aplicar ¿?</th></tr>";
+        String SQLAdded = " <table class=table table-responsive table-fit table-hover> <tr><th> Empresa</th><th>Cargo</th><th>Descripción</th><th>Tiempo Requerido</th><th>Experiencia Requerida</th><th>Estado de la Oferta</th> <th> Aplicar ¿?</th></tr>";
         try {
             ClsConexion con = new ClsConexion();
             clsempresa emp = new clsempresa();

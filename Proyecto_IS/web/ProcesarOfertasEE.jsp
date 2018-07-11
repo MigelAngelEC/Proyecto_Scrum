@@ -20,7 +20,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="icon" href="Imagenes/letterD.png">
         <title>Oferta Laboral</title>
-    </head>      <%
+    </head>   <style>
+        body {text-align:center; padding:20px}
+        input {
+            min-width:200px!important;
+            max-width:99.99%!important;
+            transition: width 0.25s;
+            text-align:center;
+        }
+    </style>
+    <%
         String email_emp;
         email_emp = request.getParameter("emaile");
     %>

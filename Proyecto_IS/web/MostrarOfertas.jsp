@@ -23,6 +23,15 @@ Author     : migue
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ofertas Laborales</title>
     </head>
+    <style>
+    body {text-align:center; padding:20px}
+    input {
+        min-width:200px!important;
+        max-width:99.99%!important;
+        transition: width 0.25s;
+        text-align:center;
+    }
+</style>
     <% String nickname = request.getParameter("nickn");
     %>
     <script>
@@ -64,26 +73,36 @@ Author     : migue
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-        <div class="row">
-            <div class="col-sm-3 col-md-3"></div>
-            <div class="col-sm-6 col-md-6">
-                <br>
-                <h2>Ofertas Disponibles</h2>
-                <br>
-                <center>
-                    <%
-                        clsUsuario us = new clsUsuario();
-                        out.print(us.PrintOferts(nickname));
-                    %>
-                    <a  href="javascript:history.go(-1)" class="btn btn-primary btn-lg"> Cancelar </a><br>
-                </center>
-            </div>
-            <div class="col-sm-3 col-md-3"></div>
+      
+            <div class="row">
+                <div class="col-sm-3 ">
+                    <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/324638-200.png" width="250"/>
+                    
+                </div>
+                <div class="col-sm-6 ">
+                    <br>
+                    <h2>Ofertas Disponibles</h2>
+                    <br>
+                    <center>
+                        <%
+                            clsUsuario us = new clsUsuario();
+                            out.print(us.PrintOferts(nickname));
+                        %>
+                        <a  href="javascript:history.go(-1)" class="btn btn-primary btn-lg"> Cancelar </a><br>
+                    </center>
+                </div>
+                <div class="col-sm-3">
+                    <br><br>
+                    <div class="list-group"> <a href="#" class="list-group-item active"> 
+                            <h4 class="list-group-item-heading">Necesitas Ayuda?</h4> 
+                            <p class="list-group-item-text"></p> </a> 
+                        <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Ofertas L  </h4> 
+                            <p class="list-group-item-text">En la tabla que se encuentra a su izquierda puede observar la lista de ofertas disponibles de acuerdo a las empresas con una breve descripción del cargo al cual aplicar.</p> </a>
+                        <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Datos</h4> 
+                            <p class="list-group-item-text">Pulsa en el botón “aplicar” de estar seguro te rediccionara a la siguiente pagina donde te mostraremos tu experiencia VS la requerida. Las ofertas no disponibles, se encuentra en estado de actualización de requerimientos o detenidas de acuerdo a la empresa.</p> </a> </div>
 
-        </div>           
-
-
-
+                </div>           
+        </div>
     </body>
 
 </html>

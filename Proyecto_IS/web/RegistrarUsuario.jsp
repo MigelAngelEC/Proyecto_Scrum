@@ -21,6 +21,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registrar Usuario</title>
     </head>
+    <style>
+    body {text-align:center; padding:20px}
+    input {
+        min-width:200px!important;
+        max-width:99.99%!important;
+        transition: width 0.25s;
+        text-align:center;
+    }
+</style>
     <body background="Imagenes/wall3.jpg" style="background-repeat: round">
 
         <nav class="navbar navbar-default">
@@ -68,14 +77,14 @@
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Cedula</div>
-                        <input type="text" class="form-control" id="ci" placeholder="CI #1234567890" name="cedula" required maxlength="10">
+                        <input type="text" class="form-control" id="cedula" placeholder="CI #1234567890" name="cedula" required maxlength="10">
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2"><center>  
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">NickName</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej: Jose123" name="nickn"required>
+                        <input type="text" class="form-control" id="nickn" placeholder="ej: Jose123" name="nickn"required>
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
@@ -96,42 +105,42 @@
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Nombres</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej: Juan Jose" name="name"required>
+                        <input type="text" class="form-control" id="name" placeholder="ej: Juan Jose" name="name"required onkeypress='return validaLetras(event)'>
                     </div> </center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2"> <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Apellido</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej: Catillo Perez" name="lname"required>
+                        <input type="text" class="form-control" id="lname" placeholder="ej: Catillo Perez" name="lname"required onkeypress='return validaLetras(event)'>
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">em@il</div>
-                        <input type="email" class="form-control" id="ci" placeholder="ej: josejj@gmail.com" name="email"required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"  >
+                        <input type="email" class="form-control" id="email" placeholder="ej: josejj@gmail.com" name="email"required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"  >
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Teléfono Fijo</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej 022465873" name="telf"required maxlength="10"onkeypress='return validaNumericos(event)'>
+                        <input type="text" class="form-control" id="telf" placeholder="ej 022465873" name="telf"required maxlength="10"onkeypress='return validaNumericos(event)'>
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2"> <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Teléfono Celular </div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej: 0912345678"name="celu"required  maxlength="10" onkeypress='return validaNumericos(event)'>
+                        <input type="text" class="form-control" id="celu" placeholder="ej: 0912345678"name="celu"required  maxlength="10" onkeypress='return validaNumericos(event)'>
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Dirección</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej: Ciudadela Ibarra" name="direc"required>
+                        <input type="text" class="form-control" id="direc" placeholder="ej: Ciudadela Ibarra" name="direc"required>
                     </div>  </center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>

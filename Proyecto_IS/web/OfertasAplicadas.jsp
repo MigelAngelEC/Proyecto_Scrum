@@ -25,7 +25,15 @@
 
         <title>Ofertas Aplicadas </title>
     </head>
-
+<style>
+    body {text-align:center; padding:20px}
+    input {
+        min-width:200px!important;
+        max-width:99.99%!important;
+        transition: width 0.25s;
+        text-align:center;
+    }
+</style>
     <% String nickname = request.getParameter("nickn");
     %>
     <script>
@@ -72,8 +80,11 @@
             clsUsuario us = new clsUsuario();
             String printed = us.PrintOfertsApply(nickname);%>
         <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-7">
+            <div class="col-sm-2">
+                <img src="https://woculus.com/wp-content/uploads/2016/11/hired-514x600.png" width="400"/>
+            </div>
+
+            <div class="col-sm-8 ">
 
                 <div class="container">
                     <h2>Ofertas Aplicadas</h2>
@@ -83,9 +94,20 @@
                 </div>
 
             </div>
-            <div class="col-sm-3"></div>
+            <div class="col-sm-2">
+                <div class="list-group"> <a href="#" class="list-group-item active"> 
+                        <h4 class="list-group-item-heading">Necesitas Ayuda?</h4> 
+                        <p class="list-group-item-text"></p> </a> 
+                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">O.Aplicadas</h4> 
+                            <p class="list-group-item-text">En la tabla izquierda puedes observar las ofertas que has aplicado, con una breve descripción de la empresa y el cargo además del estado de la misma.</p> </a>
+                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Datos</h4> 
+                        <p class="list-group-item-text">Puedes eliminar la oferta a la que has aplicado clicando en el botón Eliminar Oferta .</p> </a> </div>
+
+            </div>
+
         </div>
+    </div>
 
 
-    </body>
+</body>
 </html>

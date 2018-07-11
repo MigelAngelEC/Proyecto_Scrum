@@ -24,6 +24,15 @@
         <link rel="icon" href="Imagenes/letterD.png">
         <title>Registrando Mi Perfil</title>
     </head>
+    <style>
+    body {text-align:center; padding:20px}
+    input {
+        min-width:200px!important;
+        max-width:99.99%!important;
+        transition: width 0.25s;
+        text-align:center;
+    }
+</style>
     <body background="Imagenes/wall3.jpg" style="background-repeat: space">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -74,7 +83,7 @@
                     direc = request.getParameter("direc");
                     telefo = request.getParameter("telf");
                     celu = request.getParameter("celu");
-
+                    out.print(ci+"_"+nickn+"_"+pass+"_"+name+"_"+apel+"_"+mail+"_"+direc+"_"+telefo+"_"+celu);
                     clsUsuario obj = new clsUsuario(ci, nickn, pass, name, apel, mail, direc, telefo, celu);
                     out.print("<br> Cedula : " + obj.getCedula() + "<br>Nombre&Apellido: " + obj.getNombre() + " " + obj.getApellido());
 

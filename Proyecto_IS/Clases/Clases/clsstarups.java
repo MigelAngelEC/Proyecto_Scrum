@@ -127,9 +127,9 @@ public class clsstarups {
                         + "<input type=text name=codstart value='" + this.MyStartUP(nickname) + "'hidden=true >"
                         + "<input type=text name=nickn value='" + nickname + "'hidden=true >";
                 if (rs.getInt(6) == 0) {
-                    SQLAdded += "<td>  <button type=submit class=list-group-item>Aplicar </button></td></form></tr>";
+                    SQLAdded += "<td>  <button type=submit class=list-group-item>Agergar </button></td></form></tr>";
                 } else {
-                    SQLAdded += "<td>  <button title=\"Usuario registrado en StartUP, impsible registrarse en más de una\" type=submit class=btn btn-link disabled=true>Aplicar </button></td></form></tr>";
+                    SQLAdded += "<td>  <button title=\"Usuario registrado en StartUP, impsible registrarse en más de una\" type=submit class=btn btn-link disabled=true>Agregar </button></td></form></tr>";
 
                 }
 

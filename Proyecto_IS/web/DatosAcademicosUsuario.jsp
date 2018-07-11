@@ -22,9 +22,19 @@
         <title>Datos Academicos de Usuario</title>
         <link rel="icon" href="Imagenes/letterD.png">
     </head>
+    <style>
+        body {text-align:center; padding:20px}
+        input {
+            min-width:200px!important;
+            max-width:99.99%!important;
+            transition: width 0.25s;
+            text-align:center;
+        }
+    </style>
     <% String nickname = request.getParameter("nickn");
     %>
     <script>
+
         function myFunction() {
         <%
             if (nickname == null) {
@@ -70,7 +80,7 @@
 
             <div class="row">
                 <div class="col-sm-3">
-                    <img src="Imagenes/DA.png" alt=""width="350" height="625"/>
+                    <img src="https://www.freeiconspng.com/uploads/education-png-0.png" alt=""width="475"/>
 
                 </div>
                 <div class="col-sm-6">
@@ -88,21 +98,21 @@
                                 <tr><td colspan="2">  <center>
                                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                         <div class="input-group-addon">Institución</div>
-                                        <input type="text" class="form-control" id="Instituto" placeholder="U.P.S" name="Instituto" size="20px" required=""maxlength="90">
+                                        <input type="text" class="form-control" id="Instituto" placeholder="U.P.S" name="Instituto" size="20px" required=""maxlength="50">
                                     </div></center>
                                 </td></tr>
                                 <tr><td> <br></td></tr>
                                 <tr><td colspan="2">  <center>
                                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                         <div class="input-group-addon">Titulo</div>
-                                        <input type="text" class="form-control" id="titulo" placeholder="Ing. Sistemas" name="Titulo" size="24px"onkeypress='return validaLetras(event)' required=""maxlength="140">
+                                        <input type="text" class="form-control" id="titulo" placeholder="Ing. Sistemas" name="Titulo" size="24px"onkeypress='return validaLetras(event)' required=""maxlength="100">
                                     </div></center>
                                 </td></tr>
                                 <tr><td> <br></td></tr>
                                 <tr><td colspan="2">  <center>
                                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                         <div class="input-group-addon">Especialidad</div>
-                                        <input type="text" class="form-control" id="espe" placeholder="Programación" name="Espe"  onkeypress='return validaLetras(event)'required="">
+                                        <input type="text" class="form-control" id="espe" placeholder="Programación" name="Espe"  onkeypress='return validaLetras(event)'required="" maxlength="50">
                                     </div></center>
                                 </td></tr>
                                 <tr><td> <br></td></tr>
@@ -139,6 +149,21 @@
             }
             return true;
         }
+    </script>
+    <script>
+        function resizable(el, factor) {
+            var int = Number(factor) || 7.7;
+            function resize() {
+                el.style.width = ((el.value.length + 1) * int) + 'px'
+            }
+            var e = 'keyup,keypress,focus,blur,change'.split(',');
+            for (var i in e)
+                el.addEventListener(e[i], resize, false);
+            resize();
+        }
+        resizable(document.getElementById('Instituto'), 7);
+        resizable(document.getElementById('titulo'), 7);
+        resizable(document.getElementById('espe'), 7);
     </script>
 </body>
 </html>

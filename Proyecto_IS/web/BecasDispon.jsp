@@ -21,7 +21,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Becas Disponibles</title>
         <link rel="icon" href="Imagenes/letterD.png">
-    </head>
+    </head>    <style>
+        body {text-align:center; padding:20px}
+        input {
+            min-width:200px!important;
+            max-width:99.99%!important;
+            transition: width 0.25s;
+            text-align:center;
+        }
+    </style>
     <% String nickname = request.getParameter("nickn");
     %>
     <script>
@@ -64,10 +72,12 @@
             </div><!-- /.container-fluid -->
         </nav>
         <div class="row">
-            <div class="col-sm-3 col-md-3"></div>
-            <div class="col-sm-6 col-md-6">
+            <div class="col-sm-3 col-md-2">
+                <img src="Imagenes/Foto5.png" alt="" width="310"/>
+            </div>
+            <div class="col-sm-6 col-md-8">
                 <br>
-                <h2>Ofertas Disponibles</h2>
+                <h2>Becas Disponibles</h2>
                 <br>
                 <center>
                     <%
@@ -77,7 +87,17 @@
                     <a  href="javascript:history.go(-1)" class="btn btn-primary btn-lg"> Cancelar </a><br>
                 </center>
             </div>
-            <div class="col-sm-3 col-md-3"></div>
+            <div class="col-sm-3 col-md-2">
+                <br><br><br>
+                <div class="list-group"> <a href="#" class="list-group-item active"> 
+
+                        <h4 class="list-group-item-heading">Necesitas Ayuda?</h4> 
+                        <p class="list-group-item-text"></p> </a> 
+                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Becas Disponibles</h4> 
+                        <center> <img src="http://shynemedia.com/dev/wow/amadeus/20160311_wow-amadeus_landing-page/media/solutions/assets/images/20160316_airlines_graphic-icon-3_hand.png" width="100" height="100" /></center>
+                        <br> <p class="list-group-item-text">A su izquierda se encuentran todas las ofertas de trabajo disponibles teniendo en cuenta la descripción de la beca, su inicio y fin además de su horario correspondiente. Aquellas becas a las cuales no se puede aplicar debido a que el botón “Aplicar” no se encuentra activa, debido a su estado, Para más información vea a Ayuda</p> </a>
+                </div>
+            </div>
 
         </div>           
 

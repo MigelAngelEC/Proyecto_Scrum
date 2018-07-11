@@ -21,7 +21,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Becas Disponibles</title>
         <link rel="icon" href="Imagenes/letterD.png">
-    </head>
+    </head>    <style>
+        body {text-align:center; padding:20px}
+        input {
+            min-width:200px!important;
+            max-width:99.99%!important;
+            transition: width 0.25s;
+            text-align:center;
+        }
+    </style>
     <% String nickname = request.getParameter("nickn");
     %>
     <script>
@@ -68,8 +76,11 @@
             String printed = us.PrintBeksApply(nickname);
         %>
         <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-7">
+            <div class="col-sm-2">
+                <img src="Imagenes/Foto9.png" alt="" width="400" height=""/>
+
+            </div>
+            <div class="col-sm-8">
 
                 <div class="container">
                     <h2>Becas Aplicadas</h2>
@@ -79,7 +90,17 @@
                 </div>
 
             </div>
-            <div class="col-sm-3"></div>
+            <div class="col-sm-2">
+                <div class="list-group"> <a href="#" class="list-group-item active"> 
+
+                        <h4 class="list-group-item-heading">Necesitas Ayuda?</h4> 
+                        <p class="list-group-item-text"></p> </a> 
+                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Becas Aplicadas</h4> 
+                        <center> <img src="https://www.javerianacali.edu.co/sites/ujc/files/node/field-documents/field_document_file/icon-becas.png" width="100" height="100" /></center>
+                        <br> <p class="list-group-item-text">A tu izquierda puedes observar las becas en las que has aplicado, puedes observar los datos tantos como requieras, además de ello si por algún motivo, deseas eliminar la beca, puedes pulsar en el botón “Eliminar”.</p> </a>
+                </div>
+
+            </div>
         </div>
 
 

@@ -19,7 +19,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="icon" href="Imagenes/letterD.png">
         <title>Oferta Laboral</title>
-    </head>      <%
+    </head>    
+    <style>
+    body {text-align:center; padding:20px}
+    input {
+        min-width:200px!important;
+        max-width:99.99%!important;
+        transition: width 0.25s;
+        text-align:center;
+    }
+</style><%
         String email_emp;
         email_emp = request.getParameter("emaile");
     %>
@@ -65,60 +74,82 @@
         </nav>
 
     <center>
-        <h1>Oferta Empleo</h1>
-        <br>
-        <form action="Oferta_Empleo.jsp" method="post">
+        <div class="row">
+            <div class="col-sm-3">
+                <center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="https://dvz3vrza543jw.cloudfront.net/assets/marketing-website/guides/recruiting/closing-the-deal-ff1c3caaa83d7d044f5f5845fc6824f2.png" width="250"/></center>
+                <img src="https://www.pngarts.com/files/1/Career-PNG-Photo.png" width="650"/>
+            </div>
+            <div class="col-sm-6">
+                <h1>Oferta Empleo</h1>
+                <br>
+                <form action="Oferta_Empleo.jsp" method="post">
 
-            <table>
-                <tr><td> &nbsp;</td></tr>
-                <tr><td colspan="2">  <center>
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Cargo Empresarial</div>
-                        <input type="text" class="form-control" id="cargo" placeholder="ej: Gerente" name="cargo">
-                    </div></center>
-                </td></tr>
-                <tr><td> &nbsp;</td></tr>
-                <tr><td colspan="2">  <center>
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Descripcion</div>
-                        <input type="text" class="form-control" id="desc"  placeholder="ej: Varias Habilidades" name="desc">
+                    <table>
+                        <tr><td> &nbsp;</td></tr>
+                        <tr><td colspan="2">  <center>
+                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                <div class="input-group-addon">Cargo Empresarial</div>
+                                <input type="text" class="form-control" id="cargo" placeholder="ej: Gerente" name="cargo">
+                            </div></center>
+                        </td></tr>
+                        <tr><td> &nbsp;</td></tr>
+                        <tr><td colspan="2">  <center>
+                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                <div class="input-group-addon">Descripcion</div>
+                                <input type="text" class="form-control" id="desc"  placeholder="ej: Varias Habilidades" name="desc">
 
-                    </div> </center>
-                </td></tr>
-                <tr><td> &nbsp;</td></tr>
-                <tr><td colspan="2">  <center>
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon" >Tiempo Requerido</div>
-                        <select class="form-control" id="time" name="time" >
-                            <option value="4 Horas">4 Horas o menos</option>
-                            <option value="6 Horas">6 Horas</option>
-                            <option value="8 Horas">8 Horas</option>
-                            <option value="10 Horas">10 Horas</option>
-                        </select>
-                    </div></center>
-                </td></tr>
-                <tr><td> &nbsp;</td></tr>
-                <tr><td colspan="2">  <center>
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon" >Experiencia Requerida</div>
-                        <select class="form-control" id="xp" name="xp" >
-                            <option value="3 Meses">3 Meses o menos</option>
-                            <option value="6 Meses">6 Meses</option>
-                            <option value="9 Meses">9 Meses</option>
-                            <option value="2 Años">2 Años</option>
-                            <option value="5 Años">5 Años o más</option>
-                        </select>
-                    </div></center>
-                </td></tr>
-                <tr><td> &nbsp;</td></tr>
-            </table>
-            </table>
-            <input type="text" name="emaile" value="<%out.println(email_emp);%>" hidden="true" >
-            <button type="submit"  class="btn btn-primary btn-lg"> Crear Oferta Laboral </button>
-            <a  href="javascript:history.go(-1)" class="btn btn-primary btn-lg"> Cancelar </a><br>
-            <br>
-            <img src="Imagenes/oferta.jpg" higth="300" width="300"/>
-        </form>
+                            </div> </center>
+                        </td></tr>
+                        <tr><td> &nbsp;</td></tr>
+                        <tr><td colspan="2">  <center>
+                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                <div class="input-group-addon" >Tiempo Requerido</div>
+                                <select class="form-control" id="time" name="time" >
+                                    <option value="4 Horas">4 Horas o menos</option>
+                                    <option value="6 Horas">6 Horas</option>
+                                    <option value="8 Horas">8 Horas</option>
+                                    <option value="10 Horas">10 Horas</option>
+                                </select>
+                            </div></center>
+                        </td></tr>
+                        <tr><td> &nbsp;</td></tr>
+                        <tr><td colspan="2">  <center>
+                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                <div class="input-group-addon" >Experiencia Requerida</div>
+                                <select class="form-control" id="xp" name="xp" >
+                                    <option value="3 Meses">3 Meses o menos</option>
+                                    <option value="6 Meses">6 Meses</option>
+                                    <option value="9 Meses">9 Meses</option>
+                                    <option value="2 Años">2 Años</option>
+                                    <option value="5 Años">5 Años o más</option>
+                                </select>
+                            </div></center>
+                        </td></tr>
+                        <tr><td> &nbsp;</td></tr>
+                    </table>
+                    </table>
+                    <input type="text" name="emaile" value="<%out.println(email_emp);%>" hidden="true" >
+                    <button type="submit"  class="btn btn-primary btn-lg"> Crear Oferta Laboral </button>
+                    <a  href="javascript:history.go(-1)" class="btn btn-primary btn-lg"> Cancelar </a><br>
+                    <br>
+                    <img src="Imagenes/oferta.jpg" higth="300" width="300"/>
+                </form>
+            </div>
+            <div class="col-sm-3">
+                <br><br>
+                <div class="list-group"> <a href="#" class="list-group-item active"> 
+                        <h4 class="list-group-item-heading">Necesitas Ayuda?</h4> 
+                        <p class="list-group-item-text"></p> </a> 
+                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Tu Oferta de Empleo</h4> 
+                        <p class="list-group-item-text">En este apartado a tu izquierda tienes todos los datos relacionados para Crear una Oferta de Empleo, Ingresa el cargo empresarial al que los usuarios podrán aplicar, describe acerca del mismo además del tiempo que requieres que trabaje dicho usuario y la experiencia requerida para poder aplicar a este cargo .</p> </a>
+                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Datos</h4> 
+                        <p class="list-group-item-text">Puedes Describir el Cargo empresarial con 100 palabras, se conciso para explicar el cargo empresarial. Puedes escoger una sola opción tanto en el campo tiempo requerido y experiencia requerida.</p> </a> </div>
+
+            </div>
+        </div>
     </center>
 </body>
 </html>

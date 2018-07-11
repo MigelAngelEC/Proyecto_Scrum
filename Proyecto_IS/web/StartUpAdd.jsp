@@ -25,6 +25,15 @@
     </head>
     <% String nickname = request.getParameter("nickn");
     %>
+    <style>
+        body {text-align:center; padding:20px}
+        input {
+            min-width:200px!important;
+            max-width:99.99%!important;
+            transition: width 0.25s;
+            text-align:center;
+        }
+    </style>
     <script>
         function myFunction() {
         <%
@@ -65,10 +74,12 @@
             </div><!-- /.container-fluid -->
         </nav>
         <div class="row">
-            <div class="col-sm-3 col-md-3"></div>
+            <div class="col-sm-3 col-md-3">
+                <img src="https://www.freeiconspng.com/uploads/--relations-social-graph-user-group-icon--icon-search-engine-22.png" width="400"/>
+            </div>
             <div class="col-sm-6 col-md-6">
                 <br>
-                <h2>Ofertas Disponibles</h2>
+                <h2>Usuarios Disponibles</h2>
                 <br>
                 <center>
                     <%
@@ -78,7 +89,15 @@
                     <a  href="javascript:history.go(-1)" class="btn btn-primary btn-lg"> Cancelar </a><br>
                 </center>
             </div>
-            <div class="col-sm-3 col-md-3"></div>
-
+            <div class="col-sm-3 col-md-3">
+                <br>   <br>
+                <div class="list-group"> <a href="#" class="list-group-item active"> 
+                        <h4 class="list-group-item-heading">Necesitas Ayuda?</h4> 
+                        <p class="list-group-item-text"></p> </a> 
+                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">StartUp</h4> 
+                        <p class="list-group-item-text">En esta pagina a tu izquierda se encuentran todos los Usuarios Disponibles los cuales puedes agregar a tu StartUp .</p> </a>
+                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Datos</h4> 
+                        <p class="list-group-item-text">Puedes agregar a cualquier usuario solamente dando clic en “Agregar”    .</p> </a> </div>
+            </div>
         </div>      
 </html>

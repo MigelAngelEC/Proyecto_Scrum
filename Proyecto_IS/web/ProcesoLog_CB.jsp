@@ -27,6 +27,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
+    <style>
+    body {text-align:center; padding:20px}
+    input {
+        min-width:200px!important;
+        max-width:99.99%!important;
+        transition: width 0.25s;
+        text-align:center;
+    }
+</style>
     <body background="Imagenes/wall3.jpg" style="background-repeat: round">
 
         <!-- PROCESO DE REGISTRO DE LOS CENTROS DE BECAS-->  

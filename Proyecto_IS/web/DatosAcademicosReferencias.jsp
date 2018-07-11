@@ -20,7 +20,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Referencias del Usuario</title>
         <link rel="icon" href="Imagenes/letterD.png">
-    </head>
+    </head>    <style>
+        body {text-align:center; padding:20px}
+        input {
+            min-width:200px!important;
+            max-width:99.99%!important;
+            transition: width 0.25s;
+            text-align:center;
+        }
+    </style>
     <% String nickname = request.getParameter("nickn");
     %>
     <script>
@@ -67,7 +75,7 @@
         <h1>Registrar Mis Referencias Personales</h1>
         <form action="ProcesarDatosAcademicosReferencias.jsp" method="post">
             <div class="col-sm-3">  
-                <img src="Imagenes/RF.png" alt="" width="350" height="625"/>
+                <img src="Imagenes/Foto7.png" alt="" width="350"/>
             </div>
 
             <div class="col-sm-6">

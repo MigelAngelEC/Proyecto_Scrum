@@ -20,7 +20,16 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
         <link rel="icon" href="Imagenes/letterD.png">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Oferta_Empleo</title>
+        <title>Oferta_Empleo</title> </head>
+    <style>
+    body {text-align:center; padding:20px}
+    input {
+        min-width:200px!important;
+        max-width:99.99%!important;
+        transition: width 0.25s;
+        text-align:center;
+    }
+</style>
         <%
             String email_emp;
             email_emp = request.getParameter("emaile");
@@ -36,7 +45,7 @@
             %>
             }
         </script>
-    </head>
+   
     <body background="Imagenes/wall3.jpg" style="background-repeat: space" onload="myFunction()">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
