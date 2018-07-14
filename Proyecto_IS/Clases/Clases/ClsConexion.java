@@ -45,17 +45,22 @@ public class ClsConexion {
 
     public ClsConexion() {
 
-        this.driver = "org.postgresql.Driver";
-        this.user = "postgres";
+//       this.driver = "org.postgresql.Driver";
+//        this.user = "postgres";
+//        this.pwd = "1234";
+//        this.cadena = "jdbc:postgresql://localhost:5432/BaseProy3";
+//        this.con = this.crearConexion();
+        this.driver = "com.mysql.jdbc.Driver";
+        this.user = "root";
         this.pwd = "1234";
-        this.cadena = "jdbc:postgresql://localhost:5432/BaseProy3";
+        this.cadena = "jdbc:mysql://localhost:3306/baseproy";
         this.con = this.crearConexion();
-
     }
 
     Connection crearConexion() {
         try {
-            Class.forName("org.postgresql.Driver");
+            //Class.forName("org.postgresql.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException e) {
 
         }
