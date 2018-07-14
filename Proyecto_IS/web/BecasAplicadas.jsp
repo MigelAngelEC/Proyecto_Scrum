@@ -65,7 +65,7 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right" >
                         <p class="navbar-text ">Signed in as <a class="navbar-link"><i><%out.println(nickname);%></i></a></p>
-                        <li><a href="#">Ayuda</a></li>
+                       <li><a href="Ayuda.jsp">Ayuda</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -91,14 +91,7 @@
 
             </div>
             <div class="col-sm-2">
-                <div class="list-group"> <a href="#" class="list-group-item active"> 
-
-                        <h4 class="list-group-item-heading">Necesitas Ayuda?</h4> 
-                        <p class="list-group-item-text"></p> </a> 
-                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Becas Aplicadas</h4> 
-                        <center> <img src="https://www.javerianacali.edu.co/sites/ujc/files/node/field-documents/field_document_file/icon-becas.png" width="100" height="100" /></center>
-                        <br> <p class="list-group-item-text">A tu izquierda puedes observar las becas en las que has aplicado, puedes observar los datos tantos como requieras, además de ello si por algún motivo, deseas eliminar la beca, puedes pulsar en el botón “Eliminar”.</p> </a>
-                </div>
+               
 
             </div>
         </div>

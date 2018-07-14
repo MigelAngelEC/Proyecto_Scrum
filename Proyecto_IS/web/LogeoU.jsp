@@ -19,14 +19,14 @@
         <title>Login de candidatos</title>
     </head>
     <style>
-    body {text-align:center; padding:20px}
-    input {
-        min-width:200px!important;
-        max-width:99.99%!important;
-        transition: width 0.25s;
-        text-align:center;
-    }
-</style>
+        body {text-align:center; padding:20px}
+        input {
+            min-width:200px!important;
+            max-width:99.99%!important;
+            transition: width 0.25s;
+            text-align:center;
+        }
+    </style>
     <body background="Imagenes/wall3.jpg" style="background-repeat: space">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -57,7 +57,7 @@
                                 <li><a href="TipoRegistro.html">Registrarse</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Ayuda</a></li>
+                         <li><a href="Ayuda.jsp">Ayuda</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->

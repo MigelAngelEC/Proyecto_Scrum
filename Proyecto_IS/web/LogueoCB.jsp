@@ -58,7 +58,7 @@
                                 <li><a href="TipoRegistro.html">Registrarse</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Ayuda</a></li>
+                        <li><a href="Ayuda.jsp">Ayuda</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
