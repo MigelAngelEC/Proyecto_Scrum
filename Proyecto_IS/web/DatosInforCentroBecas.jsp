@@ -184,15 +184,7 @@
                 <img src="Imagenes/centros_becas.jpeg" alt=""/>
             </form></div>
         <div class="col-sm-3">
-            <br><br>
-            <div class="list-group"> <a href="#" class="list-group-item active"> 
-                    <h4 class="list-group-item-heading">Necesitas Ayuda?</h4> 
-                    <p class="list-group-item-text"></p> </a> 
-                <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Tu Información de C.B</h4> 
-                    <p class="list-group-item-text">En este apartado a tu izquierda tienes todos los datos relacionados a tu Centro de Becas tales como nombre, email, teléfono si deseas actualizar alguno de estos datos, modifícalos y pulsa clic en el botón “Actualizar Cuenta”.</p> </a>
-                <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Datos</h4> 
-                    <p class="list-group-item-text">El campo Identificación de centro puedes escribir las siglas de tu centro de becas para una rápida identificación del mismo dentro del sistema.</p> </a> </div>
-
+           
         </div>
     </div>
 </center>

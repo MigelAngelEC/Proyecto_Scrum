@@ -53,7 +53,7 @@ public class ClsConexion {
         this.driver = "com.mysql.jdbc.Driver";
         this.user = "root";
         this.pwd = "1234";
-        this.cadena = "jdbc:mysql://localhost:3306/baseproy";
+        this.cadena = "jdbc:mysql://localhost:3306/baseproy1";
         this.con = this.crearConexion();
     }
 

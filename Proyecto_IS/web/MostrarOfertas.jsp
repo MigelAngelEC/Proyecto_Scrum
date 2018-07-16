@@ -92,15 +92,7 @@ Author     : migue
                     </center>
                 </div>
                 <div class="col-sm-3">
-                    <br><br>
-                    <div class="list-group"> <a href="#" class="list-group-item active"> 
-                            <h4 class="list-group-item-heading">Necesitas Ayuda?</h4> 
-                            <p class="list-group-item-text"></p> </a> 
-                        <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Ofertas L  </h4> 
-                            <p class="list-group-item-text">En la tabla que se encuentra a su izquierda puede observar la lista de ofertas disponibles de acuerdo a las empresas con una breve descripción del cargo al cual aplicar.</p> </a>
-                        <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Datos</h4> 
-                            <p class="list-group-item-text">Pulsa en el botón “aplicar” de estar seguro te rediccionara a la siguiente pagina donde te mostraremos tu experiencia VS la requerida. Las ofertas no disponibles, se encuentra en estado de actualización de requerimientos o detenidas de acuerdo a la empresa.</p> </a> </div>
-
+                   
                 </div>           
         </div>
     </body>

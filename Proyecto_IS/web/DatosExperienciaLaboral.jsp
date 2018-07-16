@@ -134,14 +134,7 @@
                     <a  href="javascript:history.go(-1)" class="btn btn-primary btn-lg"> Cancelar </a><br>
                 </div>
                 <div class="col-sm-3">
-                    <div class="list-group"> <a href="#" class="list-group-item active"> 
-                            <h4 class="list-group-item-heading">Necesitas Ayuda?</h4> 
-                            <p class="list-group-item-text"></p> </a> 
-                        <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Tus Experiencias Laborales</h4> 
-                            <p class="list-group-item-text">Son Aquellos datos que refieren a toda la experiencia vivida en el entorno laboral tales como el tiempo trabajado dentro de una empresa y el cargo desempeñado. Nos permite conocer el tiempo promedio que trabajas en una empresa.</p> </a>
-                        <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Datos</h4> 
-                            <p class="list-group-item-text">En cuanto al tiempo selecciona una sola opción que se encuentre dentro de tu rango, agrega la empresa como el ejemplo. En el campo contacto puedes agregar un número de teléfono o celular de una persona referente que trabaje en tu antigua empresa y escribe finalmente el Cargo que desempeñaste..</p> </a> </div>
-
+                   
 
 
                 </div>

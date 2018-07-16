@@ -102,8 +102,12 @@ public class clsCentroBecas {
                     + "            cod_cb, cod_perfil, nombre_cb, direccion, telefonos, email, password)\n"
                     + "           VALUES ('" + id + "','cbeca','" + nombre + "','" + dir + "','" + tel + "','" + email + "','" + pwd + "');");
             ClsConexion con = new ClsConexion();
-            con.Ejecutar(SQL);
-            ejecuto = true;
+            String eject = con.Ejecutar(SQL);
+            if (eject.equalsIgnoreCase("Datos Insertados")) {
+                ejecuto = true;
+            } else {
+                ejecuto = false;
+            }
         } catch (Exception e) {
             System.out.println("Error" + e.getMessage());
             ejecuto = false;
@@ -210,8 +214,12 @@ public class clsCentroBecas {
             String SQL = ("UPDATE centros__becas\n"
                     + "   SET nombre_cb='" + nombre + "',direccion='" + dir + "',telefono='" + tel + "',email='" + email + "',password='" + pwd + "' where cod_cb='" + id + "'");
             ClsConexion con = new ClsConexion();
-            con.Ejecutar(SQL);
-            ejecuto = true;
+            String eject = con.Ejecutar(SQL);
+            if (eject.equalsIgnoreCase("Datos Insertados")) {
+                ejecuto = true;
+            } else {
+                ejecuto = false;
+            }
         } catch (Exception e) {
             System.out.println("Error" + e.getMessage());
             ejecuto = false;
@@ -237,5 +245,102 @@ public class clsCentroBecas {
         }
         System.out.println(" " + centro);
         return centro;
+    }
+
+    public String PrintBecas(String emailcb) {
+        String SQLAdded = " <table class=table table-hover> <tr><th>Centro de Beca</th><th>Descripción de Beca</th><th>Fecha de Inicio</th><th>Fecha de Finalización </th><th>Horario de la Beca </th><th>Estado de la Beca</th> <th> Editar ¿?</th><th> Eliminar ¿?</th></tr>";
+        try {
+            ClsConexion con = new ClsConexion();
+            ResultSet rs = con.Consultar("SELECT cb.nombre_cb, bc.descripcion_beca, bc.fecha_inicio, bc.fecha_fin, bc.horario, bc.estado,bc.COD_BECA,bc.COD_CB FROM centros__becas as cb, becas as bc WHERE cb.EMAIL='" + emailcb + "' and cb.cod_cb = bc.cod_cb;");
+            while (rs.next()) {
+                SQLAdded += "<tr><td>" + rs.getString(1) + "</td><td>" + rs.getString(2) + "</td><td>" + rs.getString(3) + "</td><td>" + rs.getString(4) + "</td><td>" + rs.getString(5) + "</td><td>" + rs.getString(6) + "</td>"
+                        + "<form action=BecasEdit.jsp>"
+                        + "<input type=text name=codcbeca value='" + rs.getString(8).trim() + "'hidden=true >"
+                        + "<input type=text name=codobeca value='" + rs.getInt(7) + "'hidden=true >"
+                        + "<input type=text name=emailcb value='" + emailcb + "'hidden=true >";
+                SQLAdded += "<td>  <button type=submit class=list-group-item>Editar </button></td></form>"
+                        + "<form action=BecasDelete.jsp>"
+                        + "<input type=text name=codcbeca value='" + rs.getString(8).trim() + "'hidden=true >"
+                        + "<input type=text name=codobeca value='" + rs.getInt(7) + "'hidden=true >"
+                        + "<input type=text name=emailcb value='" + emailcb + "'hidden=true >";
+                SQLAdded += "<td>  <button type=submit class=list-group-item data-placement=\"right\"  data-toggle=tooltip title=\"¿Esta seguro que desea eliminar esta beca?. \n No se pueden Deshacer los cambios \">Eliminar </button></td></form></tr>";
+//                        + "<td>  <button type=submit class=list-group-item>Aplicar </button></td></form></tr>";
+            }
+        } catch (SQLException e) {
+            System.out.println("Error" + e.getMessage());
+        }
+        SQLAdded += "</table>";
+        return SQLAdded;
+    }
+
+    public String CODECentro(String emailcb) {
+        String codCb = "";
+        try {
+            String SQL = "SELECT COD_CB FROM centros__becas WHERE EMAIL='" + emailcb + "'";
+            ClsConexion con = new ClsConexion();
+            ResultSet rs = con.Consultar(SQL);
+            while (rs.next()) {
+                codCb = rs.getString(1);
+            }
+        } catch (SQLException e) {
+        }
+        return codCb;
+    }
+
+    public boolean InsertarBeca(String emailcb, String descrip, String fechaI, String fechaF, String Horario, String Estado) {
+        boolean ejecuto = false;
+        try {
+            String codbeca = this.CODECentro(emailcb);
+            String SQL = ("Insert into becas (COD_CB,COD_BECA,DESCRIPCION_BECA,FECHA_INICIO,FECHA_FIN,HORARIO,ESTADO) VALUES ('" + codbeca + "',0,'" + descrip + "','" + fechaI + "','" + fechaF + "','" + Horario + "','" + Estado + "');;");
+            ClsConexion con = new ClsConexion();
+            String eject = con.Ejecutar(SQL);
+            if (eject.equalsIgnoreCase("Datos Insertados")) {
+                ejecuto = true;
+            } else {
+                ejecuto = false;
+            }
+        } catch (Exception e) {
+            System.out.println("Error" + e.getMessage());
+            ejecuto = false;
+        }
+        return ejecuto;
+    }
+
+    public List<String> ConsultarBeca(String codcb, String beca) {
+        List<String> lista = new ArrayList<String>(7);
+        try {
+            String SQL = "SELECT bc.descripcion_beca, bc.fecha_inicio, bc.fecha_fin, bc.horario, bc.estado FROM becas as bc WHERE bc.COD_CB='" + codcb + "' and bc.COD_BECA=" + beca.trim() + ";";
+            ClsConexion con = new ClsConexion();
+            ResultSet rs = con.Consultar(SQL);
+            while (rs.next()) {
+                for (int i = 1; i < 6; i++) {
+                    lista.add(rs.getString(i));
+                }
+
+            }
+            System.out.println("Clases.clsCentroBecas.ConsultarBeca()" + lista.get(1));
+        } catch (Exception e) {
+            System.out.println("Error" + e.getMessage());
+        }
+
+        return lista;
+    }
+
+    public boolean UpdateBeca(String codecb, String codebc, String descrip, String fechaI, String fechaF, String Horario, String Estado) {
+        boolean ejecuto = false;
+        try {
+            String SQL = ("update becas SET DESCRIPCION_BECA='" + descrip + "', FECHA_INICIO='" + fechaI + "',FECHA_FIN='" + fechaF + "',HORARIO='" + Horario + "',ESTADO='" + Estado + "' WHERE COD_CB='" + codecb + "'and COD_BECA=" + codebc.trim() + ";");
+            ClsConexion con = new ClsConexion();
+            String eject = con.Ejecutar(SQL);
+            if (eject.equalsIgnoreCase("Datos Insertados")) {
+                ejecuto = true;
+            } else {
+                ejecuto = false;
+            }
+        } catch (Exception e) {
+            System.out.println("Error" + e.getMessage());
+            ejecuto = false;
+        }
+        return ejecuto;
     }
 }

@@ -90,14 +90,6 @@
                 </center>
             </div>
             <div class="col-sm-3 col-md-3">
-                <br>   <br>
-                <div class="list-group"> <a href="#" class="list-group-item active"> 
-                        <h4 class="list-group-item-heading">Necesitas Ayuda?</h4> 
-                        <p class="list-group-item-text"></p> </a> 
-                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">StartUp</h4> 
-                        <p class="list-group-item-text">En esta pagina a tu izquierda se encuentran todos los Usuarios Disponibles los cuales puedes agregar a tu StartUp .</p> </a>
-                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Datos</h4> 
-                        <p class="list-group-item-text">Puedes agregar a cualquier usuario solamente dando clic en “Agregar”    .</p> </a> </div>
-            </div>
+                  </div>
         </div>      
 </html>

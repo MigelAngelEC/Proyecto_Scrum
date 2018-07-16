@@ -93,10 +93,14 @@ public class clsOfertaEmpleo {
     public boolean InsertarOfertaEmpresa(String ruc, int cod, String carg, String desc, String time, String xp) {
         boolean ejecuto = false;
         try {
-            String SQL = ("insert into ofertas_empleo values ('" + ruc + "'," + cod + ",'" + carg + "','" + desc + "','Disponible','" + time + "','" + xp + "');");
+            String SQL = ("insert into ofertas_empleo (RUC,COD_OFERTA,CAARGO,DESCRIPCION,ESTADO,TIEMPO_REQ,EXP_REQ) values ('" + ruc + "'," + cod + ",'" + carg + "','" + desc + "','Disponible','" + time + "','" + xp + "');");
             ClsConexion con = new ClsConexion();
-            con.Ejecutar(SQL);
-            ejecuto = true;
+            String eject = con.Ejecutar(SQL);
+            if (eject.equalsIgnoreCase("Datos Insertados")) {
+                ejecuto = true;
+            } else {
+                ejecuto = false;
+            }
         } catch (Exception e) {
             System.out.println("Error" + e.getMessage());
             ejecuto = false;
@@ -107,13 +111,19 @@ public class clsOfertaEmpleo {
     public boolean UpdateOfertaLaboral(String ruc, String cod, String carg, String desc, String time, String xp, String state) {
         boolean ejecuto = false;
         try {
-            String SQL = ("update ofertas_empleo set caargo='" + carg + "', descripcion='" + desc + "',estado='" + state + "',tiempo_req='" + time + "',ex_req='" + xp + "' where ruc='" + ruc + "' and cod_oferta='" + cod + "'");
+            String SQL = ("update ofertas_empleo set caargo='" + carg + "', descripcion='" + desc + "',estado='" + state + "',tiempo_req='" + time + "',exp_req='" + xp + "' where ruc='" + ruc + "' and cod_oferta='" + cod + "'");
             ClsConexion con = new ClsConexion();
-            con.Ejecutar(SQL);
-            ejecuto = true;
+            String eject = con.Ejecutar(SQL);
+           // System.out.println("Clases.clsOfertaEmpleo.UpdateOfertaLaboral()" + eject);
+            if (eject.equalsIgnoreCase("Datos Insertados")) {
+                ejecuto = true;
+            } else {
+                ejecuto = false;
+            }
         } catch (Exception e) {
-            System.out.println("Error" + e.getMessage());
             ejecuto = false;
+            System.out.println("Error" + e.getMessage());
+
         }
         return ejecuto;
     }
@@ -123,8 +133,12 @@ public class clsOfertaEmpleo {
         try {
             String SQL = ("Delete From ofertas_empleo where ruc='" + ruc + "' and cod_oferta='" + cod + "'");
             ClsConexion con = new ClsConexion();
-            con.Ejecutar(SQL);
-            ejecuto = true;
+             String eject = con.Ejecutar(SQL);
+            if (eject.equalsIgnoreCase("Datos Insertados")) {
+                ejecuto = true;
+            } else {
+                ejecuto = false;
+            }
         } catch (Exception e) {
             System.out.println("Error" + e.getMessage());
             ejecuto = false;

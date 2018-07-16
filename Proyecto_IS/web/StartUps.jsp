@@ -115,14 +115,7 @@
                 </form>
             </div>
             <div class="col-sm-3">
-                <div class="list-group"> <a href="#" class="list-group-item active"> 
-                        <h4 class="list-group-item-heading">Necesitas Ayuda?</h4> 
-                        <p class="list-group-item-text"></p> </a> 
-                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">StartUp</h4> 
-                        <p class="list-group-item-text">Crea tú StartUp agregando su nombre y descripción a que se dedicara la misma.</p> </a>
-                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Datos</h4> 
-                        <p class="list-group-item-text">La Descripción de tu StartUp puede contener hasta un máximo de 100 palabras .</p> </a> </div>
-
+               
             </div>
         </div>
         <%

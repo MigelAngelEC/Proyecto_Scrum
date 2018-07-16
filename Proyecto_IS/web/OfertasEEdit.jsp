@@ -23,14 +23,14 @@
         <link rel="icon" href="Imagenes/letterD.png">
         <title>Oferta Laboral</title>
     </head>     <style>
-    body {text-align:center; padding:20px}
-    input {
-        min-width:200px!important;
-        max-width:99.99%!important;
-        transition: width 0.25s;
-        text-align:center;
-    }
-</style> <%
+        body {text-align:center; padding:20px}
+        input {
+            min-width:200px!important;
+            max-width:99.99%!important;
+            transition: width 0.25s;
+            text-align:center;
+        }
+    </style> <%
         String email_emp;
         email_emp = request.getParameter("emaile");
     %>
@@ -68,7 +68,7 @@
                     <ul class="nav navbar-nav navbar-right" >
                         <p class="navbar-text ">Signed in as <a class="navbar-link"><i><%out.println(email_emp);%></i></a></p>
                         <p class="navbar-text ">  <a class="navbar-link" href="Inicio.html"><i>Cerrar Sesión</i></a></p>
-                       <li><a href="Ayuda.jsp">Ayuda</a></li>
+                        <li><a href="Ayuda.jsp">Ayuda</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -135,24 +135,26 @@
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon" >Experiencia Requerida</div>
-                        <select class="form-control" id="xp" name="xp">
+                        <input  list="xp1" type="text" class="form-control" id="xp"  placeholder="ej: Ninguna" name="xp" required maxlength="20">
+                        <datalist id="xp1"  name="xp1">
                             <option value="3 Meses">3 Meses o menos</option>
                             <option value="6 Meses">6 Meses</option>
                             <option value="9 Meses">9 Meses</option>
                             <option value="2 Años">2 Años</option>
                             <option value="5 Años">5 Años o más</option>
-                        </select>
+                        </datalist>
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon" >Estado</div>
-                        <select class="form-control" id="state" name="state">
+                        <input  list="state1" type="text" class="form-control" id="state"  placeholder="ej: Ninguna" name="state" required maxlength="20">
+                        <datalist id="state1" name="state1">
                             <option value="Disponible">Disponible</option>
                             <option value="No Disponible">No Disponible</option>
-
-                        </select>
+                            <option value="No Disponible">Urgente</option>
+                        </datalist>
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
@@ -179,4 +181,18 @@
         </form>
     </center>
 </body>
+<script>
+    function validaNumericos(event) {
+        if (event.charCode >= 48 && event.charCode <= 57) {
+            return true;
+        }
+        return false;
+    }
+    function validaLetras(event) {
+        if (event.charCode >= 48 && event.charCode <= 57) {
+            return false;
+        }
+        return true;
+    }
+</script>
 </html>

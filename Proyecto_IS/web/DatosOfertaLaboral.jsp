@@ -78,9 +78,9 @@
             <div class="col-sm-3">
                 <center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <img src="https://dvz3vrza543jw.cloudfront.net/assets/marketing-website/guides/recruiting/closing-the-deal-ff1c3caaa83d7d044f5f5845fc6824f2.png" width="250"/></center>
-                <img src="https://www.pngarts.com/files/1/Career-PNG-Photo.png" width="650"/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                    <img src="https://dvz3vrza543jw.cloudfront.net/assets/marketing-website/guides/recruiting/closing-the-deal-ff1c3caaa83d7d044f5f5845fc6824f2.png" width="450"/></center>
+             
             </div>
             <div class="col-sm-6">
                 <h1>Oferta Empleo</h1>
@@ -139,15 +139,7 @@
                 </form>
             </div>
             <div class="col-sm-3">
-                <br><br>
-                <div class="list-group"> <a href="#" class="list-group-item active"> 
-                        <h4 class="list-group-item-heading">Necesitas Ayuda?</h4> 
-                        <p class="list-group-item-text"></p> </a> 
-                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Tu Oferta de Empleo</h4> 
-                        <p class="list-group-item-text">En este apartado a tu izquierda tienes todos los datos relacionados para Crear una Oferta de Empleo, Ingresa el cargo empresarial al que los usuarios podrán aplicar, describe acerca del mismo además del tiempo que requieres que trabaje dicho usuario y la experiencia requerida para poder aplicar a este cargo .</p> </a>
-                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Datos</h4> 
-                        <p class="list-group-item-text">Puedes Describir el Cargo empresarial con 100 palabras, se conciso para explicar el cargo empresarial. Puedes escoger una sola opción tanto en el campo tiempo requerido y experiencia requerida.</p> </a> </div>
-
+               
             </div>
         </div>
     </center>

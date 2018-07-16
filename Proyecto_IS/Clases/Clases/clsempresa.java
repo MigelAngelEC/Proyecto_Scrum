@@ -144,10 +144,14 @@ public class clsempresa {
     public boolean InsertarEmpresa(String ruct, String nempresa, String direc, String telf, String mail, String desc, String pwd) {
         boolean ejecuto = false;
         try {
-            String SQL = ("Insert into empresas values('" + ruct + "','3','" + nempresa + "','" + direc + "','" + telf + "','" + mail + "','" + desc + "','" + pwd + "');");
+            String SQL = ("Insert into empresas (RUC,COD_PERFIL,NOM_EMPRESA,DIRECCION,TELEFONO,EMAIL,DESCRIPCION_EMP,PASSWORD_E) values('" + ruct + "','3','" + nempresa + "','" + direc + "','" + telf + "','" + mail + "','" + desc + "','" + pwd + "');");
             ClsConexion con = new ClsConexion();
-            con.Ejecutar(SQL);
-            ejecuto = true;
+            String eject = con.Ejecutar(SQL);
+            if (eject.equalsIgnoreCase("Datos Insertados")) {
+                ejecuto = true;
+            } else {
+                ejecuto = false;
+            }
         } catch (Exception e) {
             System.out.println("Error" + e.getMessage());
             ejecuto = false;
@@ -179,8 +183,12 @@ public class clsempresa {
         try {
             String SQL = ("update empresas set nom_empresa='" + nempresa + "',direccion='" + direc + "',telefono='" + telf + "',email='" + mail + "',descripcion_emp='" + desc + "',password_e='" + pwd + "' where ruc='" + ruct + "'");
             ClsConexion con = new ClsConexion();
-            con.Ejecutar(SQL);
-            ejecuto = true;
+            String eject = con.Ejecutar(SQL);
+            if (eject.equalsIgnoreCase("Datos Insertados")) {
+                ejecuto = true;
+            } else {
+                ejecuto = false;
+            }
         } catch (Exception e) {
             System.out.println("Error" + e.getMessage());
             ejecuto = false;
@@ -191,7 +199,7 @@ public class clsempresa {
     public String NameEnterprise1() {
         String empresa = "";
         try {
-            String SQL = "select  from empresas ";
+            String SQL = "select * from empresas ";
             ClsConexion con = new ClsConexion();
             ResultSet rs = con.Consultar(SQL);
             while (rs.next()) {
@@ -220,10 +228,14 @@ public class clsempresa {
     public boolean AplicarO(String cod, String ci) {
         boolean ejecuto = false;
         try {
-            String SQL = ("insert into ofertas_aplicadas values ('" + cod + "','" + ci + "');");
+            String SQL = ("insert into ofertas_aplicadas (COD_OFERTA,CEDULA) values ('" + cod + "','" + ci + "');");
             ClsConexion con = new ClsConexion();
-            con.Ejecutar(SQL);
-            ejecuto = true;
+            String eject = con.Ejecutar(SQL);
+            if (eject.equalsIgnoreCase("Datos Insertados")) {
+                ejecuto = true;
+            } else {
+                ejecuto = false;
+            }
         } catch (Exception e) {
             System.out.println("Error" + e.getMessage());
             ejecuto = false;

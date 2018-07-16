@@ -87,8 +87,10 @@
                         xp = request.getParameter("xp");
                         state = request.getParameter("state");
                         cod = request.getParameter("cod");
+                        out.print(ruc+cargo+descrip+time+xp+state+cod);
                         boolean eject = obj.UpdateOfertaLaboral(ruc, cod, cargo, descrip, time, xp, state);
-                        if (eject = true) {
+                        out.print(eject);
+                        if (eject == true) {
                             out.print("<br> <h2>Oferta Corractamente Actualizada</h2>");
                             out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");
                             out.print("<a  href=LogeoU.jsp class=btn btn-primary btn-lg> <h3><u>Cerrar Sesión</u></h3> </a><br>");
@@ -97,7 +99,7 @@
                             out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Volver</a><br>");
                         }
                     %>
-                    <br>  <br> <a  href="javascript:history.go(-2)" class="btn btn-primary btn-lg"> Volver </a><br>
+                    
                 </div>
         </div>
     </body>

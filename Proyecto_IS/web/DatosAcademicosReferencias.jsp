@@ -95,7 +95,7 @@
                             <tr><td colspan="2">  <center>
                                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                     <div class="input-group-addon">Cargo</div>
-                                    <input type="text" class="form-control" id="cargoref1" placeholder="Administrador de Datos" name="cargoref" size="30px" onClick="this.select();" required="" onkeypress='return validaLetras(event)' maxlength="50">
+                                    <input type="text" class="form-control" id="cargoref1" placeholder="Administrador de Datos" name="cargoref1" size="30px" onClick="this.select();" required="" onkeypress='return validaLetras(event)' maxlength="50">
                                 </div></center>
                             </td></tr>
                             <tr><td> <br></td></tr>
@@ -120,13 +120,6 @@
                 <a  href="javascript:history.go(-1)" class="btn btn-primary btn-lg"> Cancelar </a><br>
             </div>
             <div class="col-sm-3">
-                <div class="list-group"> <a href="#" class="list-group-item active"> 
-                        <h4 class="list-group-item-heading">Necesitas Ayuda?</h4> 
-                        <p class="list-group-item-text"></p> </a> 
-                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Tus Referencias Personales</h4> 
-                        <p class="list-group-item-text">Son aquellas personas que tienen cierto parentesco hacia ti además de tener un cargo importante por tal manera aseguran la veracidad de tus habilidades que seguirás agregando en tu Perfil</p> </a>
-                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Datos</h4> 
-                        <p class="list-group-item-text">En el campo Nombre y Apellido es suficiente con llenar con el primer nombre y apellido de tu referencia, tal y como se muestra en el ejemplo. Si tiene varios Cargos, solo agrega el más importante, Puedes agregar el Teléfono de casa o celular y el parentesco que tienes hacia el o ella..</p> </a> </div>
 
             </div>
             <script>
@@ -143,7 +136,19 @@
                     return true;
                 }
             </script>
-
+            <script>
+                function resizable(el, factor) {
+                    var int = Number(factor) || 7.7;
+                    function resize() {
+                        el.style.width = ((el.value.length + 1) * int) + 'px'
+                    }
+                    var e = 'keyup,keypress,focus,blur,change'.split(',');
+                    for (var i in e)
+                        el.addEventListener(e[i], resize, false);
+                    resize();
+                }
+                resizable(document.getElementById('cargoref1'), 7);
+            </script>
         </form>
     </center>
 </body>

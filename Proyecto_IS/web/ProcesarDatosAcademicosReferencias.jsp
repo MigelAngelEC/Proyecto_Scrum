@@ -75,7 +75,7 @@
 
                     nick = request.getParameter("nickne");
                     NameRef1 = request.getParameter("nameref");
-                    CargoRef1 = request.getParameter("cargoref");
+                    CargoRef1 = request.getParameter("cargoref1");
                     Telfref1 = request.getParameter("telfref");
                     parentescoref1 = request.getParameter("parentescoref");
                     clsInfoAcademicaReferences obj = new clsInfoAcademicaReferences();

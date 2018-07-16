@@ -118,9 +118,13 @@ public class clsInfoAcademicaReferences {
             }
             maxed = maxed + 1;
 
-            String SQL3 = ("insert into referencias_personales values (" + maxed + ",'" + ci + "','" + namef + "','" + cargof + "','" + telff + "','" + parentescof + "'); ");
-            con.Ejecutar(SQL3);
-            ejecuto = true;
+            String SQL3 = ("insert into referencias_personales (COD_REF,CEDULA,NOMBRES,CARGO,TELEFONO,PARENTESCO) values (" + maxed + ",'" + ci + "','" + namef + "','" + cargof + "','" + telff + "','" + parentescof + "'); ");
+             String eject = con.Ejecutar(SQL3);
+            if (eject.equalsIgnoreCase("Datos Insertados")) {
+                ejecuto = true;
+            } else {
+                ejecuto = false;
+            }
         } catch (Exception e) {
             System.out.println("Error" + e.getMessage());
             ejecuto = false;

@@ -223,15 +223,7 @@
             </form>
         </div>   
         <div class="col-sm-3">
-            <br><br>      <br><br>      <br><br><br><br><br>
-            <div class="list-group"> <a href="#" class="list-group-item active"> 
-                    <h4 class="list-group-item-heading">Necesitas Ayuda?</h4> 
-                    <p class="list-group-item-text"></p> </a> 
-                <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Tu Información de Usuario</h4> 
-                    <p class="list-group-item-text">En este apartado a tu izquierda tienes todos los datos relacionados a tu Usuario puedes modificarlos de acuerdo a tus necesidades, modifica el o los datos necesarios y pulsa en Guardar Cambios .</p> </a>
-                <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Datos</h4> 
-                    <p class="list-group-item-text">El campo cedula se encuentra bloqueado ya que es un identificador para cada persona por lo cual no podrás modificarlo. El campo NickName es tu usuario para iniciar sesión recuérdalo.</p> </a> </div>
-
+           
         </div>
     </div>
 </center>

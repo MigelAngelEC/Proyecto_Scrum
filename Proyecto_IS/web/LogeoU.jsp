@@ -57,7 +57,7 @@
                                 <li><a href="TipoRegistro.html">Registrarse</a></li>
                             </ul>
                         </li>
-                         <li><a href="Ayuda.jsp">Ayuda</a></li>
+                        <li><a href="Ayuda.jsp">Ayuda</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -114,7 +114,7 @@
 
                                 <br/>
                                 <br/>
-                                <a href="#">Olvide mi contraseña..!</a>
+
                                 <br/>
                                 <a href="RegistrarUsuario.jsp">Registrarme</a>
                                 <br/> <br/> <br/>

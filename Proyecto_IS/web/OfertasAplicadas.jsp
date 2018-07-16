@@ -95,14 +95,7 @@
 
             </div>
             <div class="col-sm-2">
-                <div class="list-group"> <a href="#" class="list-group-item active"> 
-                        <h4 class="list-group-item-heading">Necesitas Ayuda?</h4> 
-                        <p class="list-group-item-text"></p> </a> 
-                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">O.Aplicadas</h4> 
-                            <p class="list-group-item-text">En la tabla izquierda puedes observar las ofertas que has aplicado, con una breve descripción de la empresa y el cargo además del estado de la misma.</p> </a>
-                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Datos</h4> 
-                        <p class="list-group-item-text">Puedes eliminar la oferta a la que has aplicado clicando en el botón Eliminar Oferta .</p> </a> </div>
-
+               
             </div>
 
         </div>

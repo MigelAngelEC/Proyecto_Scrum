@@ -202,15 +202,7 @@
                 </form>
             </div>
             <div class="col-sm-3">
-                <br><br>
-                <div class="list-group"> <a href="#" class="list-group-item active"> 
-                        <h4 class="list-group-item-heading">Necesitas Ayuda?</h4> 
-                        <p class="list-group-item-text"></p> </a> 
-                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Tu Información de Empresa</h4> 
-                        <p class="list-group-item-text">En este apartado a tu izquierda tienes todos los datos relacionados a tu Empresa tales como nombre, email, teléfono si deseas actualizar alguno de estos datos, modifícalos y pulsa clic en el botón “Actualizar Cuenta”.</p> </a>
-                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Datos</h4> 
-                        <p class="list-group-item-text">El campo RUC se encuentra bloqueado ya que es un campo con el cual se genera las ofertas de trabajo y demás. En el campo Descripción Empresa puedes describir a tu empresa hasta 100 palabras de requerirlo, así que se lo más conciso posible.</p> </a> </div>
-
+               
             </div>
         </div>
     </center>

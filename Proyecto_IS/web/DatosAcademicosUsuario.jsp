@@ -124,14 +124,7 @@
                     <a  href="javascript:history.go(-1)" class="btn btn-primary btn-lg"> Cancelar </a><br>
                 </div>
                 <div class="col-sm-3">
-                    <div class="list-group"> <a href="#" class="list-group-item active"> 
-                            <h4 class="list-group-item-heading">Necesitas Ayuda?</h4> 
-                            <p class="list-group-item-text"></p> </a> 
-                        <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Tus Datos Académicos</h4> 
-                            <p class="list-group-item-text">Son Aquellos títulos que has ido obteniendo en el transcurso de toda tu vida puedes agregarlos todos o solo el más importante de alto nivel agregando su respectiva institución y el titulo que se ha adquirido. Agrega en que te especializas, tú mejor habilidad académicamente</p> </a>
-                        <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Datos</h4> 
-                            <p class="list-group-item-text">En botón de selección múltiple escoge un nivel y a continuación llena los datos solicitados como el nombre de la institución el titulo adquirido y la especialidad que manejas.</p> </a> </div>
-
+                   
                 </div>
             </div>
         </form>

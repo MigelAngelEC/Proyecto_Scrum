@@ -34,16 +34,16 @@
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));</script>
     </head>
-<style>
-    body {text-align:center; padding:20px}
-    input {
-        min-width:200px!important;
-        max-width:99.99%!important;
-        transition: width 0.25s;
-        text-align:center;
-    }
-</style>
-<body background="Imagenes/wall3.jpg" style="background-repeat: space" onload="checkEdits(), checkEdits1(), checkEdits2()">
+    <style>
+        body {text-align:center; padding:20px}
+        input {
+            min-width:200px!important;
+            max-width:99.99%!important;
+            transition: width 0.25s;
+            text-align:center;
+        }
+    </style>
+    <body background="Imagenes/wall3.jpg" style="background-repeat: space" onload="checkEdits(), checkEdits1(), checkEdits2()">
 
         <%
             String nickname = request.getParameter("nick");
@@ -91,7 +91,7 @@
                     <ul class="nav navbar-nav navbar-right" >
                         <p class="navbar-text ">Signed in as <a class="navbar-link"><i><%out.println(nickname);%></i></a></p>
                         <p class="navbar-text ">  <a class="navbar-link" href="Inicio.html"><i>Cerrar Sesión</i></a></p>
-                       <li><a href="Ayuda.jsp">Ayuda</a></li>
+                        <li><a href="Ayuda.jsp">Ayuda</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -162,9 +162,9 @@
                                     <img src="Imagenes/useru.png" data-holder-rendered="true" style="height: 200px; width: 70%; display: block;">
                                     <div class="caption">
                                         <h3>Mi Perfil !</h3>
-                                        <p> : D </p>
+                                        <p>  </p>
                                         <div id="edit" contenteditable="true" class="well" >
-                                            Here is the element's original contentaa</div>
+                                            Descripción de Mi Perfil</div>
 
                                         <input  class="btn btn-default btn-xs dropdown-toggle"  aria-haspopup="true" aria-expanded="false" type="button" value="Guardar" onclick="saveEdits()">
 
@@ -183,7 +183,7 @@
                                                 out.print("<h5>" + lista1.get(i) + "</h5>");
                                             }%></p>
                                         <div id="edit1" contenteditable="true" class="well" >
-                                            Here is the element's original contentaa</div>
+                                            Descripción de Mis Estudios</div>
 
                                         <input  class="btn btn-default btn-xs dropdown-toggle"  aria-haspopup="true" aria-expanded="false" type="button" value="Guardar" onclick="saveEdits1()">
 
@@ -201,7 +201,7 @@
                                                 out.print("<h5>" + lista2.get(i) + "</h5>");
                                             }%></p>
                                         <div id="edit2" contenteditable="true" class="well" >
-                                            Here is the element's original contentaa</div>
+                                            Descripción de Mis Especialidades</div>
 
                                         <input  class="btn btn-default btn-xs dropdown-toggle"  aria-haspopup="true" aria-expanded="false" type="button" value="Guardar" onclick="saveEdits2()">
 

@@ -114,7 +114,7 @@
 
                                 <br/>
                                 <br/>
-                                <a href="#">Olvide mi contraseña..!</a>
+                               
                                 <br/>
                                 <a href="Registro_Empresas.jsp">Registrarme</a>
                                 <br/> <br/>

@@ -89,14 +89,7 @@
             </div>
             <div class="col-sm-3 col-md-2">
                 <br><br><br>
-                <div class="list-group"> <a href="#" class="list-group-item active"> 
-
-                        <h4 class="list-group-item-heading">Necesitas Ayuda?</h4> 
-                        <p class="list-group-item-text"></p> </a> 
-                    <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">Becas Disponibles</h4> 
-                        <center> <img src="http://shynemedia.com/dev/wow/amadeus/20160311_wow-amadeus_landing-page/media/solutions/assets/images/20160316_airlines_graphic-icon-3_hand.png" width="100" height="100" /></center>
-                        <br> <p class="list-group-item-text">A su izquierda se encuentran todas las ofertas de trabajo disponibles teniendo en cuenta la descripción de la beca, su inicio y fin además de su horario correspondiente. Aquellas becas a las cuales no se puede aplicar debido a que el botón “Aplicar” no se encuentra activa, debido a su estado, Para más información vea a Ayuda</p> </a>
-                </div>
+                
             </div>
 
         </div>           

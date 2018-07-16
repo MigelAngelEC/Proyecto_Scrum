@@ -19,14 +19,14 @@
         <title>Login Centro de Becas</title>
     </head>
     <style>
-    body {text-align:center; padding:20px}
-    input {
-        min-width:200px!important;
-        max-width:99.99%!important;
-        transition: width 0.25s;
-        text-align:center;
-    }
-</style>
+        body {text-align:center; padding:20px}
+        input {
+            min-width:200px!important;
+            max-width:99.99%!important;
+            transition: width 0.25s;
+            text-align:center;
+        }
+    </style>
     <body background="Imagenes/wall3.jpg" style="background-repeat: space">
         <!-- BARRA DE NAVEGACION-->
         <nav class="navbar navbar-default">
@@ -113,9 +113,9 @@
 
                                 <br/>
                                 <br/>
-                                <a href="#">Olvide mi contraseña..!</a>
+                                
                                 <br/>
-                                <a href="RegistrarUsuario.jsp">Registrarme</a>
+                                <a href="Registro_Centro_Becas.jsp">Registrarme</a>
                                 <br/> <br/>
 
                                 <img src="Imagenes/centros_becas.jpeg" alt="" height="350" width="350" align="center" />

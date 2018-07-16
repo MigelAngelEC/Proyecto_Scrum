@@ -22,14 +22,14 @@
         <title>Registrar Usuario</title>
     </head>
     <style>
-    body {text-align:center; padding:20px}
-    input {
-        min-width:200px!important;
-        max-width:99.99%!important;
-        transition: width 0.25s;
-        text-align:center;
-    }
-</style>
+        body {text-align:center; padding:20px}
+        input {
+            min-width:200px!important;
+            max-width:99.99%!important;
+            transition: width 0.25s;
+            text-align:center;
+        }
+    </style>
     <body background="Imagenes/wall3.jpg" style="background-repeat: round">
 
         <nav class="navbar navbar-default">
@@ -61,7 +61,7 @@
                                 <li><a href="TipoRegistro.html">Registrarse</a></li>
                             </ul>
                         </li>
-                      <li><a href="Ayuda.jsp">Ayuda</a></li>
+                        <li><a href="Ayuda.jsp">Ayuda</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -71,13 +71,13 @@
 
         <h1>Registrar Usuario</h1>
         <br>
-        <form action="Proceso_Usuario.jsp" method="post">
+        <form action="Proceso_Usuario.jsp" method="post" name="registro">
 
             <table>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Cedula</div>
-                        <input type="text" class="form-control" id="cedula" placeholder="CI #1234567890" name="cedula" required maxlength="10">
+                        <input type="text" class="form-control" id="cedula" placeholder="CI #1234567890" name="cedula" required maxlength="10" onkeypress='return validaNumericos(event)' onchange="validarcedula()" >
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
@@ -181,5 +181,36 @@
 
     password.onchange = validatePassword;
     confirm_password.onkeyup = validatePassword;
+</script>
+<script type="text/javascript">
+    function validarcedula()
+    {
+        var i;
+        var cedula;
+        var acumulado;
+        cedula = document.registro.cedula.value;
+        var instancia;
+        acumulado = 0;
+        for (i = 1; i <= 9; i++)
+        {
+            if (i % 2 != 0)
+            {
+                instancia = cedula.substring(i - 1, i) * 2;
+                if (instancia > 9)
+                    instancia -= 9;
+            } else
+                instancia = cedula.substring(i - 1, i);
+            acumulado += parseInt(instancia);
+        }
+        while (acumulado > 0)
+            acumulado -= 10;
+        if (cedula.substring(9, 10) != (acumulado * -1))
+        {
+            alert("Cedula no valida!!");
+            document.getElementById("cedula").value = " ".trim();
+            document.registro.cedula.setfocus();
+        }
+        alert("Cedula valida !!");
+    }
 </script>
 </html>

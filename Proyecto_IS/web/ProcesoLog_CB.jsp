@@ -28,14 +28,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <style>
-    body {text-align:center; padding:20px}
-    input {
-        min-width:200px!important;
-        max-width:99.99%!important;
-        transition: width 0.25s;
-        text-align:center;
-    }
-</style>
+        body {text-align:center; padding:20px}
+        input {
+            min-width:200px!important;
+            max-width:99.99%!important;
+            transition: width 0.25s;
+            text-align:center;
+        }
+    </style>
     <body background="Imagenes/wall3.jpg" style="background-repeat: round">
 
         <!-- PROCESO DE REGISTRO DE LOS CENTROS DE BECAS-->  
@@ -124,7 +124,15 @@
                     <input type="text" name="emailcb" value="<%out.println(email_cb);%>" hidden="true" >
                     <button type="submit" class="list-group-item">Datos de Centro de Becas <u>(Editar)</u></button>
                 </form>
-                <a href="#ofertasBecas" class="list-group-item">Becas Ofertadas</a>
+                <form action="BecasAdd.jsp" method="post">
+                    <input type="text" name="emailcb" value="<%out.println(email_cb);%>" hidden="true" >
+                    <button type="submit" class="list-group-item">Ofertar Beca <u>(Agregar)</u></button>
+                </form>
+                <form action="BecasShow.jsp" method="post">
+                    <input type="text" name="emailcb" value="<%out.println(email_cb);%>" hidden="true" >
+                    <button type="submit" class="list-group-item">Becas Ofertadas <u>(Editar)</u></button>
+                </form>
+                <a href="#ofertasBecas" class="list-group-item">Revisar Becas Ofertadas</a>
             </div>
         </div>
         <!-- CONTENEDOR DE INFORMACION GENERAL DEL CNETRO DE BECAS -->  

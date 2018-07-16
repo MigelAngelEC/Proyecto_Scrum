@@ -61,9 +61,13 @@ public class clsstarups {
                 max = rs.getInt(1);
             }
             max = max + 1;
-            String SQL = ("insert into startups values(" + max + ",'" + Nombre + "','" + Descripcion + "');");
-            con.Ejecutar(SQL);
-            ejecuto = true;
+            String SQL = ("insert into startups (COD_STARTUP,NOMBRES,DESCRIPCIONS) values(" + max + ",'" + Nombre + "','" + Descripcion + "');");
+            String eject = con.Ejecutar(SQL);
+            if (eject.equalsIgnoreCase("Datos Insertados")) {
+                ejecuto = true;
+            } else {
+                ejecuto = false;
+            }
         } catch (Exception e) {
             System.out.println("Error" + e.getMessage());
             ejecuto = false;
@@ -76,8 +80,12 @@ public class clsstarups {
         ClsConexion con = new ClsConexion();
         try {
             String SQL = ("update startups set nombres ='" + Nombre + "', descripcions='" + Descripcion + "' where cod_startup='" + cod + "'");
-            con.Ejecutar(SQL);
-            ejecuto = true;
+            String eject = con.Ejecutar(SQL);
+            if (eject.equalsIgnoreCase("Datos Insertados")) {
+                ejecuto = true;
+            } else {
+                ejecuto = false;
+            }
         } catch (Exception e) {
             System.out.println("Error" + e.getMessage());
             ejecuto = false;
@@ -89,7 +97,7 @@ public class clsstarups {
         int start = 0;
         try {
             ClsConexion con = new ClsConexion();
-            ResultSet rs = con.Consultar("SELECT usuarios.cod_startup FROM public.usuarios where usuarios.nickname='" + nickname + "'");
+            ResultSet rs = con.Consultar("SELECT cod_startup FROM usuarios where nickname='" + nickname + "'");
             while (rs.next()) {
                 start = rs.getInt(1);
             }
@@ -119,7 +127,7 @@ public class clsstarups {
         try {
             clsUsuario us = new clsUsuario();
             ClsConexion con = new ClsConexion();
-            ResultSet rs = con.Consultar("SELECT usuarios.nombres, usuarios.apellidos, usuarios.email, usuarios.tel_celular,usuarios.cedula,usuarios.cod_startup FROM public.usuarios;");
+            ResultSet rs = con.Consultar("SELECT nombres, apellidos, email, tel_celular,cedula,cod_startup FROM .usuarios;");
             while (rs.next()) {
                 SQLAdded += "<tr><td>" + rs.getString(1) + " " + rs.getString(2) + "</td><td>" + rs.getString(3) + "</td><td>" + rs.getString(4) + "</td>"
                         + "<form action=StartUpProAdd.jsp>"
@@ -129,7 +137,7 @@ public class clsstarups {
                 if (rs.getInt(6) == 0) {
                     SQLAdded += "<td>  <button type=submit class=list-group-item>Agergar </button></td></form></tr>";
                 } else {
-                    SQLAdded += "<td>  <button title=\"Usuario registrado en StartUP, impsible registrarse en más de una\" type=submit class=btn btn-link disabled=true>Agregar </button></td></form></tr>";
+                    SQLAdded += "<td>  <button title=\"Usuario registrado en StartUP, imposible registrarse en más de una\" type=submit class=btn btn-link disabled=true>Agregar </button></td></form></tr>";
 
                 }
 
@@ -147,8 +155,12 @@ public class clsstarups {
         ClsConexion con = new ClsConexion();
         try {
             String SQL = ("update usuarios set cod_startup=" + cod + " where cedula='" + cedula + "'");
-            con.Ejecutar(SQL);
-            ejecuto = true;
+            String eject = con.Ejecutar(SQL);
+            if (eject.equalsIgnoreCase("Datos Insertados")) {
+                ejecuto = true;
+            } else {
+                ejecuto = false;
+            }
         } catch (Exception e) {
             System.out.println("Error" + e.getMessage());
             ejecuto = false;
