@@ -78,7 +78,7 @@
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">RUC</div>
-                        <input type="text" class="form-control" id="ruc" placeholder="RUC: #123456789001" name="ruc" required maxlength="13" onfocusout=validar()>
+                        <input type="text" class="form-control" id="ruc" placeholder="RUC: #123456789001" name="ruc" required maxlength="13" onfocusout="validar()">
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>

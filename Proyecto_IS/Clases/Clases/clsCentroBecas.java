@@ -343,4 +343,23 @@ public class clsCentroBecas {
         }
         return ejecuto;
     }
+
+    public boolean DeleteBeca(String codecb, String codebc) {
+        boolean ejecuto = false;
+        try {
+            String SQL = ("delete from becas where COD_CB='" + codecb + "' and COD_BECA=" + codebc.trim() + ";");
+            ClsConexion con = new ClsConexion();
+            String eject = con.Ejecutar(SQL);
+            if (eject.equalsIgnoreCase("Datos Insertados")) {
+                ejecuto = true;
+            } else {
+                ejecuto = false;
+            }
+        } catch (Exception e) {
+            System.out.println("Error" + e.getMessage());
+            ejecuto = false;
+        }
+        return ejecuto;
+    }
+
 }

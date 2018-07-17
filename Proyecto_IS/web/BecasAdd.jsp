@@ -102,21 +102,21 @@
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Fecha de Finalización </div>
-                        <input type="date"  min="<%out.print(dtf.format(now).trim());%>" max="2020-12-31"  class="form-control" id="ffin" placeholder="ej: Mispar159357" name="ffin"required >
+                        <input type="date"  min="<%out.print(dtf.format(now).trim());%>" max="2020-12-31"  class="form-control" id="ffin" placeholder="ej: Mispar159357" name="ffin"required onchange="validardates()">
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Horario</div>
-                        <input type="time" value="00:00:00" max="22:30:00" min="09:00:00" class="form-control" id="horario" name="horario" placeholder="" required >
+                        <input type="time" value="00:00:00" max="22:30:00" min="09:00:00" class="form-control" id="horario" name="horario" placeholder="" required  >
                     </div> </center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon" >Estado de la Beca</div>
-                        <input  list="state1" type="text" class="form-control" id="state"  placeholder="ej: Ninguna" name="state" required maxlength="20" onkeypress='return validaLetras(event)'>
+                        <input  list="state1" type="text" class="form-control" id="state"  placeholder="ej: Ninguna" name="state" required maxlength="20" onkeypress='return validaLetras(event)' >
                         <datalist id="state1" name="state1">
                             <option value="Disponible">Disponible</option>
                             <option value="No Disponible">Urgente</option>
@@ -128,7 +128,7 @@
             </table>
         </center>
         <input type="text" name="emailcb" value="<%out.println(emailcb);%>" hidden="true" >
-        <button type="submit" class="btn btn-primary btn-lg">Crear </button>
+        <button type="submit" class="btn btn-primary btn-lg" >Crear </button>
         <a  href="javascript:history.go(-1)" class="btn btn-primary btn-lg"> Cancelar </a><br>
     </form>
 </body>
@@ -146,4 +146,19 @@
         return true;
     }
 </script>
+<script>
+    function validardates() {
+        var date = document.getElementById("finicio").value;
+        var varDate = new Date(date); //dd-mm-YYYY
+        var date2 = document.getElementById("ffin").value;
+        var varDate2 = new Date(date2); //dd-mm-YYYY
+        if (varDate >= varDate2) {
+            alert("No puede Seleccionar una Fecha Menor a la Fecha de Inicio!");
+            document.getElementById("ffin").value="";
+        } else {
+            //alert("Working!");
+        }
+    }
+</script>
+
 </html>
