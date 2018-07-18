@@ -23,7 +23,7 @@
         <title>InformaciónEmpresa</title>
         <link rel="icon" href="Imagenes/letterD.png">
     </head>
-        <style>
+    <style>
         body {text-align:center; padding:20px}
         input {
             min-width:200px!important;
@@ -74,7 +74,7 @@
                     <ul class="nav navbar-nav navbar-right" >
                         <p class="navbar-text ">Signed in as <a class="navbar-link"><i><%out.println(email_emp);%></i></a></p>
                         <p class="navbar-text ">  <a class="navbar-link" href="Inicio.html"><i>Cerrar Sesión</i></a></p>
-                       <li><a href="Ayuda.jsp">Ayuda</a></li>
+                        <li><a href="Ayuda.jsp">Ayuda</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -183,13 +183,13 @@
                         <tr><td colspan="2">  <center>
                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                 <div class="input-group-addon">Descripción Empresa</div>
-                                <input type="text" class="form-control" id="txtSearch" placeholder="A que se dedica" name="desc" value="<%
+                                <input type="text" class="form-control" id="desc" placeholder="A que se dedica" name="desc" value="<%
                                     if (lista.isEmpty()) {
                                         out.print("");
                                     } else {
                                         out.print(lista.get(5).trim());
                                     }
-                                       %>"onClick="this.select();"required>
+                                       %>"onClick="this.select();"required maxlength="70">
                             </div></center>
                         </td></tr>
                         <tr><td> &nbsp;</td></tr>
@@ -202,7 +202,7 @@
                 </form>
             </div>
             <div class="col-sm-3">
-               
+
             </div>
         </div>
     </center>
@@ -234,6 +234,19 @@
 
         password.onchange = validatePassword;
         confirm_password.onkeyup = validatePassword;
+    </script>
+    <script>
+        function resizable(el, factor) {
+            var int = Number(factor) || 7.7;
+            function resize() {
+                el.style.width = ((el.value.length + 1) * int) + 'px'
+            }
+            var e = 'keyup,keypress,focus,blur,change'.split(',');
+            for (var i in e)
+                el.addEventListener(e[i], resize, false);
+            resize();
+        }
+        resizable(document.getElementById('desc'), 7);
     </script>
 </body>
 </html>

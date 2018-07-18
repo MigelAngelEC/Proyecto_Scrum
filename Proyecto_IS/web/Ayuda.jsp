@@ -16,7 +16,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="icon" href="Imagenes/letterD.png">
-        <title>Login de candidatos</title>
+        <title>¡Ayuda!</title>
         <style>
             .bs-callout {
                 padding: 20px;
@@ -128,27 +128,95 @@
         <div class="row">
 
             <div class="col-sm-2">
-                <br>
-                <div class="list-group">
-                    <a href="#" class="list-group-item active "><h4>Ayuda Navegacional</h4></a>
-                    <a href="#" class="list-group-item"><h4 align="left" ><span class="glyphicon glyphicon-share-alt" aria-hidden="true"> <i> Menus</i></span></h4></a>
-                    <a href="#" class="list-group-item active"><h4>Ayuda Usuario</h4></a>
-                    <a href="#" class="list-group-item"><h4 align="left" ><span class="glyphicon glyphicon-user" aria-hidden="true"> <i> Menus</i> </span></h4></a>
-                    <a href="#" class="list-group-item active"><h4>Ayuda Empresa</h4></a>
-                    <a href="#" class="list-group-item"><h4 align="left" ><span class="glyphicon glyphicon-xbt" aria-hidden="true">  <i> Menus</i> </span></h4></a>
-                    <a href="#" class="list-group-item active"><h4>Ayuda Centro de Becas</h4></a>
-                    <a href="#" class="list-group-item"><h4 align="left" ><span class="glyphicon glyphicon-education" aria-hidden="true">  <i> Menus</i> </span></h4></a>
-                </div>
+                <img src="Imagenes/help.png" alt="" height="850"/>
             </div>
             <div class="col-sm-9">
-                <div class="bs-callout bs-callout-danger" id="callout-glyphicons-dont-mix"> 
-                    <h4 align="left"    >Menus Navegacionales </h4> 
-                    <br>
-                    <p>Icon classes cannot be directly combined with other components. They should not be used along with other classes on the same element. Instead, add a nested 
-                        <code>&lt;span&gt;</code> and apply the icon classes to the
-                        <code>&lt;span&gt;</code>.
-                    </p> 
-                    
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <h4>Menús Navegacionales</h4>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                <h4> Una vez iniciada sesión en la parte izquierda contaras con un menú de opciones tales como:
+                                </h4><br>
+                                <img src="Imagenes/Menu2.gif" alt="Menu Empresas" title="Menu Empresas" height="200"/>
+                                <img src="Imagenes/Menu.gif" alt="" title="Menu Usuarios"height="350"/>
+                                <img src="Imagenes/Menu3.gif" alt=""height="200" title="Menu Centro de Becas"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" >
+                                    <h4>Usuarios</h4>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                <h4> Datos de usuario</h4>
+                                Al registrarte como usuario llenaras estos datos, sin embargo, si deseas realizar algún cambio puedes hacerlo clicando en el menú navegacional de tu usuario en la opción “Datos de Usuario” si embargo no podrás modificar tu cedula ya que es tu identificador en toda la web
+                                <br><h4>Datos académicos </h4>
+                                Accede a esta opción después de iniciar sesión clicando en el menú navegacional la opción “Datos Académicos”, podrás ir agregando tus datos académicos de<br>sde primer nivel hasta Doctorado si es que posees dicho título. Además de agregar en que te especializas.
+                                <br><h4> Experiencia laboral</h4>
+                                Agrega toda la experiencia que has ido obteniendo a lo largo de los años en las distintas empresas, datos importantes como el tiempo, la empresa y el cargo desempeñado
+                                <br><h4> Ofertas Laborales y Aplicadas</h4>
+                                En el Menú Navegacional podrás dirigirte y observar las ofertas disponibles que nuestras empresas asociadas han publicado, si así lo deseas podrás aplicar a las mismas clickea en el botón derecho “Aplicar” y a continuación observaras a detalle todos los requerimientos de la empresa VS tu experiencia permitiendo observar si eres apto o no para el cargo
+                                En la siguiente opción O. Aplicadas, si lo deseas puedes eliminar alguna oferta a la que has aplicado sin importar el motivo.
+                                <br><h4>Becas Disponibles y Aplicadas</h4>
+                                En el Menú Navegacional tendrás 2 opciones: B. Disponibles, en la cual podrás aplicar a una Beca por parte de nuestros Centro de Becas Asociados con el fin de mantenerte siempre en constante aprendizaje. De igual manera puedes eliminar cualquier beca a la que has aplicado en la opción de Becas Aplicadas
+                                <br><h4>Startups</h4>
+                                Las Startups son pequeñas empresas que están empezando en el mercado, si tu lo deseas puedes acordar con tus amigos, registrarse y agregarse como Startup y continuar como un grupo que busca el beneficio para sí mismo 
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <h4>Empresas</h4>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                <h4>Datos de Empresa</h4>
+                                En esta opción puede editar los datos de tu empresa en caso de requerir actualizar algún parámetro, dirígete a tu menú navegacional (ya logueado) y cliquea en Datos de mi empresa para comenzar
+                                <br>  <h4>Crear y Editar Oferta Laboral</h4>
+                                Tendrás 2 apartados para estas opciones en el Menú Navegacional, Crear una oferta laboral es muy sencillo, clickea en la opción y agrega los datos requeridos.
+                                Edita las ofertas ya sea actualizar o eliminar ofertas que consideras inoportunas mediante 2 clics, el primero seleccionaras la oferta y con el 2do editar (actualizar cualquier requerimiento de la oferta), eliminar (permanente, no se pueden deshacer los cambios).
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="h1">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                    <h4>Centro de Becas</h4>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="h1">
+                            <div class="panel-body">
+                                <h4>Datos Centro de Becas</h4>
+                                Edita tus datos como Centro de Becas, datos importantes como tu identificación la cual es descrita en forma de siglas ej.: “Centro de Becas La Cordillera”, “CBLC”. Además de tus datos empresariales.
+                                <br>   <h4>Crear y Editar Beca</h4>
+                                Ambas opciones disponibles en el Menú Navegacional de tu CB, Crear una Beca es tan sencillo, selecciona la fecha de inicio, fin, el horario en que se dictara y describe de que trata la beca.
+                                De igual manera puedes actualizar o eliminar una beca de acuerdo a tus necesidades, clickea en la beca que desees eliminar y desaparecerá de tu centro de becas.
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <div class="col-sm-1">

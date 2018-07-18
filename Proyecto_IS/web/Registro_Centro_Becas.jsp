@@ -22,14 +22,14 @@
         <title>Registrar Centro de Becas</title>
     </head>
     <style>
-    body {text-align:center; padding:20px}
-    input {
-        min-width:200px!important;
-        max-width:99.99%!important;
-        transition: width 0.25s;
-        text-align:center;
-    }
-</style>
+        body {text-align:center; padding:20px}
+        input {
+            min-width:200px!important;
+            max-width:99.99%!important;
+            transition: width 0.25s;
+            text-align:center;
+        }
+    </style>
     <body background="Imagenes/wall3.jpg" style="background-repeat: space">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -60,7 +60,7 @@
                                 <li><a href="TipoRegistro.html">Registrarse</a></li>
                             </ul>
                         </li>
-                <li><a href="Ayuda.jsp">Ayuda</a></li>
+                        <li><a href="Ayuda.jsp">Ayuda</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -75,15 +75,18 @@
             <table>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Identificado Centro </div>
+                        <div class="input-group-addon">Identificado Centro  <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Que es la Identificación de Centro?. Son las Siglas que simbolizan a tu Centro de Becas, Ejemplo Centro de Becas Cordillera -> CBCA"></span></div>
                         <input type="text" class="form-control" id="id" placeholder="Identificador:CBNSF" name="id" onkeypress='return validaLetras(event)' maxlength="5" required>
-                    </div></center>
+
+                    </div>
+
+                </center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2"><center>  
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Nombre</div>
-                        <input type="text" class="form-control" id="nombre" placeholder="ej: CENEC123" name="nombre"required>
+                        <input type="text" class="form-control" id="nombre" placeholder="ej: CENEC123" name="nombre"required onkeypress='return validaLetras(event)'>
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
@@ -97,7 +100,7 @@
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Teléfono Fijo</div>
-                        <input type="text" class="form-control" id="tel" placeholder="ej 022465873" name="tel" onkeypress='return validaNumericos(event)'required>
+                        <input type="text" class="form-control" id="tel" placeholder="ej 022465873" name="tel" onkeypress='return validaNumericos(event)'required onkeypress='return validaNumericos(event)'>
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>

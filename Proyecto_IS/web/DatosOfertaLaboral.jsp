@@ -21,14 +21,14 @@
         <title>Oferta Laboral</title>
     </head>    
     <style>
-    body {text-align:center; padding:20px}
-    input {
-        min-width:200px!important;
-        max-width:99.99%!important;
-        transition: width 0.25s;
-        text-align:center;
-    }
-</style><%
+        body {text-align:center; padding:20px}
+        input {
+            min-width:200px!important;
+            max-width:99.99%!important;
+            transition: width 0.25s;
+            text-align:center;
+        }
+    </style><%
         String email_emp;
         email_emp = request.getParameter("emaile");
     %>
@@ -66,7 +66,7 @@
                     <ul class="nav navbar-nav navbar-right" >
                         <p class="navbar-text ">Signed in as <a class="navbar-link"><i><%out.println(email_emp);%></i></a></p>
                         <p class="navbar-text ">  <a class="navbar-link" href="Inicio.html"><i>Cerrar Sesión</i></a></p>
-                      <li><a href="Ayuda.jsp">Ayuda</a></li>
+                        <li><a href="Ayuda.jsp">Ayuda</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -80,7 +80,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
                     <img src="https://dvz3vrza543jw.cloudfront.net/assets/marketing-website/guides/recruiting/closing-the-deal-ff1c3caaa83d7d044f5f5845fc6824f2.png" width="450"/></center>
-             
+
             </div>
             <div class="col-sm-6">
                 <h1>Oferta Empleo</h1>
@@ -92,14 +92,14 @@
                         <tr><td colspan="2">  <center>
                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                 <div class="input-group-addon">Cargo Empresarial</div>
-                                <input type="text" class="form-control" id="cargo" placeholder="ej: Gerente" name="cargo">
+                                <input type="text" class="form-control" id="cargo" placeholder="ej: Gerente" name="cargo" required maxlength="100" onkeypress='return validaLetras(event)'>
                             </div></center>
                         </td></tr>
                         <tr><td> &nbsp;</td></tr>
                         <tr><td colspan="2">  <center>
                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                <div class="input-group-addon">Descripcion</div>
-                                <input type="text" class="form-control" id="desc"  placeholder="ej: Varias Habilidades" name="desc">
+                                <div class="input-group-addon">Descripción</div>
+                                <input type="text" class="form-control" id="desc"  placeholder="ej: Varias Habilidades" name="desc" required maxlength="100" >
 
                             </div> </center>
                         </td></tr>
@@ -120,6 +120,7 @@
                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                 <div class="input-group-addon" >Experiencia Requerida</div>
                                 <select class="form-control" id="xp" name="xp" >
+                                    <option value="Ninguna">Ninguna</option>
                                     <option value="3 Meses">3 Meses o menos</option>
                                     <option value="6 Meses">6 Meses</option>
                                     <option value="9 Meses">9 Meses</option>
@@ -139,9 +140,37 @@
                 </form>
             </div>
             <div class="col-sm-3">
-               
+
             </div>
         </div>
     </center>
+    <script>
+        function resizable(el, factor) {
+            var int = Number(factor) || 7.7;
+            function resize() {
+                el.style.width = ((el.value.length + 1) * int) + 'px'
+            }
+            var e = 'keyup,keypress,focus,blur,change'.split(',');
+            for (var i in e)
+                el.addEventListener(e[i], resize, false);
+            resize();
+        }
+        resizable(document.getElementById('cargo'), 7);
+        resizable(document.getElementById('desc'), 7);
+    </script>
+    <script>
+        function validaNumericos(event) {
+            if (event.charCode >= 48 && event.charCode <= 57) {
+                return true;
+            }
+            return false;
+        }
+        function validaLetras(event) {
+            if (event.charCode >= 48 && event.charCode <= 57) {
+                return false;
+            }
+            return true;
+        }
+    </script>
 </body>
 </html>
