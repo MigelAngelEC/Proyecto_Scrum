@@ -7,6 +7,21 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <head>
+    <!-- Chatra {literal} -->
+    <script>
+        (function (d, w, c) {
+            w.ChatraID = 'zP9v9br5gsMWXE9eR';
+            var s = d.createElement('script');
+            w[c] = w[c] || function () {
+                (w[c].q = w[c].q || []).push(arguments);
+            };
+            s.async = true;
+            s.src = 'https://call.chatra.io/chatra.js';
+            if (d.head)
+                d.head.appendChild(s);
+        })(document, window, 'Chatra');
+    </script>
+    <!-- /Chatra {/literal} -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <!-- jQuery library -->
@@ -31,15 +46,15 @@
     email_cb = request.getParameter("emailcb");
 %>
 <script>
-    function myFunction() {
+        function myFunction() {
     <%
         if (email_cb == null) {
     %>
-        alert("Sesión no Iniciada , Se lo Redirigira al Incio");
-        window.setTimeout('window.location="Inicio.html"; ', 200);
+            alert("Sesión no Iniciada , Se lo Redirigira al Incio");
+            window.setTimeout('window.location="Inicio.html"; ', 200);
     <% }
     %>
-    }
+        }
 </script>
 <body background="Imagenes/wall3.jpg" style="background-repeat: space" onload="myFunction()">
 

@@ -9,7 +9,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <head> 
+         <!-- Chatra {literal} -->
+    <script>
+        (function (d, w, c) {
+            w.ChatraID = 'zP9v9br5gsMWXE9eR';
+            var s = d.createElement('script');
+            w[c] = w[c] || function () {
+                (w[c].q = w[c].q || []).push(arguments);
+            };
+            s.async = true;
+            s.src = 'https://call.chatra.io/chatra.js';
+            if (d.head)
+                d.head.appendChild(s);
+        })(document, window, 'Chatra');
+    </script>
+    <!-- /Chatra {/literal} -->
         <!-- Latest compiled and minified CSS -->
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -25,14 +39,14 @@
         <title>Registrando Mi Perfil</title>
     </head>
     <style>
-    body {text-align:center; padding:20px}
-    input {
-        min-width:200px!important;
-        max-width:99.99%!important;
-        transition: width 0.25s;
-        text-align:center;
-    }
-</style>
+        body {text-align:center; padding:20px}
+        input {
+            min-width:200px!important;
+            max-width:99.99%!important;
+            transition: width 0.25s;
+            text-align:center;
+        }
+    </style>
     <body background="Imagenes/wall3.jpg" style="background-repeat: space">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -63,7 +77,7 @@
                                 <li><a href="TipoRegistro.html">Registrarse</a></li>
                             </ul>
                         </li>
-                   <li><a href="Ayuda.jsp">Ayuda</a></li>
+                        <li><a href="Ayuda.jsp">Ayuda</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -83,14 +97,14 @@
                     direc = request.getParameter("direc");
                     telefo = request.getParameter("telf");
                     celu = request.getParameter("celu");
-                    out.print(ci+"_"+nickn+"_"+pass+"_"+name+"_"+apel+"_"+mail+"_"+direc+"_"+telefo+"_"+celu);
                     clsUsuario obj = new clsUsuario(ci, nickn, pass, name, apel, mail, direc, telefo, celu);
-                    out.print("<br> Cedula : " + obj.getCedula() + "<br>Nombre&Apellido: " + obj.getNombre() + " " + obj.getApellido());
 
                     boolean eject = obj.InsertarUsuario(ci, nickn, pass, name, apel, mail, direc, telefo, celu);
                     if (eject = true) {
                         out.print("<br><h2>Usuario Correctamente Registrado </h2>");
                         out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Iniciar Sesión</h3>");
+                        out.print("<br> Cedula : " + obj.getCedula() + "<br>Nombre&Apellido: " + obj.getNombre() + " " + obj.getApellido());
+
                         out.print("<a  href=LogeoU.jsp class=btn btn-primary btn-lg> <h3><u>Iniciar Sesión</u></h3> </a><br>");
                     } else {
                         out.print("<br>Fallo al Registrar Usuario " + eject);

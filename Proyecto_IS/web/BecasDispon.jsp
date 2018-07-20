@@ -81,15 +81,15 @@
                 <br>
                 <center>
                     <%
-                        clsUsuario us = new clsUsuario();
-                        out.print(us.PrintBecas(nickname));
+                        clsUsuario bdis = new clsUsuario();
+                        out.print(bdis.PrintBecas(nickname));
                     %>
                     <a  href="javascript:history.go(-1)" class="btn btn-primary btn-lg"> Cancelar </a><br>
                 </center>
             </div>
             <div class="col-sm-3 col-md-2">
                 <br><br><br>
-                
+
             </div>
 
         </div>           

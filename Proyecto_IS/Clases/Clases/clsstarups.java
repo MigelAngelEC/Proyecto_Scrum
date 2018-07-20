@@ -51,23 +51,42 @@ public class clsstarups {
     private String Nombre;
     private String Descripcion;
 
-    public boolean InsertarStart(String Nombre, String Descripcion) {
+    public boolean InsertarStart(String Nombre, String Descripcion, String nickname) {
         boolean ejecuto = false;
         int max = 0;
+        String maxed = "";
         ClsConexion con = new ClsConexion();
         try {
             ResultSet rs = con.Consultar("Select Max(cod_startup) from startups");
             while (rs.next()) {
-                max = rs.getInt(1);
+                maxed = rs.getString(1);
+
             }
-            max = max + 1;
-            String SQL = ("insert into startups (COD_STARTUP,NOMBRES,DESCRIPCIONS) values(" + max + ",'" + Nombre + "','" + Descripcion + "');");
-            String eject = con.Ejecutar(SQL);
-            if (eject.equalsIgnoreCase("Datos Insertados")) {
-                ejecuto = true;
+
+            if (maxed.isEmpty() || maxed == null) {
+                max = 1;
+                String SQL = ("insert into startups (COD_STARTUP,NOMBRES,DESCRIPCIONS) values(" + max + ",'" + Nombre + "','" + Descripcion + "');");
+                String SQL1 = ("UPDATE usuarios SET COD_STARTUP=" + max + " WHERE NICKNAME='" + nickname + "';");
+                String eject = con.Ejecutar(SQL);
+                String eject1 = con.Ejecutar(SQL1);
+                if (eject.equalsIgnoreCase("Datos Insertados") || eject1.equalsIgnoreCase("Datos Insertados")) {
+                    ejecuto = true;
+                } else {
+                    ejecuto = false;
+                }
             } else {
-                ejecuto = false;
+                max = Integer.parseInt(maxed) + 1;
+                String SQL = ("insert into startups (COD_STARTUP,NOMBRES,DESCRIPCIONS) values(" + max + ",'" + Nombre + "','" + Descripcion + "');");
+                String SQL1 = ("UPDATE usuarios SET COD_STARTUP=" + max + " WHERE NICKNAME='" + nickname + "';");
+                String eject = con.Ejecutar(SQL);
+                String eject1 = con.Ejecutar(SQL1);
+                if (eject.equalsIgnoreCase("Datos Insertados") || eject1.equalsIgnoreCase("Datos Insertados")) {
+                    ejecuto = true;
+                } else {
+                    ejecuto = false;
+                }
             }
+
         } catch (Exception e) {
             System.out.println("Error" + e.getMessage());
             ejecuto = false;

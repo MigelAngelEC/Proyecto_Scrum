@@ -232,7 +232,7 @@ public class clsUsuario {
             clsempresa emp = new clsempresa();
             ResultSet rs = con.Consultar("select * from ofertas_empleo ;");
             while (rs.next()) {
-                String empresa = emp.NameEnterprise(rs.getString(1));
+                String empresa = emp.NameEnterprise(rs.getString(1).trim());
                 SQLAdded += "<tr><td>" + empresa + "</td><td>" + rs.getString(3) + "</td><td>" + rs.getString(4) + "</td><td>" + rs.getString(6) + "</td><td>" + rs.getString(7) + "</td><td>" + rs.getString(5) + "</td>"
                         + "<form action=ProcesarOferta.jsp><input type=text name=ofert value=" + rs.getString(2) + " hidden=true>"
                         + "<input type=text name=cedula value='" + this.CIUser(nickname) + "' hidden=true>"
@@ -244,7 +244,6 @@ public class clsUsuario {
                         + "<input type=text name=exp value='" + rs.getString(7).trim() + "'hidden=true >"
                         + "<input type=text name=stado value='" + rs.getString(5).trim() + "'hidden=true >";
                 if (rs.getString(5).trim().equalsIgnoreCase("No Disponible")) {
-
                     SQLAdded += "<td>  <button title=\"Oferta No Disponible, Imposible de Aplicar\" type=submit class=btn btn-link disabled=true>Aplicar </button></td></form></tr>";
                 } else {
                     SQLAdded += "<td>  <button type=submit class=list-group-item>Aplicar </button></td></form></tr>";

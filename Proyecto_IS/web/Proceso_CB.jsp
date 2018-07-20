@@ -10,6 +10,21 @@
 <!DOCTYPE html>
 <html>
     <head>
+         <!-- Chatra {literal} -->
+    <script>
+        (function (d, w, c) {
+            w.ChatraID = 'zP9v9br5gsMWXE9eR';
+            var s = d.createElement('script');
+            w[c] = w[c] || function () {
+                (w[c].q = w[c].q || []).push(arguments);
+            };
+            s.async = true;
+            s.src = 'https://call.chatra.io/chatra.js';
+            if (d.head)
+                d.head.appendChild(s);
+        })(document, window, 'Chatra');
+    </script>
+    <!-- /Chatra {/literal} -->
         <!-- Latest compiled and minified CSS -->
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -24,15 +39,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-    body {text-align:center; padding:20px}
-    input {
-        min-width:200px!important;
-        max-width:99.99%!important;
-        transition: width 0.25s;
-        text-align:center;
-    }
-</style>
+        <style>
+            body {text-align:center; padding:20px}
+            input {
+                min-width:200px!important;
+                max-width:99.99%!important;
+                transition: width 0.25s;
+                text-align:center;
+            }
+        </style>
 
     </head>
     <body background="Imagenes/wall3.jpg" style="background-repeat: round"onload="checkEdits(), checkEdits1(), checkEdits2()">
@@ -65,7 +80,7 @@
                                 <li><a href="TipoRegistro.html">Registrarse</a></li>
                             </ul>
                         </li>
-                       <li><a href="Ayuda.jsp">Ayuda</a></li>
+                        <li><a href="Ayuda.jsp">Ayuda</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -89,21 +104,13 @@
                     // out.print("<br> COD : " + objCb.getCod_b()+ "<br>NombreDeLaEmpresa : " + objCb.getNombre_cb());
 
                     boolean eject = objCb.InsertarCb(codCB, NombreCB, direccionCB, telefonoCB, EmailCB, PasswordCB);
-                    // out.print(" " +codCB+" "+" "+ NombreCB+" "+ direccionCB+" "+ telefonoCB+" " + EmailCB+" "+ PasswordCB);
                     if (eject = true) {
-                        out.print("<br> Centro de Becas registrado correctamente " + eject);
-                    } else {
-                        out.print("<br>Error al Registrar Empresa " + eject);
-                    }
-
-                    boolean ejectAc = objCb.ActualizarCb(codCB, NombreCB, direccionCB, telefonoCB, EmailCB, PasswordCB);
-                    if (eject = true) {
-                        out.print("<br> <h2>Datos Correctamente Actualizados </h2>");
+                        out.print("<br> <h2>Centro de Becas Correctamente Registrado </h2>");
                         out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");
-                        out.print("<a  href=LogueoE.jsp class=btn btn-primary btn-lg> <h3><u>Cerrar Sesión</u></h3> </a><br>");
+                        out.print("<a  href=LogueoCB.jsp class=btn btn-primary btn-lg> <h3><u>Iniciar Sesión/u></h3> </a><br>");
                     } else {
                         out.print("<br><h2>Error al Actualizar Datos de Empresa </h2>");
-                        out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Cerrar Sesión </a><br>");
+                        out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Volver</a><br>");
                     }
                 %>
 

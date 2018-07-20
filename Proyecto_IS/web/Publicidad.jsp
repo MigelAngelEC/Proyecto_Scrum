@@ -8,6 +8,21 @@
 <!DOCTYPE html>
 <html>
     <head>
+         <!-- Chatra {literal} -->
+    <script>
+        (function (d, w, c) {
+            w.ChatraID = 'zP9v9br5gsMWXE9eR';
+            var s = d.createElement('script');
+            w[c] = w[c] || function () {
+                (w[c].q = w[c].q || []).push(arguments);
+            };
+            s.async = true;
+            s.src = 'https://call.chatra.io/chatra.js';
+            if (d.head)
+                d.head.appendChild(s);
+        })(document, window, 'Chatra');
+    </script>
+    <!-- /Chatra {/literal} -->
         <!-- Latest compiled and minified CSS--> 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -21,15 +36,15 @@
         <title>Pagina Publicitaria</title>
     </head>
     <style>
-    body {text-align:center; padding:20px}
-    input {
-        min-width:200px!important;
-        max-width:99.99%!important;
-        transition: width 0.25s;
-        text-align:center;
-    }
-</style>
-    <body background="Imagenes/wall3.jpg" style="background-repeat: space">
+        body {text-align:center; padding:20px}
+        input {
+            min-width:200px!important;
+            max-width:99.99%!important;
+            transition: width 0.25s;
+            text-align:center;
+        }
+    </style>
+    <body background="Imagenes/wall31.jpg" style="background-repeat: space">
 
         <div class="row">
             <img src="ImagesPublicidad/marketing_banner.jpg" alt="BANNER" width="1820" height="250"/> 
@@ -64,7 +79,7 @@
                                 <li><a href="TipoRegistro.html">Registrarse</a></li>
                             </ul>
                         </li>
-                 <li><a href="Ayuda.jsp">Ayuda</a></li>
+                        <li><a href="Ayuda.jsp">Ayuda</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -84,16 +99,13 @@
                     <a href="#" class="list-group-item">POSTULACION DE BECAS</a>
                     <a href="RegistrarUsuario.jsp" class="list-group-item">REGISTRO DE USUARIOS</a>
                     <a href="Registro_Empresas.jsp" class="list-group-item">REGISTRO DE EMPRESAS</a>
-                    <a href="#" class="list-group-item">REGISTRO CENTRO DE BECAS</a>
+                    <a href="Registro_Centro_Becas.jsp" class="list-group-item">REGISTRO CENTRO DE BECAS</a>
                 </div>
 
                 <ul class="list-group">
                     <li class="list-group-item list-group-item-success">
-                        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxpertlearn%2Fposts%2F10155369271418414&width=500" width="300" height="538" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fxpertlearn%2Fposts%2F10155369271418414&width=500" width="250" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                     </li>
-                    <li class="list-group-item list-group-item-info">Cras sit amet nibh libero</li>
-                    <li class="list-group-item list-group-item-warning">Porta ac consectetur ac</li>
-                    <li class="list-group-item list-group-item-danger">Vestibulum at eros</li>
                 </ul>
             </div>
 

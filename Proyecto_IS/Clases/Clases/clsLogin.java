@@ -13,6 +13,7 @@ import java.sql.SQLException;
  * @author EstIvonneGeovannaCam
  */
 public class clsLogin {
+
     public String cedula;
     public String nickname;
     public String cod_perfil;
@@ -49,27 +50,25 @@ public class clsLogin {
     public void setPassword(String password) {
         this.password = password;
     }
-    
-    
-    public static String autenticacion(String nick, String pass){
-       String log="false";
-       ClsConexion con=new ClsConexion();
-       ResultSet rs=null;
-       String sql_Usuario="SELECT cedula,cod_perfil FROM usuarios WHERE nickname='"+nick+"' AND password='"+pass+"'";
+
+    public static String autenticacion(String nick, String pass) {
+        String log = "false";
+        ClsConexion con = new ClsConexion();
+        ResultSet rs = null;
+        String sql_Usuario = "SELECT cedula,cod_perfil FROM usuarios WHERE nickname='" + nick + "' AND password='" + pass + "'";
         try {
-            rs=con.Consultar(sql_Usuario);
-            while(rs.next()){
-                log="true";
-                System.out.println("ci"+rs.getString(0)+"perfil"+rs.getString(1));
-                
-         }
+            rs = con.Consultar(sql_Usuario);
+            while (rs.next()) {
+                log = "true";
+                System.out.println("ci" + rs.getString(0) + "perfil" + rs.getString(1));
+
+            }
         } catch (SQLException e) {
+            System.out.println("Clases.clsLogin.autenticacion()" + e.getSQLState() + e.getMessage());
         }
         System.out.println(log);
         return log;
-        
-       
 
     }
-    
+
 }

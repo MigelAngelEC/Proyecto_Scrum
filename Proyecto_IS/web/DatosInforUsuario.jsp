@@ -11,6 +11,21 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- Chatra {literal} -->
+        <script>
+            (function (d, w, c) {
+                w.ChatraID = 'zP9v9br5gsMWXE9eR';
+                var s = d.createElement('script');
+                w[c] = w[c] || function () {
+                    (w[c].q = w[c].q || []).push(arguments);
+                };
+                s.async = true;
+                s.src = 'https://call.chatra.io/chatra.js';
+                if (d.head)
+                    d.head.appendChild(s);
+            })(document, window, 'Chatra');
+        </script>
+        <!-- /Chatra {/literal} -->
         <!-- Latest compiled and minified CSS -->
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -40,15 +55,15 @@
     List<String> vec = cs.ConsultarUsuario(nickname);
 %>
 <script>
-    function myFunction() {
+        function myFunction() {
     <%
         if (nickname == null) {
     %>
-        alert("Sesión no Iniciada , Se lo Redirigira al Incio");
-        window.setTimeout('window.location="Inicio.html"; ', 200);
+            alert("Sesión no Iniciada , Se lo Redirigira al Incio");
+            window.setTimeout('window.location="Inicio.html"; ', 200);
     <% }
     %>
-    }
+        }
 </script>
 <body background="Imagenes/wall3.jpg" style="background-repeat: round" onload="myFunction()">
 
@@ -223,7 +238,7 @@
             </form>
         </div>   
         <div class="col-sm-3">
-           
+
         </div>
     </div>
 </center>

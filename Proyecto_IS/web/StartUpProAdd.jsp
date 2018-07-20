@@ -9,6 +9,21 @@
 <!DOCTYPE html>
 <html>
     <head>
+         <!-- Chatra {literal} -->
+    <script>
+        (function (d, w, c) {
+            w.ChatraID = 'zP9v9br5gsMWXE9eR';
+            var s = d.createElement('script');
+            w[c] = w[c] || function () {
+                (w[c].q = w[c].q || []).push(arguments);
+            };
+            s.async = true;
+            s.src = 'https://call.chatra.io/chatra.js';
+            if (d.head)
+                d.head.appendChild(s);
+        })(document, window, 'Chatra');
+    </script>
+    <!-- /Chatra {/literal} -->
         <!-- Latest compiled and minified CSS -->
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -24,14 +39,14 @@
         <title>StarUps</title>
     </head>
     <style>
-    body {text-align:center; padding:20px}
-    input {
-        min-width:200px!important;
-        max-width:99.99%!important;
-        transition: width 0.25s;
-        text-align:center;
-    }
-</style>
+        body {text-align:center; padding:20px}
+        input {
+            min-width:200px!important;
+            max-width:99.99%!important;
+            transition: width 0.25s;
+            text-align:center;
+        }
+    </style>
     <% String nickname = request.getParameter("nickn");
     %>
     <script>
@@ -80,15 +95,22 @@
                     cedul = request.getParameter("cedula");
                     cod = request.getParameter("codstart");
                     clsstarups st = new clsstarups();
-                    boolean eject = st.UpdateUserStartUp(cedul, cod);
-                    if (eject = true) {
-                        out.print("<br><h2>Usuario Registrado en Mí StartUp </h2>");
-                        out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");
+                    if (cod.equalsIgnoreCase("0")) {
+                        out.print("<br><h2>Usted no pertenece a Ningun StartUP</h2>");
+                        out.print("<h3>&nbsp; &nbsp;Cree su StartUp y continue agregando </h3>");
                         out.print("<a  href=LogeoU.jsp class=btn btn-primary btn-lg> <h3><u>Cerrar Sesión</u></h3> </a><br>");
                     } else {
-                        out.print("<br>Fallo al Registrar Usuario en mí StartUp " + eject);
-                        out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Regresar</a><br>");
+                        boolean eject = st.UpdateUserStartUp(cedul, cod);
+                        if (eject = true) {
+                            out.print("<br><h2>Usuario Registrado en Mí StartUp </h2>");
+                            out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");
+                            out.print("<a  href=LogeoU.jsp class=btn btn-primary btn-lg> <h3><u>Cerrar Sesión</u></h3> </a><br>");
+                        } else {
+                            out.print("<br>Fallo al Registrar Usuario en mí StartUp " + eject);
+                            out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Regresar</a><br>");
+                        }
                     }
+
 
                 %>
             </div>

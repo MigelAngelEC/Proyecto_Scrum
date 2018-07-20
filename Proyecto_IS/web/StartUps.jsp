@@ -10,6 +10,21 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- Chatra {literal} -->
+        <script>
+            (function (d, w, c) {
+                w.ChatraID = 'zP9v9br5gsMWXE9eR';
+                var s = d.createElement('script');
+                w[c] = w[c] || function () {
+                    (w[c].q = w[c].q || []).push(arguments);
+                };
+                s.async = true;
+                s.src = 'https://call.chatra.io/chatra.js';
+                if (d.head)
+                    d.head.appendChild(s);
+            })(document, window, 'Chatra');
+        </script>
+        <!-- /Chatra {/literal} -->
         <!-- Latest compiled and minified CSS -->
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -36,15 +51,15 @@
     <% String nickname = request.getParameter("nickn");
     %>
     <script>
-        function myFunction() {
+            function myFunction() {
         <%
             if (nickname == null) {
         %>
-            alert("Sesión no Iniciada , Se lo Redirigira al Incio");
-            window.setTimeout('window.location="Inicio.html"; ', 200);
+                alert("Sesión no Iniciada , Se lo Redirigira al Incio");
+                window.setTimeout('window.location="Inicio.html"; ', 200);
         <% }
         %>
-        }
+            }
     </script>
     <body background="Imagenes/wall3.jpg" style="background-repeat: space" onload="myFunction()">
         <nav class="navbar navbar-default">
@@ -68,7 +83,7 @@
                     <ul class="nav navbar-nav navbar-right" >
                         <p class="navbar-text ">Signed in as <a class="navbar-link"><i><%out.println(nickname);%></i></a></p>
                         <p class="navbar-text ">  <a class="navbar-link" href="Inicio.html"><i>Cerrar Sesión</i></a></p>
-                         <li><a href="Ayuda.jsp">Ayuda</a></li>
+                        <li><a href="Ayuda.jsp">Ayuda</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -115,7 +130,7 @@
                 </form>
             </div>
             <div class="col-sm-3">
-               
+
             </div>
         </div>
         <%
@@ -168,7 +183,7 @@
                 </form>
             </div>
             <div class="col-sm-3">
-               <div class="list-group"> <a href="#" class="list-group-item active"> 
+                <div class="list-group"> <a href="#" class="list-group-item active"> 
                         <h4 class="list-group-item-heading">Necesitas Ayuda?</h4> 
                         <p class="list-group-item-text"></p> </a> 
                     <a href="#" class="list-group-item"> <h4 class="list-group-item-heading">StartUp</h4> 

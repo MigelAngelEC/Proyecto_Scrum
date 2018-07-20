@@ -207,7 +207,7 @@ public class clsempresa {
             }
         } catch (SQLException e) {
         }
-        return empresa;
+        return empresa.trim();
 
     }
 
@@ -222,7 +222,7 @@ public class clsempresa {
             }
         } catch (SQLException e) {
         }
-        return empresa;
+        return empresa.trim();
     }
 
     public boolean AplicarO(String cod, String ci) {
