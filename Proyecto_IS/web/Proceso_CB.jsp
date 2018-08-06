@@ -98,7 +98,7 @@
                     telefonoCB = request.getParameter("tel");
                     EmailCB = request.getParameter("email");
                     PasswordCB = request.getParameter("pass");
-                    System.out.println(codCB + " " + NombreCB + " " + direccionCB + " " + telefonoCB + " " + EmailCB + " " + PasswordCB);
+                    //System.out.println(codCB + " " + NombreCB + " " + direccionCB + " " + telefonoCB + " " + EmailCB + " " + PasswordCB);
 
                     clsCentroBecas objCb = new clsCentroBecas();
                     // out.print("<br> COD : " + objCb.getCod_b()+ "<br>NombreDeLaEmpresa : " + objCb.getNombre_cb());
@@ -106,8 +106,8 @@
                     boolean eject = objCb.InsertarCb(codCB, NombreCB, direccionCB, telefonoCB, EmailCB, PasswordCB);
                     if (eject = true) {
                         out.print("<br> <h2>Centro de Becas Correctamente Registrado </h2>");
-                        out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");
-                        out.print("<a  href=LogueoCB.jsp class=btn btn-primary btn-lg> <h3><u>Iniciar Sesión/u></h3> </a><br>");
+                        out.print("<h3>&nbsp; &nbsp;Cambios Realizados</h3>");
+                        out.print("<a  href=javascript:history.go(-2) class=btn btn-primary btn-lg> Volver</a><br>");
                     } else {
                         out.print("<br><h2>Error al Actualizar Datos de Empresa </h2>");
                         out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Volver</a><br>");

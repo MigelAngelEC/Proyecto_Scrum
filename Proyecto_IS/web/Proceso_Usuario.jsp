@@ -105,7 +105,7 @@
                         out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Iniciar Sesión</h3>");
                         out.print("<br> Cedula : " + obj.getCedula() + "<br>Nombre&Apellido: " + obj.getNombre() + " " + obj.getApellido());
 
-                        out.print("<a  href=LogeoU.jsp class=btn btn-primary btn-lg> <h3><u>Iniciar Sesión</u></h3> </a><br>");
+                        out.print("<br><a  href=LogeoU.jsp class=btn btn-primary btn-lg> <h3><u>Iniciar Sesión</u></h3> </a><br>");
                     } else {
                         out.print("<br>Fallo al Registrar Usuario " + eject);
                         out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Regresar</a><br>");

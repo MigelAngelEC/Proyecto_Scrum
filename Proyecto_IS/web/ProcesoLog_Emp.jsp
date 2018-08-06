@@ -148,7 +148,7 @@
 
         <div class="list-group">
             <a href="#" class="list-group-item active">
-                MENU
+                MENÚ
             </a>
             <form action="DatosOfertaLaboral.jsp" method="post">
                 <input type="text" name="emaile" value="<%out.println(email_emp);%>" hidden="true" >
@@ -168,7 +168,7 @@
     <div class="col-sm-8">
         <div class="container">
             <div class="jumbotron">
-                <h2>Bievenido <%  out.println(email_emp);
+                <h2>Bienvenido <%  out.println(email_emp);
                     %></h2>
                 <br>
                 <center>

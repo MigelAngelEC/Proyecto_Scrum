@@ -107,7 +107,7 @@
                 clsCentroBecas cb = new clsCentroBecas();
                 boolean eject = cb.UpdateBeca(codcb, codbc, Descrip, FechaI, FechaF, Horario, State);
                 if (eject == true) {
-                    out.print("<br> <h2>Beca Corractamente ACtualizada</h2>");
+                    out.print("<br> <h2>Beca Corractamente Actualizada</h2>");
                     out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");
                     out.print("<a  href=LogueoCB.jsp class=btn btn-primary btn-lg> <h3><u>Cerrar Sesión</u></h3> </a><br>");
                 } else {

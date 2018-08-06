@@ -33,7 +33,7 @@
         <link rel="icon" href="Imagenes/letterD.png">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
-    <body background="Imagenes/wall3.jpg" style="background-repeat: round">
+    <body background="Imagenes/wall3.jpg" style="background-repeat: space">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -69,6 +69,7 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
+    <center>
         <div class="container">
             <div class="jumbotron">
                 <%
@@ -88,8 +89,8 @@
                     boolean eject = obj.ActualizarEmpresa(ruc, NombreEmpresa, direccion, telefono, Email, Descripcion, Password);
                     if (eject = true) {
                         out.print("<br> <h2>Datos Correctamente Actualizados </h2>");
-                        out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");
-                        out.print("<a  href=LogueoE.jsp class=btn btn-primary btn-lg> <h3><u>Cerrar Sesión</u></h3> </a><br>");
+                        out.print("<h3>&nbsp; &nbsp;Cambios Realizados</h3>");
+                        out.print("<a  href=javascript:history.go(-2) class=btn btn-primary btn-lg> Volver</a><br>");
                     } else {
                         out.print("<br><h2>Error al Actualizar Datos de Empresa </h2>");
                         out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Cerrar Sesión </a><br>");
@@ -98,9 +99,10 @@
 
             </div>
         </div>
-        <h2></h2>
+    </center>
+    <h2></h2>
 
 
 
-    </body>
+</body>
 </html>

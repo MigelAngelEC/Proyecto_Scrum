@@ -10,21 +10,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-         <!-- Chatra {literal} -->
-    <script>
-        (function (d, w, c) {
-            w.ChatraID = 'zP9v9br5gsMWXE9eR';
-            var s = d.createElement('script');
-            w[c] = w[c] || function () {
-                (w[c].q = w[c].q || []).push(arguments);
-            };
-            s.async = true;
-            s.src = 'https://call.chatra.io/chatra.js';
-            if (d.head)
-                d.head.appendChild(s);
-        })(document, window, 'Chatra');
-    </script>
-    <!-- /Chatra {/literal} -->
+        <!-- Chatra {literal} -->
+        <script>
+            (function (d, w, c) {
+                w.ChatraID = 'zP9v9br5gsMWXE9eR';
+                var s = d.createElement('script');
+                w[c] = w[c] || function () {
+                    (w[c].q = w[c].q || []).push(arguments);
+                };
+                s.async = true;
+                s.src = 'https://call.chatra.io/chatra.js';
+                if (d.head)
+                    d.head.appendChild(s);
+            })(document, window, 'Chatra');
+        </script>
+        <!-- /Chatra {/literal} -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
         <!-- jQuery library -->
@@ -37,14 +37,14 @@
         <title>Mi Perfil StartUps</title>
     </head>
     <style>
-    body {text-align:center; padding:20px}
-    input {
-        min-width:200px!important;
-        max-width:99.99%!important;
-        transition: width 0.25s;
-        text-align:center;
-    }
-</style>
+        body {text-align:center; padding:20px}
+        input {
+            min-width:200px!important;
+            max-width:99.99%!important;
+            transition: width 0.25s;
+            text-align:center;
+        }
+    </style>
     <body background="Imagenes/wall3.jpg" style="background-repeat: round">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -75,7 +75,7 @@
                                 <li><a href="TipoRegistro.html">Registrarse</a></li>
                             </ul>
                         </li>
-                     <li><a href="Ayuda.jsp">Ayuda</a></li>
+                        <li><a href="Ayuda.jsp">Ayuda</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -84,11 +84,12 @@
         <div class="container">
             <div class="jumbotron">
                 <%
-                    String Nombre, Descripcion;
+                    String Nombre, Descripcion ,nickname;
                     clsstarups obj = new clsstarups();
                     Nombre = request.getParameter("nempresa");
                     Descripcion = request.getParameter("desc");
-                    boolean eject = obj.InsertarStart(Nombre, Descripcion);
+                    nickname = request.getParameter("nickn");
+                   boolean eject =obj.InsertarStart(Nombre, Descripcion, nickname);
                     if (eject = true) {
                         out.print("<br><h2>StartUp Registrada </h2>");
                         out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");

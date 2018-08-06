@@ -9,21 +9,21 @@
 <!DOCTYPE html>
 <html>
     <head> 
-         <!-- Chatra {literal} -->
-    <script>
-        (function (d, w, c) {
-            w.ChatraID = 'zP9v9br5gsMWXE9eR';
-            var s = d.createElement('script');
-            w[c] = w[c] || function () {
-                (w[c].q = w[c].q || []).push(arguments);
-            };
-            s.async = true;
-            s.src = 'https://call.chatra.io/chatra.js';
-            if (d.head)
-                d.head.appendChild(s);
-        })(document, window, 'Chatra');
-    </script>
-    <!-- /Chatra {/literal} -->
+        <!-- Chatra {literal} -->
+        <script>
+            (function (d, w, c) {
+                w.ChatraID = 'zP9v9br5gsMWXE9eR';
+                var s = d.createElement('script');
+                w[c] = w[c] || function () {
+                    (w[c].q = w[c].q || []).push(arguments);
+                };
+                s.async = true;
+                s.src = 'https://call.chatra.io/chatra.js';
+                if (d.head)
+                    d.head.appendChild(s);
+            })(document, window, 'Chatra');
+        </script>
+        <!-- /Chatra {/literal} -->
         <!-- Latest compiled and minified CSS -->
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -91,14 +91,14 @@
             <table>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Cedula</div>
+                        <div class="input-group-addon">Cédula</div>
                         <input type="text" class="form-control" id="cedula" placeholder="CI #1234567890" name="cedula" required maxlength="10" onkeypress='return validaNumericos(event)' onchange="validarcedula()" >
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2"><center>  
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">NickName</div>
+                        <div class="input-group-addon">NickName<span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="El NickName es tu identificador de usuario con el que iniciaras sesión"></span></div>
                         <input type="text" class="form-control" id="nickn" placeholder="ej: Jose123" name="nickn"required>
                     </div></center>
                 </td></tr>
@@ -106,14 +106,14 @@
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Password</div>
-                        <input type="password" class="form-control" id="passw" placeholder="ej: Mispar159357" name="passw"required maxlength="20">
+                        <input type="password" class="form-control" id="passw" placeholder="ej: Mispar159357" name="passw"required maxlength="20" onkeyup="this.value=NumText(this.value)" />
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Verficar Password</div>
-                        <input type="password" class="form-control" id="passwv" name="passwv" placeholder="Repetir Password" required maxlength="20">
+                        <div class="input-group-addon">Verificar Password</div>
+                        <input type="password" class="form-control" id="passwv" name="passwv" placeholder="Repetir Password" required maxlength="20" onkeyup="this.value=NumText(this.value)"  />
                     </div> </center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
@@ -154,7 +154,7 @@
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Dirección</div>
+                        <div class="input-group-addon">Dirección Domiciliaria</div>
                         <input type="text" class="form-control" id="direc" placeholder="ej: Ciudadela Ibarra" name="direc"required>
                     </div>  </center>
                 </td></tr>
@@ -226,6 +226,20 @@
             document.registro.cedula.setfocus();
         }
         alert("Cedula valida !!");
+    }
+</script>
+<script>
+    function NumText(string) {//solo letras y numeros
+        var out = '';
+        //Se añaden las letras validas
+        var filtro = 'abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890';//Caracteres validos
+
+        for (var i = 0; i < string.length; i++)
+            if (filtro.indexOf(string.charAt(i)) != -1)
+                out += string.charAt(i);
+            else
+                alert("Solo Letras y Numeros");
+        return out;
     }
 </script>
 </html>

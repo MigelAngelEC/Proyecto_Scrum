@@ -55,15 +55,15 @@
         List<String> vec = cb.ConsultarCb(emailcb);
     %>
     <script>
-        function myFunction() {
+            function myFunction() {
         <%
             if (emailcb == null) {
         %>
-            alert("Sesión no Iniciada , Se lo Redirigira al Incio");
-            window.setTimeout('window.location="Inicio.html"; ', 200);
+                alert("Sesión no Iniciada , Se lo Redirigira al Incio");
+                window.setTimeout('window.location="Inicio.html"; ', 200);
         <% }
         %>
-        }
+            }
     </script>
 </head>
 <body background="Imagenes/wall3.jpg" style="background-repeat: space" onload="myFunction()">
@@ -101,19 +101,19 @@
             <img src="Imagenes/Foto4.png" alt="" width="450"/>
         </div>
         <div class="col-sm-6">
-            <h1>Actualizar Mi Información de Usuario</h1>
+            <h1>Actualizar Mi Información de C.Becas</h1>
             <br>
-            <form action="Proceso_CB.jsp" method="post">
+            <form action="ProcesarDatosInforCentroBecas.jsp" method="post">
 
                 <table>
                     <tr><td colspan="2">  <center>
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                            <div class="input-group-addon">Identificado Centro </div>
+                            <div class="input-group-addon">Identificador Centro <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Que es la Identificación de Centro?. Son las Siglas que simbolizan a tu Centro de Becas, Ejemplo Centro de Becas Cordillera -> CBCA"></span></div>
                             <input type="text" class="form-control" id="id" placeholder="Identificador #1234567890" name="id"value="<%
                                 if (vec.isEmpty()) {
                                     out.print("");
                                 } else {
-                                    out.print(vec.get(1).trim());
+                                    out.print(vec.get(0).trim());
                                 }
                                    %>" required onkeypress='return validaLetras(event)'>
                         </div></center>
@@ -134,7 +134,7 @@
                     <tr><td> &nbsp;</td></tr>
                     <tr><td colspan="2">  <center>
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                            <div class="input-group-addon">Dirección</div>
+                            <div class="input-group-addon">Dirección Empresarial</div>
                             <input type="text" class="form-control" id="dir" placeholder="ej: Ciudadela Ibarra" name="dir"value="<%
                                 if (vec.isEmpty()) {
                                     out.print("");
@@ -180,14 +180,14 @@
                                 } else {
                                     out.print(vec.get(6).trim());
                                 }
-                                   %>"required maxlength="20">
+                                   %>"required maxlength="20" onkeyup="this.value = NumText(this.value)">
                         </div></center>
                     </td></tr>
                     <tr><td> &nbsp;</td></tr>
                     <tr><td colspan="2">  <center>
                         <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                            <div class="input-group-addon">Verficar Password</div>
-                            <input type="password" class="form-control" id="vpass" placeholder="Repetir Password" name="vpass" required maxlength="20">
+                            <div class="input-group-addon">Verificar Password</div>
+                            <input type="password" class="form-control" id="vpass" placeholder="Repetir Password" name="vpass" required maxlength="20" onkeyup="this.value = NumText(this.value)">
                         </div> </center>
                     </td></tr>     
                     <tr><td> &nbsp;</td></tr>
@@ -231,6 +231,20 @@
 
     password.onchange = validatePassword;
     confirm_password.onkeyup = validatePassword;
+</script>
+<script>
+    function NumText(string) {//solo letras y numeros
+        var out = '';
+        //Se añaden las letras validas
+        var filtro = 'abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890';//Caracteres validos
+
+        for (var i = 0; i < string.length; i++)
+            if (filtro.indexOf(string.charAt(i)) != -1)
+                out += string.charAt(i);
+            else
+                alert("Solo Letras y Numeros");
+        return out;
+    }
 </script>
 </body>
 </html>

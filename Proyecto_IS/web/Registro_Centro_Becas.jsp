@@ -90,7 +90,7 @@
             <table>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Identificado Centro  <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Que es la Identificación de Centro?. Son las Siglas que simbolizan a tu Centro de Becas, Ejemplo Centro de Becas Cordillera -> CBCA"></span></div>
+                        <div class="input-group-addon">Identificador de Centro  <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Que es la Identificación de Centro?. Son las Siglas que simbolizan a tu Centro de Becas, Ejemplo Centro de Becas Cordillera -> CBCA"></span></div>
                         <input type="text" class="form-control" id="id" placeholder="Identificador:CBNSF" name="id" onkeypress='return validaLetras(event)' maxlength="5" required>
 
                     </div>
@@ -107,7 +107,7 @@
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Dirección</div>
+                        <div class="input-group-addon">Dirección Empresarial</div>
                         <input type="text" class="form-control" id="dir" placeholder="ej: Ciudadela Ibarra" name="dir"required>
                     </div>  </center>
                 </td></tr>
@@ -129,14 +129,14 @@
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Password</div>
-                        <input type="password" class="form-control" id="pass" placeholder="ej: Mispar159357" name="pass"required>
+                        <input type="password" class="form-control" id="pass" placeholder="ej: Mispar159357" name="pass"required onkeyup="this.value=NumText(this.value)" >
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Verficar Password</div>
-                        <input type="password" class="form-control" id="vpass" placeholder="Repetir Password" required>
+                        <div class="input-group-addon">Verificar Password</div>
+                        <input type="password" class="form-control" id="vpass" placeholder="Repetir Password" required onkeyup="this.value=NumText(this.value)">
                     </div> </center>
                 </td></tr>     
                 <tr><td> &nbsp;</td></tr>
@@ -177,5 +177,19 @@
 
     password.onchange = validatePassword;
     confirm_password.onkeyup = validatePassword;
+</script>
+<script>
+    function NumText(string) {//solo letras y numeros
+        var out = '';
+        //Se añaden las letras validas
+        var filtro = 'abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890';//Caracteres validos
+
+        for (var i = 0; i < string.length; i++)
+            if (filtro.indexOf(string.charAt(i)) != -1)
+                out += string.charAt(i);
+            else
+                alert("Solo Letras y Numeros");
+        return out;
+    }
 </script>
 </html>

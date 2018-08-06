@@ -211,8 +211,7 @@ public class clsCentroBecas {
         boolean ejecuto = false;
         try {
 
-            String SQL = ("UPDATE centros__becas\n"
-                    + "   SET nombre_cb='" + nombre + "',direccion='" + dir + "',telefono='" + tel + "',email='" + email + "',password='" + pwd + "' where cod_cb='" + id + "'");
+            String SQL = ("UPDATE centros__becas SET nombre_cb='" + nombre + "',direccion='" + dir + "',telefonos='" + tel + "',email='" + email + "',password='" + pwd + "' where cod_cb='" + id + "'");
             ClsConexion con = new ClsConexion();
             String eject = con.Ejecutar(SQL);
             if (eject.equalsIgnoreCase("Datos Insertados")) {

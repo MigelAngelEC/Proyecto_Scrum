@@ -9,21 +9,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-         <!-- Chatra {literal} -->
-    <script>
-        (function (d, w, c) {
-            w.ChatraID = 'zP9v9br5gsMWXE9eR';
-            var s = d.createElement('script');
-            w[c] = w[c] || function () {
-                (w[c].q = w[c].q || []).push(arguments);
-            };
-            s.async = true;
-            s.src = 'https://call.chatra.io/chatra.js';
-            if (d.head)
-                d.head.appendChild(s);
-        })(document, window, 'Chatra');
-    </script>
-    <!-- /Chatra {/literal} -->
+        <!-- Chatra {literal} -->
+        <script>
+            (function (d, w, c) {
+                w.ChatraID = 'zP9v9br5gsMWXE9eR';
+                var s = d.createElement('script');
+                w[c] = w[c] || function () {
+                    (w[c].q = w[c].q || []).push(arguments);
+                };
+                s.async = true;
+                s.src = 'https://call.chatra.io/chatra.js';
+                if (d.head)
+                    d.head.appendChild(s);
+            })(document, window, 'Chatra');
+        </script>
+        <!-- /Chatra {/literal} -->
         <!-- Latest compiled and minified CSS -->
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -39,14 +39,14 @@
         <title>StarUps</title>
     </head>
     <style>
-    body {text-align:center; padding:20px}
-    input {
-        min-width:200px!important;
-        max-width:99.99%!important;
-        transition: width 0.25s;
-        text-align:center;
-    }
-</style>
+        body {text-align:center; padding:20px}
+        input {
+            min-width:200px!important;
+            max-width:99.99%!important;
+            transition: width 0.25s;
+            text-align:center;
+        }
+    </style>
     <% String nickname = request.getParameter("nickn");
     %>
     <script>
@@ -82,7 +82,7 @@
                     <ul class="nav navbar-nav navbar-right" >
                         <p class="navbar-text ">Signed in as <a class="navbar-link"><i><%out.println(nickname);%></i></a></p>
                         <p class="navbar-text ">  <a class="navbar-link" href="Inicio.html"><i>Cerrar Sesión</i></a></p>
-                  <li><a href="Ayuda.jsp">Ayuda</a></li>
+                        <li><a href="Ayuda.jsp">Ayuda</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -99,8 +99,8 @@
                     boolean eject = st.UpdateStart(cod, nombre, descrip);
                     if (eject = true) {
                         out.print("<br> <h2>StartUp Correctamente Actualizada </h2>");
-                        out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");
-                        out.print("<a  href=LogeoU.jsp class=btn btn-primary btn-lg> <h3><u>Cerrar Sesión</u></h3> </a><br>");
+                        out.print("<h3>&nbsp; &nbsp;Cambios Realizados</h3>");
+                            out.print("<a  href=javascript:history.go(-2) class=btn btn-primary btn-lg> Volver</a><br>");
                     } else {
                         out.print("<br><h2>Error al Actualizar StartUp </h2>");
                         out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Volver</a><br>");

@@ -92,7 +92,7 @@
             <div class="col-sm-2">
                 <div class="list-group">
                     <a href="#" class="list-group-item active">
-                        MENU
+                        MENÚ
                     </a>
                     <a href="#p1" class="list-group-item"> EMPRESAS</a>
                     <a href="#p2" class="list-group-item">CENTROS DE BECAS</a>
@@ -252,7 +252,7 @@
                 <a href="#" class="alert-link">...</a><br/>
                 <div class="list-group">
                     <a href="#" class="list-group-item active">
-                        <h4 class="list-group-item-heading">INFORMACION DE SU INTERES..!</h4>
+                        <h4 class="list-group-item-heading">INFORMACIÓN DE SU INTERES..!</h4>
                         <br/>
                         <h4 class="list-group-item-heading">BECAS GAR- TERCER NIVEL</h4>
                         <p class="list-group-item-text">El “Programa de Becas para el Grupo de Alto Rendimiento de Tercer Nivel 2018” tiene por objetivo conceder financiamiento para que ecuatorianas y ecuatorianos, que sean parte del Grupo de Alto Rendimiento X, XI y XII, puedan realizar estudios de tercer nivel en instituciones de educación superior del exterior.
@@ -276,7 +276,7 @@
             <h1><center>CENTROS DE BECAS</center></h1>
 
             <div class="container">
-                <h2>Carousel Example</h2>
+                <h2></h2>
                 <div id="CentroBecas" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">

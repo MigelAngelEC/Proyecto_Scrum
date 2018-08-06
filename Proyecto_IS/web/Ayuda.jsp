@@ -176,7 +176,7 @@
                         <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                             <div class="panel-body">
                                 <h4> Datos de usuario</h4>
-                                Al registrarte como usuario llenaras estos datos, sin embargo, si deseas realizar algún cambio puedes hacerlo clicando en el menú navegacional de tu usuario en la opción “Datos de Usuario” si embargo no podrás modificar tu cedula ya que es tu identificador en toda la web
+                                Al registrarte como usuario llenaras estos datos, sin embargo, si deseas realizar algún cambio puedes hacerlo clicando en el menú navegacional de tu usuario en la opción “Datos de Usuario” si embargo no podrás modificar tu cédula ya que es tu identificador en toda la web
                                 <br><h4>Datos académicos </h4>
                                 Accede a esta opción después de iniciar sesión clicando en el menú navegacional la opción “Datos Académicos”, podrás ir agregando tus datos académicos de<br>sde primer nivel hasta Doctorado si es que posees dicho título. Además de agregar en que te especializas.
                                 <br><h4> Experiencia laboral</h4>

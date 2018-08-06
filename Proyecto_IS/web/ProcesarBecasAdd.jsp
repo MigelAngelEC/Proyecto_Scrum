@@ -100,13 +100,13 @@
                     FechaF = request.getParameter("ffin");
                     Horario = request.getParameter("horario");
                     State = request.getParameter("state");
-                    out.print(Descrip + FechaI + FechaF + Horario + State);
+                    //out.print(Descrip + FechaI + FechaF + Horario + State);
                     clsCentroBecas cb = new clsCentroBecas();
                     boolean eject = cb.InsertarBeca(emailcb, Descrip, FechaI, FechaF, Horario, State);
                     if (eject == true) {
                         out.print("<br> <h2>Beca Corractamente Creada</h2>");
-                        out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");
-                        out.print("<a  href=LogueoCB.jsp class=btn btn-primary btn-lg> <h3><u>Cerrar Sesión</u></h3> </a><br>");
+                        out.print("<h3>&nbsp; &nbsp;Cambios Realizados</h3>");
+                        out.print("<a  href=javascript:history.go(-2) class=btn btn-primary btn-lg> Volver</a><br>");
                     } else {
                         out.print("<br><h2>Error al Actualizar Oferta </h2>");
                         out.print("<br><h3>Revisa los datos insertados previamente </h3>");

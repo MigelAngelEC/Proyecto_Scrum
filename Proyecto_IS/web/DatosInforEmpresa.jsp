@@ -111,7 +111,7 @@
                     <table>
                         <tr><td colspan="2">  <center>
                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                <div class="input-group-addon">RUC</div>
+                                <div class="input-group-addon">R.U.C</div>
                                 <input type="text" class="form-control" id="ci" placeholder="RUC: #123456789001" name="ruc" value="<%
                                     if (lista.isEmpty()) {
                                         out.print("");
@@ -137,7 +137,7 @@
                         <tr><td> &nbsp;</td></tr>
                         <tr><td colspan="2">  <center>
                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                <div class="input-group-addon">Direccion</div>
+                                <div class="input-group-addon">Dirección Empresarial</div>
                                 <input type="text" class="form-control" id="ci" placeholder="ej: Ajavi" name="direc" value="<%
                                     if (lista.isEmpty()) {
                                         out.print("");
@@ -150,7 +150,7 @@
                         <tr><td> &nbsp;</td></tr>
                         <tr><td colspan="2">  <center>
                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                <div class="input-group-addon">Telefono</div>
+                                <div class="input-group-addon">Teléfono</div>
                                 <input type="text" class="form-control" id="ci" placeholder="ej: 022467315" name="telefono" value="<%
                                     if (lista.isEmpty()) {
                                         out.print("");
@@ -163,7 +163,7 @@
                         <tr><td> &nbsp;</td></tr>
                         <tr><td colspan="2">  <center>
                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                <div class="input-group-addon">Email</div>
+                                <div class="input-group-addon">Em@il</div>
                                 <input type="text" class="form-control" id="ci" placeholder="ej:akroscgi@akros.com" name="email" value="<%
                                     if (lista.isEmpty()) {
                                         out.print("");
@@ -184,14 +184,14 @@
                                     } else {
                                         out.print(lista.get(6).trim());
                                     }
-                                       %>"onClick="this.select();" maxlength="20" required>
+                                       %>"onClick="this.select();" maxlength="20" requiredonkeyup="this.value=NumText(this.value)" >
                             </div></center>
                         </td></tr>
                         <tr><td> &nbsp;</td></tr>
                         <tr><td colspan="2">  <center>
                             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                 <div class="input-group-addon">Repetir Password</div>
-                                <input type="password" class="form-control" id="passwv" name="passwv" placeholder="Repetir Password" maxlength="20" required>
+                                <input type="password" class="form-control" id="passwv" name="passwv" placeholder="Repetir Password" maxlength="20" required onkeyup="this.value=NumText(this.value)" >
                             </div></center>
                         </td></tr>
                         <tr><td> &nbsp;</td></tr>
@@ -263,5 +263,19 @@
         }
         resizable(document.getElementById('desc'), 7);
     </script>
+    <script>
+    function NumText(string) {//solo letras y numeros
+        var out = '';
+        //Se añaden las letras validas
+        var filtro = 'abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890';//Caracteres validos
+
+        for (var i = 0; i < string.length; i++)
+            if (filtro.indexOf(string.charAt(i)) != -1)
+                out += string.charAt(i);
+            else
+                alert("Solo Letras y Numeros");
+        return out;
+    }
+</script>
 </body>
 </html>

@@ -13,21 +13,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-         <!-- Chatra {literal} -->
-    <script>
-        (function (d, w, c) {
-            w.ChatraID = 'zP9v9br5gsMWXE9eR';
-            var s = d.createElement('script');
-            w[c] = w[c] || function () {
-                (w[c].q = w[c].q || []).push(arguments);
-            };
-            s.async = true;
-            s.src = 'https://call.chatra.io/chatra.js';
-            if (d.head)
-                d.head.appendChild(s);
-        })(document, window, 'Chatra');
-    </script>
-    <!-- /Chatra {/literal} -->
+        <!-- Chatra {literal} -->
+        <script>
+            (function (d, w, c) {
+                w.ChatraID = 'zP9v9br5gsMWXE9eR';
+                var s = d.createElement('script');
+                w[c] = w[c] || function () {
+                    (w[c].q = w[c].q || []).push(arguments);
+                };
+                s.async = true;
+                s.src = 'https://call.chatra.io/chatra.js';
+                if (d.head)
+                    d.head.appendChild(s);
+            })(document, window, 'Chatra');
+        </script>
+        <!-- /Chatra {/literal} -->
         <!-- Latest compiled and minified CSS -->
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -133,7 +133,7 @@
 
             <div class="list-group">
                 <a href="#" class="list-group-item active">
-                    MENU
+                    MENÚ
                 </a>
                 <form action="DatosInforCentroBecas.jsp" method="post">
                     <input type="text" name="emailcb" value="<%out.println(email_cb);%>" hidden="true" >
@@ -156,12 +156,13 @@
                 <center>
                     <div class="jumbotron">
 
-                        <h2>Bievenido Centro de Becas  
+                        <h2>Bienvenido Centro de Becas  
                             <%
                                 String nombreCB = objCb.NombreCB(email_cb);
-                                out.print(nombreCB.toUpperCase());%></h2>
+                                out.print(nombreCB);%>
+                        </h2>
 
-                        <h2>Direccion del centro:
+                        <h2>Dirección del centro:
                             <%
                                 String dirCB = objCb.DireccionCB(email_cb);
                                 out.print(dirCB);%></h2>
@@ -188,13 +189,13 @@
                             <div class="panel panel-default">
                                 <h2>Oferta de Becas</h2>
                                 <!-- Default panel contents -->
-                                <div class="panel-heading">Informacion de Becas Ofertadas</div>
+                                <div class="panel-heading">Información de Becas Ofertadas</div>
                                 <!-- Table -->
                                 <table class="table" >
 
                                     <tr>
                                         <td>Codigo de Beca</td>
-                                        <td>Descripcion</td>
+                                        <td>Descripción</td>
                                         <td>Inicio</td>
                                         <td>Fin</td>
                                         <td>Horario</td>

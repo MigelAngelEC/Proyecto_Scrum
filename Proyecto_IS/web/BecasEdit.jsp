@@ -100,7 +100,7 @@
                 clsCentroBecas cls = new clsCentroBecas();
                 String codeCB, codeBeca;
                 codeCB = request.getParameter("codcbeca");
-                codeBeca = request.getParameter("codcbeca");
+                codeBeca = request.getParameter("codobeca");
                 List<String> lista = cls.ConsultarBeca(codeCB, codeBeca);
             %>
             <br>

@@ -1,10 +1,10 @@
 <%-- 
-    Document   : StartUpsReg
-    Created on : 09/07/2018, 3:32:16
+    Document   : ProcesarDatosInforCentroBecas
+    Created on : 20/07/2018, 6:45:25
     Author     : migue
 --%>
 
-<%@page import="Clases.clsstarups"%>
+<%@page import="Clases.clsCentroBecas"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -33,34 +33,23 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="icon" href="Imagenes/letterD.png">
-        <title>StarUps</title>
-    </head>
-    <style>
-        body {text-align:center; padding:20px}
-        input {
-            min-width:200px!important;
-            max-width:99.99%!important;
-            transition: width 0.25s;
-            text-align:center;
-        }
-    </style>
-    <% String nickname = request.getParameter("nickn");
-    %>
-    <script>
-            function myFunction() {
-        <%
-            if (nickname == null) {
-        %>
-                alert("Sesión no Iniciada , Se lo Redirigira al Incio");
-                window.setTimeout('window.location="Inicio.html"; ', 200);
-        <% }
-        %>
+        <title>Perfil Centro de Becas!</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            body {text-align:center; padding:20px}
+            input {
+                min-width:200px!important;
+                max-width:99.99%!important;
+                transition: width 0.25s;
+                text-align:center;
             }
-    </script>
-    <body background="Imagenes/wall3.jpg" style="background-repeat: space" onload="myFunction()">
+        </style>
+
+    </head>
+    <body background="Imagenes/wall3.jpg" style="background-repeat: round"onload="checkEdits(), checkEdits1(), checkEdits2()">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -80,34 +69,51 @@
                         <li class=""><a href="Publicidad.jsp">Empresas Asociadas <span class="sr-only">(current)</span></a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right" >
-                        <p class="navbar-text ">Signed in as <a class="navbar-link"><i><%out.println(nickname);%></i></a></p>
-                        <p class="navbar-text ">  <a class="navbar-link" href="Inicio.html"><i>Cerrar Sesión</i></a></p>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"name="drop" >Iniciar Sesión <span class="caret"></span></a>
+                            <ul class="dropdown-menu" >
+                                <li><a href="LogeoU.jsp" >Iniciar Sesión Usuario</a></li>
+                                <li><a href="LogueoE.jsp">Iniciar Sesión Empresa</a></li>
+                                <li><a href="LogueoCB.jsp">Iniciar Sesión C.Becas</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="TipoRegistro.html">Registrarse</a></li>
+                            </ul>
+                        </li>
                         <li><a href="Ayuda.jsp">Ayuda</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
+
         <div class="container">
             <div class="jumbotron">
                 <%
-                    String nombre, descrip;
-                    nombre = request.getParameter("namest");
-                    descrip = request.getParameter("descst");
-                    clsstarups st = new clsstarups();
-                    Boolean eject = st.InsertarStart(nombre, descrip, nickname);
+                    //Confirmacion de registro de centros de becas
+                    String codCB, NombreCB, direccionCB, telefonoCB, EmailCB, PasswordCB;
+
+                    codCB = request.getParameter("id");
+                    NombreCB = request.getParameter("nombre");
+                    direccionCB = request.getParameter("dir");
+                    telefonoCB = request.getParameter("tel");
+                    EmailCB = request.getParameter("email");
+                    PasswordCB = request.getParameter("pass");
+                   // System.out.println(codCB + " " + NombreCB + " " + direccionCB + " " + telefonoCB + " " + EmailCB + " " + PasswordCB);
+
+                    clsCentroBecas objCb = new clsCentroBecas();
+                    // out.print("<br> COD : " + objCb.getCod_b()+ "<br>NombreDeLaEmpresa : " + objCb.getNombre_cb());
+
+                    boolean eject = objCb.ActualizarCb(codCB, NombreCB, direccionCB, telefonoCB, EmailCB, PasswordCB);
                     if (eject = true) {
-                        out.print("<br><h2>StartUP Registrada Correctamente </h2>");
+                        out.print("<br> <h2>Centro de Becas Correctamente Actualizados</h2>");
                         out.print("<h3>&nbsp; &nbsp;Cambios Realizados</h3>");
                         out.print("<a  href=javascript:history.go(-2) class=btn btn-primary btn-lg> Volver</a><br>");
                     } else {
-                        out.print("<br>Fallo al Registrar StartUP");
-                        out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Volver </a><br>");
+                        out.print("<br><h2>Error al Actualizar Datos de Becas </h2>");
+                        out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Volver</a><br>");
                     }
-
                 %>
-            </div>
 
+            </div>
         </div>
-    </body>
 </html>

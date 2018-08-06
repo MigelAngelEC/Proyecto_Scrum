@@ -8,21 +8,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-         <!-- Chatra {literal} -->
-    <script>
-        (function (d, w, c) {
-            w.ChatraID = 'zP9v9br5gsMWXE9eR';
-            var s = d.createElement('script');
-            w[c] = w[c] || function () {
-                (w[c].q = w[c].q || []).push(arguments);
-            };
-            s.async = true;
-            s.src = 'https://call.chatra.io/chatra.js';
-            if (d.head)
-                d.head.appendChild(s);
-        })(document, window, 'Chatra');
-    </script>
-    <!-- /Chatra {/literal} -->
+        <!-- Chatra {literal} -->
+        <script>
+            (function (d, w, c) {
+                w.ChatraID = 'zP9v9br5gsMWXE9eR';
+                var s = d.createElement('script');
+                w[c] = w[c] || function () {
+                    (w[c].q = w[c].q || []).push(arguments);
+                };
+                s.async = true;
+                s.src = 'https://call.chatra.io/chatra.js';
+                if (d.head)
+                    d.head.appendChild(s);
+            })(document, window, 'Chatra');
+        </script>
+        <!-- /Chatra {/literal} -->
         <!-- Latest compiled and minified CSS -->
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -92,8 +92,8 @@
             <table>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">RUC</div>
-                        <input type="text" class="form-control" id="ruc" placeholder="RUC: #123456789001" name="ruc" required maxlength="13" onfocusout="validar()">
+                        <div class="input-group-addon">R.U.C</div>
+                        <input type="text" class="form-control" id="ruc" placeholder="RUC: #123456789001" name="ruc" required maxlength="13" onfocusout="validar()"onkeypress='return validaNumericos(event)'>
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
@@ -106,43 +106,43 @@
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Direccion</div>
+                        <div class="input-group-addon">Dirección Empresarial</div>
                         <input type="text" class="form-control" id="ci" placeholder="ej: Ajavi" name="direc" required>
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Telefono</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej: 022467315" name="telefono" required>
+                        <div class="input-group-addon">Teléfono</div>
+                        <input type="text" class="form-control" id="ci" placeholder="ej: 022467315" name="telefono" required maxlength="10" onkeypress='return validaNumericos(event)'>
                     </div> </center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon">Email</div>
-                        <input type="text" class="form-control" id="ci" placeholder="ej:akroscgi@akros.com" name="email"required>
+                        <div class="input-group-addon">Em@il</div>
+                        <input type="text" class="form-control" id="ci" placeholder="ej:akroscgi@akros.com" name="email"required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
                     </div> </center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Password</div>
-                        <input type="password" class="form-control" id="ci" placeholder="ej:AkrosC159" name="passw">
+                        <input type="password" class="form-control" id="passw" placeholder="ej:AkrosC159" name="passw" required onkeyup="this.value = NumText(this.value)">
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Repetir Password</div>
-                        <input type="password" class="form-control" id="ci" placeholder="Repetir Password">
+                        <input type="password" class="form-control" id="passwv" name="passwv" placeholder="Repetir Password" required onkeyup="this.value = NumText(this.value)">
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
                 <tr><td colspan="2">  <center>
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-addon">Descripción Empresa</div>
-                        <input type="text" class="form-control" id="ci" placeholder="A que se dedica" name="desc">
+                        <input type="text" class="form-control" id="desc" placeholder="A que se dedica" name="desc" required maxlength="100">
                     </div></center>
                 </td></tr>
                 <tr><td> &nbsp;</td></tr>
@@ -186,20 +186,20 @@
             if (acu == dto) {
                 while (number.substring(10, 13) != 001) {
                     alert('Los tres últimos dígitos no tienen el código del RUC 001.');
-                    document.getElementById("ruc").value=" ";
+                    document.getElementById("ruc").value = " ";
                     return;
                 }
                 while (number.substring(0, 2) > 24) {
                     alert('Los dos primeros dígitos no pueden ser mayores a 24.');
-                     document.getElementById("ruc").value=" ";
+                    document.getElementById("ruc").value = " ";
                     return;
                 }
                 alert('El RUC está escrito correctamente');
-              //  alert('Se procederá a analizar el respectivo RUC.');
+                //  alert('Se procederá a analizar el respectivo RUC.');
                 var porcion1 = number.substring(2, 3);
                 if (porcion1 < 6) {
                     alert('El tercer dígito es menor a 6, por lo \ntanto el usuario es una persona natural.\n');
-                     document.getElementById("ruc").value=" ";
+
                 } else {
                     if (porcion1 == 6) {
                         alert('El tercer dígito es igual a 6, por lo \ntanto el usuario es una entidad pública.\n');
@@ -229,5 +229,32 @@
 
     password.onchange = validatePassword;
     confirm_password.onkeyup = validatePassword;
+</script>
+<script>
+    function NumText(string) {//solo letras y numeros
+        var out = '';
+        //Se añaden las letras validas
+        var filtro = 'abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ1234567890';//Caracteres validos
+
+        for (var i = 0; i < string.length; i++)
+            if (filtro.indexOf(string.charAt(i)) != -1)
+                out += string.charAt(i);
+            else
+                alert("Solo Letras y Numeros");
+        return out;
+    }
+</script>
+<script>
+    function resizable(el, factor) {
+        var int = Number(factor) || 7.7;
+        function resize() {
+            el.style.width = ((el.value.length + 1) * int) + 'px'
+        }
+        var e = 'keyup,keypress,focus,blur,change'.split(',');
+        for (var i in e)
+            el.addEventListener(e[i], resize, false);
+        resize();
+    }
+    resizable(document.getElementById('desc'), 7);
 </script>
 </html>

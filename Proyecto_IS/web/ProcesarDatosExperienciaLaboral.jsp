@@ -50,15 +50,15 @@
     <% String nickname = request.getParameter("nickne");
     %>
     <script>
-        function myFunction() {
+            function myFunction() {
         <%
             if (nickname == null) {
         %>
-            alert("Sesión no Iniciada , Se lo Redirigira al Incio");
-            window.setTimeout('window.location="Inicio.html"; ', 200);
+                alert("Sesión no Iniciada , Se lo Redirigira al Incio");
+                window.setTimeout('window.location="Inicio.html"; ', 200);
         <% }
         %>
-        }
+            }
     </script>
     <body background="Imagenes/wall3.jpg" style="background-repeat: space" onload="myFunction()">
 
@@ -98,12 +98,12 @@
                     empresa = request.getParameter("Empresa");
                     contacto = request.getParameter("Contact");
                     cargo = request.getParameter("cargo");
-                    clsUsuario us = new clsUsuario();
-                    boolean eject = us.InsertarXP(time, empresa, contacto, cargo, nickname);
+                    clsUsuario user = new clsUsuario();
+                    boolean eject = user.InsertarXP(time, empresa, contacto, cargo, nickname);
                     if (eject = true) {
                         out.print("<br> <h2>Experiencia Laboral Correctamente Actualizados </h2>");
-                        out.print("<h3>&nbsp; &nbsp;Para Efectuar los cambios Cierre Sesión</h3>");
-                        out.print("<a  href=LogeoU.jsp class=btn btn-primary btn-lg> <h3><u>Cerrar Sesión</u></h3> </a><br>");
+                        out.print("<h3>&nbsp; &nbsp;Cambios Realizados</h3>");
+                        out.print("<a  href=javascript:history.go(-2) class=btn btn-primary btn-lg> Volver</a><br>");
                     } else {
                         out.print("<br><h2>Error al Actualizar Experiencia Laboral </h2>");
                         out.print("<a  href=javascript:history.go(-1) class=btn btn-primary btn-lg> Cerrar Sesión </a><br>");

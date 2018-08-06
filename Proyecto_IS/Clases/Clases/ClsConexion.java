@@ -50,22 +50,20 @@ public class ClsConexion {
 //        this.pwd = "1234";
 //        this.cadena = "jdbc:postgresql://localhost:5432/BaseProy3";
 //        this.con = this.crearConexion();
-
-
-        this.driver = "com.mysql.jdbc.Driver";
-        this.user = "root";
-        this.pwd = "";
-        this.cadena = "jdbc:mysql://localhost:3306/baseproy1";
-        this.con = this.crearConexion();
-        
-        
-//        
-//        
+//
 //        this.driver = "com.mysql.jdbc.Driver";
-//        this.user = "migue5tu_basepro";
-//        this.pwd = "W~K6HISp#ZyX";
-//        this.cadena = "jdbc:mysql://mysql3000.mochahost.com:3306/migue5tu_BaseProyecto";
+//        this.user = "root";
+//        this.pwd = "";
+//        this.cadena = "jdbc:mysql://localhost:3306/baseproy1";
 //        this.con = this.crearConexion();
+////        
+//        
+        this.driver = "com.mysql.jdbc.Driver";
+        this.user = "migue5tu_basepro";
+        this.pwd = "W~K6HISp#ZyX";
+        this.cadena = "jdbc:mysql://mysql3000.mochahost.com:3306/migue5tu_BaseProyecto";
+        this.con = this.crearConexion();
+
     }
 
     Connection crearConexion() {

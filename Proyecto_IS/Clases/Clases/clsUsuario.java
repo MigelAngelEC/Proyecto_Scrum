@@ -396,15 +396,11 @@ public class clsUsuario {
 
     public boolean InsertarXP(String time, String empresa, String contacto, String cargo, String nickname) {
         boolean ejecuto = false;
-        int max = 0;
-        ClsConexion con = new ClsConexion();
         try {
-            ResultSet rs = con.Consultar("Select Max(cod_refe) from experiencia_laboral");
-            while (rs.next()) {
-                max = rs.getInt(1);
-            }
-            max = max + 1;
-            String SQL = "insert into experiencia_laboral (COD_REFE,CEDULA,EMPRESA,TIEMPO,CARGO_DESEM,CONTACTO) values(" + max + ",'" + this.CIUser(nickname) + "','" + empresa + "','" + time + "','" + cargo + "','" + contacto + "');";
+            ClsConexion con = new ClsConexion();
+            String cedulad = "";
+            cedulad = this.CIUser(nickname);
+            String SQL = "INSERT INTO `experiencia_laboral` (`COD_REFE`, `CEDULA`, `EMPRESA`, `TIEMPO`, `CARGO_DESEM`, `CONTACTO`) VALUES (NULL, '" + cedulad + "', '" + empresa + "', '" + time + "', '" + cargo + "', '" + contacto + "');";
             String eject = con.Ejecutar(SQL);
             if (eject.equalsIgnoreCase("Datos Insertados")) {
                 ejecuto = true;

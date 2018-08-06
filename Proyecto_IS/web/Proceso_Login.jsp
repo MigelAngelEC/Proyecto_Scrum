@@ -116,7 +116,7 @@
 
             <div class="list-group">
                 <a href="#" class="list-group-item active">
-                    MENU
+                    MENÚ
                 </a>
                 <form action="DatosInforUsuario.jsp" method="post">
                     <input type="text" name="nickn" value="<%out.println(nickname);%>" hidden="true" >
@@ -124,7 +124,7 @@
                 </form>
                 <form action="DatosAcademicosUsuario.jsp" method="post">
                     <input type="text" name="nickn" value="<%out.println(nickname);%>" hidden="true" >
-                    <button type="submit" class="list-group-item">Datos Academicos <u>(Agregar)</u></button>
+                    <button type="submit" class="list-group-item">Datos Académicos <u>(Agregar)</u></button>
                 </form>
                 <form action="DatosAcademicosReferencias.jsp" method="post">
                     <input type="text" name="nickn" value="<%out.println(nickname);%>" hidden="true" >
